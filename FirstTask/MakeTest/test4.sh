@@ -18,3 +18,6 @@ then
 else
 	echo "var1 is $var"
 fi
+
+va=hh
+echo $va
