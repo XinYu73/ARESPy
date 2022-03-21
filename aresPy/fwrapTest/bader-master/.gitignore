@@ -1,0 +1,10 @@
+*~
+*.o
+*.pyc
+*.mod
+f90wrap*.f90
+.f2py_f2cmap
+bader
+bader.py
+_bader.so
+libbader.a
