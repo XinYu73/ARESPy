@@ -1,0 +1,3 @@
+import simple_ice_model_basic
+
+simple_ice_model_basic.simple_ice_model()
