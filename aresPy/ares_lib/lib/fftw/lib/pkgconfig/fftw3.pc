@@ -1,0 +1,11 @@
+prefix=/work/home/xinyu/soft/ARES/ares_lib/FFTW/fftw-3.3.9
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FFTW
+Description: fast Fourier transform library
+Version: 3.3.9
+Libs: -L${libdir} -lfftw3 
+Libs.private: -lm
+Cflags: -I${includedir}

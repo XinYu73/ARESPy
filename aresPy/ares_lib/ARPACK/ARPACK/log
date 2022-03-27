@@ -1,0 +1,857 @@
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/BLAS; /usr/bin/make clean )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/BLAS'
+Makefile:69: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+rm -f *.o a.out core
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/BLAS'
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/LAPACK; /usr/bin/make clean )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/LAPACK'
+Makefile:91: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+rm -f *.o a.out core
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/LAPACK'
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/UTIL; /usr/bin/make clean )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/UTIL'
+Makefile:47: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+rm -f *.o a.out core
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/UTIL'
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/SRC; /usr/bin/make clean )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/SRC'
+Makefile:50: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+rm -f *.o a.out core
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/SRC'
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI; /usr/bin/make clean )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI'
+Makefile:45: warning: overriding recipe for target '.f.o'
+../../../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+rm -f *.o a.out core
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI'
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI; /usr/bin/make clean )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI'
+Makefile:48: warning: overriding recipe for target '.f.o'
+../../../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+rm -f *.o a.out core
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI'
+Making lib in /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/BLAS
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/BLAS'
+Makefile:69: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+ifort -O3 -c isamax.f
+ifort -O3 -c sasum.f
+ifort -O3 -c saxpy.f
+ifort -O3 -c scopy.f
+ifort -O3 -c sdot.f
+ifort -O3 -c snrm2.f
+ifort -O3 -c srot.f
+ifort -O3 -c srotg.f
+ifort -O3 -c sscal.f
+ifort -O3 -c sswap.f
+ifort -O3 -c sgemv.f
+ifort -O3 -c sger.f
+ifort -O3 -c ssymv.f
+ifort -O3 -c ssyr2.f
+ifort -O3 -c strmm.f
+ifort -O3 -c sgbmv.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a isamax.o sasum.o saxpy.o scopy.o sdot.o  snrm2.o srot.o  srotg.o sscal.o  sswap.o sgemv.o sger.o  ssymv.o ssyr2.o strmm.o sgbmv.o
+r - isamax.o
+r - sasum.o
+r - saxpy.o
+r - scopy.o
+r - sdot.o
+r - snrm2.o
+r - srot.o
+r - srotg.o
+r - sscal.o
+r - sswap.o
+r - sgemv.o
+r - sger.o
+r - ssymv.o
+r - ssyr2.o
+r - strmm.o
+r - sgbmv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c idamax.f
+ifort -O3 -c dasum.f
+ifort -O3 -c daxpy.f
+ifort -O3 -c dcopy.f
+ifort -O3 -c ddot.f
+ifort -O3 -c dnrm2.f
+ifort -O3 -c drot.f
+ifort -O3 -c drotg.f
+ifort -O3 -c dscal.f
+ifort -O3 -c dswap.f
+ifort -O3 -c dgemv.f
+ifort -O3 -c dger.f
+ifort -O3 -c dsymv.f
+ifort -O3 -c dsyr2.f
+ifort -O3 -c dtrmm.f
+ifort -O3 -c dgbmv.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a idamax.o dasum.o daxpy.o dcopy.o ddot.o  dnrm2.o drot.o  drotg.o dscal.o  dswap.o dgemv.o dger.o  dsymv.o dsyr2.o dtrmm.o dgbmv.o
+r - idamax.o
+r - dasum.o
+r - daxpy.o
+r - dcopy.o
+r - ddot.o
+r - dnrm2.o
+r - drot.o
+r - drotg.o
+r - dscal.o
+r - dswap.o
+r - dgemv.o
+r - dger.o
+r - dsymv.o
+r - dsyr2.o
+r - dtrmm.o
+r - dgbmv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c icamax.f
+ifort -O3 -c caxpy.f
+ifort -O3 -c ccopy.f
+ifort -O3 -c cdotc.f
+ifort -O3 -c cdotu.f
+ifort -O3 -c cgbmv.f
+ifort -O3 -c cgemv.f
+ifort -O3 -c cgerc.f
+ifort -O3 -c cgeru.f
+ifort -O3 -c cscal.f
+ifort -O3 -c csscal.f
+ifort -O3 -c cswap.f
+ifort -O3 -c ctrmm.f
+ifort -O3 -c ctrsv.f
+ifort -O3 -c scasum.f
+ifort -O3 -c scnrm2.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a icamax.o caxpy.o ccopy.o cdotc.o cdotu.o cgbmv.o  cgemv.o cgerc.o cgeru.o  cscal.o csscal.o cswap.o ctrmm.o ctrsv.o scasum.o scnrm2.o isamax.o sscal.o 
+r - icamax.o
+r - caxpy.o
+r - ccopy.o
+r - cdotc.o
+r - cdotu.o
+r - cgbmv.o
+r - cgemv.o
+r - cgerc.o
+r - cgeru.o
+r - cscal.o
+r - csscal.o
+r - cswap.o
+r - ctrmm.o
+r - ctrsv.o
+r - scasum.o
+r - scnrm2.o
+r - isamax.o
+r - sscal.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c izamax.f
+ifort -O3 -c zaxpy.f
+ifort -O3 -c zcopy.f
+ifort -O3 -c zdotc.f
+ifort -O3 -c zdotu.f
+ifort -O3 -c zgbmv.f
+ifort -O3 -c zgemv.f
+ifort -O3 -c zgerc.f
+ifort -O3 -c zgeru.f
+ifort -O3 -c zscal.f
+ifort -O3 -c zdscal.f
+ifort -O3 -c zswap.f
+ifort -O3 -c ztrmm.f
+ifort -O3 -c ztrsv.f
+ifort -O3 -c dzasum.f
+ifort -O3 -c dznrm2.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a izamax.o zaxpy.o zcopy.o zdotc.o zdotu.o zgbmv.o  zgemv.o zgerc.o zgeru.o zscal.o zdscal.o zswap.o ztrmm.o ztrsv.o dzasum.o dznrm2.o idamax.o dscal.o
+r - izamax.o
+r - zaxpy.o
+r - zcopy.o
+r - zdotc.o
+r - zdotu.o
+r - zgbmv.o
+r - zgemv.o
+r - zgerc.o
+r - zgeru.o
+r - zscal.o
+r - zdscal.o
+r - zswap.o
+r - ztrmm.o
+r - ztrsv.o
+r - dzasum.o
+r - dznrm2.o
+r - idamax.o
+r - dscal.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/BLAS'
+Making lib in /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/LAPACK
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/LAPACK'
+Makefile:91: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+ifort -O3 -c sgeqr2.f
+ifort -O3 -c slabad.f
+ifort -O3 -c slacon.f
+ifort -O3 -c slacpy.f
+ifort -O3 -c sladiv.f
+ifort -O3 -c slae2.f
+ifort -O3 -c slaev2.f
+ifort -O3 -c slaexc.f
+ifort -O3 -c slagtm.f
+ifort -O3 -c slahqr.f
+ifort -O3 -c slaln2.f
+ifort -O3 -c slamch.f
+ifort -O3 -c slange.f
+ifort -O3 -c slanhs.f
+ifort -O3 -c slanst.f
+ifort -O3 -c slanv2.f
+ifort -O3 -c slaptm.f
+ifort -O3 -c slapy2.f
+ifort -O3 -c slapy3.f
+ifort -O3 -c slaran.f
+ifort -O3 -c slarf.f
+ifort -O3 -c slarfg.f
+ifort -O3 -c slarfx.f
+ifort -O3 -c slarnd.f
+ifort -O3 -c slarnv.f
+ifort -O3 -c slartg.f
+ifort -O3 -c slaruv.f
+ifort -O3 -c slascl.f
+ifort -O3 -c slaset.f
+ifort -O3 -c slasr.f
+ifort -O3 -c slasrt.f
+ifort -O3 -c slassq.f
+ifort -O3 -c slasy2.f
+ifort -O3 -c sorm2r.f
+ifort -O3 -c ssteqr.f
+ifort -O3 -c strevc.f
+ifort -O3 -c strexc.f
+ifort -O3 -c strsen.f
+ifort -O3 -c strsyl.f
+ifort -O3 -c ilaenv.f
+ifort -O3 -c lsame.f
+ifort -O3 -c lsamen.f
+ifort -O3 -c xerbla.f
+ifort -O3 -c xlaenv.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a sgeqr2.o slabad.o slacon.o slacpy.o sladiv.o slae2.o slaev2.o slaexc.o slagtm.o slahqr.o slaln2.o slamch.o slange.o slanhs.o slanst.o slanv2.o slaptm.o slapy2.o slapy3.o slaran.o slarf.o slarfg.o slarfx.o slarnd.o slarnv.o slartg.o slaruv.o slascl.o slaset.o slasr.o  slasrt.o slassq.o slasy2.o sorm2r.o ssteqr.o strevc.o strexc.o strsen.o strsyl.o ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
+r - sgeqr2.o
+r - slabad.o
+r - slacon.o
+r - slacpy.o
+r - sladiv.o
+r - slae2.o
+r - slaev2.o
+r - slaexc.o
+r - slagtm.o
+r - slahqr.o
+r - slaln2.o
+r - slamch.o
+r - slange.o
+r - slanhs.o
+r - slanst.o
+r - slanv2.o
+r - slaptm.o
+r - slapy2.o
+r - slapy3.o
+r - slaran.o
+r - slarf.o
+r - slarfg.o
+r - slarfx.o
+r - slarnd.o
+r - slarnv.o
+r - slartg.o
+r - slaruv.o
+r - slascl.o
+r - slaset.o
+r - slasr.o
+r - slasrt.o
+r - slassq.o
+r - slasy2.o
+r - sorm2r.o
+r - ssteqr.o
+r - strevc.o
+r - strexc.o
+r - strsen.o
+r - strsyl.o
+r - ilaenv.o
+r - lsame.o
+r - lsamen.o
+r - xerbla.o
+r - xlaenv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c dgeqr2.f
+ifort -O3 -c dlabad.f
+ifort -O3 -c dlacon.f
+ifort -O3 -c dlacpy.f
+ifort -O3 -c dladiv.f
+ifort -O3 -c dlae2.f
+ifort -O3 -c dlaev2.f
+ifort -O3 -c dlaexc.f
+ifort -O3 -c dlagtm.f
+ifort -O3 -c dlahqr.f
+ifort -O3 -c dlaln2.f
+ifort -O3 -c dlamch.f
+ifort -O3 -c dlange.f
+ifort -O3 -c dlanhs.f
+ifort -O3 -c dlanst.f
+ifort -O3 -c dlanv2.f
+ifort -O3 -c dlaptm.f
+ifort -O3 -c dlapy2.f
+ifort -O3 -c dlapy3.f
+ifort -O3 -c dlaran.f
+ifort -O3 -c dlarf.f
+ifort -O3 -c dlarfg.f
+ifort -O3 -c dlarfx.f
+ifort -O3 -c dlarnd.f
+ifort -O3 -c dlarnv.f
+ifort -O3 -c dlartg.f
+ifort -O3 -c dlaruv.f
+ifort -O3 -c dlascl.f
+ifort -O3 -c dlaset.f
+ifort -O3 -c dlasr.f
+ifort -O3 -c dlasrt.f
+ifort -O3 -c dlassq.f
+ifort -O3 -c dlasy2.f
+ifort -O3 -c dorm2r.f
+ifort -O3 -c dsteqr.f
+ifort -O3 -c dtrevc.f
+ifort -O3 -c dtrexc.f
+ifort -O3 -c dtrsen.f
+ifort -O3 -c dtrsyl.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a dgeqr2.o dlabad.o dlacon.o dlacpy.o dladiv.o dlae2.o dlaev2.o dlaexc.o dlagtm.o dlahqr.o dlaln2.o dlamch.o dlange.o dlanhs.o dlanst.o dlanv2.o dlaptm.o dlapy2.o dlapy3.o dlaran.o dlarf.o dlarfg.o dlarfx.o dlarnd.o dlarnv.o dlartg.o dlaruv.o dlascl.o dlaset.o dlasr.o  dlasrt.o dlassq.o dlasy2.o dorm2r.o dsteqr.o dtrevc.o dtrexc.o dtrsen.o dtrsyl.o ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
+r - dgeqr2.o
+r - dlabad.o
+r - dlacon.o
+r - dlacpy.o
+r - dladiv.o
+r - dlae2.o
+r - dlaev2.o
+r - dlaexc.o
+r - dlagtm.o
+r - dlahqr.o
+r - dlaln2.o
+r - dlamch.o
+r - dlange.o
+r - dlanhs.o
+r - dlanst.o
+r - dlanv2.o
+r - dlaptm.o
+r - dlapy2.o
+r - dlapy3.o
+r - dlaran.o
+r - dlarf.o
+r - dlarfg.o
+r - dlarfx.o
+r - dlarnd.o
+r - dlarnv.o
+r - dlartg.o
+r - dlaruv.o
+r - dlascl.o
+r - dlaset.o
+r - dlasr.o
+r - dlasrt.o
+r - dlassq.o
+r - dlasy2.o
+r - dorm2r.o
+r - dsteqr.o
+r - dtrevc.o
+r - dtrexc.o
+r - dtrsen.o
+r - dtrsyl.o
+r - ilaenv.o
+r - lsame.o
+r - lsamen.o
+r - xerbla.o
+r - xlaenv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c cgeqr2.f
+ifort -O3 -c clacon.f
+ifort -O3 -c clacpy.f
+ifort -O3 -c cladiv.f
+ifort -O3 -c clahqr.f
+ifort -O3 -c clange.f
+ifort -O3 -c clanhs.f
+ifort -O3 -c clarf.f
+ifort -O3 -c clarfg.f
+ifort -O3 -c clarnv.f
+ifort -O3 -c clartg.f
+ifort -O3 -c clascl.f
+ifort -O3 -c claset.f
+ifort -O3 -c classq.f
+ifort -O3 -c clatrs.f
+ifort -O3 -c cmach.f
+ifort -O3 -c crot.f
+ifort -O3 -c ctrevc.f
+ifort -O3 -c ctrexc.f
+ifort -O3 -c ctrsen.f
+ifort -O3 -c ctrsyl.f
+ifort -O3 -c cunm2r.f
+ifort -O3 -c scsum1.f
+ifort -O3 -c icmax1.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a cgeqr2.o clacon.o clacpy.o cladiv.o clahqr.o clange.o clanhs.o clarf.o  clarfg.o clarnv.o clartg.o clascl.o claset.o classq.o clatrs.o cmach.o  crot.o   ctrevc.o ctrexc.o ctrsen.o ctrsyl.o cunm2r.o scsum1.o slabad.o sladiv.o slamch.o slapy2.o slapy3.o slaruv.o icmax1.o  ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
+r - cgeqr2.o
+r - clacon.o
+r - clacpy.o
+r - cladiv.o
+r - clahqr.o
+r - clange.o
+r - clanhs.o
+r - clarf.o
+r - clarfg.o
+r - clarnv.o
+r - clartg.o
+r - clascl.o
+r - claset.o
+r - classq.o
+r - clatrs.o
+r - cmach.o
+r - crot.o
+r - ctrevc.o
+r - ctrexc.o
+r - ctrsen.o
+r - ctrsyl.o
+r - cunm2r.o
+r - scsum1.o
+r - slabad.o
+r - sladiv.o
+r - slamch.o
+r - slapy2.o
+r - slapy3.o
+r - slaruv.o
+r - icmax1.o
+r - ilaenv.o
+r - lsame.o
+r - lsamen.o
+r - xerbla.o
+r - xlaenv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c zgeqr2.f
+ifort -O3 -c zlacon.f
+ifort -O3 -c zlacpy.f
+ifort -O3 -c zladiv.f
+ifort -O3 -c zlahqr.f
+ifort -O3 -c zlange.f
+ifort -O3 -c zlanhs.f
+ifort -O3 -c zlarf.f
+ifort -O3 -c zlarfg.f
+ifort -O3 -c zlarnv.f
+ifort -O3 -c zlartg.f
+ifort -O3 -c zlascl.f
+ifort -O3 -c zlaset.f
+ifort -O3 -c zlassq.f
+ifort -O3 -c zlatrs.f
+ifort -O3 -c zmach.f
+ifort -O3 -c zrot.f
+ifort -O3 -c ztrevc.f
+ifort -O3 -c ztrexc.f
+ifort -O3 -c ztrsen.f
+ifort -O3 -c ztrsyl.f
+ifort -O3 -c zunm2r.f
+ifort -O3 -c dzsum1.f
+ifort -O3 -c izmax1.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a zgeqr2.o zlacon.o zlacpy.o zladiv.o zlahqr.o zlange.o zlanhs.o zlarf.o  zlarfg.o zlarnv.o zlartg.o zlascl.o zlaset.o zlassq.o zlatrs.o zmach.o  zrot.o   ztrevc.o ztrexc.o ztrsen.o ztrsyl.o zunm2r.o dzsum1.o dlabad.o dladiv.o dlamch.o dlapy2.o dlapy3.o dlaruv.o izmax1.o ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
+r - zgeqr2.o
+r - zlacon.o
+r - zlacpy.o
+r - zladiv.o
+r - zlahqr.o
+r - zlange.o
+r - zlanhs.o
+r - zlarf.o
+r - zlarfg.o
+r - zlarnv.o
+r - zlartg.o
+r - zlascl.o
+r - zlaset.o
+r - zlassq.o
+r - zlatrs.o
+r - zmach.o
+r - zrot.o
+r - ztrevc.o
+r - ztrexc.o
+r - ztrsen.o
+r - ztrsyl.o
+r - zunm2r.o
+r - dzsum1.o
+r - dlabad.o
+r - dladiv.o
+r - dlamch.o
+r - dlapy2.o
+r - dlapy3.o
+r - dlaruv.o
+r - izmax1.o
+r - ilaenv.o
+r - lsame.o
+r - lsamen.o
+r - xerbla.o
+r - xlaenv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a 
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/LAPACK'
+Making lib in /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/UTIL
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/UTIL'
+Makefile:47: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+ifort -O3 -c svout.f
+ifort -O3 -c smout.f
+ifort -O3 -c icnteq.f
+ifort -O3 -c icopy.f
+ifort -O3 -c iset.f
+ifort -O3 -c iswap.f
+ifort -O3 -c ivout.f
+ifort -O3 -c second.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a svout.o  smout.o icnteq.o icopy.o iset.o iswap.o ivout.o second.o
+r - svout.o
+r - smout.o
+r - icnteq.o
+r - icopy.o
+r - iset.o
+r - iswap.o
+r - ivout.o
+r - second.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c dvout.f
+ifort -O3 -c dmout.f
+ifort -O3 -c zvout.f
+ifort -O3 -c zmout.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a dvout.o  dmout.o icnteq.o icopy.o iset.o iswap.o ivout.o second.o
+r - dvout.o
+r - dmout.o
+r - icnteq.o
+r - icopy.o
+r - iset.o
+r - iswap.o
+r - ivout.o
+r - second.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c cvout.f
+ifort -O3 -c cmout.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a svout.o  smout.o cvout.o  cmout.o  icnteq.o icopy.o iset.o iswap.o ivout.o second.o
+r - svout.o
+r - smout.o
+r - cvout.o
+r - cmout.o
+r - icnteq.o
+r - icopy.o
+r - iset.o
+r - iswap.o
+r - ivout.o
+r - second.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a dvout.o  dmout.o zvout.o  zmout.o icnteq.o icopy.o iset.o iswap.o ivout.o second.o
+r - dvout.o
+r - dmout.o
+r - zvout.o
+r - zmout.o
+r - icnteq.o
+r - icopy.o
+r - iset.o
+r - iswap.o
+r - ivout.o
+r - second.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/UTIL'
+Making lib in /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/SRC
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/SRC'
+Makefile:50: warning: overriding recipe for target '.f.o'
+../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+ifort -O3 -c sgetv0.f
+ifort -O3 -c slaqrb.f
+ifort -O3 -c sstqrb.f
+ifort -O3 -c ssortc.f
+ifort -O3 -c ssortr.f
+ifort -O3 -c sstatn.f
+ifort -O3 -c sstats.f
+ifort -O3 -c snaitr.f
+ifort -O3 -c snapps.f
+ifort -O3 -c snaup2.f
+ifort -O3 -c snaupd.f
+ifort -O3 -c snconv.f
+ifort -O3 -c sneigh.f
+ifort -O3 -c sngets.f
+ifort -O3 -c ssaitr.f
+ifort -O3 -c ssapps.f
+ifort -O3 -c ssaup2.f
+ifort -O3 -c ssaupd.f
+ifort -O3 -c ssconv.f
+ifort -O3 -c sseigt.f
+ifort -O3 -c ssgets.f
+ifort -O3 -c sneupd.f
+ifort -O3 -c sseupd.f
+ifort -O3 -c ssesrt.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a sgetv0.o slaqrb.o sstqrb.o ssortc.o ssortr.o sstatn.o sstats.o snaitr.o snapps.o snaup2.o snaupd.o snconv.o sneigh.o sngets.o ssaitr.o ssapps.o ssaup2.o ssaupd.o ssconv.o sseigt.o ssgets.o sneupd.o sseupd.o ssesrt.o
+r - sgetv0.o
+r - slaqrb.o
+r - sstqrb.o
+r - ssortc.o
+r - ssortr.o
+r - sstatn.o
+r - sstats.o
+r - snaitr.o
+r - snapps.o
+r - snaup2.o
+r - snaupd.o
+r - snconv.o
+r - sneigh.o
+r - sngets.o
+r - ssaitr.o
+r - ssapps.o
+r - ssaup2.o
+r - ssaupd.o
+r - ssconv.o
+r - sseigt.o
+r - ssgets.o
+r - sneupd.o
+r - sseupd.o
+r - ssesrt.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c dgetv0.f
+ifort -O3 -c dlaqrb.f
+ifort -O3 -c dstqrb.f
+ifort -O3 -c dsortc.f
+ifort -O3 -c dsortr.f
+ifort -O3 -c dstatn.f
+ifort -O3 -c dstats.f
+ifort -O3 -c dnaitr.f
+ifort -O3 -c dnapps.f
+ifort -O3 -c dnaup2.f
+ifort -O3 -c dnaupd.f
+ifort -O3 -c dnconv.f
+ifort -O3 -c dneigh.f
+ifort -O3 -c dngets.f
+ifort -O3 -c dsaitr.f
+ifort -O3 -c dsapps.f
+ifort -O3 -c dsaup2.f
+ifort -O3 -c dsaupd.f
+ifort -O3 -c dsconv.f
+ifort -O3 -c dseigt.f
+ifort -O3 -c dsgets.f
+ifort -O3 -c dneupd.f
+ifort -O3 -c dseupd.f
+ifort -O3 -c dsesrt.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a dgetv0.o dlaqrb.o dstqrb.o dsortc.o dsortr.o dstatn.o dstats.o dnaitr.o dnapps.o dnaup2.o dnaupd.o dnconv.o dneigh.o dngets.o dsaitr.o dsapps.o dsaup2.o dsaupd.o dsconv.o dseigt.o dsgets.o dneupd.o dseupd.o dsesrt.o
+r - dgetv0.o
+r - dlaqrb.o
+r - dstqrb.o
+r - dsortc.o
+r - dsortr.o
+r - dstatn.o
+r - dstats.o
+r - dnaitr.o
+r - dnapps.o
+r - dnaup2.o
+r - dnaupd.o
+r - dnconv.o
+r - dneigh.o
+r - dngets.o
+r - dsaitr.o
+r - dsapps.o
+r - dsaup2.o
+r - dsaupd.o
+r - dsconv.o
+r - dseigt.o
+r - dsgets.o
+r - dneupd.o
+r - dseupd.o
+r - dsesrt.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c cnaitr.f
+ifort -O3 -c cnapps.f
+ifort -O3 -c cnaup2.f
+ifort -O3 -c cnaupd.f
+ifort -O3 -c cneigh.f
+ifort -O3 -c cneupd.f
+ifort -O3 -c cngets.f
+ifort -O3 -c cgetv0.f
+ifort -O3 -c csortc.f
+ifort -O3 -c cstatn.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a cnaitr.o cnapps.o cnaup2.o cnaupd.o cneigh.o cneupd.o cngets.o cgetv0.o csortc.o cstatn.o
+r - cnaitr.o
+r - cnapps.o
+r - cnaup2.o
+r - cnaupd.o
+r - cneigh.o
+r - cneupd.o
+r - cngets.o
+r - cgetv0.o
+r - csortc.o
+r - cstatn.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+ifort -O3 -c znaitr.f
+ifort -O3 -c znapps.f
+ifort -O3 -c znaup2.f
+ifort -O3 -c znaupd.f
+ifort -O3 -c zneigh.f
+ifort -O3 -c zneupd.f
+ifort -O3 -c zngets.f
+ifort -O3 -c zgetv0.f
+ifort -O3 -c zsortc.f
+ifort -O3 -c zstatn.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a znaitr.o znapps.o znaup2.o znaupd.o zneigh.o zneupd.o zngets.o zgetv0.o zsortc.o zstatn.o
+r - znaitr.o
+r - znapps.o
+r - znaup2.o
+r - znaupd.o
+r - zneigh.o
+r - zneupd.o
+r - zngets.o
+r - zgetv0.o
+r - zsortc.o
+r - zstatn.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/SRC'
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/libarpack_linux_ifort.a
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI; /usr/bin/make single double complex complex16 )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI'
+Makefile:45: warning: overriding recipe for target '.f.o'
+../../../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+ifort -O3 -c psvout.f
+ifort -O3 -c psmout.f
+ifort -O3 -c pivout.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a psvout.o  psmout.o pivout.o
+ar: creating /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+a - psvout.o
+a - psmout.o
+a - pivout.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+ifort -O3 -c pdvout.f
+ifort -O3 -c pdmout.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a pdvout.o  pdmout.o pivout.o
+a - pdvout.o
+a - pdmout.o
+r - pivout.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+ifort -O3 -c pcvout.f
+ifort -O3 -c pcmout.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a pcvout.o  pcmout.o  pivout.o
+a - pcvout.o
+a - pcmout.o
+r - pivout.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+ifort -O3 -c pzvout.f
+ifort -O3 -c pzmout.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a pzvout.o  pzmout.o pivout.o
+a - pzvout.o
+a - pzmout.o
+r - pivout.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI'
+( cd /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI; /usr/bin/make single double complex complex16 )
+make[1]: Entering directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI'
+Makefile:48: warning: overriding recipe for target '.f.o'
+../../../ARmake.inc:93: warning: ignoring old recipe for target '.f.o'
+ifort -O3 -c psgetv0.f
+ifort -O3 -c psnaitr.f
+ifort -O3 -c psnapps.f
+ifort -O3 -c psnaup2.f
+ifort -O3 -c psnaupd.f
+ifort -O3 -c psneigh.f
+ifort -O3 -c psngets.f
+ifort -O3 -c pssaitr.f
+ifort -O3 -c pssapps.f
+ifort -O3 -c pssaup2.f
+ifort -O3 -c pssaupd.f
+ifort -O3 -c psseigt.f
+ifort -O3 -c pssgets.f
+ifort -O3 -c psneupd.f
+ifort -O3 -c psseupd.f
+ifort -O3 -c pslarnv.f
+ifort -O3 -c pslamch.f
+ifort -O3 -c psnorm2.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a psgetv0.o psnaitr.o psnapps.o psnaup2.o psnaupd.o psneigh.o psngets.o pssaitr.o pssapps.o pssaup2.o pssaupd.o psseigt.o pssgets.o psneupd.o psseupd.o pslarnv.o pslamch.o psnorm2.o
+a - psgetv0.o
+a - psnaitr.o
+a - psnapps.o
+a - psnaup2.o
+a - psnaupd.o
+a - psneigh.o
+a - psngets.o
+a - pssaitr.o
+a - pssapps.o
+a - pssaup2.o
+a - pssaupd.o
+a - psseigt.o
+a - pssgets.o
+a - psneupd.o
+a - psseupd.o
+a - pslarnv.o
+a - pslamch.o
+a - psnorm2.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+ifort -O3 -c pdgetv0.f
+ifort -O3 -c pdnaitr.f
+ifort -O3 -c pdnapps.f
+ifort -O3 -c pdnaup2.f
+ifort -O3 -c pdnaupd.f
+ifort -O3 -c pdneigh.f
+ifort -O3 -c pdngets.f
+ifort -O3 -c pdsaitr.f
+ifort -O3 -c pdsapps.f
+ifort -O3 -c pdsaup2.f
+ifort -O3 -c pdsaupd.f
+ifort -O3 -c pdseigt.f
+ifort -O3 -c pdsgets.f
+ifort -O3 -c pdneupd.f
+ifort -O3 -c pdseupd.f
+ifort -O3 -c pdlarnv.f
+ifort -O3 -c pdlamch.f
+ifort -O3 -c pdnorm2.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a pdgetv0.o pdnaitr.o pdnapps.o pdnaup2.o pdnaupd.o pdneigh.o pdngets.o pdsaitr.o pdsapps.o pdsaup2.o pdsaupd.o pdseigt.o pdsgets.o pdneupd.o pdseupd.o pdlarnv.o pdlamch.o pdnorm2.o
+a - pdgetv0.o
+a - pdnaitr.o
+a - pdnapps.o
+a - pdnaup2.o
+a - pdnaupd.o
+a - pdneigh.o
+a - pdngets.o
+a - pdsaitr.o
+a - pdsapps.o
+a - pdsaup2.o
+a - pdsaupd.o
+a - pdseigt.o
+a - pdsgets.o
+a - pdneupd.o
+a - pdseupd.o
+a - pdlarnv.o
+a - pdlamch.o
+a - pdnorm2.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+ifort -O3 -c pcnaitr.f
+ifort -O3 -c pcnapps.f
+ifort -O3 -c pcnaup2.f
+ifort -O3 -c pcnaupd.f
+ifort -O3 -c pcneigh.f
+ifort -O3 -c pcneupd.f
+ifort -O3 -c pcngets.f
+ifort -O3 -c pcgetv0.f
+ifort -O3 -c pscnorm2.f
+ifort -O3 -c pclarnv.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a pcnaitr.o pcnapps.o pcnaup2.o pcnaupd.o pcneigh.o pcneupd.o pcngets.o pcgetv0.o pscnorm2.o pclarnv.o
+a - pcnaitr.o
+a - pcnapps.o
+a - pcnaup2.o
+a - pcnaupd.o
+a - pcneigh.o
+a - pcneupd.o
+a - pcngets.o
+a - pcgetv0.o
+a - pscnorm2.o
+a - pclarnv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+ifort -O3 -c pznaitr.f
+ifort -O3 -c pznapps.f
+ifort -O3 -c pznaup2.f
+ifort -O3 -c pznaupd.f
+ifort -O3 -c pzneigh.f
+ifort -O3 -c pzneupd.f
+ifort -O3 -c pzngets.f
+ifort -O3 -c pzgetv0.f
+ifort -O3 -c pdznorm2.f
+ifort -O3 -c pzlarnv.f
+ar rv /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a pznaitr.o pznapps.o pznaup2.o pznaupd.o pzneigh.o pzneupd.o pzngets.o pzgetv0.o pdznorm2.o pzlarnv.o
+a - pznaitr.o
+a - pznapps.o
+a - pznaup2.o
+a - pznaupd.o
+a - pzneigh.o
+a - pzneupd.o
+a - pzngets.o
+a - pzgetv0.o
+a - pdznorm2.o
+a - pzlarnv.o
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
+make[1]: Leaving directory '/home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI'
+ranlib /home/xlt/mount/Xlt_Work/Isolate_RS/ares_lib/ARPACK/ARPACK/parpack_MPI-linux_ifort.a
