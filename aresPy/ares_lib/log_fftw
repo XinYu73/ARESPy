@@ -3801,3 +3801,110 @@ config.status: creating m4/Makefile
 config.status: creating fftw.pc
 config.status: creating config.h
 config.status: executing depfiles commands
+config.status: executing libtool commands
+make  all-recursive
+make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9'
+Making all in support
+make[2]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/support'
+make[2]: Nothing to be done for `all'.
+make[2]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/support'
+Making all in kernel
+make[2]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/kernel'
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT align.lo -MD -MP -MF .deps/align.Tpo -c -o align.lo align.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT align.lo -MD -MP -MF .deps/align.Tpo -c align.c  -fPIC -DPIC -o align.o
+mv -f .deps/align.Tpo .deps/align.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT alloc.lo -MD -MP -MF .deps/alloc.Tpo -c -o alloc.lo alloc.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT alloc.lo -MD -MP -MF .deps/alloc.Tpo -c alloc.c  -fPIC -DPIC -o alloc.o
+mv -f .deps/alloc.Tpo .deps/alloc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT assert.lo -MD -MP -MF .deps/assert.Tpo -c -o assert.lo assert.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT assert.lo -MD -MP -MF .deps/assert.Tpo -c assert.c  -fPIC -DPIC -o assert.o
+mv -f .deps/assert.Tpo .deps/assert.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT awake.lo -MD -MP -MF .deps/awake.Tpo -c -o awake.lo awake.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT awake.lo -MD -MP -MF .deps/awake.Tpo -c awake.c  -fPIC -DPIC -o awake.o
+mv -f .deps/awake.Tpo .deps/awake.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT buffered.lo -MD -MP -MF .deps/buffered.Tpo -c -o buffered.lo buffered.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT buffered.lo -MD -MP -MF .deps/buffered.Tpo -c buffered.c  -fPIC -DPIC -o buffered.o
+mv -f .deps/buffered.Tpo .deps/buffered.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT cpy1d.lo -MD -MP -MF .deps/cpy1d.Tpo -c -o cpy1d.lo cpy1d.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT cpy1d.lo -MD -MP -MF .deps/cpy1d.Tpo -c cpy1d.c  -fPIC -DPIC -o cpy1d.o
+mv -f .deps/cpy1d.Tpo .deps/cpy1d.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT cpy2d-pair.lo -MD -MP -MF .deps/cpy2d-pair.Tpo -c -o cpy2d-pair.lo cpy2d-pair.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT cpy2d-pair.lo -MD -MP -MF .deps/cpy2d-pair.Tpo -c cpy2d-pair.c  -fPIC -DPIC -o cpy2d-pair.o
+mv -f .deps/cpy2d-pair.Tpo .deps/cpy2d-pair.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT cpy2d.lo -MD -MP -MF .deps/cpy2d.Tpo -c -o cpy2d.lo cpy2d.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT cpy2d.lo -MD -MP -MF .deps/cpy2d.Tpo -c cpy2d.c  -fPIC -DPIC -o cpy2d.o
+mv -f .deps/cpy2d.Tpo .deps/cpy2d.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT ct.lo -MD -MP -MF .deps/ct.Tpo -c -o ct.lo ct.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT ct.lo -MD -MP -MF .deps/ct.Tpo -c ct.c  -fPIC -DPIC -o ct.o
+mv -f .deps/ct.Tpo .deps/ct.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT debug.lo -MD -MP -MF .deps/debug.Tpo -c -o debug.lo debug.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT debug.lo -MD -MP -MF .deps/debug.Tpo -c debug.c  -fPIC -DPIC -o debug.o
+mv -f .deps/debug.Tpo .deps/debug.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT extract-reim.lo -MD -MP -MF .deps/extract-reim.Tpo -c -o extract-reim.lo extract-reim.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT extract-reim.lo -MD -MP -MF .deps/extract-reim.Tpo -c extract-reim.c  -fPIC -DPIC -o extract-reim.o
+mv -f .deps/extract-reim.Tpo .deps/extract-reim.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT hash.lo -MD -MP -MF .deps/hash.Tpo -c -o hash.lo hash.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT hash.lo -MD -MP -MF .deps/hash.Tpo -c hash.c  -fPIC -DPIC -o hash.o
+mv -f .deps/hash.Tpo .deps/hash.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT iabs.lo -MD -MP -MF .deps/iabs.Tpo -c -o iabs.lo iabs.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT iabs.lo -MD -MP -MF .deps/iabs.Tpo -c iabs.c  -fPIC -DPIC -o iabs.o
+mv -f .deps/iabs.Tpo .deps/iabs.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT kalloc.lo -MD -MP -MF .deps/kalloc.Tpo -c -o kalloc.lo kalloc.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT kalloc.lo -MD -MP -MF .deps/kalloc.Tpo -c kalloc.c  -fPIC -DPIC -o kalloc.o
+mv -f .deps/kalloc.Tpo .deps/kalloc.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT md5-1.lo -MD -MP -MF .deps/md5-1.Tpo -c -o md5-1.lo md5-1.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT md5-1.lo -MD -MP -MF .deps/md5-1.Tpo -c md5-1.c  -fPIC -DPIC -o md5-1.o
+mv -f .deps/md5-1.Tpo .deps/md5-1.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c -o md5.lo md5.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT md5.lo -MD -MP -MF .deps/md5.Tpo -c md5.c  -fPIC -DPIC -o md5.o
+mv -f .deps/md5.Tpo .deps/md5.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT minmax.lo -MD -MP -MF .deps/minmax.Tpo -c -o minmax.lo minmax.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT minmax.lo -MD -MP -MF .deps/minmax.Tpo -c minmax.c  -fPIC -DPIC -o minmax.o
+mv -f .deps/minmax.Tpo .deps/minmax.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT ops.lo -MD -MP -MF .deps/ops.Tpo -c -o ops.lo ops.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT ops.lo -MD -MP -MF .deps/ops.Tpo -c ops.c  -fPIC -DPIC -o ops.o
+mv -f .deps/ops.Tpo .deps/ops.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT pickdim.lo -MD -MP -MF .deps/pickdim.Tpo -c -o pickdim.lo pickdim.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT pickdim.lo -MD -MP -MF .deps/pickdim.Tpo -c pickdim.c  -fPIC -DPIC -o pickdim.o
+mv -f .deps/pickdim.Tpo .deps/pickdim.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT plan.lo -MD -MP -MF .deps/plan.Tpo -c -o plan.lo plan.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT plan.lo -MD -MP -MF .deps/plan.Tpo -c plan.c  -fPIC -DPIC -o plan.o
+mv -f .deps/plan.Tpo .deps/plan.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT planner.lo -MD -MP -MF .deps/planner.Tpo -c -o planner.lo planner.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT planner.lo -MD -MP -MF .deps/planner.Tpo -c planner.c  -fPIC -DPIC -o planner.o
+mv -f .deps/planner.Tpo .deps/planner.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT primes.lo -MD -MP -MF .deps/primes.Tpo -c -o primes.lo primes.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT primes.lo -MD -MP -MF .deps/primes.Tpo -c primes.c  -fPIC -DPIC -o primes.o
+mv -f .deps/primes.Tpo .deps/primes.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT print.lo -MD -MP -MF .deps/print.Tpo -c -o print.lo print.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT print.lo -MD -MP -MF .deps/print.Tpo -c print.c  -fPIC -DPIC -o print.o
+mv -f .deps/print.Tpo .deps/print.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT problem.lo -MD -MP -MF .deps/problem.Tpo -c -o problem.lo problem.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT problem.lo -MD -MP -MF .deps/problem.Tpo -c problem.c  -fPIC -DPIC -o problem.o
+mv -f .deps/problem.Tpo .deps/problem.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT rader.lo -MD -MP -MF .deps/rader.Tpo -c -o rader.lo rader.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT rader.lo -MD -MP -MF .deps/rader.Tpo -c rader.c  -fPIC -DPIC -o rader.o
+mv -f .deps/rader.Tpo .deps/rader.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT scan.lo -MD -MP -MF .deps/scan.Tpo -c -o scan.lo scan.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT scan.lo -MD -MP -MF .deps/scan.Tpo -c scan.c  -fPIC -DPIC -o scan.o
+mv -f .deps/scan.Tpo .deps/scan.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT solver.lo -MD -MP -MF .deps/solver.Tpo -c -o solver.lo solver.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT solver.lo -MD -MP -MF .deps/solver.Tpo -c solver.c  -fPIC -DPIC -o solver.o
+mv -f .deps/solver.Tpo .deps/solver.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT solvtab.lo -MD -MP -MF .deps/solvtab.Tpo -c -o solvtab.lo solvtab.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT solvtab.lo -MD -MP -MF .deps/solvtab.Tpo -c solvtab.c  -fPIC -DPIC -o solvtab.o
+mv -f .deps/solvtab.Tpo .deps/solvtab.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT stride.lo -MD -MP -MF .deps/stride.Tpo -c -o stride.lo stride.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT stride.lo -MD -MP -MF .deps/stride.Tpo -c stride.c  -fPIC -DPIC -o stride.o
+mv -f .deps/stride.Tpo .deps/stride.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT tensor.lo -MD -MP -MF .deps/tensor.Tpo -c -o tensor.lo tensor.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT tensor.lo -MD -MP -MF .deps/tensor.Tpo -c tensor.c  -fPIC -DPIC -o tensor.o
+mv -f .deps/tensor.Tpo .deps/tensor.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT tensor1.lo -MD -MP -MF .deps/tensor1.Tpo -c -o tensor1.lo tensor1.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT tensor1.lo -MD -MP -MF .deps/tensor1.Tpo -c tensor1.c  -fPIC -DPIC -o tensor1.o
+mv -f .deps/tensor1.Tpo .deps/tensor1.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT tensor2.lo -MD -MP -MF .deps/tensor2.Tpo -c -o tensor2.lo tensor2.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT tensor2.lo -MD -MP -MF .deps/tensor2.Tpo -c tensor2.c  -fPIC -DPIC -o tensor2.o
+mv -f .deps/tensor2.Tpo .deps/tensor2.Plo
+/bin/sh ../libtool  --tag=CC   --mode=compile icc -std=gnu99 -DHAVE_CONFIG_H -I. -I..  -I ..   -O3 -ansi-alias -malign-double -MT tensor3.lo -MD -MP -MF .deps/tensor3.Tpo -c -o tensor3.lo tensor3.c
+libtool: compile:  icc -std=gnu99 -DHAVE_CONFIG_H -I. -I.. -I .. -O3 -ansi-alias -malign-double -MT tensor3.lo -MD -MP -MF .deps/tensor3.Tpo -c tensor3.c  -fPIC -DPIC -o tensor3.o
