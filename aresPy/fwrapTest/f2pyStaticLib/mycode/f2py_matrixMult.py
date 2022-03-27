@@ -3,9 +3,9 @@ from time import *
 import sys
 import matrixMult
 
-n1 = int(sys.argv[1])
-n2 = int(sys.argv[2])
-n3 = int(sys.argv[3])
+n1 = int(4)
+n2 = int(2)
+n3 = int(5)
 
 A = np.random.rand(n1,n2)
 B = np.random.rand(n2,n3)
@@ -15,6 +15,7 @@ B = np.random.rand(n2,n3)
 #-------
 beg = time()
 AB = matrixMult.matrixmult(A,B,1)
+print(AB)
 end = time()
 
 print ('Loop1: time for','AB'+str(np.shape(AB)),'=','A'+str(np.shape(A)),'B'+str(

@@ -12,7 +12,7 @@
          CASE (2)
             CALL matMult_loop2(A, B, C, n1, n2, n3)
          CASE (3)
-            CALL matMult_func (A, B, C, n1, n2, n3)
+            CALL matMult_func(A, B, C, n1, n2, n3)
       END SELECT
 
       RETURN

@@ -1,4 +1,4 @@
-subroutine f90wrap_matrixmult(a, b, c, n1, n2, n3, icase, n0, n1, n2, n3, n4, n5)
+subroutine f90wrap_matrixmult(a, b, c, icase, n0, n1, n2, n3, n4, n5)
     implicit none
     external matrixmult
     
