@@ -228,3 +228,47 @@ all:
 clean:
     rm -rf subdir
 ```
+
+## Advanced
+
+### Variable part 2
+
+#### the difference of = and *= :*
+
+```make
+# Recursive variable. This will print "later" below
+one = one ${later_variable}
+# Simply expanded variable. This will not print "later" below
+two := two ${later_variable}
+
+later_variable = later
+
+all: 
+    echo $(one)
+    echo $(two)
+```
+
+(using :=) allows you to append to a variable, we can also append with +=
+
+```make
+foo = start
+foo += more
+foo := $(foo) end
+all: 
+    echo $(foo)
+```
+
+?= only sets variables if they have not yet been set
+
+```make
+# Recursive variable. This will print "later" below
+one = hello
+one ?= will not be set
+two ?= will be set
+
+all: 
+    echo $(one)
+    echo $(two)
+```
+
+### Conditional part of Makefiles
