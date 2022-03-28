@@ -272,3 +272,35 @@ all:
 ```
 
 ### Conditional part of Makefiles
+
+#### Conditional if/else
+
+```make
+foo = ok
+
+all:
+ifeq ($(foo), ok)
+    echo "foo equals ok"
+else
+    echo "nope"
+endif
+```
+
+### Functions
+
+Call functions with $(fn, arguments) or ${fn, arguments}. You can make your own using the call builtin function
+
+.phony
+
+Adding .PHONY to a target will prevent make from confusing the phony target with a file name
+
+```make
+some_file:
+    touch some_file
+    touch clean
+
+.PHONY: clean
+clean:
+    rm -f some_file
+    rm -f clean
+```
