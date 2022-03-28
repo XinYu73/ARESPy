@@ -1,11 +1,9 @@
-thing := one two three 
+new_contents = "hello:\n\ttouch inside_file"
+all:
+	mkdir -p subdir
+	printf $(new_contents) | sed -e 's/^ //' > subdir/makefile
+	cd subdir && $(MAKE)
+	@$(MAKE) clean
 
-all: $(thing)
-	echo $@
-	echo $? # prerequisites newer than the target
-	echo $^ # all prerequisites
-$(thing):
-	touch $@
-
-clean: 
-	rm -f $(thing)
+clean:
+	rm -rf subdir
