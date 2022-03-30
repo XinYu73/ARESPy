@@ -15,7 +15,7 @@ PLAT = _LINUX
 #  selected.  Define LOADER and LOADOPTS to refer to the loader and
 #  desired load options for your machine.
 #
-FC  = gfortran
+FC  = ifort
 FFLAGS = -O2 -frecursive
 FFLAGS_DRV = $(FFLAGS)
 FFLAGS_NOOPT = -O0 -frecursive
@@ -32,4 +32,4 @@ RANLIB = ranlib
 #
 #  The location and name of the Reference BLAS library.
 #
-BLASLIB      = blas$(PLAT).a
+BLASLIB      = libblas.a
