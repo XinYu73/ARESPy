@@ -9,14 +9,12 @@ integer ,dimension(n) :: ipiv
 a = reshape((/1.0,45.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0/),(/n,n/))
 xx = reshape((/1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0/),(/n,n/))
 yy = reshape((/1.0,2.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0/),(/n,n/))
-b=(/1.0,2.0,3.5/)
+b=(/2.0,2.0,3.5/)
 write(*,*) 'j(1) = '
 x=b
 nrhs=1
 lda=n
 ldb=n
-!call matvecA(n,a,b)
-!call  matMult_loop1(a, a, a,3, 3, 3)
 call dgesv(n,nrhs,a,ldb,ipiv,x,ldb,info)
 write(*,*) x
 end program test

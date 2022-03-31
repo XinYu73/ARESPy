@@ -9,7 +9,7 @@ n3 = int(3)
 
 A = np.random.rand(n1,n2)
 B = np.random.rand(n2,n3)
-C = np.random.rand(3,1)
+C = np.random.rand(1,3)
 D = np.zeros(n1)
 #-------
 # Case 1
@@ -17,7 +17,8 @@ D = np.zeros(n1)
 print(my.__doc__)
 beg = time()
 print(A)
-print(my.matrixmult(A,C))
+D=my.my(A,C)
+print(D)
 end = time()
 """ 
 print ('Loop1: time for','AB'+str(np.shape(AB)),'=','A'+str(np.shape(A)),'B'+str(

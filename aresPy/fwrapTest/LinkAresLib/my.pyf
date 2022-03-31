@@ -1,0 +1,15 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module my ! in 
+    interface  ! in :my
+        subroutine my(n,a,d) ! in :my:my.f90
+            integer, optional,intent(in),check(shape(a,0)==n),depend(a) :: n=shape(a,0)
+            double precision dimension(n,n),intent(in) :: a
+            double precision dimension(n),intent(inout),depend(n) :: d
+        end subroutine my
+    end interface 
+end python module my
+
+! This file was auto-generated with f2py (version:1.21.2).
+! See http://cens.ioc.ee/projects/f2py2e/
