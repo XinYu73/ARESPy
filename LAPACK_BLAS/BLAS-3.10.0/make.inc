@@ -16,7 +16,7 @@ PLAT = _LINUX
 #  desired load options for your machine.
 #
 FC  = ifort
-FFLAGS = -O2 -frecursive
+FFLAGS = -O3 -frecursive -fPIC
 FFLAGS_DRV = $(FFLAGS)
 FFLAGS_NOOPT = -O0 -frecursive
 #  Define LDFLAGS to the desired linker options for your machine.

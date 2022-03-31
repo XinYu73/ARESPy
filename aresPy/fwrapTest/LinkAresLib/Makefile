@@ -6,6 +6,10 @@ AresLib2=-L/work/home/xinyu/soft/ARES/ares_lib/lib/fftw/lib -lfftw3
 AresLibInclude1=-I/work/home/xinyu/soft/ARES/ares_lib/lib/include
 AresLibInclude2=-I/work/home/xinyu/soft/ARES/ares_lib/lib/fftw/include
 
+LAPACKLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0 -llapack -lrefblas  -ltmglib
+BLASLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0 -lblas
+
+
 FC=ifort
 
 .PHONY: buildLib Wrap
@@ -16,8 +20,9 @@ $(LIB_PATH_ROOT)/%.o:%.f90
 	$(FC) -c -fPIC $<
 
 Wrap:
-	f2py --f90exec=$(FC) --f77exec=$(FC) --opt=-O3 $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) -c my.f90 -m my 
+	f2py --f90exec=$(FC) --f77exec=$(FC) --opt=-O3  -c my.f90 -m my  $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) $(LAPACKLIB) $(BLASLIB)
 
 build:
 	$(FC) -c  test.f90
-	$(FC) -o test test.o $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) 
+	#$(FC) -o test test.o $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) 
+	$(FC) -o test test.o $(LAPACKLIB) $(BLASLIB)
