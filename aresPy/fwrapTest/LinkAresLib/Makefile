@@ -20,9 +20,15 @@ $(LIB_PATH_ROOT)/%.o:%.f90
 	$(FC) -c -fPIC $<
 
 Wrap:
-	f2py --f90exec=$(FC) --f77exec=$(FC) --opt=-O3  -c my.f90 -m my  $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) $(LAPACKLIB) $(BLASLIB)
+	@#f90wrap -m my my.f90
+	@#f2py-f90wrap --f90exec=$(FC) --f77exec=$(FC) -c my.f90 f90wrap_toplevel.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
+
+	
+	@#f2py --f90exec=$(FC) --f77exec=$(FC) -c my.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
+
+	f2py --f90exec=$(FC) --f77exec=$(FC) -c my.f90 -m my 
 
 build:
 	$(FC) -c  test.f90
 	#$(FC) -o test test.o $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) 
-	$(FC) -o test test.o $(LAPACKLIB) $(BLASLIB)
+	$(FC) -o test test.o -mkl
