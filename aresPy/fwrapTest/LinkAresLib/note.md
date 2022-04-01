@@ -54,7 +54,6 @@ test:
     -1.744186046511630E-002   1.11821705426357      -0.350775193798449
 ```
 
-
 ## Wrap
 
 ```fortran
@@ -69,7 +68,7 @@ test:
 ```
 
 Wrap
-    
+
 ```make
     LAPACKLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0 -llapack -lrefblas  -ltmglib
     BLASLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0 -lblas
