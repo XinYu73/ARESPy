@@ -1,72 +1,140 @@
-# Link libs that Ares is dependent on
+# f2py 链接库
 
-## f2py
+## Preparation
 
-### 测试链接自己写的静态库
+### install LAPACK and BLAS
 
-```fortran
-subroutine matrixMult(A, B, C, n1, n2, n3, iCase)
+1. compile with flag -fPIC，f2py needs lib to be position-independent
+2. compiler: ifort  and icc
+3. lib path
 
-    INTEGER, intent(in) :: n1, n2, n3
-    INTEGER, intent(in) :: iCase
-    DOUBLE PRECISION, intent(in) :: A(n1,n2)
-    DOUBLE PRECISION, intent(in) :: B(n2,n3)
-    DOUBLE PRECISION, intent(out) :: C(n1,n3)
-    SELECT CASE (iCase)
-        CASE (1)
-            CALL matMult_loop1(A, B, C, n1, n2, n3)
-        CASE (2)
-            CALL matMult_loop2(A, B, C, n1, n2, n3)
-        CASE (3)
-            CALL matMult_func(A, B, C, n1, n2, n3)
-    END SELECT
-    RETURN
+    ```bash
+    /work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0
+    /work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0
+    ```
 
-end subroutine matrixMult
-```
-
-matMult_loop1,matMult_loop1,matMult_loop1 三个做矩阵乘法的方法，已经用下面的方法编译为libmatMultiplication.a
-
-```bash
-ifort -c -fPIC *.f90
-ar rc libmatMultiplication.a *.o
-```
-
-用下面的方式包
-
-```bash
-f2py --f90exec=ifort -L../testlib -lmatMultiplication -c matrixMult.f90 -m matrixMult
-```
-
-运行正常
-
-### 测试链接APRACK写的静态库
+### Link LAPACK to Fortran Program
 
 ```fortran
-subroutine matrixMult(n1, A, D)
-
-    INTEGER, intent(in) :: n1
-    DOUBLE PRECISION, intent(in) :: A(n1,n1)
-    DOUBLE PRECISION, intent(out) :: D(n1)
-    CALL EVLRG(A,D)
-    RETURN
-
-end subroutine matrixMult
+    !./test.f90
+    program test
+    implicit none
+    integer,parameter :: n= 3
+    real(kind=8), dimension(n) :: x,b
+    real(kind=8), dimension(n,n) :: a
+    integer :: i,info,lda,ldb ,nrhs
+    integer ,dimension(n) :: ipiv
+    a = reshape((/1.0,45.0,3.0,4.0,5.0,6.0,7.0,8.0,9.0/),(/n,n/))
+    b=(/2.0,2.0,3.5/)
+    write(*,*) 'j(1) = '
+    x=b
+    nrhs=1
+    lda=n
+    ldb=n
+    call dgesv(n,nrhs,a,ldb,ipiv,x,ldb,info)   ! solve Ax = B,return x
+    write(*,*) x
+    end program test
 ```
 
-现在我添加了 EVLRG LAPACK 的函数, 想测试一下能不能链接上，运行了下面的命令
+compile
+
+```make
+    LAPACKLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0 -llapack -lrefblas  -ltmglib
+    BLASLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0 -lblas
+
+    build:
+    $(FC) -c  test.f90
+    $(FC) -o test test.o $(LAPACKLIB) $(BLASLIB)
+```
+
+test:
 
 ```bash
-f2py --f90exec=ifort -L/work/home/xinyu/soft/ARES/ares_lib/lib -larpack_ifort -lxcf90 -lxc -c my.f90 -m my
+    ./test
+    -1.744186046511630E-002   1.11821705426357      -0.350775193798449
 ```
 
-f2py 正常运行结束
 
-测试一下
+## Wrap
+
+```fortran
+    subroutine my(n, a, d)
+    INTEGER, intent(in) :: n
+    DOUBLE PRECISION, intent(in) :: a(n,n)
+    DOUBLE PRECISION, intent(inout) :: d(n)
+    integer :: i,info,lda,ldb ,nrhs
+    integer ,dimension(n) :: ipiv
+    CALL dgesv(n,nrhs,a,ldb,ipiv,d,ldb,info)
+    end subroutine my
+```
+
+Wrap
+    
+```make
+    LAPACKLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0 -llapack -lrefblas  -ltmglib
+    BLASLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0 -lblas
+    FC=ifort
+    .PHONY: buildLib Wrap
+    Wrap:
+    @f2py my.f90 -m my -h my.pyf --overwrite-signature
+    @f2py --fcompiler=intelem --f90exec=$(FC) --f77exec=$(FC) -c my.pyf my.f90 -m my $(LAPACKLIB) $(BLASLIB)
+```
+
+```bash
+    make Wrap
+```
+
+then I have
+
+```bash
+    my.cpython-38-x86_64-linux-gnu.so
+```
+
+test with python
 
 ```python
-import my
-ImportError: /work/home/xinyu/workplace/PhdProgram/aresPy/fwrapTest/LinkAresLib/my.cpython-38-x86_64-linux-gnu.so: undefined symbol: evlrg_
+    #./test.py
+    import numpy as np
+    from time import *
+    import sys
+    import my
+
+    n1 = int(3)
+    n2 = int(3)
+    n3 = int(3)
+
+    A = np.random.rand(n1,n2)
+    B = np.random.rand(n2,n3)
+    C = np.random.rand(1,3)
+    D = np.zeros(n1)
+    #-------
+    # Case 1
+    #-------
+    print(my.__doc__)
+    beg = time()
+    print(A)
+    D=my.my(A,C)
+    print(D)
+    end = time()
 ```
 
-发现还是没找到这个函数
+run test.py
+
+```bash
+    python test.py
+```
+
+result
+
+```bash
+    This module 'my' is auto-generated with f2py (version:1.21.2).
+    Functions:
+    my(a,d,n=shape(a,0))
+    .
+    [[0.15121598 0.97648753 0.59436203]
+    [0.89983464 0.80702176 0.22636051]
+    [0.58806946 0.84986581 0.31170033]]
+
+    Intel MKL ERROR: Parameter 2 was incorrect on entry to DGESV . 
+    None
+```

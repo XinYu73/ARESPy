@@ -20,25 +20,3 @@ print(A)
 D=my.my(A,C)
 print(D)
 end = time()
-""" 
-print ('Loop1: time for','AB'+str(np.shape(AB)),'=','A'+str(np.shape(A)),'B'+str(
-np.shape(B)),'is', end - beg,'s')
-
-#-------
-# Case 2
-#-------
-beg = time()
-AB = my.matrixmult(A,B,C,2)
-end = time()
-
-print ('Loop2: time for','AB'+str(np.shape(AB)),'=','A'+str(np.shape(A)),'B'+str(np.shape(B)),'is', end - beg,'s')
-
-#-------
-# Case 3
-#-------
-beg = time()
-AB = my.matrixmult(A,B,C,3)
-end = time()
-
-print ('matmul function: time for','AB'+str(np.shape(AB)),'=','A'+str(np.shape(A)),'B'+str(np.shape(B)),'is', end - beg,'s')
- """

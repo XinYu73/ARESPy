@@ -23,11 +23,11 @@ Wrap:
 	@#f90wrap -m my my.f90
 	@#f2py-f90wrap --f90exec=$(FC) --f77exec=$(FC) -c my.f90 @#f90wrap_toplevel.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
 	@f2py my.f90 -m my -h my.pyf --overwrite-signature
-	@f2py --fcompiler=intelem --f90exec=$(FC) --f77exec=$(FC) -c my.pyf my.f90 -m my -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread -lm -ldl
+	@f2py --fcompiler=intelem --f90exec=$(FC) --f77exec=$(FC) -c my.pyf my.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
 
 	@#f2py --f90exec=$(FC) --f77exec=$(FC) -c my.f90 -m my 
 
 build:
 	$(FC) -c  test.f90
 	#$(FC) -o test test.o $(MyLIBS) $(AresLibInclude1) $(AresLibInclude2) $(AresLib1) $(AresLib2) 
-	$(FC) -o test test.o -lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core
+	$(FC) -o test test.o $(LAPACKLIB) $(BLASLIB)
