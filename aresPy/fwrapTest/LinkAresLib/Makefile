@@ -23,7 +23,7 @@ Wrap:
 	@#f90wrap -m my my.f90
 	@#f2py-f90wrap --f90exec=$(FC) --f77exec=$(FC) -c my.f90 @#f90wrap_toplevel.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
 	@f2py my.f90 -m my -h my.pyf --overwrite-signature
-	@f2py --fcompiler=intelem --f90exec=$(FC) --f77exec=$(FC) -c my.pyf my.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
+	@python -m numpy.f2py --fcompiler=intelem --f90exec=$(FC) --f77exec=$(FC) -c my.pyf my.f90 -m my $(MyLIBS) $(LAPACKLIB) $(BLASLIB)
 
 	@#f2py --f90exec=$(FC) --f77exec=$(FC) -c my.f90 -m my 
 

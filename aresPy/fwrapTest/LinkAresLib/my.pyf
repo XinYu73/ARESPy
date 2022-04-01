@@ -3,10 +3,9 @@
 
 python module my ! in 
     interface  ! in :my
-        subroutine my(n,a,d) ! in :my:my.f90
-            integer, optional,intent(in),check(shape(a,0)==n),depend(a) :: n=shape(a,0)
-            double precision dimension(n,n),intent(in) :: a
-            double precision dimension(n),intent(inout),depend(n) :: d
+        subroutine my(a,b) ! in :my:my.f90
+            real(kind=8) dimension(3,3),intent(in) :: a
+            real(kind=8) dimension(3),intent(inout) :: b
         end subroutine my
     end interface 
 end python module my

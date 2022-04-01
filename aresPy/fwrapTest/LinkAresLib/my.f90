@@ -1,8 +1,16 @@
-subroutine my(n, a, d)
-    INTEGER, intent(in) :: n
-    DOUBLE PRECISION, intent(in) :: a(n,n)
-    DOUBLE PRECISION, intent(inout) :: d(n)
-    integer :: i,info,lda,ldb ,nrhs
-    integer ,dimension(n) :: ipiv
-    CALL dgesv(n,nrhs,a,ldb,ipiv,d,ldb,info)
+subroutine my(a, b)
+implicit none
+integer,parameter :: n = 3
+real(kind=8), dimension(n,n),intent(in) :: a
+real(kind=8),dimension(n), intent(inout) :: b
+integer :: info,lda,ldb,nrhs
+integer ,dimension(n) :: ipiv
+nrhs=1
+lda=n
+ldb=n
+ipiv=(/0.0,0.0,0.0/)
+write(*,*) b
+call dgesv(n,nrhs,a,ldb,ipiv,b,ldb,info)
+write(*,*) b
+RETURN
 end subroutine my
