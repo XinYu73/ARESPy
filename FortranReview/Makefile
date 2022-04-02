@@ -1,13 +1,15 @@
-Options_for_Debugging=-o0 -g -traceback -check all -check bounds -check uninit -ftrapuv -debug all -gen-interface -warn interface
+Options_for_Debugging=-O0 -g -traceback -check all -check bounds -check uninit -ftrapuv -debug all -gen-interface -warn interface
 
-Flag=$(Options_for_Debugging)
+WORKDIR=.
+
+FFLAGS=$(Options_for_Debugging)
 
 FC=ifort
 
-targets=3_1
+targets=4_2
 
+build:$(targets).o
+	$(FC) $(FFLAGS) -o  $(targets) $<
 
-build:
-	$(FC) -c  $(targets).f90  $(Flag)
-	$(FC) -o  $(targets) $(targets).o 
-
+$(WORKDIR)/%.o : %.f90
+	$(FC) -c $(FFLAGS) $< -o $@
