@@ -6,7 +6,7 @@ FFLAGS=$(Options_for_Debugging)
 
 FC=ifort
 
-targets=4_2
+targets=6_1
 
 build:$(targets).o
 	$(FC) $(FFLAGS) -o  $(targets) $<

@@ -156,3 +156,4 @@ WRITE (*,'(1X,I6,F10.2)') i, x ! Format in character constant
 The format descriptor F7.3 specifies that a space seven characters wide should be used to print out the value of variable result, and that it should be printed with three digits to the right of the decimal point.
 
 ## Introduction to Arrays
+
