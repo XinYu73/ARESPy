@@ -157,3 +157,11 @@ The format descriptor F7.3 specifies that a space seven characters wide should b
 
 ## Introduction to Arrays
 
+```fortran
+integer,dimension(-5:5) :: number
+!array extent = upper bound  - lower bound + 1
+```
+
+elemental intrinsic functions
+
+subscript_1 : subscript_2 : stride
