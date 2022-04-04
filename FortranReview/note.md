@@ -165,3 +165,39 @@ integer,dimension(-5:5) :: number
 elemental intrinsic functions
 
 subscript_1 : subscript_2 : stride
+
+### input and output
+
+## Introduction to Procedures
+
+the difference between subroutines and functions
+
+1. call a subroutine
+2. invoked a function
+3. results of a function is a single value
+
+### passing arrays to subroutines
+
+if the arguments happen to be arrays ,the pointers point to the first value of the arrays, but what about their lengths?
+
+1. explicit-shape dummy array, simply pass the bounds of each dimension of the array to the subroutine as arguments in the subroutine call
+2. assumed-shape dummy arrays
+3. assumed-size dummy arrays,*shuold never been used*
+
+### passing character variables to subroutines
+
+```fortran
+SUBROUTINE sample ( string ) 
+CHARACTER(len=*), INTENT(IN) :: string 
+...
+```
+
+### Error Handling in Subrountines
+
+solutuon *using error flags*
+
+## sharing data using modules
+
+A module is a separately-compiled program unit that contains the definitions and initial values of the data that we wish to share between program units
+
+Do not declare local variables with the same name as variables inherited through USE association. This redefinition of a variable name will produce a compilation error.

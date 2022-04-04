@@ -6,10 +6,15 @@ FFLAGS=$(Options_for_Debugging)
 
 FC=ifort
 
-targets=6_1
+targets=7_2
+objs=7_21.o 7_22.o
+$(targets):$(objs)
+	echo $^
+	$(FC) $(FFLAGS) -o  $(targets) $(objs)
 
-build:$(targets).o
-	$(FC) $(FFLAGS) -o  $(targets) $<
-
-$(WORKDIR)/%.o : %.f90
+$(objs): %.o: %.f90
 	$(FC) -c $(FFLAGS) $< -o $@
+
+.PHONY:clean
+clean:
+	rm -f $(targets) $(objs)

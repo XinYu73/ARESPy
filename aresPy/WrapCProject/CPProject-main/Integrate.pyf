@@ -1,0 +1,33 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module Integrate ! in 
+    interface  ! in :Integrate
+        module integrate ! in :Integrate:Integrate.f90
+            real, parameter,optional :: pi=3.14159265359
+            real, parameter,optional :: mz=1
+            real, parameter,optional,depend(pi) :: omega=125663706.1436
+            double complex, parameter,optional :: i=(0, 1)
+            real, parameter,optional :: epsilon=8.854e-12
+            double complex, parameter,optional,depend(omega,i,epsilon) :: sigma=0.1-i*omega*epsilon
+            real, parameter,optional,depend(pi) :: mu=1.2566370614359999e-06
+            real :: x
+            real :: y
+            real :: z
+            subroutine getposition(arg1,arg2,arg3) ! in :Integrate:Integrate.f90:integrate
+                real intent(in) :: arg1
+                real intent(in) :: arg2
+                real intent(in) :: arg3
+            end subroutine getposition
+            function cubic(arg,jj) result (retval) ! in :Integrate:Integrate.f90:integrate
+                double complex intent(in) :: arg
+                integer intent(in) :: jj
+            end function cubic
+            subroutine spline ! in :Integrate:Integrate.f90:integrate
+            end subroutine spline
+        end module integrate
+    end interface 
+end python module Integrate
+
+! This file was auto-generated with f2py (version:1.21.2).
+! See http://cens.ioc.ee/projects/f2py2e/

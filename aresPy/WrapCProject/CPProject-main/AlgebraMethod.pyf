@@ -1,0 +1,42 @@
+!    -*- f90 -*-
+! Note: the context of this file is case sensitive.
+
+python module AlgebraMethod ! in 
+    interface  ! in :AlgebraMethod
+        module algebramethod ! in :AlgebraMethod:AlgebraMethod.f90
+            real, parameter,optional :: pi=3.14159265359
+            real, parameter,optional :: mz=1
+            real, parameter,optional,depend(pi) :: omega=125663706.1436
+            complex, parameter,optional :: i=(0, 1)
+            real, parameter,optional :: epsilon=8.854e-12
+            complex, parameter,optional,depend(omega,i,epsilon) :: sigma=0.1-i*omega*epsilon
+            real, parameter,optional,depend(pi) :: mu=1.2566370614359999e-06
+            complex, optional,depend(omega,i,sigma,mu) :: k=sqrt(i*omega*mu*sigma)
+            real :: x
+            real :: y
+            real :: z
+            subroutine getposition(arg1,arg2,arg3) ! in :AlgebraMethod:AlgebraMethod.f90:algebramethod
+                real intent(in) :: arg1
+                real intent(in) :: arg2
+                real intent(in) :: arg3
+            end subroutine getposition
+            subroutine getex(ex) ! in :AlgebraMethod:AlgebraMethod.f90:algebramethod
+                complex intent(out) :: ex
+            end subroutine getex
+            subroutine getey(ey) ! in :AlgebraMethod:AlgebraMethod.f90:algebramethod
+                complex intent(out) :: ey
+            end subroutine getey
+            subroutine getez(ez) ! in :AlgebraMethod:AlgebraMethod.f90:algebramethod
+                complex intent(out) :: ez
+            end subroutine getez
+            subroutine geth(hx,hy,hz) ! in :AlgebraMethod:AlgebraMethod.f90:algebramethod
+                complex intent(out) :: hx
+                complex intent(out) :: hy
+                complex intent(out) :: hz
+            end subroutine geth
+        end module algebramethod
+    end interface 
+end python module AlgebraMethod
+
+! This file was auto-generated with f2py (version:1.21.2).
+! See http://cens.ioc.ee/projects/f2py2e/
