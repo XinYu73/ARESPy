@@ -20,8 +20,8 @@ build_dir(){
 
 #> func: install ARPACK LIBXC FFTW
 install_ARPACK(){
-  build_dir 'ARPACK'
-  tar -xzvf ARPACK.tar.gz -C ARPACK
+  #build_dir 'ARPACK'
+  # tar -xzvf ARPACK.tar.gz -C ARPACK
   cd ARPACK/ARPACK
 
   cat ./ARmake.inc | awk '{if(NR==31){$0="home='$(pwd)'"}}\
@@ -37,8 +37,8 @@ install_ARPACK(){
 
 
 install_libxc(){
-  build_dir 'LIBXC'
-  tar -xzvf libxc-3.0.1.tar.gz -C LIBXC
+  #build_dir 'LIBXC'
+  # tar -xzvf libxc-3.0.1.tar.gz -C LIBXC
   cd ./LIBXC/libxc*
   ./configure --prefix=`pwd` --with-pic CC=$CC FC=$FC
   make
@@ -48,8 +48,8 @@ install_libxc(){
 
 
 install_fftw() {
-  build_dir 'FFTW'
-  tar -xzvf fftw-3.3.9.tar.gz -C FFTW
+  # build_dir 'FFTW'
+  # tar -xzvf fftw-3.3.9.tar.gz -C FFTW
   cd FFTW/fftw*
   ./configure --prefix=`pwd` --enable-mpi --with-pic CC=$CC FC=$FC MPICC=$MPICC MPIFC=$MPIFC F77=$F77
   make

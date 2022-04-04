@@ -105,19 +105,19 @@ PLIBS = $(PARPACKLIB) $(ALIBS) $(MPILIBS)
 #
 #FC		= f77
 FC = ifort
-FFLAGS	= -O3
+FFLAGS	= -O3 -fPIC
 
 # Set the parallel fortran compiler
 #PFC     = $(HOME)/sun4/mpich/bin/mpif77
 PFC = mpiifort
-PFFLAGS = -O3
+PFFLAGS = -O3 -fPIC
 
-LDFLAGS = 
+LDFLAGS = -fPIC
 CD		= cd
 AR      = ar
 
 CHMOD	 = chmod
-CHFLAGS	 = -f
+CHFLAGS	 = -f -fPIC
 
 COMPRESS = compress
 
@@ -126,23 +126,23 @@ CP	 = cp
 #  To find the path for cpp, try `man cpp', and it should list the path
 #  at the top, under `Syntax'.  It is usually in /lib.
 CPP	 = /lib/cpp
-CPPFLAGS =
+CPPFLAGS = -fPIC
 
 ECHO	 = echo
 
 LN	 = ln
-LNFLAGS	 = -s
+LNFLAGS	 = -s -fPIC
 
 MAKE	 = /usr/bin/make
 
 MKDIR	 = mkdir
-MDFLAGS	 = -p
+MDFLAGS	 = -p -fPIC
 
 MV	 = mv
-MVFLAGS	 = -f
+MVFLAGS	 = -f -fPIC
 
 RM	 = rm
-RMFLAGS  = -f
+RMFLAGS  = -f -fPIC
 
 SHELL	 = /bin/sh
 

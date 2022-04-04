@@ -1,646 +1,3 @@
-rm ARPACK and rebuild
-./ARPACK/
-./ARPACK/SRC/
-./ARPACK/SRC/cnaup2.f
-./ARPACK/SRC/sseigt.f
-./ARPACK/SRC/znaitr.f
-./ARPACK/SRC/dsconv.f
-./ARPACK/SRC/cneupd.f
-./ARPACK/SRC/dnconv.f
-./ARPACK/SRC/ssortr.f
-./ARPACK/SRC/dlaqrb.f
-./ARPACK/SRC/sstatn.f
-./ARPACK/SRC/ssesrt.f
-./ARPACK/SRC/ssaup2.f
-./ARPACK/SRC/ssortc.f
-./ARPACK/SRC/znaup2.f
-./ARPACK/SRC/dsgets.f
-./ARPACK/SRC/dseigt.f
-./ARPACK/SRC/dneigh.f
-./ARPACK/SRC/zngets.f
-./ARPACK/SRC/zsortc.f
-./ARPACK/SRC/dnaitr.f
-./ARPACK/SRC/cnaitr.f
-./ARPACK/SRC/snaup2.f
-./ARPACK/SRC/sneupd.f
-./ARPACK/SRC/csortc.f
-./ARPACK/SRC/sseupd.f
-./ARPACK/SRC/snaitr.f
-./ARPACK/SRC/ssapps.f
-./ARPACK/SRC/dsortr.f
-./ARPACK/SRC/dsapps.f
-./ARPACK/SRC/slaqrb.f
-./ARPACK/SRC/znaupd.f
-./ARPACK/SRC/debug.h
-./ARPACK/SRC/version.h
-./ARPACK/SRC/sgetv0.f
-./ARPACK/SRC/sstqrb.f
-./ARPACK/SRC/snapps.f
-./ARPACK/SRC/Makefile
-./ARPACK/SRC/dnaupd.f
-./ARPACK/SRC/cngets.f
-./ARPACK/SRC/dseupd.f
-./ARPACK/SRC/cnapps.f
-./ARPACK/SRC/snaupe.f
-./ARPACK/SRC/cnaupd.f
-./ARPACK/SRC/dsaupd.f
-./ARPACK/SRC/ssaupd.f
-./ARPACK/SRC/sstats.f
-./ARPACK/SRC/dnapps.f
-./ARPACK/SRC/dneupd.f
-./ARPACK/SRC/cgetv0.f
-./ARPACK/SRC/sngets.f
-./ARPACK/SRC/snaupd.f
-./ARPACK/SRC/dstatn.f
-./ARPACK/SRC/ssaitr.f
-./ARPACK/SRC/dnaupe.f
-./ARPACK/SRC/dsesrt.f
-./ARPACK/SRC/dnaup2.f
-./ARPACK/SRC/cstatn.f
-./ARPACK/SRC/cneigh.f
-./ARPACK/SRC/ssgets.f
-./ARPACK/SRC/dngets.f
-./ARPACK/SRC/dgetv0.f
-./ARPACK/SRC/znapps.f
-./ARPACK/SRC/dstqrb.f
-./ARPACK/SRC/dstats.f
-./ARPACK/SRC/zneupd.f
-./ARPACK/SRC/dsaup2.f
-./ARPACK/SRC/dsortc.f
-./ARPACK/SRC/zneigh.f
-./ARPACK/SRC/snconv.f
-./ARPACK/SRC/zgetv0.f
-./ARPACK/SRC/sneigh.f
-./ARPACK/SRC/ssconv.f
-./ARPACK/SRC/dsaitr.f
-./ARPACK/SRC/stat.h
-./ARPACK/SRC/zstatn.f
-./ARPACK/UTIL/
-./ARPACK/UTIL/iswap.f
-./ARPACK/UTIL/zmout.f
-./ARPACK/UTIL/cvout.f
-./ARPACK/UTIL/icnteq.f
-./ARPACK/UTIL/dmout.f
-./ARPACK/UTIL/ivout.f
-./ARPACK/UTIL/smout.f
-./ARPACK/UTIL/second.f
-./ARPACK/UTIL/cmout.f
-./ARPACK/UTIL/Makefile
-./ARPACK/UTIL/iset.f
-./ARPACK/UTIL/icopy.f
-./ARPACK/UTIL/svout.f
-./ARPACK/UTIL/zvout.f
-./ARPACK/UTIL/second.t3d
-./ARPACK/UTIL/dvout.f
-./ARPACK/EXAMPLES/
-./ARPACK/EXAMPLES/BAND/
-./ARPACK/EXAMPLES/BAND/ssbdr2.f
-./ARPACK/EXAMPLES/BAND/dnbdr1.f
-./ARPACK/EXAMPLES/BAND/cnbdr3.f
-./ARPACK/EXAMPLES/BAND/dsbdr2.f
-./ARPACK/EXAMPLES/BAND/dsbdr5.f
-./ARPACK/EXAMPLES/BAND/dnbdr6.f
-./ARPACK/EXAMPLES/BAND/dsbdr6.f
-./ARPACK/EXAMPLES/BAND/ssbdr4.f
-./ARPACK/EXAMPLES/BAND/dnbdr5.f
-./ARPACK/EXAMPLES/BAND/dsbdr1.f
-./ARPACK/EXAMPLES/BAND/snband.f
-./ARPACK/EXAMPLES/BAND/znbdr3.f
-./ARPACK/EXAMPLES/BAND/ssbdr6.f
-./ARPACK/EXAMPLES/BAND/znbdr2.f
-./ARPACK/EXAMPLES/BAND/ssbdr5.f
-./ARPACK/EXAMPLES/BAND/ssbdr3.f
-./ARPACK/EXAMPLES/BAND/dsband.f
-./ARPACK/EXAMPLES/BAND/dnbdr3.f
-./ARPACK/EXAMPLES/BAND/znbdr4.f
-./ARPACK/EXAMPLES/BAND/znbdr1.f
-./ARPACK/EXAMPLES/BAND/snbdr4.f
-./ARPACK/EXAMPLES/BAND/cnbdr1.f
-./ARPACK/EXAMPLES/BAND/dsbdr4.f
-./ARPACK/EXAMPLES/BAND/dnband.f
-./ARPACK/EXAMPLES/BAND/dsbdr3.f
-./ARPACK/EXAMPLES/BAND/README
-./ARPACK/EXAMPLES/BAND/cnband.f
-./ARPACK/EXAMPLES/BAND/snbdr3.f
-./ARPACK/EXAMPLES/BAND/dnbdr2.f
-./ARPACK/EXAMPLES/BAND/snbdr2.f
-./ARPACK/EXAMPLES/BAND/cnbdr4.f
-./ARPACK/EXAMPLES/BAND/snbdr6.f
-./ARPACK/EXAMPLES/BAND/snbdr1.f
-./ARPACK/EXAMPLES/BAND/cnbdr2.f
-./ARPACK/EXAMPLES/BAND/snbdr5.f
-./ARPACK/EXAMPLES/BAND/dnbdr4.f
-./ARPACK/EXAMPLES/BAND/ssband.f
-./ARPACK/EXAMPLES/BAND/makefile
-./ARPACK/EXAMPLES/BAND/znband.f
-./ARPACK/EXAMPLES/BAND/ssbdr1.f
-./ARPACK/EXAMPLES/NONSYM/
-./ARPACK/EXAMPLES/NONSYM/dndrv4.f
-./ARPACK/EXAMPLES/NONSYM/sndrv2.f
-./ARPACK/EXAMPLES/NONSYM/dndrv6.f
-./ARPACK/EXAMPLES/NONSYM/sndrv6.f
-./ARPACK/EXAMPLES/NONSYM/sndrv4.f
-./ARPACK/EXAMPLES/NONSYM/dndrv3.f
-./ARPACK/EXAMPLES/NONSYM/README
-./ARPACK/EXAMPLES/NONSYM/sndrv1.f
-./ARPACK/EXAMPLES/NONSYM/sndrv3.f
-./ARPACK/EXAMPLES/NONSYM/dndrv1.f
-./ARPACK/EXAMPLES/NONSYM/sndrv5.f
-./ARPACK/EXAMPLES/NONSYM/makefile
-./ARPACK/EXAMPLES/NONSYM/dndrv5.f
-./ARPACK/EXAMPLES/NONSYM/dndrv2.f
-./ARPACK/EXAMPLES/COMPLEX/
-./ARPACK/EXAMPLES/COMPLEX/cndrv2.f
-./ARPACK/EXAMPLES/COMPLEX/zndrv3.f
-./ARPACK/EXAMPLES/COMPLEX/zndrv4.f
-./ARPACK/EXAMPLES/COMPLEX/zndrv2.f
-./ARPACK/EXAMPLES/COMPLEX/README
-./ARPACK/EXAMPLES/COMPLEX/cndrv4.f
-./ARPACK/EXAMPLES/COMPLEX/cndrv1.f
-./ARPACK/EXAMPLES/COMPLEX/zndrv1.f
-./ARPACK/EXAMPLES/COMPLEX/makefile
-./ARPACK/EXAMPLES/COMPLEX/cndrv3.f
-./ARPACK/EXAMPLES/SVD/
-./ARPACK/EXAMPLES/SVD/debug.h
-./ARPACK/EXAMPLES/SVD/README
-./ARPACK/EXAMPLES/SVD/ssvd.f
-./ARPACK/EXAMPLES/SVD/makefile
-./ARPACK/EXAMPLES/SVD/dsvd.f
-./ARPACK/EXAMPLES/SYM/
-./ARPACK/EXAMPLES/SYM/ssdrv4.f
-./ARPACK/EXAMPLES/SYM/dsdrv2.f
-./ARPACK/EXAMPLES/SYM/ssdrv3.f
-./ARPACK/EXAMPLES/SYM/ssdrv5.f
-./ARPACK/EXAMPLES/SYM/ssdrv1.f
-./ARPACK/EXAMPLES/SYM/dsdrv6.f
-./ARPACK/EXAMPLES/SYM/ssdrv6.f
-./ARPACK/EXAMPLES/SYM/dsdrv5.f
-./ARPACK/EXAMPLES/SYM/README
-./ARPACK/EXAMPLES/SYM/dsdrv4.f
-./ARPACK/EXAMPLES/SYM/dsdrv3.f
-./ARPACK/EXAMPLES/SYM/makefile
-./ARPACK/EXAMPLES/SYM/dsdrv1.f
-./ARPACK/EXAMPLES/SYM/ssdrv2.f
-./ARPACK/EXAMPLES/README
-./ARPACK/EXAMPLES/SIMPLE/
-./ARPACK/EXAMPLES/SIMPLE/dnsimp.f
-./ARPACK/EXAMPLES/SIMPLE/sssimp.f
-./ARPACK/EXAMPLES/SIMPLE/znsimp.f
-./ARPACK/EXAMPLES/SIMPLE/cnsimp.f
-./ARPACK/EXAMPLES/SIMPLE/dssimp.f
-./ARPACK/EXAMPLES/SIMPLE/debug.h
-./ARPACK/EXAMPLES/SIMPLE/README
-./ARPACK/EXAMPLES/SIMPLE/snsimp.f
-./ARPACK/EXAMPLES/SIMPLE/makefile
-./ARPACK/ARMAKES/
-./ARPACK/ARMAKES/ARmake.BLACS-SP2
-./ARPACK/ARMAKES/ARmake.BLACS-T3D
-./ARPACK/ARMAKES/ARmake.MPI-sunmos
-./ARPACK/ARMAKES/ARmake.SGI
-./ARPACK/ARMAKES/ARmake.SP2
-./ARPACK/ARMAKES/ARmake.SUN4
-./ARPACK/ARMAKES/ARmake.BLACS-NX-I860
-./ARPACK/ARMAKES/ARmake.BLACS-SGI
-./ARPACK/ARMAKES/ARmake.SGI_mp
-./ARPACK/ARMAKES/ARmake.BLACS-SUN4
-./ARPACK/ARMAKES/ARmake.MPI-SUN4
-./ARPACK/ARMAKES/ARmake.MPI-SP2
-./ARPACK/ARMAKES/ARmake.MPI-T3D
-./ARPACK/ARMAKES/ARmake.CJ
-./ARPACK/ARMAKES/ARmake.BLACS-CJ
-./ARPACK/ARMAKES/ARmake.BLACS-SGI_mp
-./ARPACK/ARMAKES/ARmake.MPI-CJ
-./ARPACK/ARMAKES/ARmake.CRAY
-./ARPACK/README
-./ARPACK/Makefile
-./ARPACK/log
-./ARPACK/ARmake.inc
-./ARPACK/DOCUMENTS/
-./ARPACK/DOCUMENTS/debug.doc
-./ARPACK/DOCUMENTS/ex-nonsym.doc
-./ARPACK/DOCUMENTS/ex-complex.doc
-./ARPACK/DOCUMENTS/stat.doc
-./ARPACK/DOCUMENTS/README
-./ARPACK/DOCUMENTS/ex-sym.doc
-./ARPACK/Makefile_serial
-./ARPACK/LAPACK/
-./ARPACK/LAPACK/claset.f
-./ARPACK/LAPACK/zladiv.f
-./ARPACK/LAPACK/cunm2r.f
-./ARPACK/LAPACK/ctrexc.f
-./ARPACK/LAPACK/lsame.f
-./ARPACK/LAPACK/dlarnv.f
-./ARPACK/LAPACK/slanv2.f
-./ARPACK/LAPACK/slanhs.f
-./ARPACK/LAPACK/sorm2r.f
-./ARPACK/LAPACK/dlabad.f
-./ARPACK/LAPACK/cgbtrs.f
-./ARPACK/LAPACK/slarf.f
-./ARPACK/LAPACK/slasrt.f
-./ARPACK/LAPACK/cgbtf2.f
-./ARPACK/LAPACK/zgttrs.f
-./ARPACK/LAPACK/dlanv2.f
-./ARPACK/LAPACK/clatrs.f
-./ARPACK/LAPACK/ctrsyl.f
-./ARPACK/LAPACK/ctrevc.f
-./ARPACK/LAPACK/clarfg.f
-./ARPACK/LAPACK/spttrs.f
-./ARPACK/LAPACK/xerbla.f
-./ARPACK/LAPACK/zlatrs.f
-./ARPACK/LAPACK/sgeqr2.f
-./ARPACK/LAPACK/ilaenv.f
-./ARPACK/LAPACK/cgbtrf.f
-./ARPACK/LAPACK/cmach.f
-./ARPACK/LAPACK/slaev2.f
-./ARPACK/LAPACK/dlaruv.f
-./ARPACK/LAPACK/dgbtf2.f
-./ARPACK/LAPACK/cladiv.f
-./ARPACK/LAPACK/dlarfg.f
-./ARPACK/LAPACK/ztrexc.f
-./ARPACK/LAPACK/zlarf.f
-./ARPACK/LAPACK/zgeqr2.f
-./ARPACK/LAPACK/crot.f
-./ARPACK/LAPACK/xlaenv.f
-./ARPACK/LAPACK/dlaswp.f
-./ARPACK/LAPACK/dlaexc.f
-./ARPACK/LAPACK/icmax1.f
-./ARPACK/LAPACK/izmax1.f
-./ARPACK/LAPACK/sgttrs.f
-./ARPACK/LAPACK/zunm2r.f
-./ARPACK/LAPACK/clahqr.f
-./ARPACK/LAPACK/zlacgv.f
-./ARPACK/LAPACK/cgttrf.f
-./ARPACK/LAPACK/slasr.f
-./ARPACK/LAPACK/dlacpy.f
-./ARPACK/LAPACK/dladiv.f
-./ARPACK/LAPACK/zlahqr.f
-./ARPACK/LAPACK/zrot.f
-./ARPACK/LAPACK/slascl.f
-./ARPACK/LAPACK/dlamch.f
-./ARPACK/LAPACK/dzsum1.f
-./ARPACK/LAPACK/dtrsen.f
-./ARPACK/LAPACK/dpttrs.f
-./ARPACK/LAPACK/spttrf.f
-./ARPACK/LAPACK/zgttrf.f
-./ARPACK/LAPACK/dpttrf.f
-./ARPACK/LAPACK/zlartg.f
-./ARPACK/LAPACK/slaset.f
-./ARPACK/LAPACK/slacon.f
-./ARPACK/LAPACK/dgbtrf.f
-./ARPACK/LAPACK/zlanhs.f
-./ARPACK/LAPACK/ctrsen.f
-./ARPACK/LAPACK/clartg.f
-./ARPACK/LAPACK/dlascl.f
-./ARPACK/LAPACK/dlarfx.f
-./ARPACK/LAPACK/slaln2.f
-./ARPACK/LAPACK/dlapy3.f
-./ARPACK/LAPACK/clarf.f
-./ARPACK/LAPACK/sgttrf.f
-./ARPACK/LAPACK/slagtm.f
-./ARPACK/LAPACK/slassq.f
-./ARPACK/LAPACK/zlassq.f
-./ARPACK/LAPACK/slarfx.f
-./ARPACK/LAPACK/Makefile
-./ARPACK/LAPACK/classq.f
-./ARPACK/LAPACK/slahqr.f
-./ARPACK/LAPACK/ztrsyl.f
-./ARPACK/LAPACK/slamch.f
-./ARPACK/LAPACK/strevc.f
-./ARPACK/LAPACK/zdscal.f
-./ARPACK/LAPACK/sgbtf2.f
-./ARPACK/LAPACK/dlaev2.f
-./ARPACK/LAPACK/sladiv.f
-./ARPACK/LAPACK/zlaset.f
-./ARPACK/LAPACK/dgbtrs.f
-./ARPACK/LAPACK/slaptm.f
-./ARPACK/LAPACK/dgttrf.f
-./ARPACK/LAPACK/slabad.f
-./ARPACK/LAPACK/strsyl.f
-./ARPACK/LAPACK/ztrsen.f
-./ARPACK/LAPACK/dlarf.f
-./ARPACK/LAPACK/slaexc.f
-./ARPACK/LAPACK/strsen.f
-./ARPACK/LAPACK/dlae2.f
-./ARPACK/LAPACK/dlartg.f
-./ARPACK/LAPACK/dsteqr.f
-./ARPACK/LAPACK/clacgv.f
-./ARPACK/LAPACK/slapy3.f
-./ARPACK/LAPACK/slaruv.f
-./ARPACK/LAPACK/zlascl.f
-./ARPACK/LAPACK/dlagtm.f
-./ARPACK/LAPACK/slange.f
-./ARPACK/LAPACK/slaran.f
-./ARPACK/LAPACK/slasy2.f
-./ARPACK/LAPACK/slarnv.f
-./ARPACK/LAPACK/lsamen.f
-./ARPACK/LAPACK/slapy2.f
-./ARPACK/LAPACK/zlacpy.f
-./ARPACK/LAPACK/zlange.f
-./ARPACK/LAPACK/zgbtf2.f
-./ARPACK/LAPACK/slae2.f
-./ARPACK/LAPACK/slanst.f
-./ARPACK/LAPACK/cgeqr2.f
-./ARPACK/LAPACK/dtrexc.f
-./ARPACK/LAPACK/dlapy2.f
-./ARPACK/LAPACK/dgeqr2.f
-./ARPACK/LAPACK/cgttrs.f
-./ARPACK/LAPACK/zmach.f
-./ARPACK/LAPACK/dlacon.f
-./ARPACK/LAPACK/clanhs.f
-./ARPACK/LAPACK/clacpy.f
-./ARPACK/LAPACK/dorm2r.f
-./ARPACK/LAPACK/slaswp.f
-./ARPACK/LAPACK/slarfg.f
-./ARPACK/LAPACK/zgbtrs.f
-./ARPACK/LAPACK/strexc.f
-./ARPACK/LAPACK/clascl.f
-./ARPACK/LAPACK/clarnv.f
-./ARPACK/LAPACK/sgbtrs.f
-./ARPACK/LAPACK/zlarfg.f
-./ARPACK/LAPACK/sgbtrf.f
-./ARPACK/LAPACK/dlasrt.f
-./ARPACK/LAPACK/dlaran.f
-./ARPACK/LAPACK/dlaptm.f
-./ARPACK/LAPACK/scsum1.f
-./ARPACK/LAPACK/ztrevc.f
-./ARPACK/LAPACK/dlaln2.f
-./ARPACK/LAPACK/dtrevc.f
-./ARPACK/LAPACK/dlassq.f
-./ARPACK/LAPACK/slarnd.f
-./ARPACK/LAPACK/zgbtrf.f
-./ARPACK/LAPACK/dlaset.f
-./ARPACK/LAPACK/claswp.f
-./ARPACK/LAPACK/zlacon.f
-./ARPACK/LAPACK/slartg.f
-./ARPACK/LAPACK/dlanst.f
-./ARPACK/LAPACK/dlange.f
-./ARPACK/LAPACK/zlaswp.f
-./ARPACK/LAPACK/dgttrs.f
-./ARPACK/LAPACK/dlasy2.f
-./ARPACK/LAPACK/slacpy.f
-./ARPACK/LAPACK/ssteqr.f
-./ARPACK/LAPACK/dlarnd.f
-./ARPACK/LAPACK/dlahqr.f
-./ARPACK/LAPACK/clange.f
-./ARPACK/LAPACK/dtrsyl.f
-./ARPACK/LAPACK/dlanhs.f
-./ARPACK/LAPACK/clacon.f
-./ARPACK/LAPACK/dlasr.f
-./ARPACK/LAPACK/zlarnv.f
-./ARPACK/PARPACK/
-./ARPACK/PARPACK/SRC/
-./ARPACK/PARPACK/SRC/BLACS/
-./ARPACK/PARPACK/SRC/BLACS/pscnorm2.f
-./ARPACK/PARPACK/SRC/BLACS/pclarnv.f
-./ARPACK/PARPACK/SRC/BLACS/pdneigh.f
-./ARPACK/PARPACK/SRC/BLACS/psneupd.f
-./ARPACK/PARPACK/SRC/BLACS/pdngets.f
-./ARPACK/PARPACK/SRC/BLACS/psnorm2.f
-./ARPACK/PARPACK/SRC/BLACS/pdsgets.f
-./ARPACK/PARPACK/SRC/BLACS/pcneupd.f
-./ARPACK/PARPACK/SRC/BLACS/pcneigh.f
-./ARPACK/PARPACK/SRC/BLACS/psgetv0.f
-./ARPACK/PARPACK/SRC/BLACS/pcngets.f
-./ARPACK/PARPACK/SRC/BLACS/pdnapps.f
-./ARPACK/PARPACK/SRC/BLACS/pdsaitr.f
-./ARPACK/PARPACK/SRC/BLACS/pdseigt.f
-./ARPACK/PARPACK/SRC/BLACS/psseigt.f
-./ARPACK/PARPACK/SRC/BLACS/psneigh.f
-./ARPACK/PARPACK/SRC/BLACS/psnaup2.f
-./ARPACK/PARPACK/SRC/BLACS/pssaup2.f
-./ARPACK/PARPACK/SRC/BLACS/pdlamch.f
-./ARPACK/PARPACK/SRC/BLACS/pssaupd.f
-./ARPACK/PARPACK/SRC/BLACS/pznaupd.f
-./ARPACK/PARPACK/SRC/BLACS/debug.h
-./ARPACK/PARPACK/SRC/BLACS/pdnaitr.f
-./ARPACK/PARPACK/SRC/BLACS/pdsaupd.f
-./ARPACK/PARPACK/SRC/BLACS/pzneigh.f
-./ARPACK/PARPACK/SRC/BLACS/pzlarnv.f
-./ARPACK/PARPACK/SRC/BLACS/psnapps.f
-./ARPACK/PARPACK/SRC/BLACS/Makefile
-./ARPACK/PARPACK/SRC/BLACS/pdsaup2.f
-./ARPACK/PARPACK/SRC/BLACS/pcgetv0.f
-./ARPACK/PARPACK/SRC/BLACS/pdneupd.f
-./ARPACK/PARPACK/SRC/BLACS/pznaitr.f
-./ARPACK/PARPACK/SRC/BLACS/psnaitr.f
-./ARPACK/PARPACK/SRC/BLACS/pdlarnv.f
-./ARPACK/PARPACK/SRC/BLACS/psngets.f
-./ARPACK/PARPACK/SRC/BLACS/pdseupd.f
-./ARPACK/PARPACK/SRC/BLACS/pslarnv.f
-./ARPACK/PARPACK/SRC/BLACS/pdznorm2.f
-./ARPACK/PARPACK/SRC/BLACS/pssgets.f
-./ARPACK/PARPACK/SRC/BLACS/pznapps.f
-./ARPACK/PARPACK/SRC/BLACS/pzgetv0.f
-./ARPACK/PARPACK/SRC/BLACS/pssapps.f
-./ARPACK/PARPACK/SRC/BLACS/pcnaupd.f
-./ARPACK/PARPACK/SRC/BLACS/pdgetv0.f
-./ARPACK/PARPACK/SRC/BLACS/pdnaup2.f
-./ARPACK/PARPACK/SRC/BLACS/pdsapps.f
-./ARPACK/PARPACK/SRC/BLACS/pcnaitr.f
-./ARPACK/PARPACK/SRC/BLACS/psnaupd.f
-./ARPACK/PARPACK/SRC/BLACS/pzngets.f
-./ARPACK/PARPACK/SRC/BLACS/pslamch.f
-./ARPACK/PARPACK/SRC/BLACS/pdnorm2.f
-./ARPACK/PARPACK/SRC/BLACS/pznaup2.f
-./ARPACK/PARPACK/SRC/BLACS/psseupd.f
-./ARPACK/PARPACK/SRC/BLACS/stat.h
-./ARPACK/PARPACK/SRC/BLACS/pcnapps.f
-./ARPACK/PARPACK/SRC/BLACS/pdnaupd.f
-./ARPACK/PARPACK/SRC/BLACS/pcnaup2.f
-./ARPACK/PARPACK/SRC/BLACS/pzneupd.f
-./ARPACK/PARPACK/SRC/BLACS/pssaitr.f
-./ARPACK/PARPACK/SRC/MPI/
-./ARPACK/PARPACK/SRC/MPI/pscnorm2.f
-./ARPACK/PARPACK/SRC/MPI/pclarnv.f
-./ARPACK/PARPACK/SRC/MPI/pdneigh.f
-./ARPACK/PARPACK/SRC/MPI/psneupd.f
-./ARPACK/PARPACK/SRC/MPI/pdngets.f
-./ARPACK/PARPACK/SRC/MPI/psnorm2.f
-./ARPACK/PARPACK/SRC/MPI/pdsgets.f
-./ARPACK/PARPACK/SRC/MPI/pcneupd.f
-./ARPACK/PARPACK/SRC/MPI/pcneigh.f
-./ARPACK/PARPACK/SRC/MPI/psgetv0.f
-./ARPACK/PARPACK/SRC/MPI/pcngets.f
-./ARPACK/PARPACK/SRC/MPI/pdnapps.f
-./ARPACK/PARPACK/SRC/MPI/pdsaitr.f
-./ARPACK/PARPACK/SRC/MPI/pdseigt.f
-./ARPACK/PARPACK/SRC/MPI/psseigt.f
-./ARPACK/PARPACK/SRC/MPI/psneigh.f
-./ARPACK/PARPACK/SRC/MPI/psnaup2.f
-./ARPACK/PARPACK/SRC/MPI/pssaup2.f
-./ARPACK/PARPACK/SRC/MPI/pdlamch.f
-./ARPACK/PARPACK/SRC/MPI/pssaupd.f
-./ARPACK/PARPACK/SRC/MPI/pznaupd.f
-./ARPACK/PARPACK/SRC/MPI/debug.h
-./ARPACK/PARPACK/SRC/MPI/pdnaitr.f
-./ARPACK/PARPACK/SRC/MPI/pdsaupd.f
-./ARPACK/PARPACK/SRC/MPI/pzneigh.f
-./ARPACK/PARPACK/SRC/MPI/pzlarnv.f
-./ARPACK/PARPACK/SRC/MPI/psnapps.f
-./ARPACK/PARPACK/SRC/MPI/Makefile
-./ARPACK/PARPACK/SRC/MPI/pdsaup2.f
-./ARPACK/PARPACK/SRC/MPI/pcgetv0.f
-./ARPACK/PARPACK/SRC/MPI/pdneupd.f
-./ARPACK/PARPACK/SRC/MPI/pznaitr.f
-./ARPACK/PARPACK/SRC/MPI/psnaitr.f
-./ARPACK/PARPACK/SRC/MPI/pdlarnv.f
-./ARPACK/PARPACK/SRC/MPI/psngets.f
-./ARPACK/PARPACK/SRC/MPI/pdseupd.f
-./ARPACK/PARPACK/SRC/MPI/pslarnv.f
-./ARPACK/PARPACK/SRC/MPI/pdznorm2.f
-./ARPACK/PARPACK/SRC/MPI/pssgets.f
-./ARPACK/PARPACK/SRC/MPI/pznapps.f
-./ARPACK/PARPACK/SRC/MPI/pzgetv0.f
-./ARPACK/PARPACK/SRC/MPI/mpif.h
-./ARPACK/PARPACK/SRC/MPI/pssapps.f
-./ARPACK/PARPACK/SRC/MPI/pcnaupd.f
-./ARPACK/PARPACK/SRC/MPI/pdgetv0.f
-./ARPACK/PARPACK/SRC/MPI/pdnaup2.f
-./ARPACK/PARPACK/SRC/MPI/pdsapps.f
-./ARPACK/PARPACK/SRC/MPI/pcnaitr.f
-./ARPACK/PARPACK/SRC/MPI/psnaupd.f
-./ARPACK/PARPACK/SRC/MPI/pzngets.f
-./ARPACK/PARPACK/SRC/MPI/pslamch.f
-./ARPACK/PARPACK/SRC/MPI/pdnorm2.f
-./ARPACK/PARPACK/SRC/MPI/pznaup2.f
-./ARPACK/PARPACK/SRC/MPI/psseupd.f
-./ARPACK/PARPACK/SRC/MPI/stat.h
-./ARPACK/PARPACK/SRC/MPI/pcnapps.f
-./ARPACK/PARPACK/SRC/MPI/pdnaupd.f
-./ARPACK/PARPACK/SRC/MPI/pcnaup2.f
-./ARPACK/PARPACK/SRC/MPI/pzneupd.f
-./ARPACK/PARPACK/SRC/MPI/pssaitr.f
-./ARPACK/PARPACK/UTIL/
-./ARPACK/PARPACK/UTIL/BLACS/
-./ARPACK/PARPACK/UTIL/BLACS/pzmout.f
-./ARPACK/PARPACK/UTIL/BLACS/pzvout.f
-./ARPACK/PARPACK/UTIL/BLACS/psvout.f
-./ARPACK/PARPACK/UTIL/BLACS/psmout.f
-./ARPACK/PARPACK/UTIL/BLACS/pcmout.f
-./ARPACK/PARPACK/UTIL/BLACS/Makefile
-./ARPACK/PARPACK/UTIL/BLACS/pivout.f
-./ARPACK/PARPACK/UTIL/BLACS/pdmout.f
-./ARPACK/PARPACK/UTIL/BLACS/pcvout.f
-./ARPACK/PARPACK/UTIL/BLACS/pdvout.f
-./ARPACK/PARPACK/UTIL/MPI/
-./ARPACK/PARPACK/UTIL/MPI/pzmout.f
-./ARPACK/PARPACK/UTIL/MPI/pzvout.f
-./ARPACK/PARPACK/UTIL/MPI/psvout.f
-./ARPACK/PARPACK/UTIL/MPI/psmout.f
-./ARPACK/PARPACK/UTIL/MPI/pcmout.f
-./ARPACK/PARPACK/UTIL/MPI/Makefile
-./ARPACK/PARPACK/UTIL/MPI/pivout.f
-./ARPACK/PARPACK/UTIL/MPI/pdmout.f
-./ARPACK/PARPACK/UTIL/MPI/pcvout.f
-./ARPACK/PARPACK/UTIL/MPI/mpif.h
-./ARPACK/PARPACK/UTIL/MPI/pdvout.f
-./ARPACK/PARPACK/EXAMPLES/
-./ARPACK/PARPACK/EXAMPLES/BLACS/
-./ARPACK/PARPACK/EXAMPLES/BLACS/pcndrv1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/psndrv3.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/pzndrv1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/psndrv1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/debug.h
-./ARPACK/PARPACK/EXAMPLES/BLACS/pdndrv3.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/psntest1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/pdndrv1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/pdsdrv1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/pdntest1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/pssdrv1.f
-./ARPACK/PARPACK/EXAMPLES/BLACS/makefile
-./ARPACK/PARPACK/EXAMPLES/BLACS/stat.h
-./ARPACK/PARPACK/EXAMPLES/MPI/
-./ARPACK/PARPACK/EXAMPLES/MPI/pcndrv1.f
-./ARPACK/PARPACK/EXAMPLES/MPI/psndrv3.f
-./ARPACK/PARPACK/EXAMPLES/MPI/pzndrv1.f
-./ARPACK/PARPACK/EXAMPLES/MPI/psndrv1.f
-./ARPACK/PARPACK/EXAMPLES/MPI/debug.h
-./ARPACK/PARPACK/EXAMPLES/MPI/pdndrv3.f
-./ARPACK/PARPACK/EXAMPLES/MPI/pdndrv1.f
-./ARPACK/PARPACK/EXAMPLES/MPI/mpif.h
-./ARPACK/PARPACK/EXAMPLES/MPI/pdsdrv1.f
-./ARPACK/PARPACK/EXAMPLES/MPI/pssdrv1.f
-./ARPACK/PARPACK/EXAMPLES/MPI/makefile
-./ARPACK/PARPACK/EXAMPLES/MPI/stat.h
-./ARPACK/BLAS/
-./ARPACK/BLAS/isamax.f
-./ARPACK/BLAS/sscal.f
-./ARPACK/BLAS/sger.f
-./ARPACK/BLAS/zaxpy.f
-./ARPACK/BLAS/cgbmv.f
-./ARPACK/BLAS/ctrmm.f
-./ARPACK/BLAS/cdotu.f
-./ARPACK/BLAS/snrm2.f
-./ARPACK/BLAS/ctrsm.f
-./ARPACK/BLAS/saxpy.f
-./ARPACK/BLAS/ccopy.f
-./ARPACK/BLAS/idamax.f
-./ARPACK/BLAS/csscal.f
-./ARPACK/BLAS/dgemm.f
-./ARPACK/BLAS/caxpy.f
-./ARPACK/BLAS/cgemv.f
-./ARPACK/BLAS/zdotu.f
-./ARPACK/BLAS/cscal.f
-./ARPACK/BLAS/dsymv.f
-./ARPACK/BLAS/dasum.f
-./ARPACK/BLAS/zgbmv.f
-./ARPACK/BLAS/ctrsv.f
-./ARPACK/BLAS/ztrsv.f
-./ARPACK/BLAS/sgemv.f
-./ARPACK/BLAS/stbsv.f
-./ARPACK/BLAS/drotg.f
-./ARPACK/BLAS/ctbsv.f
-./ARPACK/BLAS/dzasum.f
-./ARPACK/BLAS/ddot.f
-./ARPACK/BLAS/dgemv.f
-./ARPACK/BLAS/dtrmm.f
-./ARPACK/BLAS/dtrsm.f
-./ARPACK/BLAS/dsyr2.f
-./ARPACK/BLAS/zgemv.f
-./ARPACK/BLAS/zswap.f
-./ARPACK/BLAS/dswap.f
-./ARPACK/BLAS/dznrm2.f
-./ARPACK/BLAS/strsm.f
-./ARPACK/BLAS/sgemm.f
-./ARPACK/BLAS/cgemm.f
-./ARPACK/BLAS/drot.f
-./ARPACK/BLAS/srot.f
-./ARPACK/BLAS/daxpy.f
-./ARPACK/BLAS/ssyr2.f
-./ARPACK/BLAS/dgbmv.f
-./ARPACK/BLAS/Makefile
-./ARPACK/BLAS/dcopy.f
-./ARPACK/BLAS/ssymv.f
-./ARPACK/BLAS/zgerc.f
-./ARPACK/BLAS/strmm.f
-./ARPACK/BLAS/zdscal.f
-./ARPACK/BLAS/dscal.f
-./ARPACK/BLAS/zcopy.f
-./ARPACK/BLAS/sdot.f
-./ARPACK/BLAS/sasum.f
-./ARPACK/BLAS/ztrsm.f
-./ARPACK/BLAS/cgerc.f
-./ARPACK/BLAS/cdotc.f
-./ARPACK/BLAS/dtbsv.f
-./ARPACK/BLAS/scnrm2.f
-./ARPACK/BLAS/zscal.f
-./ARPACK/BLAS/srotg.f
-./ARPACK/BLAS/zgeru.f
-./ARPACK/BLAS/cswap.f
-./ARPACK/BLAS/sswap.f
-./ARPACK/BLAS/zdotc.f
-./ARPACK/BLAS/icamax.f
-./ARPACK/BLAS/scopy.f
-./ARPACK/BLAS/zgemm.f
-./ARPACK/BLAS/ztrmm.f
-./ARPACK/BLAS/izamax.f
-./ARPACK/BLAS/ztbsv.f
-./ARPACK/BLAS/scasum.f
-./ARPACK/BLAS/cgeru.f
-./ARPACK/BLAS/dger.f
-./ARPACK/BLAS/dnrm2.f
-./ARPACK/BLAS/sgbmv.f
-./ARPACK/ARmake.inc_serial
 ( cd /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/BLAS; /usr/bin/make clean )
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/BLAS'
 rm -f *.o a.out core
@@ -667,22 +24,22 @@ rm -f *.o a.out core
 make[1]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI'
 Making lib in /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/BLAS
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/BLAS'
-ifort -O3 -c isamax.f
-ifort -O3 -c sasum.f
-ifort -O3 -c saxpy.f
-ifort -O3 -c scopy.f
-ifort -O3 -c sdot.f
-ifort -O3 -c snrm2.f
-ifort -O3 -c srot.f
-ifort -O3 -c srotg.f
-ifort -O3 -c sscal.f
-ifort -O3 -c sswap.f
-ifort -O3 -c sgemv.f
-ifort -O3 -c sger.f
-ifort -O3 -c ssymv.f
-ifort -O3 -c ssyr2.f
-ifort -O3 -c strmm.f
-ifort -O3 -c sgbmv.f
+ifort -O3 -fPIC -c isamax.f
+ifort -O3 -fPIC -c sasum.f
+ifort -O3 -fPIC -c saxpy.f
+ifort -O3 -fPIC -c scopy.f
+ifort -O3 -fPIC -c sdot.f
+ifort -O3 -fPIC -c snrm2.f
+ifort -O3 -fPIC -c srot.f
+ifort -O3 -fPIC -c srotg.f
+ifort -O3 -fPIC -c sscal.f
+ifort -O3 -fPIC -c sswap.f
+ifort -O3 -fPIC -c sgemv.f
+ifort -O3 -fPIC -c sger.f
+ifort -O3 -fPIC -c ssymv.f
+ifort -O3 -fPIC -c ssyr2.f
+ifort -O3 -fPIC -c strmm.f
+ifort -O3 -fPIC -c sgbmv.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a isamax.o sasum.o saxpy.o scopy.o sdot.o  snrm2.o srot.o  srotg.o sscal.o  sswap.o sgemv.o sger.o  ssymv.o ssyr2.o strmm.o sgbmv.o
 a - isamax.o
 a - sasum.o
@@ -701,22 +58,22 @@ a - ssyr2.o
 a - strmm.o
 a - sgbmv.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c idamax.f
-ifort -O3 -c dasum.f
-ifort -O3 -c daxpy.f
-ifort -O3 -c dcopy.f
-ifort -O3 -c ddot.f
-ifort -O3 -c dnrm2.f
-ifort -O3 -c drot.f
-ifort -O3 -c drotg.f
-ifort -O3 -c dscal.f
-ifort -O3 -c dswap.f
-ifort -O3 -c dgemv.f
-ifort -O3 -c dger.f
-ifort -O3 -c dsymv.f
-ifort -O3 -c dsyr2.f
-ifort -O3 -c dtrmm.f
-ifort -O3 -c dgbmv.f
+ifort -O3 -fPIC -c idamax.f
+ifort -O3 -fPIC -c dasum.f
+ifort -O3 -fPIC -c daxpy.f
+ifort -O3 -fPIC -c dcopy.f
+ifort -O3 -fPIC -c ddot.f
+ifort -O3 -fPIC -c dnrm2.f
+ifort -O3 -fPIC -c drot.f
+ifort -O3 -fPIC -c drotg.f
+ifort -O3 -fPIC -c dscal.f
+ifort -O3 -fPIC -c dswap.f
+ifort -O3 -fPIC -c dgemv.f
+ifort -O3 -fPIC -c dger.f
+ifort -O3 -fPIC -c dsymv.f
+ifort -O3 -fPIC -c dsyr2.f
+ifort -O3 -fPIC -c dtrmm.f
+ifort -O3 -fPIC -c dgbmv.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a idamax.o dasum.o daxpy.o dcopy.o ddot.o  dnrm2.o drot.o  drotg.o dscal.o  dswap.o dgemv.o dger.o  dsymv.o dsyr2.o dtrmm.o dgbmv.o
 a - idamax.o
 a - dasum.o
@@ -735,22 +92,22 @@ a - dsyr2.o
 a - dtrmm.o
 a - dgbmv.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c icamax.f
-ifort -O3 -c caxpy.f
-ifort -O3 -c ccopy.f
-ifort -O3 -c cdotc.f
-ifort -O3 -c cdotu.f
-ifort -O3 -c cgbmv.f
-ifort -O3 -c cgemv.f
-ifort -O3 -c cgerc.f
-ifort -O3 -c cgeru.f
-ifort -O3 -c cscal.f
-ifort -O3 -c csscal.f
-ifort -O3 -c cswap.f
-ifort -O3 -c ctrmm.f
-ifort -O3 -c ctrsv.f
-ifort -O3 -c scasum.f
-ifort -O3 -c scnrm2.f
+ifort -O3 -fPIC -c icamax.f
+ifort -O3 -fPIC -c caxpy.f
+ifort -O3 -fPIC -c ccopy.f
+ifort -O3 -fPIC -c cdotc.f
+ifort -O3 -fPIC -c cdotu.f
+ifort -O3 -fPIC -c cgbmv.f
+ifort -O3 -fPIC -c cgemv.f
+ifort -O3 -fPIC -c cgerc.f
+ifort -O3 -fPIC -c cgeru.f
+ifort -O3 -fPIC -c cscal.f
+ifort -O3 -fPIC -c csscal.f
+ifort -O3 -fPIC -c cswap.f
+ifort -O3 -fPIC -c ctrmm.f
+ifort -O3 -fPIC -c ctrsv.f
+ifort -O3 -fPIC -c scasum.f
+ifort -O3 -fPIC -c scnrm2.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a icamax.o caxpy.o ccopy.o cdotc.o cdotu.o cgbmv.o  cgemv.o cgerc.o cgeru.o  cscal.o csscal.o cswap.o ctrmm.o ctrsv.o scasum.o scnrm2.o isamax.o sscal.o 
 a - icamax.o
 a - caxpy.o
@@ -771,22 +128,22 @@ a - scnrm2.o
 r - isamax.o
 r - sscal.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c izamax.f
-ifort -O3 -c zaxpy.f
-ifort -O3 -c zcopy.f
-ifort -O3 -c zdotc.f
-ifort -O3 -c zdotu.f
-ifort -O3 -c zgbmv.f
-ifort -O3 -c zgemv.f
-ifort -O3 -c zgerc.f
-ifort -O3 -c zgeru.f
-ifort -O3 -c zscal.f
-ifort -O3 -c zdscal.f
-ifort -O3 -c zswap.f
-ifort -O3 -c ztrmm.f
-ifort -O3 -c ztrsv.f
-ifort -O3 -c dzasum.f
-ifort -O3 -c dznrm2.f
+ifort -O3 -fPIC -c izamax.f
+ifort -O3 -fPIC -c zaxpy.f
+ifort -O3 -fPIC -c zcopy.f
+ifort -O3 -fPIC -c zdotc.f
+ifort -O3 -fPIC -c zdotu.f
+ifort -O3 -fPIC -c zgbmv.f
+ifort -O3 -fPIC -c zgemv.f
+ifort -O3 -fPIC -c zgerc.f
+ifort -O3 -fPIC -c zgeru.f
+ifort -O3 -fPIC -c zscal.f
+ifort -O3 -fPIC -c zdscal.f
+ifort -O3 -fPIC -c zswap.f
+ifort -O3 -fPIC -c ztrmm.f
+ifort -O3 -fPIC -c ztrsv.f
+ifort -O3 -fPIC -c dzasum.f
+ifort -O3 -fPIC -c dznrm2.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a izamax.o zaxpy.o zcopy.o zdotc.o zdotu.o zgbmv.o  zgemv.o zgerc.o zgeru.o zscal.o zdscal.o zswap.o ztrmm.o ztrsv.o dzasum.o dznrm2.o idamax.o dscal.o
 a - izamax.o
 a - zaxpy.o
@@ -810,50 +167,50 @@ ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libar
 make[1]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/BLAS'
 Making lib in /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/LAPACK
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/LAPACK'
-ifort -O3 -c sgeqr2.f
-ifort -O3 -c slabad.f
-ifort -O3 -c slacon.f
-ifort -O3 -c slacpy.f
-ifort -O3 -c sladiv.f
-ifort -O3 -c slae2.f
-ifort -O3 -c slaev2.f
-ifort -O3 -c slaexc.f
-ifort -O3 -c slagtm.f
-ifort -O3 -c slahqr.f
-ifort -O3 -c slaln2.f
-ifort -O3 -c slamch.f
-ifort -O3 -c slange.f
-ifort -O3 -c slanhs.f
-ifort -O3 -c slanst.f
-ifort -O3 -c slanv2.f
-ifort -O3 -c slaptm.f
-ifort -O3 -c slapy2.f
-ifort -O3 -c slapy3.f
-ifort -O3 -c slaran.f
-ifort -O3 -c slarf.f
-ifort -O3 -c slarfg.f
-ifort -O3 -c slarfx.f
-ifort -O3 -c slarnd.f
-ifort -O3 -c slarnv.f
-ifort -O3 -c slartg.f
-ifort -O3 -c slaruv.f
-ifort -O3 -c slascl.f
-ifort -O3 -c slaset.f
-ifort -O3 -c slasr.f
-ifort -O3 -c slasrt.f
-ifort -O3 -c slassq.f
-ifort -O3 -c slasy2.f
-ifort -O3 -c sorm2r.f
-ifort -O3 -c ssteqr.f
-ifort -O3 -c strevc.f
-ifort -O3 -c strexc.f
-ifort -O3 -c strsen.f
-ifort -O3 -c strsyl.f
-ifort -O3 -c ilaenv.f
-ifort -O3 -c lsame.f
-ifort -O3 -c lsamen.f
-ifort -O3 -c xerbla.f
-ifort -O3 -c xlaenv.f
+ifort -O3 -fPIC -c sgeqr2.f
+ifort -O3 -fPIC -c slabad.f
+ifort -O3 -fPIC -c slacon.f
+ifort -O3 -fPIC -c slacpy.f
+ifort -O3 -fPIC -c sladiv.f
+ifort -O3 -fPIC -c slae2.f
+ifort -O3 -fPIC -c slaev2.f
+ifort -O3 -fPIC -c slaexc.f
+ifort -O3 -fPIC -c slagtm.f
+ifort -O3 -fPIC -c slahqr.f
+ifort -O3 -fPIC -c slaln2.f
+ifort -O3 -fPIC -c slamch.f
+ifort -O3 -fPIC -c slange.f
+ifort -O3 -fPIC -c slanhs.f
+ifort -O3 -fPIC -c slanst.f
+ifort -O3 -fPIC -c slanv2.f
+ifort -O3 -fPIC -c slaptm.f
+ifort -O3 -fPIC -c slapy2.f
+ifort -O3 -fPIC -c slapy3.f
+ifort -O3 -fPIC -c slaran.f
+ifort -O3 -fPIC -c slarf.f
+ifort -O3 -fPIC -c slarfg.f
+ifort -O3 -fPIC -c slarfx.f
+ifort -O3 -fPIC -c slarnd.f
+ifort -O3 -fPIC -c slarnv.f
+ifort -O3 -fPIC -c slartg.f
+ifort -O3 -fPIC -c slaruv.f
+ifort -O3 -fPIC -c slascl.f
+ifort -O3 -fPIC -c slaset.f
+ifort -O3 -fPIC -c slasr.f
+ifort -O3 -fPIC -c slasrt.f
+ifort -O3 -fPIC -c slassq.f
+ifort -O3 -fPIC -c slasy2.f
+ifort -O3 -fPIC -c sorm2r.f
+ifort -O3 -fPIC -c ssteqr.f
+ifort -O3 -fPIC -c strevc.f
+ifort -O3 -fPIC -c strexc.f
+ifort -O3 -fPIC -c strsen.f
+ifort -O3 -fPIC -c strsyl.f
+ifort -O3 -fPIC -c ilaenv.f
+ifort -O3 -fPIC -c lsame.f
+ifort -O3 -fPIC -c lsamen.f
+ifort -O3 -fPIC -c xerbla.f
+ifort -O3 -fPIC -c xlaenv.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a sgeqr2.o slabad.o slacon.o slacpy.o sladiv.o slae2.o slaev2.o slaexc.o slagtm.o slahqr.o slaln2.o slamch.o slange.o slanhs.o slanst.o slanv2.o slaptm.o slapy2.o slapy3.o slaran.o slarf.o slarfg.o slarfx.o slarnd.o slarnv.o slartg.o slaruv.o slascl.o slaset.o slasr.o  slasrt.o slassq.o slasy2.o sorm2r.o ssteqr.o strevc.o strexc.o strsen.o strsyl.o ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
 a - sgeqr2.o
 a - slabad.o
@@ -900,45 +257,45 @@ a - lsamen.o
 a - xerbla.o
 a - xlaenv.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c dgeqr2.f
-ifort -O3 -c dlabad.f
-ifort -O3 -c dlacon.f
-ifort -O3 -c dlacpy.f
-ifort -O3 -c dladiv.f
-ifort -O3 -c dlae2.f
-ifort -O3 -c dlaev2.f
-ifort -O3 -c dlaexc.f
-ifort -O3 -c dlagtm.f
-ifort -O3 -c dlahqr.f
-ifort -O3 -c dlaln2.f
-ifort -O3 -c dlamch.f
-ifort -O3 -c dlange.f
-ifort -O3 -c dlanhs.f
-ifort -O3 -c dlanst.f
-ifort -O3 -c dlanv2.f
-ifort -O3 -c dlaptm.f
-ifort -O3 -c dlapy2.f
-ifort -O3 -c dlapy3.f
-ifort -O3 -c dlaran.f
-ifort -O3 -c dlarf.f
-ifort -O3 -c dlarfg.f
-ifort -O3 -c dlarfx.f
-ifort -O3 -c dlarnd.f
-ifort -O3 -c dlarnv.f
-ifort -O3 -c dlartg.f
-ifort -O3 -c dlaruv.f
-ifort -O3 -c dlascl.f
-ifort -O3 -c dlaset.f
-ifort -O3 -c dlasr.f
-ifort -O3 -c dlasrt.f
-ifort -O3 -c dlassq.f
-ifort -O3 -c dlasy2.f
-ifort -O3 -c dorm2r.f
-ifort -O3 -c dsteqr.f
-ifort -O3 -c dtrevc.f
-ifort -O3 -c dtrexc.f
-ifort -O3 -c dtrsen.f
-ifort -O3 -c dtrsyl.f
+ifort -O3 -fPIC -c dgeqr2.f
+ifort -O3 -fPIC -c dlabad.f
+ifort -O3 -fPIC -c dlacon.f
+ifort -O3 -fPIC -c dlacpy.f
+ifort -O3 -fPIC -c dladiv.f
+ifort -O3 -fPIC -c dlae2.f
+ifort -O3 -fPIC -c dlaev2.f
+ifort -O3 -fPIC -c dlaexc.f
+ifort -O3 -fPIC -c dlagtm.f
+ifort -O3 -fPIC -c dlahqr.f
+ifort -O3 -fPIC -c dlaln2.f
+ifort -O3 -fPIC -c dlamch.f
+ifort -O3 -fPIC -c dlange.f
+ifort -O3 -fPIC -c dlanhs.f
+ifort -O3 -fPIC -c dlanst.f
+ifort -O3 -fPIC -c dlanv2.f
+ifort -O3 -fPIC -c dlaptm.f
+ifort -O3 -fPIC -c dlapy2.f
+ifort -O3 -fPIC -c dlapy3.f
+ifort -O3 -fPIC -c dlaran.f
+ifort -O3 -fPIC -c dlarf.f
+ifort -O3 -fPIC -c dlarfg.f
+ifort -O3 -fPIC -c dlarfx.f
+ifort -O3 -fPIC -c dlarnd.f
+ifort -O3 -fPIC -c dlarnv.f
+ifort -O3 -fPIC -c dlartg.f
+ifort -O3 -fPIC -c dlaruv.f
+ifort -O3 -fPIC -c dlascl.f
+ifort -O3 -fPIC -c dlaset.f
+ifort -O3 -fPIC -c dlasr.f
+ifort -O3 -fPIC -c dlasrt.f
+ifort -O3 -fPIC -c dlassq.f
+ifort -O3 -fPIC -c dlasy2.f
+ifort -O3 -fPIC -c dorm2r.f
+ifort -O3 -fPIC -c dsteqr.f
+ifort -O3 -fPIC -c dtrevc.f
+ifort -O3 -fPIC -c dtrexc.f
+ifort -O3 -fPIC -c dtrsen.f
+ifort -O3 -fPIC -c dtrsyl.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a dgeqr2.o dlabad.o dlacon.o dlacpy.o dladiv.o dlae2.o dlaev2.o dlaexc.o dlagtm.o dlahqr.o dlaln2.o dlamch.o dlange.o dlanhs.o dlanst.o dlanv2.o dlaptm.o dlapy2.o dlapy3.o dlaran.o dlarf.o dlarfg.o dlarfx.o dlarnd.o dlarnv.o dlartg.o dlaruv.o dlascl.o dlaset.o dlasr.o  dlasrt.o dlassq.o dlasy2.o dorm2r.o dsteqr.o dtrevc.o dtrexc.o dtrsen.o dtrsyl.o ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
 a - dgeqr2.o
 a - dlabad.o
@@ -985,30 +342,30 @@ r - lsamen.o
 r - xerbla.o
 r - xlaenv.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c cgeqr2.f
-ifort -O3 -c clacon.f
-ifort -O3 -c clacpy.f
-ifort -O3 -c cladiv.f
-ifort -O3 -c clahqr.f
-ifort -O3 -c clange.f
-ifort -O3 -c clanhs.f
-ifort -O3 -c clarf.f
-ifort -O3 -c clarfg.f
-ifort -O3 -c clarnv.f
-ifort -O3 -c clartg.f
-ifort -O3 -c clascl.f
-ifort -O3 -c claset.f
-ifort -O3 -c classq.f
-ifort -O3 -c clatrs.f
-ifort -O3 -c cmach.f
-ifort -O3 -c crot.f
-ifort -O3 -c ctrevc.f
-ifort -O3 -c ctrexc.f
-ifort -O3 -c ctrsen.f
-ifort -O3 -c ctrsyl.f
-ifort -O3 -c cunm2r.f
-ifort -O3 -c scsum1.f
-ifort -O3 -c icmax1.f
+ifort -O3 -fPIC -c cgeqr2.f
+ifort -O3 -fPIC -c clacon.f
+ifort -O3 -fPIC -c clacpy.f
+ifort -O3 -fPIC -c cladiv.f
+ifort -O3 -fPIC -c clahqr.f
+ifort -O3 -fPIC -c clange.f
+ifort -O3 -fPIC -c clanhs.f
+ifort -O3 -fPIC -c clarf.f
+ifort -O3 -fPIC -c clarfg.f
+ifort -O3 -fPIC -c clarnv.f
+ifort -O3 -fPIC -c clartg.f
+ifort -O3 -fPIC -c clascl.f
+ifort -O3 -fPIC -c claset.f
+ifort -O3 -fPIC -c classq.f
+ifort -O3 -fPIC -c clatrs.f
+ifort -O3 -fPIC -c cmach.f
+ifort -O3 -fPIC -c crot.f
+ifort -O3 -fPIC -c ctrevc.f
+ifort -O3 -fPIC -c ctrexc.f
+ifort -O3 -fPIC -c ctrsen.f
+ifort -O3 -fPIC -c ctrsyl.f
+ifort -O3 -fPIC -c cunm2r.f
+ifort -O3 -fPIC -c scsum1.f
+ifort -O3 -fPIC -c icmax1.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a cgeqr2.o clacon.o clacpy.o cladiv.o clahqr.o clange.o clanhs.o clarf.o  clarfg.o clarnv.o clartg.o clascl.o claset.o classq.o clatrs.o cmach.o  crot.o   ctrevc.o ctrexc.o ctrsen.o ctrsyl.o cunm2r.o scsum1.o slabad.o sladiv.o slamch.o slapy2.o slapy3.o slaruv.o icmax1.o  ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
 a - cgeqr2.o
 a - clacon.o
@@ -1046,30 +403,30 @@ r - lsamen.o
 r - xerbla.o
 r - xlaenv.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c zgeqr2.f
-ifort -O3 -c zlacon.f
-ifort -O3 -c zlacpy.f
-ifort -O3 -c zladiv.f
-ifort -O3 -c zlahqr.f
-ifort -O3 -c zlange.f
-ifort -O3 -c zlanhs.f
-ifort -O3 -c zlarf.f
-ifort -O3 -c zlarfg.f
-ifort -O3 -c zlarnv.f
-ifort -O3 -c zlartg.f
-ifort -O3 -c zlascl.f
-ifort -O3 -c zlaset.f
-ifort -O3 -c zlassq.f
-ifort -O3 -c zlatrs.f
-ifort -O3 -c zmach.f
-ifort -O3 -c zrot.f
-ifort -O3 -c ztrevc.f
-ifort -O3 -c ztrexc.f
-ifort -O3 -c ztrsen.f
-ifort -O3 -c ztrsyl.f
-ifort -O3 -c zunm2r.f
-ifort -O3 -c dzsum1.f
-ifort -O3 -c izmax1.f
+ifort -O3 -fPIC -c zgeqr2.f
+ifort -O3 -fPIC -c zlacon.f
+ifort -O3 -fPIC -c zlacpy.f
+ifort -O3 -fPIC -c zladiv.f
+ifort -O3 -fPIC -c zlahqr.f
+ifort -O3 -fPIC -c zlange.f
+ifort -O3 -fPIC -c zlanhs.f
+ifort -O3 -fPIC -c zlarf.f
+ifort -O3 -fPIC -c zlarfg.f
+ifort -O3 -fPIC -c zlarnv.f
+ifort -O3 -fPIC -c zlartg.f
+ifort -O3 -fPIC -c zlascl.f
+ifort -O3 -fPIC -c zlaset.f
+ifort -O3 -fPIC -c zlassq.f
+ifort -O3 -fPIC -c zlatrs.f
+ifort -O3 -fPIC -c zmach.f
+ifort -O3 -fPIC -c zrot.f
+ifort -O3 -fPIC -c ztrevc.f
+ifort -O3 -fPIC -c ztrexc.f
+ifort -O3 -fPIC -c ztrsen.f
+ifort -O3 -fPIC -c ztrsyl.f
+ifort -O3 -fPIC -c zunm2r.f
+ifort -O3 -fPIC -c dzsum1.f
+ifort -O3 -fPIC -c izmax1.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a zgeqr2.o zlacon.o zlacpy.o zladiv.o zlahqr.o zlange.o zlanhs.o zlarf.o  zlarfg.o zlarnv.o zlartg.o zlascl.o zlaset.o zlassq.o zlatrs.o zmach.o  zrot.o   ztrevc.o ztrexc.o ztrsen.o ztrsyl.o zunm2r.o dzsum1.o dlabad.o dladiv.o dlamch.o dlapy2.o dlapy3.o dlaruv.o izmax1.o ilaenv.o lsame.o lsamen.o xerbla.o xlaenv.o
 a - zgeqr2.o
 a - zlacon.o
@@ -1110,14 +467,14 @@ ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libar
 make[1]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/LAPACK'
 Making lib in /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/UTIL
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/UTIL'
-ifort -O3 -c svout.f
-ifort -O3 -c smout.f
-ifort -O3 -c icnteq.f
-ifort -O3 -c icopy.f
-ifort -O3 -c iset.f
-ifort -O3 -c iswap.f
-ifort -O3 -c ivout.f
-ifort -O3 -c second.f
+ifort -O3 -fPIC -c svout.f
+ifort -O3 -fPIC -c smout.f
+ifort -O3 -fPIC -c icnteq.f
+ifort -O3 -fPIC -c icopy.f
+ifort -O3 -fPIC -c iset.f
+ifort -O3 -fPIC -c iswap.f
+ifort -O3 -fPIC -c ivout.f
+ifort -O3 -fPIC -c second.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a svout.o  smout.o icnteq.o icopy.o iset.o iswap.o ivout.o second.o
 a - svout.o
 a - smout.o
@@ -1128,10 +485,10 @@ a - iswap.o
 a - ivout.o
 a - second.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c dvout.f
-ifort -O3 -c dmout.f
-ifort -O3 -c zvout.f
-ifort -O3 -c zmout.f
+ifort -O3 -fPIC -c dvout.f
+ifort -O3 -fPIC -c dmout.f
+ifort -O3 -fPIC -c zvout.f
+ifort -O3 -fPIC -c zmout.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a dvout.o  dmout.o icnteq.o icopy.o iset.o iswap.o ivout.o second.o
 a - dvout.o
 a - dmout.o
@@ -1142,8 +499,8 @@ r - iswap.o
 r - ivout.o
 r - second.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c cvout.f
-ifort -O3 -c cmout.f
+ifort -O3 -fPIC -c cvout.f
+ifort -O3 -fPIC -c cmout.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a svout.o  smout.o cvout.o  cmout.o  icnteq.o icopy.o iset.o iswap.o ivout.o second.o
 r - svout.o
 r - smout.o
@@ -1171,30 +528,30 @@ ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libar
 make[1]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/UTIL'
 Making lib in /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/SRC
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/SRC'
-ifort -O3 -c sgetv0.f
-ifort -O3 -c slaqrb.f
-ifort -O3 -c sstqrb.f
-ifort -O3 -c ssortc.f
-ifort -O3 -c ssortr.f
-ifort -O3 -c sstatn.f
-ifort -O3 -c sstats.f
-ifort -O3 -c snaitr.f
-ifort -O3 -c snapps.f
-ifort -O3 -c snaup2.f
-ifort -O3 -c snaupd.f
-ifort -O3 -c snconv.f
-ifort -O3 -c sneigh.f
-ifort -O3 -c sngets.f
-ifort -O3 -c ssaitr.f
-ifort -O3 -c ssapps.f
-ifort -O3 -c ssaup2.f
-ifort -O3 -c ssaupd.f
-ifort -O3 -c ssconv.f
-ifort -O3 -c sseigt.f
-ifort -O3 -c ssgets.f
-ifort -O3 -c sneupd.f
-ifort -O3 -c sseupd.f
-ifort -O3 -c ssesrt.f
+ifort -O3 -fPIC -c sgetv0.f
+ifort -O3 -fPIC -c slaqrb.f
+ifort -O3 -fPIC -c sstqrb.f
+ifort -O3 -fPIC -c ssortc.f
+ifort -O3 -fPIC -c ssortr.f
+ifort -O3 -fPIC -c sstatn.f
+ifort -O3 -fPIC -c sstats.f
+ifort -O3 -fPIC -c snaitr.f
+ifort -O3 -fPIC -c snapps.f
+ifort -O3 -fPIC -c snaup2.f
+ifort -O3 -fPIC -c snaupd.f
+ifort -O3 -fPIC -c snconv.f
+ifort -O3 -fPIC -c sneigh.f
+ifort -O3 -fPIC -c sngets.f
+ifort -O3 -fPIC -c ssaitr.f
+ifort -O3 -fPIC -c ssapps.f
+ifort -O3 -fPIC -c ssaup2.f
+ifort -O3 -fPIC -c ssaupd.f
+ifort -O3 -fPIC -c ssconv.f
+ifort -O3 -fPIC -c sseigt.f
+ifort -O3 -fPIC -c ssgets.f
+ifort -O3 -fPIC -c sneupd.f
+ifort -O3 -fPIC -c sseupd.f
+ifort -O3 -fPIC -c ssesrt.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a sgetv0.o slaqrb.o sstqrb.o ssortc.o ssortr.o sstatn.o sstats.o snaitr.o snapps.o snaup2.o snaupd.o snconv.o sneigh.o sngets.o ssaitr.o ssapps.o ssaup2.o ssaupd.o ssconv.o sseigt.o ssgets.o sneupd.o sseupd.o ssesrt.o
 a - sgetv0.o
 a - slaqrb.o
@@ -1221,30 +578,30 @@ a - sneupd.o
 a - sseupd.o
 a - ssesrt.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c dgetv0.f
-ifort -O3 -c dlaqrb.f
-ifort -O3 -c dstqrb.f
-ifort -O3 -c dsortc.f
-ifort -O3 -c dsortr.f
-ifort -O3 -c dstatn.f
-ifort -O3 -c dstats.f
-ifort -O3 -c dnaitr.f
-ifort -O3 -c dnapps.f
-ifort -O3 -c dnaup2.f
-ifort -O3 -c dnaupd.f
-ifort -O3 -c dnconv.f
-ifort -O3 -c dneigh.f
-ifort -O3 -c dngets.f
-ifort -O3 -c dsaitr.f
-ifort -O3 -c dsapps.f
-ifort -O3 -c dsaup2.f
-ifort -O3 -c dsaupd.f
-ifort -O3 -c dsconv.f
-ifort -O3 -c dseigt.f
-ifort -O3 -c dsgets.f
-ifort -O3 -c dneupd.f
-ifort -O3 -c dseupd.f
-ifort -O3 -c dsesrt.f
+ifort -O3 -fPIC -c dgetv0.f
+ifort -O3 -fPIC -c dlaqrb.f
+ifort -O3 -fPIC -c dstqrb.f
+ifort -O3 -fPIC -c dsortc.f
+ifort -O3 -fPIC -c dsortr.f
+ifort -O3 -fPIC -c dstatn.f
+ifort -O3 -fPIC -c dstats.f
+ifort -O3 -fPIC -c dnaitr.f
+ifort -O3 -fPIC -c dnapps.f
+ifort -O3 -fPIC -c dnaup2.f
+ifort -O3 -fPIC -c dnaupd.f
+ifort -O3 -fPIC -c dnconv.f
+ifort -O3 -fPIC -c dneigh.f
+ifort -O3 -fPIC -c dngets.f
+ifort -O3 -fPIC -c dsaitr.f
+ifort -O3 -fPIC -c dsapps.f
+ifort -O3 -fPIC -c dsaup2.f
+ifort -O3 -fPIC -c dsaupd.f
+ifort -O3 -fPIC -c dsconv.f
+ifort -O3 -fPIC -c dseigt.f
+ifort -O3 -fPIC -c dsgets.f
+ifort -O3 -fPIC -c dneupd.f
+ifort -O3 -fPIC -c dseupd.f
+ifort -O3 -fPIC -c dsesrt.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a dgetv0.o dlaqrb.o dstqrb.o dsortc.o dsortr.o dstatn.o dstats.o dnaitr.o dnapps.o dnaup2.o dnaupd.o dnconv.o dneigh.o dngets.o dsaitr.o dsapps.o dsaup2.o dsaupd.o dsconv.o dseigt.o dsgets.o dneupd.o dseupd.o dsesrt.o
 a - dgetv0.o
 a - dlaqrb.o
@@ -1271,16 +628,16 @@ a - dneupd.o
 a - dseupd.o
 a - dsesrt.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c cnaitr.f
-ifort -O3 -c cnapps.f
-ifort -O3 -c cnaup2.f
-ifort -O3 -c cnaupd.f
-ifort -O3 -c cneigh.f
-ifort -O3 -c cneupd.f
-ifort -O3 -c cngets.f
-ifort -O3 -c cgetv0.f
-ifort -O3 -c csortc.f
-ifort -O3 -c cstatn.f
+ifort -O3 -fPIC -c cnaitr.f
+ifort -O3 -fPIC -c cnapps.f
+ifort -O3 -fPIC -c cnaup2.f
+ifort -O3 -fPIC -c cnaupd.f
+ifort -O3 -fPIC -c cneigh.f
+ifort -O3 -fPIC -c cneupd.f
+ifort -O3 -fPIC -c cngets.f
+ifort -O3 -fPIC -c cgetv0.f
+ifort -O3 -fPIC -c csortc.f
+ifort -O3 -fPIC -c cstatn.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a cnaitr.o cnapps.o cnaup2.o cnaupd.o cneigh.o cneupd.o cngets.o cgetv0.o csortc.o cstatn.o
 a - cnaitr.o
 a - cnapps.o
@@ -1293,16 +650,16 @@ a - cgetv0.o
 a - csortc.o
 a - cstatn.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
-ifort -O3 -c znaitr.f
-ifort -O3 -c znapps.f
-ifort -O3 -c znaup2.f
-ifort -O3 -c znaupd.f
-ifort -O3 -c zneigh.f
-ifort -O3 -c zneupd.f
-ifort -O3 -c zngets.f
-ifort -O3 -c zgetv0.f
-ifort -O3 -c zsortc.f
-ifort -O3 -c zstatn.f
+ifort -O3 -fPIC -c znaitr.f
+ifort -O3 -fPIC -c znapps.f
+ifort -O3 -fPIC -c znaup2.f
+ifort -O3 -fPIC -c znaupd.f
+ifort -O3 -fPIC -c zneigh.f
+ifort -O3 -fPIC -c zneupd.f
+ifort -O3 -fPIC -c zngets.f
+ifort -O3 -fPIC -c zgetv0.f
+ifort -O3 -fPIC -c zsortc.f
+ifort -O3 -fPIC -c zstatn.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a znaitr.o znapps.o znaup2.o znaupd.o zneigh.o zneupd.o zngets.o zgetv0.o zsortc.o zstatn.o
 a - znaitr.o
 a - znapps.o
@@ -1319,30 +676,30 @@ make[1]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_li
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libarpack_ifort.a
 ( cd /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI; /usr/bin/make single double complex complex16 )
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI'
-ifort -O3 -c psvout.f
-ifort -O3 -c psmout.f
-ifort -O3 -c pivout.f
+ifort -O3 -fPIC -c psvout.f
+ifort -O3 -fPIC -c psmout.f
+ifort -O3 -fPIC -c pivout.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a psvout.o  psmout.o pivout.o
 a - psvout.o
 a - psmout.o
 a - pivout.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a
-ifort -O3 -c pdvout.f
-ifort -O3 -c pdmout.f
+ifort -O3 -fPIC -c pdvout.f
+ifort -O3 -fPIC -c pdmout.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a pdvout.o  pdmout.o pivout.o
 a - pdvout.o
 a - pdmout.o
 r - pivout.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a
-ifort -O3 -c pcvout.f
-ifort -O3 -c pcmout.f
+ifort -O3 -fPIC -c pcvout.f
+ifort -O3 -fPIC -c pcmout.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a pcvout.o  pcmout.o  pivout.o
 a - pcvout.o
 a - pcmout.o
 r - pivout.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a
-ifort -O3 -c pzvout.f
-ifort -O3 -c pzmout.f
+ifort -O3 -fPIC -c pzvout.f
+ifort -O3 -fPIC -c pzmout.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a pzvout.o  pzmout.o pivout.o
 a - pzvout.o
 a - pzmout.o
@@ -1351,24 +708,24 @@ ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libpa
 make[1]: Leaving directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/PARPACK/UTIL/MPI'
 ( cd /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI; /usr/bin/make single double complex complex16 )
 make[1]: Entering directory `/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/PARPACK/SRC/MPI'
-ifort -O3 -c psgetv0.f
-ifort -O3 -c psnaitr.f
-ifort -O3 -c psnapps.f
-ifort -O3 -c psnaup2.f
-ifort -O3 -c psnaupd.f
-ifort -O3 -c psneigh.f
-ifort -O3 -c psngets.f
-ifort -O3 -c pssaitr.f
-ifort -O3 -c pssapps.f
-ifort -O3 -c pssaup2.f
-ifort -O3 -c pssaupd.f
-ifort -O3 -c psseigt.f
-ifort -O3 -c pssgets.f
-ifort -O3 -c psneupd.f
-ifort -O3 -c psseupd.f
-ifort -O3 -c pslarnv.f
-ifort -O3 -c pslamch.f
-ifort -O3 -c psnorm2.f
+ifort -O3 -fPIC -c psgetv0.f
+ifort -O3 -fPIC -c psnaitr.f
+ifort -O3 -fPIC -c psnapps.f
+ifort -O3 -fPIC -c psnaup2.f
+ifort -O3 -fPIC -c psnaupd.f
+ifort -O3 -fPIC -c psneigh.f
+ifort -O3 -fPIC -c psngets.f
+ifort -O3 -fPIC -c pssaitr.f
+ifort -O3 -fPIC -c pssapps.f
+ifort -O3 -fPIC -c pssaup2.f
+ifort -O3 -fPIC -c pssaupd.f
+ifort -O3 -fPIC -c psseigt.f
+ifort -O3 -fPIC -c pssgets.f
+ifort -O3 -fPIC -c psneupd.f
+ifort -O3 -fPIC -c psseupd.f
+ifort -O3 -fPIC -c pslarnv.f
+ifort -O3 -fPIC -c pslamch.f
+ifort -O3 -fPIC -c psnorm2.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a psgetv0.o psnaitr.o psnapps.o psnaup2.o psnaupd.o psneigh.o psngets.o pssaitr.o pssapps.o pssaup2.o pssaupd.o psseigt.o pssgets.o psneupd.o psseupd.o pslarnv.o pslamch.o psnorm2.o
 a - psgetv0.o
 a - psnaitr.o
@@ -1389,24 +746,24 @@ a - pslarnv.o
 a - pslamch.o
 a - psnorm2.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a
-ifort -O3 -c pdgetv0.f
-ifort -O3 -c pdnaitr.f
-ifort -O3 -c pdnapps.f
-ifort -O3 -c pdnaup2.f
-ifort -O3 -c pdnaupd.f
-ifort -O3 -c pdneigh.f
-ifort -O3 -c pdngets.f
-ifort -O3 -c pdsaitr.f
-ifort -O3 -c pdsapps.f
-ifort -O3 -c pdsaup2.f
-ifort -O3 -c pdsaupd.f
-ifort -O3 -c pdseigt.f
-ifort -O3 -c pdsgets.f
-ifort -O3 -c pdneupd.f
-ifort -O3 -c pdseupd.f
-ifort -O3 -c pdlarnv.f
-ifort -O3 -c pdlamch.f
-ifort -O3 -c pdnorm2.f
+ifort -O3 -fPIC -c pdgetv0.f
+ifort -O3 -fPIC -c pdnaitr.f
+ifort -O3 -fPIC -c pdnapps.f
+ifort -O3 -fPIC -c pdnaup2.f
+ifort -O3 -fPIC -c pdnaupd.f
+ifort -O3 -fPIC -c pdneigh.f
+ifort -O3 -fPIC -c pdngets.f
+ifort -O3 -fPIC -c pdsaitr.f
+ifort -O3 -fPIC -c pdsapps.f
+ifort -O3 -fPIC -c pdsaup2.f
+ifort -O3 -fPIC -c pdsaupd.f
+ifort -O3 -fPIC -c pdseigt.f
+ifort -O3 -fPIC -c pdsgets.f
+ifort -O3 -fPIC -c pdneupd.f
+ifort -O3 -fPIC -c pdseupd.f
+ifort -O3 -fPIC -c pdlarnv.f
+ifort -O3 -fPIC -c pdlamch.f
+ifort -O3 -fPIC -c pdnorm2.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a pdgetv0.o pdnaitr.o pdnapps.o pdnaup2.o pdnaupd.o pdneigh.o pdngets.o pdsaitr.o pdsapps.o pdsaup2.o pdsaupd.o pdseigt.o pdsgets.o pdneupd.o pdseupd.o pdlarnv.o pdlamch.o pdnorm2.o
 a - pdgetv0.o
 a - pdnaitr.o
@@ -1427,16 +784,16 @@ a - pdlarnv.o
 a - pdlamch.o
 a - pdnorm2.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a
-ifort -O3 -c pcnaitr.f
-ifort -O3 -c pcnapps.f
-ifort -O3 -c pcnaup2.f
-ifort -O3 -c pcnaupd.f
-ifort -O3 -c pcneigh.f
-ifort -O3 -c pcneupd.f
-ifort -O3 -c pcngets.f
-ifort -O3 -c pcgetv0.f
-ifort -O3 -c pscnorm2.f
-ifort -O3 -c pclarnv.f
+ifort -O3 -fPIC -c pcnaitr.f
+ifort -O3 -fPIC -c pcnapps.f
+ifort -O3 -fPIC -c pcnaup2.f
+ifort -O3 -fPIC -c pcnaupd.f
+ifort -O3 -fPIC -c pcneigh.f
+ifort -O3 -fPIC -c pcneupd.f
+ifort -O3 -fPIC -c pcngets.f
+ifort -O3 -fPIC -c pcgetv0.f
+ifort -O3 -fPIC -c pscnorm2.f
+ifort -O3 -fPIC -c pclarnv.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a pcnaitr.o pcnapps.o pcnaup2.o pcnaupd.o pcneigh.o pcneupd.o pcngets.o pcgetv0.o pscnorm2.o pclarnv.o
 a - pcnaitr.o
 a - pcnapps.o
@@ -1449,16 +806,16 @@ a - pcgetv0.o
 a - pscnorm2.o
 a - pclarnv.o
 ranlib /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a
-ifort -O3 -c pznaitr.f
-ifort -O3 -c pznapps.f
-ifort -O3 -c pznaup2.f
-ifort -O3 -c pznaupd.f
-ifort -O3 -c pzneigh.f
-ifort -O3 -c pzneupd.f
-ifort -O3 -c pzngets.f
-ifort -O3 -c pzgetv0.f
-ifort -O3 -c pdznorm2.f
-ifort -O3 -c pzlarnv.f
+ifort -O3 -fPIC -c pznaitr.f
+ifort -O3 -fPIC -c pznapps.f
+ifort -O3 -fPIC -c pznaup2.f
+ifort -O3 -fPIC -c pznaupd.f
+ifort -O3 -fPIC -c pzneigh.f
+ifort -O3 -fPIC -c pzneupd.f
+ifort -O3 -fPIC -c pzngets.f
+ifort -O3 -fPIC -c pzgetv0.f
+ifort -O3 -fPIC -c pdznorm2.f
+ifort -O3 -fPIC -c pzlarnv.f
 ar rv /work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/ARPACK/ARPACK/libparpack_ifort.a pznaitr.o pznapps.o pznaup2.o pznaupd.o pzneigh.o pzneupd.o pzngets.o pzgetv0.o pdznorm2.o pzlarnv.o
 a - pznaitr.o
 a - pznapps.o

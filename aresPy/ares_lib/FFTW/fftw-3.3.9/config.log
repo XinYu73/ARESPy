@@ -33,7 +33,7 @@ PATH: /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/inte
 PATH: /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin
 PATH: /work/home/xinyu/soft/XinYuEnv/bin
 PATH: /work/software/CALYPSO_x64/Tools/CALYPSO_ANALYSIS_KIT
-PATH: /work/home/xinyu/.vscode-server/bin/c722ca6c7eed3d7987c0d5c3df5c45f6b15e77d1/bin/remote-cli
+PATH: /work/home/xinyu/.vscode-server/bin/e18005f0f1b33c29e81d732535d8c0e47cafb0b5/bin/remote-cli
 PATH: /work/software/q-e-qe-6.5/bin
 PATH: /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mpi/intel64/bin
 PATH: /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64
@@ -132,7 +132,7 @@ configure:4954: $? = 0
 configure:4966: result: yes
 configure:4986: checking whether make supports the include directive
 configure:5001: make -f confmf.GNU && cat confinc.out
-make: Warning: File `confinc.mk' has modification time 30 s in the future
+make: Warning: File `confinc.mk' has modification time 28 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 this is the am__doit target
 configure:5004: $? = 0
@@ -1290,7 +1290,7 @@ configure:16932: $? = 0
 configure:16932: result: yes
 configure:16938: checking for _doprnt
 configure:16938: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c  >&5
-/tmp/icc7DN38W.o: In function `main':
+/tmp/iccrndnLJ.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `_doprnt'
 configure:16938: $? = 1
 configure: failed program was:
@@ -1389,7 +1389,7 @@ configure:16974: $? = 0
 configure:16983: result: yes
 configure:17088: checking for BSDgettimeofday
 configure:17088: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c -lm  >&5
-/tmp/iccZqHzV2.o: In function `main':
+/tmp/icc6bk5pK.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `BSDgettimeofday'
 configure:17088: $? = 1
 configure: failed program was:
@@ -1489,7 +1489,7 @@ configure:17088: $? = 0
 configure:17088: result: yes
 configure:17088: checking for gethrtime
 configure:17088: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c -lm  >&5
-/tmp/iccX4NRc3.o: In function `main':
+/tmp/iccNtvdWJ.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `gethrtime'
 configure:17088: $? = 1
 configure: failed program was:
@@ -1586,7 +1586,7 @@ configure: failed program was:
 configure:17088: result: no
 configure:17088: checking for read_real_time
 configure:17088: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c -lm  >&5
-/tmp/iccNJDdBZ.o: In function `main':
+/tmp/icceFQxnE.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `read_real_time'
 configure:17088: $? = 1
 configure: failed program was:
@@ -1683,7 +1683,7 @@ configure: failed program was:
 configure:17088: result: no
 configure:17088: checking for time_base_to_time
 configure:17088: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c -lm  >&5
-/tmp/icciiLWz0.o: In function `main':
+/tmp/icciQiS29.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `time_base_to_time'
 configure:17088: $? = 1
 configure: failed program was:
@@ -1812,7 +1812,7 @@ configure:17088: $? = 0
 configure:17088: result: yes
 configure:17088: checking for mach_absolute_time
 configure:17088: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c -lm  >&5
-/tmp/iccQUPA2X.o: In function `main':
+/tmp/iccQn0rp3.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `mach_absolute_time'
 configure:17088: $? = 1
 configure: failed program was:
@@ -2170,7 +2170,7 @@ conftest.c(83): warning #266: function "_rtc" declared implicitly
   _rtc()
   ^
 
-/tmp/iccWkfewC.o: In function `main':
+/tmp/iccNcivEW.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `_rtc'
 configure:17204: $? = 1
 configure: failed program was:
@@ -2345,7 +2345,7 @@ configure:20692: ifort -c -g conftest.f >&5
 configure:20692: $? = 0
 configure:20710: ifort -o conftest -g -v conftest.f -lm
 ifort version 18.0.3
-/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/fortcom    -D__INTEL_COMPILER=1800 -D__INTEL_COMPILER_UPDATE=3 -D__unix__ -D__unix -D__linux__ -D__linux -D__gnu_linux__ -Dunix -Dlinux -D__ELF__ -D__x86_64 -D__x86_64__ -D__amd64 -D__amd64__ -D__INTEL_COMPILER_BUILD_DATE=20180410 -D__INTEL_OFFLOAD -D__i686 -D__i686__ -D__pentiumpro -D__pentiumpro__ -D__pentium4 -D__pentium4__ -D__tune_pentium4__ -D__SSE2__ -D__SSE2_MATH__ -D__SSE__ -D__SSE_MATH__ -D__MMX__ -mGLOB_pack_sort_init_list -I. -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/intel64 -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/icc -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include -I/usr/local/include -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/include/ -I/usr/include "-fp_modbits honor_f32_conversion" "-fp_modbits honor_f64_conversion" -O0 -g2 "-reentrancy threaded" -simd -offload_host -mGLOB_em64t=TRUE -mP1OPT_version=18.0-intel64 -mGLOB_diag_file=/tmp/ifortgWRdoU.diag -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_source_language=GLOB_SOURCE_LANGUAGE_F90 -mP2OPT_static_promotion -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=485 "-mGLOB_options_string=-o conftest -g -v -lm" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64 -mP3OPT_emit_line_numbers -mP2OPT_suppress_unreferenced_locals=FALSE -mGLOB_debug_target=GLOB_DEBUG_TARGET_ALL -mDEBUG_info_level=2 -mDEBUG_use_indirect_strings=TRUE -mGLOB_debug_format=GLOB_DEBUG_FORMAT_DWARF40 -mGLOB_as_output_backup_file_name=/tmp/ifortQB7ehlas_.s -mGLOB_dashboard_use_source_name -mGLOB_instruction_tuning=0x0 -mGLOB_uarch_tuning=0x0 -mGLOB_product_id_code=0x22006d90 -mGLOB_maintain_errno -mGLOB_noinline_intrinsics -mGLOB_use_base_pointer=1 -mCG_bnl_movbe=T -mGLOB_extended_instructions=0x8 -mP3OPT_use_mspp_call_convention -mP2OPT_subs_out_of_bound=FALSE -mP2OPT_disam_type_based_disam=2 -mGLOB_ansi_alias -mIPOPT_ninl_limit=0 -mIPOPT_ninl_user_level=0 -mPGOPTI_value_profile_use=T -mGLOB_opt_report_use_source_name -mP2OPT_gen_linux_const_pooling=FALSE -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=ifort1672922927sbMtv1 -mGLOB_opt_level=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/libiml_attr.so -mIPOPT_single_file_compile_and_link=TRUE -mP2OPT_hlo_embed_loopinfo -mPGOPTI_gen_threadsafe_level=0 -mIPOPT_lto_object_enabled -mIPOPT_lto_object_value=1 -mIPOPT_obj_output_file_name=/tmp/ifortgWRdoU.o -mIPOPT_whole_archive_fixup_file_name=/tmp/ifortwarch8RgWgM -mGLOB_linker_version=2.27 -mGLOB_driver_tempfile_name=/tmp/iforttempfileCTJmMZ -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ifortgWRdoU.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_FORTRAN -mP1OPT_source_file_name=conftest.f -mP1OPT_full_source_file_name=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/conftest.f -mP2OPT_symtab_type_copy=true conftest.f
+/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/fortcom    -D__INTEL_COMPILER=1800 -D__INTEL_COMPILER_UPDATE=3 -D__unix__ -D__unix -D__linux__ -D__linux -D__gnu_linux__ -Dunix -Dlinux -D__ELF__ -D__x86_64 -D__x86_64__ -D__amd64 -D__amd64__ -D__INTEL_COMPILER_BUILD_DATE=20180410 -D__INTEL_OFFLOAD -D__i686 -D__i686__ -D__pentiumpro -D__pentiumpro__ -D__pentium4 -D__pentium4__ -D__tune_pentium4__ -D__SSE2__ -D__SSE2_MATH__ -D__SSE__ -D__SSE_MATH__ -D__MMX__ -mGLOB_pack_sort_init_list -I. -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/intel64 -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/icc -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include -I/usr/local/include -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/include/ -I/usr/include "-fp_modbits honor_f32_conversion" "-fp_modbits honor_f64_conversion" -O0 -g2 "-reentrancy threaded" -simd -offload_host -mGLOB_em64t=TRUE -mP1OPT_version=18.0-intel64 -mGLOB_diag_file=/tmp/ifortglPbDT.diag -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_source_language=GLOB_SOURCE_LANGUAGE_F90 -mP2OPT_static_promotion -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=485 "-mGLOB_options_string=-o conftest -g -v -lm" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64 -mP3OPT_emit_line_numbers -mP2OPT_suppress_unreferenced_locals=FALSE -mGLOB_debug_target=GLOB_DEBUG_TARGET_ALL -mDEBUG_info_level=2 -mDEBUG_use_indirect_strings=TRUE -mGLOB_debug_format=GLOB_DEBUG_FORMAT_DWARF40 -mGLOB_as_output_backup_file_name=/tmp/ifortoJWfVXas_.s -mGLOB_dashboard_use_source_name -mGLOB_instruction_tuning=0x0 -mGLOB_uarch_tuning=0x0 -mGLOB_product_id_code=0x22006d90 -mGLOB_maintain_errno -mGLOB_noinline_intrinsics -mGLOB_use_base_pointer=1 -mCG_bnl_movbe=T -mGLOB_extended_instructions=0x8 -mP3OPT_use_mspp_call_convention -mP2OPT_subs_out_of_bound=FALSE -mP2OPT_disam_type_based_disam=2 -mGLOB_ansi_alias -mIPOPT_ninl_limit=0 -mIPOPT_ninl_user_level=0 -mPGOPTI_value_profile_use=T -mGLOB_opt_report_use_source_name -mP2OPT_gen_linux_const_pooling=FALSE -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=ifort1719130234mMffm9 -mGLOB_opt_level=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/libiml_attr.so -mIPOPT_single_file_compile_and_link=TRUE -mP2OPT_hlo_embed_loopinfo -mPGOPTI_gen_threadsafe_level=0 -mIPOPT_lto_object_enabled -mIPOPT_lto_object_value=1 -mIPOPT_obj_output_file_name=/tmp/ifortglPbDT.o -mIPOPT_whole_archive_fixup_file_name=/tmp/ifortwarchGRPkj2 -mGLOB_linker_version=2.27 -mGLOB_driver_tempfile_name=/tmp/iforttempfileKi4Uvz -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ifortglPbDT.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_FORTRAN -mP1OPT_source_file_name=conftest.f -mP1OPT_full_source_file_name=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/conftest.f -mP2OPT_symtab_type_copy=true conftest.f
 #include "..." search starts here:
 #include <...> search starts here:
  .
@@ -2371,12 +2371,12 @@ ifort version 18.0.3
  /usr/include/
  /usr/include
 End of search list.
-ld    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -m elf_x86_64 -o conftest /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/for_main.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib /tmp/ifortgWRdoU.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -Bstatic -limf -Bdynamic -lm -Bdynamic -Bstatic -lifport -lifcoremt -limf -lsvml -Bdynamic -lm -Bstatic -lipgo -lirc -Bdynamic -lpthread -Bstatic -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o
+ld    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -m elf_x86_64 -o conftest /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/for_main.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib /tmp/ifortglPbDT.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -Bstatic -limf -Bdynamic -lm -Bdynamic -Bstatic -lifport -lifcoremt -limf -lsvml -Bdynamic -lm -Bstatic -lipgo -lirc -Bdynamic -lpthread -Bstatic -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o
 configure:20793: result: -v
 configure:20795: checking for Fortran 77 libraries of ifort
 configure:20818: ifort -o conftest -g -v conftest.f -lm
 ifort version 18.0.3
-/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/fortcom    -D__INTEL_COMPILER=1800 -D__INTEL_COMPILER_UPDATE=3 -D__unix__ -D__unix -D__linux__ -D__linux -D__gnu_linux__ -Dunix -Dlinux -D__ELF__ -D__x86_64 -D__x86_64__ -D__amd64 -D__amd64__ -D__INTEL_COMPILER_BUILD_DATE=20180410 -D__INTEL_OFFLOAD -D__i686 -D__i686__ -D__pentiumpro -D__pentiumpro__ -D__pentium4 -D__pentium4__ -D__tune_pentium4__ -D__SSE2__ -D__SSE2_MATH__ -D__SSE__ -D__SSE_MATH__ -D__MMX__ -mGLOB_pack_sort_init_list -I. -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/intel64 -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/icc -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include -I/usr/local/include -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/include/ -I/usr/include "-fp_modbits honor_f32_conversion" "-fp_modbits honor_f64_conversion" -O0 -g2 "-reentrancy threaded" -simd -offload_host -mGLOB_em64t=TRUE -mP1OPT_version=18.0-intel64 -mGLOB_diag_file=/tmp/ifortlfb274.diag -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_source_language=GLOB_SOURCE_LANGUAGE_F90 -mP2OPT_static_promotion -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=485 "-mGLOB_options_string=-o conftest -g -v -lm" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64 -mP3OPT_emit_line_numbers -mP2OPT_suppress_unreferenced_locals=FALSE -mGLOB_debug_target=GLOB_DEBUG_TARGET_ALL -mDEBUG_info_level=2 -mDEBUG_use_indirect_strings=TRUE -mGLOB_debug_format=GLOB_DEBUG_FORMAT_DWARF40 -mGLOB_as_output_backup_file_name=/tmp/ifortXyRXUCas_.s -mGLOB_dashboard_use_source_name -mGLOB_instruction_tuning=0x0 -mGLOB_uarch_tuning=0x0 -mGLOB_product_id_code=0x22006d90 -mGLOB_maintain_errno -mGLOB_noinline_intrinsics -mGLOB_use_base_pointer=1 -mCG_bnl_movbe=T -mGLOB_extended_instructions=0x8 -mP3OPT_use_mspp_call_convention -mP2OPT_subs_out_of_bound=FALSE -mP2OPT_disam_type_based_disam=2 -mGLOB_ansi_alias -mIPOPT_ninl_limit=0 -mIPOPT_ninl_user_level=0 -mPGOPTI_value_profile_use=T -mGLOB_opt_report_use_source_name -mP2OPT_gen_linux_const_pooling=FALSE -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=ifort127514643104gEBG -mGLOB_opt_level=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/libiml_attr.so -mIPOPT_single_file_compile_and_link=TRUE -mP2OPT_hlo_embed_loopinfo -mPGOPTI_gen_threadsafe_level=0 -mIPOPT_lto_object_enabled -mIPOPT_lto_object_value=1 -mIPOPT_obj_output_file_name=/tmp/ifortlfb274.o -mIPOPT_whole_archive_fixup_file_name=/tmp/ifortwarchH2QUNa -mGLOB_linker_version=2.27 -mGLOB_driver_tempfile_name=/tmp/iforttempfilecjkXKr -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ifortlfb274.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_FORTRAN -mP1OPT_source_file_name=conftest.f -mP1OPT_full_source_file_name=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/conftest.f -mP2OPT_symtab_type_copy=true conftest.f
+/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/fortcom    -D__INTEL_COMPILER=1800 -D__INTEL_COMPILER_UPDATE=3 -D__unix__ -D__unix -D__linux__ -D__linux -D__gnu_linux__ -Dunix -Dlinux -D__ELF__ -D__x86_64 -D__x86_64__ -D__amd64 -D__amd64__ -D__INTEL_COMPILER_BUILD_DATE=20180410 -D__INTEL_OFFLOAD -D__i686 -D__i686__ -D__pentiumpro -D__pentiumpro__ -D__pentium4 -D__pentium4__ -D__tune_pentium4__ -D__SSE2__ -D__SSE2_MATH__ -D__SSE__ -D__SSE_MATH__ -D__MMX__ -mGLOB_pack_sort_init_list -I. -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/pstl/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/include -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/intel64 -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include/icc -I/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/include -I/usr/local/include -I/usr/lib/gcc/x86_64-redhat-linux/4.8.5/include -I/usr/include/ -I/usr/include "-fp_modbits honor_f32_conversion" "-fp_modbits honor_f64_conversion" -O0 -g2 "-reentrancy threaded" -simd -offload_host -mGLOB_em64t=TRUE -mP1OPT_version=18.0-intel64 -mGLOB_diag_file=/tmp/ifortxZwEZ9.diag -mGLOB_long_size_64 -mGLOB_routine_pointer_size_64 -mGLOB_source_language=GLOB_SOURCE_LANGUAGE_F90 -mP2OPT_static_promotion -mP1OPT_print_version=FALSE -mCG_use_gas_got_workaround=F -mP2OPT_align_option_used=TRUE -mGLOB_gcc_version=485 "-mGLOB_options_string=-o conftest -g -v -lm" -mGLOB_cxx_limited_range=FALSE -mCG_extend_parms=FALSE -mGLOB_compiler_bin_directory=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64 -mP3OPT_emit_line_numbers -mP2OPT_suppress_unreferenced_locals=FALSE -mGLOB_debug_target=GLOB_DEBUG_TARGET_ALL -mDEBUG_info_level=2 -mDEBUG_use_indirect_strings=TRUE -mGLOB_debug_format=GLOB_DEBUG_FORMAT_DWARF40 -mGLOB_as_output_backup_file_name=/tmp/ifortjiY7zlas_.s -mGLOB_dashboard_use_source_name -mGLOB_instruction_tuning=0x0 -mGLOB_uarch_tuning=0x0 -mGLOB_product_id_code=0x22006d90 -mGLOB_maintain_errno -mGLOB_noinline_intrinsics -mGLOB_use_base_pointer=1 -mCG_bnl_movbe=T -mGLOB_extended_instructions=0x8 -mP3OPT_use_mspp_call_convention -mP2OPT_subs_out_of_bound=FALSE -mP2OPT_disam_type_based_disam=2 -mGLOB_ansi_alias -mIPOPT_ninl_limit=0 -mIPOPT_ninl_user_level=0 -mPGOPTI_value_profile_use=T -mGLOB_opt_report_use_source_name -mP2OPT_gen_linux_const_pooling=FALSE -mP2OPT_il0_array_sections=TRUE -mGLOB_offload_mode=1 -mP2OPT_offload_unique_var_string=ifort0057934361E55MdS -mGLOB_opt_level=0 -mIPOPT_args_in_regs=0 -mP2OPT_disam_assume_nonstd_intent_in=FALSE -mGLOB_imf_mapping_library=/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/bin/intel64/libiml_attr.so -mIPOPT_single_file_compile_and_link=TRUE -mP2OPT_hlo_embed_loopinfo -mPGOPTI_gen_threadsafe_level=0 -mIPOPT_lto_object_enabled -mIPOPT_lto_object_value=1 -mIPOPT_obj_output_file_name=/tmp/ifortxZwEZ9.o -mIPOPT_whole_archive_fixup_file_name=/tmp/ifortwarch3L8fhx -mGLOB_linker_version=2.27 -mGLOB_driver_tempfile_name=/tmp/iforttempfileo4rk87 -mP3OPT_asm_target=P3OPT_ASM_TARGET_GAS -mGLOB_async_unwind_tables=TRUE -mGLOB_obj_output_file=/tmp/ifortxZwEZ9.o -mGLOB_source_dialect=GLOB_SOURCE_DIALECT_FORTRAN -mP1OPT_source_file_name=conftest.f -mP1OPT_full_source_file_name=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/FFTW/fftw-3.3.9/conftest.f -mP2OPT_symtab_type_copy=true conftest.f
 #include "..." search starts here:
 #include <...> search starts here:
  .
@@ -2402,7 +2402,7 @@ ifort version 18.0.3
  /usr/include/
  /usr/include
 End of search list.
-ld    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -m elf_x86_64 -o conftest /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/for_main.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib /tmp/ifortlfb274.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -Bstatic -limf -Bdynamic -lm -Bdynamic -Bstatic -lifport -lifcoremt -limf -lsvml -Bdynamic -lm -Bstatic -lipgo -lirc -Bdynamic -lpthread -Bstatic -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o
+ld    /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtbegin.o --eh-frame-hdr --build-id -dynamic-linker /lib64/ld-linux-x86-64.so.2 -m elf_x86_64 -o conftest /work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/for_main.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib /tmp/ifortxZwEZ9.o -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -Bstatic -limf -Bdynamic -lm -Bdynamic -Bstatic -lifport -lifcoremt -limf -lsvml -Bdynamic -lm -Bstatic -lipgo -lirc -Bdynamic -lpthread -Bstatic -lsvml -Bdynamic -lc -lgcc -lgcc_s -Bstatic -lirc_s -Bdynamic -ldl -lc /usr/lib/gcc/x86_64-redhat-linux/4.8.5/crtend.o /usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/crtn.o
 configure:21014: result:  -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib -limf -lm -lifport -lifcoremt -lsvml -lipgo -lirc -lpthread -lirc_s -ldl
 configure:21030: checking for dummy main to link with Fortran 77 libraries
 configure:21064: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c -lm   -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib -limf -lm -lifport -lifcoremt -lsvml -lipgo -lirc -lpthread -lirc_s -ldl >&5
@@ -2412,7 +2412,7 @@ configure:21149: checking for Fortran 77 name-mangling scheme
 configure:21162: ifort -c -g conftest.f >&5
 configure:21162: $? = 0
 configure:21203: icc -std=gnu99 -o conftest -O3 -ansi-alias -malign-double   conftest.c cfortran_test.o -lm   -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7 -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../../lib64/ -L/lib/../lib64 -L/lib/../lib64/ -L/usr/lib/../lib64 -L/usr/lib/../lib64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/compiler/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/mkl/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/ipp/lib/intel64/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/tbb/lib/intel64/gcc4.7/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/lib/intel64_lin/ -L/work/software/intel2018/compilers_and_libraries_2018.3.222/linux/daal/../tbb/lib/intel64_lin/gcc4.4/ -L/usr/lib/gcc/x86_64-redhat-linux/4.8.5/../../../ -L/lib64 -L/lib/ -L/usr/lib64 -L/usr/lib -limf -lm -lifport -lifcoremt -lsvml -lipgo -lirc -lpthread -lirc_s -ldl >&5
-/tmp/iccvG3ZpO.o: In function `main':
+/tmp/iccesHZ1U.o: In function `main':
 conftest.c:(.text+0x2d): undefined reference to `foobar'
 configure:21203: $? = 1
 configure: failed program was:
@@ -2599,88 +2599,130 @@ config.status:1335: creating tools/fftw-wisdom-to-conf
 config.status:1335: creating m4/Makefile
 config.status:1335: creating fftw.pc
 config.status:1335: creating config.h
+config.status:1516: config.h is unchanged
 config.status:1564: executing depfiles commands
 config.status:1641: cd kernel       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd simd-support       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/scalar       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/scalar/codelets       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/sse2       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/avx       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/avx-128-fma       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/avx2       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/avx2-128       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/avx512       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/kcvi       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/altivec       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/vsx       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/neon       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/generic-simd128       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd dft/simd/generic-simd256       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/scalar       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/scalar/r2cf       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/scalar/r2cb       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/scalar/r2r       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/sse2       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/avx       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/avx-128-fma       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/avx2       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/avx2-128       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/avx512       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/kcvi       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/altivec       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/vsx       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/neon       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/generic-simd128       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd rdft/simd/generic-simd256       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd reodft       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd threads       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd api       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd mpi       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd libbench2       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd tests       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1641: cd tools       && sed -e '/# am--include-marker/d' Makefile         | make -f - am--depfiles
+make: Nothing to be done for `am--depfiles'.
 config.status:1646: $? = 0
 config.status:1564: executing libtool commands
 
