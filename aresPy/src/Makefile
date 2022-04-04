@@ -119,10 +119,10 @@ default :
 	@ chmod a+rwX $(WORKDIR)
 	@ $(MAKE) $(GOAL)
 
-mpi :
-	@ if [ ! -d $(MPI_WORKDIR) ]; then mkdir $(MPI_WORKDIR); fi
-	@ chmod a+rwX $(MPI_WORKDIR)
-	@ $(MAKE) $(MPI_GOAL)
+# mpi :
+# 	@ if [ ! -d $(MPI_WORKDIR) ]; then mkdir $(MPI_WORKDIR); fi
+# 	@ chmod a+rwX $(MPI_WORKDIR)
+# 	@ $(MAKE) $(MPI_GOAL)
 # Rules
 #$(GOAL) : $(OBJS)
 #	$(LINKER) $(FFLAGS) -o $(GOAL) $(OBJS)\

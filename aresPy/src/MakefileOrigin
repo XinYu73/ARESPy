@@ -44,11 +44,11 @@ MPIFC = mpiifort
 MPILINKER = $(MPIFC)
 
 #> lib or other include file path
-LIB_PATH_ROOT=/work/home/xinyu/soft/ARES/ares_lib/lib
+LIB_PATH_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib
 LIB_PATH=-L ${LIB_PATH_ROOT}
 LIB_MKL_ROOT=${MKLROOT}/lib/intel64
 LIB_MKL_PATH=-L ${LIB_MKL_ROOT}
-FFTW_DIR_ROOT=/work/home/xinyu/soft/ARES/ares_lib/lib/fftw
+FFTW_DIR_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib/fftw
 FFTW_DIR=-L ${FFTW_DIR_ROOT}/lib
 
 #FFLAGS
