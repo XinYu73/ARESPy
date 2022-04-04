@@ -47,7 +47,7 @@ contains
     subroutine spline()
         implicit none
         external sgesv
-        INTEGER, PARAMETER :: N = 4000
+        integer ,PARAMETER :: N = 4
         DOUBLE complex, DIMENSION(N, 4)::Cmatrix
         INTEGER :: iter
         integer :: v(N + 1), iflag
