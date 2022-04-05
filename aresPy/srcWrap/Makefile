@@ -56,6 +56,8 @@ ifneq ($(findstring -std, ${CFLAGS}), -std)
    CFLAGS := $(CFLAGS) -std=c99
 endif
 
+prepro:
+	for item in $(ARESSRC);do $(MPIFC) -EP -P -DMPI $$item -cpp  -o ./preprocessed/$$item; done;
 
 mpiWrap:
 	@$(MAKE) f90WrapFile
@@ -74,6 +76,13 @@ buildObj:$(MPI_MODULES)
 
 $(MPI_MODULES): %.o: %.f90
 	$(MPIFC) -c $(MPI_FFLAGS) $< -o $@
+
+.PHONE:clean
+
+clean:
+	rm -f f90wrap_*.f90
+	rm -f *.o
+	rm -f arespy.py
 
 test :
 	echo $(ARESSRC)

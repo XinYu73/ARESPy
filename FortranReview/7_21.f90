@@ -5,7 +5,4 @@ module sharedData
     real, dimension(numVals) :: valuse
 contains
 
-
-
-
 end module sharedData
