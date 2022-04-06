@@ -40,7 +40,7 @@ LIB_MKL_PATH=-L${LIB_MKL_ROOT}
 FFTW_DIR_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib/fftw
 FFTW_DIR=-L${FFTW_DIR_ROOT}/lib
 
-FFLAGS = -O3 -fpp  -I${LIB_PATH_ROOT}/include  -module .
+FFLAGS = -O3 -fPIC -fpp  -I${LIB_PATH_ROOT}/include  -module .
 MPI_FFLAGS = -fPIC -O3 -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module .
 
 LIBS=-lfftw3 -larpack_ifort -lxcf90 -lxc
@@ -127,11 +127,11 @@ LIBSRC_WRAP_FPP_FILES = $(addsuffix .fpp,${LIBSRC_WRAP_SOURCES})
 all: _${PYTHON_MODN}.so _${PYTHON_MODN}_pkg.so
 
 
-clean:
-	-rm -f ${LIBSRC_OBJECTS} ${LIBSRC_FPP_FILES} libsrc.a _${PYTHON_MODN}*.so \
-	_${PYTHON_MODN}_pkg.so *.mod *.fpp f90wrap*.f90 f90wrap*.o *.o ${PYTHON_MODN}.py
-	-rm -rf ${PYTHON_MODN}_pkg
-	-rm -rf src.*/ .f2py_f2cmap .libs/ __pycache__/
+# clean:
+# 	-rm -f ${LIBSRC_OBJECTS} ${LIBSRC_FPP_FILES} libsrc.a _${PYTHON_MODN}*.so \
+# 	_${PYTHON_MODN}_pkg.so *.mod *.fpp f90wrap*.f90 f90wrap*.o *.o ${PYTHON_MODN}.py
+# 	-rm -rf ${PYTHON_MODN}_pkg
+# 	-rm -rf src.*/ .f2py_f2cmap .libs/ __pycache__/
 
 
 .f90.o:
@@ -154,15 +154,14 @@ _${PYTHON_MODN}.so: libsrc.a ${LIBSRC_FPP_FILES}
 	#f90wrap -m ${PYTHON_MODN} ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v
 	f2py-f90wrap --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
 	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN} f90wrap*.f90 \
-	${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} -L. -lsrc 
+	-L. -lsrc ${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS}  
 
 
 _${PYTHON_MODN}_pkg.so: libsrc.a ${LIBSRC_FPP_FILES}
 	#f90wrap -m ${PYTHON_MODN}_pkg ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v -P
 	f2py-f90wrap --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
 	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN}_pkg f90wrap*.f90 \
-	${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} -L. -lsrc 
-
+	-L. -lsrc ${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} 
 
 test: all
 	${PYTHON} tests.py
