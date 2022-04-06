@@ -12,6 +12,7 @@
              'i4b': 'int',
              'q2': 'long_long'},
  'real': {'': 'double',
+          '*8': 'double',
           '8': 'double',
           'dp': 'double',
           'q2': 'double',

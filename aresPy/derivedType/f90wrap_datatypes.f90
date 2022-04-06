@@ -115,7 +115,7 @@ subroutine f90wrap_alloc_arrays_finalise(this)
 end subroutine f90wrap_alloc_arrays_finalise
 
 subroutine f90wrap_init_alloc_arrays(dertype, m, n)
-    use datatypes_allocatable, only: alloc_arrays, init_alloc_arrays
+    use datatypes_allocatable, only: init_alloc_arrays, alloc_arrays
     implicit none
     
     type alloc_arrays_ptr_type
@@ -130,7 +130,7 @@ subroutine f90wrap_init_alloc_arrays(dertype, m, n)
 end subroutine f90wrap_init_alloc_arrays
 
 subroutine f90wrap_destroy_alloc_arrays(dertype)
-    use datatypes_allocatable, only: alloc_arrays, destroy_alloc_arrays
+    use datatypes_allocatable, only: destroy_alloc_arrays, alloc_arrays
     implicit none
     
     type alloc_arrays_ptr_type
@@ -666,7 +666,7 @@ end subroutine f90wrap_alloc_arrays_2_finalise
 
 subroutine f90wrap_array_nested__array_getitem__xi(f90wrap_this, f90wrap_i, xiitem)
     
-    use datatypes, only: array_nested, different_types
+    use datatypes, only: different_types, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -696,7 +696,7 @@ end subroutine f90wrap_array_nested__array_getitem__xi
 
 subroutine f90wrap_array_nested__array_setitem__xi(f90wrap_this, f90wrap_i, xiitem)
     
-    use datatypes, only: array_nested, different_types
+    use datatypes, only: different_types, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -726,7 +726,7 @@ end subroutine f90wrap_array_nested__array_setitem__xi
 
 subroutine f90wrap_array_nested__array_len__xi(f90wrap_this, f90wrap_n)
     
-    use datatypes, only: array_nested, different_types
+    use datatypes, only: different_types, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -749,7 +749,7 @@ end subroutine f90wrap_array_nested__array_len__xi
 
 subroutine f90wrap_array_nested__array_getitem__omicron(f90wrap_this, f90wrap_i, omicronitem)
     
-    use datatypes, only: array_nested, fixed_shape_arrays
+    use datatypes, only: fixed_shape_arrays, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -779,7 +779,7 @@ end subroutine f90wrap_array_nested__array_getitem__omicron
 
 subroutine f90wrap_array_nested__array_setitem__omicron(f90wrap_this, f90wrap_i, omicronitem)
     
-    use datatypes, only: array_nested, fixed_shape_arrays
+    use datatypes, only: fixed_shape_arrays, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -809,7 +809,7 @@ end subroutine f90wrap_array_nested__array_setitem__omicron
 
 subroutine f90wrap_array_nested__array_len__omicron(f90wrap_this, f90wrap_n)
     
-    use datatypes, only: array_nested, fixed_shape_arrays
+    use datatypes, only: fixed_shape_arrays, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -943,7 +943,7 @@ subroutine f90wrap_array_nested_finalise(this)
 end subroutine f90wrap_array_nested_finalise
 
 subroutine f90wrap_init_array_nested(dertype, size_bn)
-    use datatypes, only: array_nested, init_array_nested
+    use datatypes, only: init_array_nested, array_nested
     implicit none
     
     type array_nested_ptr_type
@@ -957,7 +957,7 @@ subroutine f90wrap_init_array_nested(dertype, size_bn)
 end subroutine f90wrap_init_array_nested
 
 subroutine f90wrap_destroy_array_nested(dertype)
-    use datatypes, only: array_nested, destroy_array_nested
+    use datatypes, only: destroy_array_nested, array_nested
     implicit none
     
     type array_nested_ptr_type

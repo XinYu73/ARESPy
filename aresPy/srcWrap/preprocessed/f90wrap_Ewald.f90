@@ -191,26 +191,6 @@ subroutine f90wrap_ewald_stress(latticev, ionpositions, iontpid, ret_ewald_stres
     ret_ewald_stress = ewald_stress(latticev=latticev, ionpositions=ionpositions, iontpid=iontpid, ioncharges=ioncharges)
 end subroutine f90wrap_ewald_stress
 
-subroutine f90wrap_ewaldrpstr(ret_ewaldrpstr, eta, n0)
-    use ewald, only: ewaldrpstr
-    implicit none
-    
-    real(8), intent(out), dimension(3,n0) :: ret_ewaldrpstr
-    real(8) :: eta
-    integer :: n0
-    ret_ewaldrpstr = ewaldrpstr(eta=eta)
-end subroutine f90wrap_ewaldrpstr
-
-subroutine f90wrap_ewaldavstr(ret_ewaldavstr, eta, n0)
-    use ewald, only: ewaldavstr
-    implicit none
-    
-    real(8), intent(out), dimension(3,n0) :: ret_ewaldavstr
-    real(8) :: eta
-    integer :: n0
-    ret_ewaldavstr = ewaldavstr(eta=eta)
-end subroutine f90wrap_ewaldavstr
-
 subroutine f90wrap_vectorlength(ret_vectorlength, vc)
     use ewald, only: vectorlength
     implicit none

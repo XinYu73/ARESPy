@@ -8,8 +8,8 @@ subroutine f90wrap_electronicscf
 end subroutine f90wrap_electronicscf
 
 subroutine f90wrap_arpackscf(nps, rhos, rho, eig, n0, n1, n2)
-    use grid_module, only: eigen_type
     use scf_module, only: arpackscf
+    use grid_module, only: eigen_type
     implicit none
     
     type eigen_type_ptr_type

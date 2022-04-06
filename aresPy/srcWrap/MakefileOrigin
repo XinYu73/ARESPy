@@ -38,34 +38,34 @@ endif
 
 #> ifort
 ifeq ($(PLATFORM_ENV),'intel')
-FC = ifort
-LINKER = $(FC)
-MPIFC = mpiifort
-MPILINKER = $(MPIFC)
+	FC = ifort
+	LINKER = $(FC)
+	MPIFC = mpiifort
+	MPILINKER = $(MPIFC)
 
-#> lib or other include file path
-LIB_PATH_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib
-LIB_PATH=-L ${LIB_PATH_ROOT}
-LIB_MKL_ROOT=${MKLROOT}/lib/intel64
-LIB_MKL_PATH=-L ${LIB_MKL_ROOT}
-FFTW_DIR_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib/fftw
-FFTW_DIR=-L ${FFTW_DIR_ROOT}/lib
+	#> lib or other include file path
+	LIB_PATH_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib
+	LIB_PATH=-L ${LIB_PATH_ROOT}
+	LIB_MKL_ROOT=${MKLROOT}/lib/intel64
+	LIB_MKL_PATH=-L ${LIB_MKL_ROOT}
+	FFTW_DIR_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib/fftw
+	FFTW_DIR=-L ${FFTW_DIR_ROOT}/lib
 
-#FFLAGS
-FFLAGS = -O3 -fpp  -I${LIB_PATH_ROOT}/include  -module ${WORKDIR}
-MPI_FFLAGS = -O3 -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module ${MPI_WORKDIR}
-#Debug
-#FFLAGS = -g -fpp  -I${LIB_PATH_ROOT}/include  -module ${WORKDIR}
-#MPI_FFLAGS = -g -CU -CB -CA -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module ${MPI_WORKDIR}
+	#FFLAGS
+	FFLAGS = -O3 -fpp  -I${LIB_PATH_ROOT}/include  -module ${WORKDIR}
+	MPI_FFLAGS = -O3 -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module ${MPI_WORKDIR}
+	#Debug
+	#FFLAGS = -g -fpp  -I${LIB_PATH_ROOT}/include  -module ${WORKDIR}
+	#MPI_FFLAGS = -g -CU -CB -CA -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I$			{LIB_PATH_ROOT}/include -module ${MPI_WORKDIR}
 
-#LIBS = -lfftw3 -lfmm3d -larpack_ifort -lxcf90 -lxc
-LIBS = -lfftw3 -larpack_ifort -lxcf90 -lxc
-MKLLIBS= -lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
+	#LIBS = -lfftw3 -lfmm3d -larpack_ifort -lxcf90 -lxc
+	LIBS = -lfftw3 -larpack_ifort -lxcf90 -lxc
+	MKLLIBS= -lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
 
-#MPI_LIBS = -lfmm3d  -larpack_ifort -lxcf90 -lxc# -L/home/xlt/Software/mpiP-3.5/lib -lmpiP
-MPI_LIBS = -larpack_ifort -lxcf90 -lxc
-MPI_FFT = -lfftw3_mpi -lfftw3 
-MPI_MKLLIBS= -lmkl_blacs_intelmpi_lp64 -lmkl_lapack95_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5  -lpthread
+	#MPI_LIBS = -lfmm3d  -larpack_ifort -lxcf90 -lxc# -L/home/xlt/Software/mpiP-3.5/lib -lmpiP
+	MPI_LIBS = -larpack_ifort -lxcf90 -lxc
+	MPI_FFT = -lfftw3_mpi -lfftw3 
+	MPI_MKLLIBS= -lmkl_blacs_intelmpi_lp64 -lmkl_lapack95_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5  -lpthread
 endif
 
 #----------------------------------------------------------------------------------

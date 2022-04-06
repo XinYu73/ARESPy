@@ -287,11 +287,10 @@ CONTAINS
 
        IMPLICIT NONE
 
-       INTEGER, INTENT(IN) :: & 
-          NAM, NUH
+       INTEGER, INTENT(IN) :: NAM, NUH
 
-!REAL*8, DIMENSION(:), INTENT(IN) :: &
-!   SP
+         !REAL*8, DIMENSION(:), INTENT(IN) :: &
+         !   SP
        REAL*8,INTENT(IN) :: SP
  
        REAL*8, DIMENSION(:,:), INTENT(IN) :: & 

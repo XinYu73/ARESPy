@@ -110,7 +110,7 @@ subroutine f90wrap_get_psi(nrho, n_s, nspin, psi_new, n0, n1, n2)
     call get_psi(nrho=nrho, n_s=n_s, nspin=nspin, psi_new=psi_new)
 end subroutine f90wrap_get_psi
 
-subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, trans_phase, n0, n1, n2, n3, n4, &
+subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, trans_phase, n0, n4, &
     n5)
     use succeed, only: cal_trans_phase
     implicit none
@@ -128,12 +128,6 @@ subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, 
     complex(8), intent(inout), dimension(n2,n3,n4,n5) :: trans_phase
     integer :: n0
     !f2py intent(hide), depend(r_new) :: n0 = shape(r_new,1)
-    integer :: n1
-    !f2py intent(hide), depend(gvec) :: n1 = shape(gvec,1)
-    integer :: n2
-    !f2py intent(hide), depend(trans_phase) :: n2 = shape(trans_phase,0)
-    integer :: n3
-    !f2py intent(hide), depend(trans_phase) :: n3 = shape(trans_phase,1)
     integer :: n4
     !f2py intent(hide), depend(trans_phase) :: n4 = shape(trans_phase,2)
     integer :: n5
@@ -142,7 +136,7 @@ subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, 
         trans_phase=trans_phase)
 end subroutine f90wrap_cal_trans_phase
 
-subroutine f90wrap_get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, gvec, n0, n1, n2, n3, n4, &
+subroutine f90wrap_get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, gvec, n0, n4, &
     n5, n6)
     use succeed, only: get_new_rho_psi
     implicit none
@@ -160,12 +154,6 @@ subroutine f90wrap_get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, 
     real(8), intent(in), dimension(4,n6) :: gvec
     integer :: n0
     !f2py intent(hide), depend(r_new) :: n0 = shape(r_new,1)
-    integer :: n1
-    !f2py intent(hide), depend(rho_new) :: n1 = shape(rho_new,0)
-    integer :: n2
-    !f2py intent(hide), depend(rho_new) :: n2 = shape(rho_new,1)
-    integer :: n3
-    !f2py intent(hide), depend(psi_new) :: n3 = shape(psi_new,0)
     integer :: n4
     !f2py intent(hide), depend(psi_new) :: n4 = shape(psi_new,1)
     integer :: n5

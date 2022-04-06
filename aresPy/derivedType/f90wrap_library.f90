@@ -9,6 +9,15 @@ subroutine f90wrap_return_value_func(ret_val_out, val_in)
     ret_val_out = return_value_func(val_in=val_in)
 end subroutine f90wrap_return_value_func
 
+subroutine f90wrap_subfunc(ret_subfunc, a)
+    use library, only: subfunc
+    implicit none
+    
+    integer, intent(out) :: ret_subfunc
+    integer, intent(in) :: a
+    ret_subfunc = subfunc(a=a)
+end subroutine f90wrap_subfunc
+
 subroutine f90wrap_return_value_sub(val_in, val_out)
     use library, only: return_value_sub
     implicit none
@@ -65,8 +74,8 @@ subroutine f90wrap_only_manipulate(n, array, n0)
 end subroutine f90wrap_only_manipulate
 
 subroutine f90wrap_set_derived_type(dt, dt_beta, dt_delta)
-    use datatypes, only: different_types
     use library, only: set_derived_type
+    use datatypes, only: different_types
     implicit none
     
     type different_types_ptr_type
@@ -102,8 +111,8 @@ subroutine f90wrap_modify_derived_types(dt1, dt2, dt3)
 end subroutine f90wrap_modify_derived_types
 
 subroutine f90wrap_modify_dertype_fixed_shape_arrays(dertype)
-    use datatypes, only: fixed_shape_arrays
     use library, only: modify_dertype_fixed_shape_arrays
+    use datatypes, only: fixed_shape_arrays
     implicit none
     
     type fixed_shape_arrays_ptr_type
@@ -148,8 +157,8 @@ subroutine f90wrap_modify_dertype_pointer_arrays(dertype)
 end subroutine f90wrap_modify_dertype_pointer_arrays
 
 subroutine f90wrap_return_dertype_alloc_arrays(m, n, dertype)
-    use datatypes_allocatable, only: alloc_arrays
     use library, only: return_dertype_alloc_arrays
+    use datatypes_allocatable, only: alloc_arrays
     implicit none
     
     type alloc_arrays_ptr_type

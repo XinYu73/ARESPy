@@ -2,6 +2,7 @@
     "real": {
         "": "double",
         "8": "double",
+        "*8": "double",
         "q2": "double",
         "sp": "double",
         "dp": "double"

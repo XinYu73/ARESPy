@@ -2,7 +2,7 @@
 Module library
 
 
-Defined at library.fpp lines 5-153
+Defined at library.fpp lines 5-163
 
 """
 from __future__ import print_function, absolute_import, division
@@ -32,12 +32,31 @@ def return_value_func(val_in):
     val_out = _ExampleDerivedTypes_pkg.f90wrap_return_value_func(val_in=val_in)
     return val_out
 
+def subfunc(a):
+    """
+    subfunc = subfunc(a)
+    
+    
+    Defined at library.fpp lines 13-21
+    
+    Parameters
+    ----------
+    a : int
+    
+    Returns
+    -------
+    subfunc : int
+    
+    """
+    subfunc = _ExampleDerivedTypes_pkg.f90wrap_subfunc(a=a)
+    return subfunc
+
 def return_value_sub(val_in):
     """
     val_out = return_value_sub(val_in)
     
     
-    Defined at library.fpp lines 13-16
+    Defined at library.fpp lines 23-26
     
     Parameters
     ----------
@@ -56,7 +75,7 @@ def return_a_dt_func():
     dt = return_a_dt_func()
     
     
-    Defined at library.fpp lines 18-23
+    Defined at library.fpp lines 28-33
     
     
     Returns
@@ -75,7 +94,7 @@ def do_array_stuff(n, x, y, br, co):
     do_array_stuff(n, x, y, br, co)
     
     
-    Defined at library.fpp lines 26-38
+    Defined at library.fpp lines 36-48
     
     Parameters
     ----------
@@ -93,7 +112,7 @@ def only_manipulate(n, array):
     only_manipulate(n, array)
     
     
-    Defined at library.fpp lines 40-48
+    Defined at library.fpp lines 50-58
     
     Parameters
     ----------
@@ -108,7 +127,7 @@ def set_derived_type(dt_beta, dt_delta):
     dt = set_derived_type(dt_beta, dt_delta)
     
     
-    Defined at library.fpp lines 50-56
+    Defined at library.fpp lines 60-66
     
     Parameters
     ----------
@@ -132,7 +151,7 @@ def modify_derived_types(self, dt2, dt3):
     modify_derived_types(self, dt2, dt3)
     
     
-    Defined at library.fpp lines 58-66
+    Defined at library.fpp lines 68-76
     
     Parameters
     ----------
@@ -149,7 +168,7 @@ def modify_dertype_fixed_shape_arrays():
     dertype = modify_dertype_fixed_shape_arrays()
     
     
-    Defined at library.fpp lines 68-74
+    Defined at library.fpp lines 78-84
     
     
     Returns
@@ -168,7 +187,7 @@ def return_dertype_pointer_arrays(m, n):
     dertype = return_dertype_pointer_arrays(m, n)
     
     
-    Defined at library.fpp lines 76-83
+    Defined at library.fpp lines 86-93
     
     Parameters
     ----------
@@ -192,7 +211,7 @@ def modify_dertype_pointer_arrays(self):
     modify_dertype_pointer_arrays(self)
     
     
-    Defined at library.fpp lines 85-92
+    Defined at library.fpp lines 95-102
     
     Parameters
     ----------
@@ -206,7 +225,7 @@ def return_dertype_alloc_arrays(m, n):
     dertype = return_dertype_alloc_arrays(m, n)
     
     
-    Defined at library.fpp lines 94-101
+    Defined at library.fpp lines 104-111
     
     Parameters
     ----------
@@ -229,7 +248,7 @@ def modify_dertype_alloc_arrays(self):
     modify_dertype_alloc_arrays(self)
     
     
-    Defined at library.fpp lines 103-110
+    Defined at library.fpp lines 113-120
     
     Parameters
     ----------

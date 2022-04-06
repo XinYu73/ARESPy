@@ -12,7 +12,7 @@ subroutine f90wrap_mixer_data__array__DXL(this, nd, dtype, dshape, dloc)
     integer, intent(out) :: dtype
     integer, dimension(10), intent(out) :: dshape
     integer*8, intent(out) :: dloc
-    
+
     nd = 2
     dtype = 12
     this_ptr = transfer(this, this_ptr)
@@ -36,7 +36,7 @@ subroutine f90wrap_mixer_data__array__DFL(this, nd, dtype, dshape, dloc)
     integer, intent(out) :: dtype
     integer, dimension(10), intent(out) :: dshape
     integer*8, intent(out) :: dloc
-    
+
     nd = 2
     dtype = 12
     this_ptr = transfer(this, this_ptr)
@@ -60,7 +60,7 @@ subroutine f90wrap_mixer_data__array__VOMA(this, nd, dtype, dshape, dloc)
     integer, intent(out) :: dtype
     integer, dimension(10), intent(out) :: dshape
     integer*8, intent(out) :: dloc
-    
+
     nd = 2
     dtype = 12
     this_ptr = transfer(this, this_ptr)
@@ -84,7 +84,7 @@ subroutine f90wrap_mixer_data__array__kerker(this, nd, dtype, dshape, dloc)
     integer, intent(out) :: dtype
     integer, dimension(10), intent(out) :: dshape
     integer*8, intent(out) :: dloc
-    
+
     nd = 1
     dtype = 12
     this_ptr = transfer(this, this_ptr)
@@ -108,7 +108,7 @@ subroutine f90wrap_mixer_data__array__DXGL(this, nd, dtype, dshape, dloc)
     integer, intent(out) :: dtype
     integer, dimension(10), intent(out) :: dshape
     integer*8, intent(out) :: dloc
-    
+
     nd = 2
     dtype = 15
     this_ptr = transfer(this, this_ptr)
@@ -132,7 +132,7 @@ subroutine f90wrap_mixer_data__array__DRGL(this, nd, dtype, dshape, dloc)
     integer, intent(out) :: dtype
     integer, dimension(10), intent(out) :: dshape
     integer*8, intent(out) :: dloc
-    
+
     nd = 2
     dtype = 15
     this_ptr = transfer(this, this_ptr)
@@ -147,33 +147,33 @@ end subroutine f90wrap_mixer_data__array__DRGL
 subroutine f90wrap_mixer_data_initialise(this)
     use mixer_module, only: mixer_data
     implicit none
-    
+
     type mixer_data_ptr_type
         type(mixer_data), pointer :: p => NULL()
     end type mixer_data_ptr_type
     type(mixer_data_ptr_type) :: this_ptr
     integer, intent(out), dimension(2) :: this
-    allocate(this_ptr%p)
+    allocate (this_ptr%p)
     this = transfer(this_ptr, this)
 end subroutine f90wrap_mixer_data_initialise
 
 subroutine f90wrap_mixer_data_finalise(this)
     use mixer_module, only: mixer_data
     implicit none
-    
+
     type mixer_data_ptr_type
         type(mixer_data), pointer :: p => NULL()
     end type mixer_data_ptr_type
     type(mixer_data_ptr_type) :: this_ptr
     integer, intent(in), dimension(2) :: this
     this_ptr = transfer(this, this_ptr)
-    deallocate(this_ptr%p)
+    deallocate (this_ptr%p)
 end subroutine f90wrap_mixer_data_finalise
 
 subroutine f90wrap_init_mixer(nps)
     use mixer_module, only: init_mixer
     implicit none
-    
+
     integer(4), intent(in) :: nps
     call init_mixer(nps=nps)
 end subroutine f90wrap_init_mixer
@@ -181,17 +181,17 @@ end subroutine f90wrap_init_mixer
 subroutine f90wrap_destroy_mixer
     use mixer_module, only: destroy_mixer
     implicit none
-    
+
     call destroy_mixer()
 end subroutine f90wrap_destroy_mixer
 
 subroutine f90wrap_mixing(iter, xout, xin, res, n0, n1, n2, n3)
     use mixer_module, only: mixing
     implicit none
-    
+
     integer, intent(in) :: iter
-    real(8), intent(inout), dimension(n0,n1) :: xout
-    real(8), intent(inout), dimension(n2,n3) :: xin
+    real(8), intent(inout), dimension(n0, n1) :: xout
+    real(8), intent(inout), dimension(n2, n3) :: xin
     real(8), intent(out) :: res
     integer :: n0
     !f2py intent(hide), depend(xout) :: n0 = shape(xout,0)
@@ -207,7 +207,7 @@ end subroutine f90wrap_mixing
 subroutine f90wrap_anderson_mixing(iiter, xin, xout, err, n0, n1)
     use mixer_module, only: anderson_mixing
     implicit none
-    
+
     integer, intent(in) :: iiter
     real(8), intent(inout), dimension(n0) :: xin
     real(8), intent(inout), dimension(n1) :: xout
@@ -222,44 +222,44 @@ end subroutine f90wrap_anderson_mixing
 subroutine f90wrap_om1c(nam, nuh, sp, dfp, voma)
     use mixer_module, only: om1c
     implicit none
-    
+
     integer, intent(in) :: nam
     integer, intent(in) :: nuh
-    real :: sp
-    real :: dfp
-    real :: voma
+    real(8):: sp
+    real(8), DIMENSION(:, :) :: dfp
+    real(8), DIMENSION(:, :):: voma
     call om1c(NAM=nam, NUH=nuh, sp=sp, dfp=dfp, voma=voma)
 end subroutine f90wrap_om1c
 
 subroutine f90wrap_amst(beta, w0, nam, nuh, dxp, dfp, sp, xl, fl, voma, xn)
     use mixer_module, only: amst
     implicit none
-    
-    real :: beta
-    real :: w0
+
+    real(8) :: beta
+    real(8) :: w0
     integer, intent(in) :: nam
     integer, intent(in) :: nuh
-    real :: dxp
-    real :: dfp
-    real :: sp
-    real :: xl
-    real :: fl
-    real :: voma
-    real :: xn
+    real(8), DIMENSION(:, :) :: dxp
+    real(8), DIMENSION(:, :) :: dfp
+    real(8) :: sp
+    real(8), DIMENSION(:) :: xl
+    real(8), DIMENSION(:) :: fl
+    real(8), DIMENSION(:, :) :: voma
+    real(8), DIMENSION(:) :: xn
     call amst(beta=beta, w0=w0, NAM=nam, NUH=nuh, dxp=dxp, dfp=dfp, sp=sp, xl=xl, fl=fl, voma=voma, xn=xn)
 end subroutine f90wrap_amst
 
 subroutine f90wrap_init_kerker
     use mixer_module, only: init_kerker
     implicit none
-    
+
     call init_kerker()
 end subroutine f90wrap_init_kerker
 
 subroutine f90wrap_rpulayk_mixing(iter, rlg, xing, n0, n1)
     use mixer_module, only: rpulayk_mixing
     implicit none
-    
+
     integer(4), intent(in) :: iter
     complex(8), intent(inout), dimension(n0) :: rlg
     complex(8), intent(inout), dimension(n1) :: xing
@@ -273,13 +273,13 @@ end subroutine f90wrap_rpulayk_mixing
 subroutine f90wrap_rpulayk_mix(beta, w0, dime, nh, dxl, drl, xl, rl, xn, n0, n1, n2, n3, n4, n5, n6)
     use mixer_module, only: rpulayk_mix
     implicit none
-    
+
     real(8), intent(in) :: beta
     real(8), intent(in) :: w0
     integer(4), intent(in) :: dime
     integer(4), intent(in) :: nh
-    complex(8), intent(in), dimension(n0,n1) :: dxl
-    complex(8), intent(in), dimension(n2,n3) :: drl
+    complex(8), intent(in), dimension(n0, n1) :: dxl
+    complex(8), intent(in), dimension(n2, n3) :: drl
     complex(8), intent(in), dimension(n4) :: xl
     complex(8), intent(in), dimension(n5) :: rl
     complex(8), intent(inout), dimension(n6) :: xn
@@ -303,7 +303,7 @@ end subroutine f90wrap_rpulayk_mix
 subroutine f90wrap_resta_mixing(iter, rlg, xing, n0, n1)
     use mixer_module, only: resta_mixing
     implicit none
-    
+
     integer(4), intent(in) :: iter
     complex(8), intent(inout), dimension(n0) :: rlg
     complex(8), intent(inout), dimension(n1) :: xing
@@ -317,7 +317,7 @@ end subroutine f90wrap_resta_mixing
 subroutine f90wrap_init_resta
     use mixer_module, only: init_resta
     implicit none
-    
+
     call init_resta()
 end subroutine f90wrap_init_resta
 
@@ -325,7 +325,7 @@ subroutine f90wrap_mixer_module__get__NAM(f90wrap_NAM)
     use mixer_module, only: mixer_module_NAM => NAM
     implicit none
     integer(4), intent(out) :: f90wrap_NAM
-    
+
     f90wrap_NAM = mixer_module_NAM
 end subroutine f90wrap_mixer_module__get__NAM
 
@@ -333,7 +333,7 @@ subroutine f90wrap_mixer_module__set__NAM(f90wrap_NAM)
     use mixer_module, only: mixer_module_NAM => NAM
     implicit none
     integer(4), intent(in) :: f90wrap_NAM
-    
+
     mixer_module_NAM = f90wrap_NAM
 end subroutine f90wrap_mixer_module__set__NAM
 
@@ -341,7 +341,7 @@ subroutine f90wrap_mixer_module__get__NUH(f90wrap_NUH)
     use mixer_module, only: mixer_module_NUH => NUH
     implicit none
     integer(4), intent(out) :: f90wrap_NUH
-    
+
     f90wrap_NUH = mixer_module_NUH
 end subroutine f90wrap_mixer_module__get__NUH
 
@@ -349,7 +349,7 @@ subroutine f90wrap_mixer_module__set__NUH(f90wrap_NUH)
     use mixer_module, only: mixer_module_NUH => NUH
     implicit none
     integer(4), intent(in) :: f90wrap_NUH
-    
+
     mixer_module_NUH = f90wrap_NUH
 end subroutine f90wrap_mixer_module__set__NUH
 

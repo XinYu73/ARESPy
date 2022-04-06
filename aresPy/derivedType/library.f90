@@ -7,8 +7,19 @@ contains
 
     function return_value_func(val_in) result(val_out)
         INTEGER(4) val_in, val_out
-        val_out = val_in + 10
+        val_out = val_in + 10 + subfunc(10)
     end function return_value_func
+
+    integer function subfunc(a)
+        integer, intent(in)::a
+        integer::c
+        call square
+        subfunc = c
+    contains
+        subroutine square
+            c = a**2
+        end subroutine square
+    end function subfunc
 
     subroutine return_value_sub(val_in, val_out)
         INTEGER(4), INTENT(in) :: val_in

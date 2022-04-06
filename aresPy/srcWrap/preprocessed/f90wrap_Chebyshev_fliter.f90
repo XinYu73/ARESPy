@@ -1,8 +1,8 @@
 ! Module chebyshev_module defined in file Chebyshev_fliter.fpp
 
 subroutine f90wrap_buildsubspace(nps, nev, veff, eig, n0, n1)
-    use grid_module, only: eigen_type
     use chebyshev_module, only: buildsubspace
+    use grid_module, only: eigen_type
     implicit none
     
     type eigen_type_ptr_type

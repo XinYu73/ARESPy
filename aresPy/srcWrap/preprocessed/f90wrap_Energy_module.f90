@@ -1,8 +1,8 @@
 ! Module energy_module defined in file Energy_module.fpp
 
 subroutine f90wrap_totalenergy(nps, eig, rhos, rho, n0, n1, n2)
-    use energy_module, only: totalenergy
     use grid_module, only: eigen_type
+    use energy_module, only: totalenergy
     implicit none
     
     type eigen_type_ptr_type

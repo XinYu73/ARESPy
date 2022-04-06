@@ -1053,7 +1053,7 @@ class Library(f90wrap.runtime.FortranModule):
     Module library
     
     
-    Defined at library.fpp lines 5-153
+    Defined at library.fpp lines 5-163
     
     """
     @staticmethod
@@ -1077,12 +1077,32 @@ class Library(f90wrap.runtime.FortranModule):
         return val_out
     
     @staticmethod
+    def subfunc(a):
+        """
+        subfunc = subfunc(a)
+        
+        
+        Defined at library.fpp lines 13-21
+        
+        Parameters
+        ----------
+        a : int
+        
+        Returns
+        -------
+        subfunc : int
+        
+        """
+        subfunc = _ExampleDerivedTypes.f90wrap_subfunc(a=a)
+        return subfunc
+    
+    @staticmethod
     def return_value_sub(val_in):
         """
         val_out = return_value_sub(val_in)
         
         
-        Defined at library.fpp lines 13-16
+        Defined at library.fpp lines 23-26
         
         Parameters
         ----------
@@ -1102,7 +1122,7 @@ class Library(f90wrap.runtime.FortranModule):
         dt = return_a_dt_func()
         
         
-        Defined at library.fpp lines 18-23
+        Defined at library.fpp lines 28-33
         
         
         Returns
@@ -1122,7 +1142,7 @@ class Library(f90wrap.runtime.FortranModule):
         do_array_stuff(n, x, y, br, co)
         
         
-        Defined at library.fpp lines 26-38
+        Defined at library.fpp lines 36-48
         
         Parameters
         ----------
@@ -1141,7 +1161,7 @@ class Library(f90wrap.runtime.FortranModule):
         only_manipulate(n, array)
         
         
-        Defined at library.fpp lines 40-48
+        Defined at library.fpp lines 50-58
         
         Parameters
         ----------
@@ -1157,7 +1177,7 @@ class Library(f90wrap.runtime.FortranModule):
         dt = set_derived_type(dt_beta, dt_delta)
         
         
-        Defined at library.fpp lines 50-56
+        Defined at library.fpp lines 60-66
         
         Parameters
         ----------
@@ -1182,7 +1202,7 @@ class Library(f90wrap.runtime.FortranModule):
         modify_derived_types(self, dt2, dt3)
         
         
-        Defined at library.fpp lines 58-66
+        Defined at library.fpp lines 68-76
         
         Parameters
         ----------
@@ -1200,7 +1220,7 @@ class Library(f90wrap.runtime.FortranModule):
         dertype = modify_dertype_fixed_shape_arrays()
         
         
-        Defined at library.fpp lines 68-74
+        Defined at library.fpp lines 78-84
         
         
         Returns
@@ -1220,7 +1240,7 @@ class Library(f90wrap.runtime.FortranModule):
         dertype = return_dertype_pointer_arrays(m, n)
         
         
-        Defined at library.fpp lines 76-83
+        Defined at library.fpp lines 86-93
         
         Parameters
         ----------
@@ -1244,7 +1264,7 @@ class Library(f90wrap.runtime.FortranModule):
         modify_dertype_pointer_arrays(self)
         
         
-        Defined at library.fpp lines 85-92
+        Defined at library.fpp lines 95-102
         
         Parameters
         ----------
@@ -1259,7 +1279,7 @@ class Library(f90wrap.runtime.FortranModule):
         dertype = return_dertype_alloc_arrays(m, n)
         
         
-        Defined at library.fpp lines 94-101
+        Defined at library.fpp lines 104-111
         
         Parameters
         ----------
@@ -1283,7 +1303,7 @@ class Library(f90wrap.runtime.FortranModule):
         modify_dertype_alloc_arrays(self)
         
         
-        Defined at library.fpp lines 103-110
+        Defined at library.fpp lines 113-120
         
         Parameters
         ----------

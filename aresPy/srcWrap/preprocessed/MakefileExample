@@ -43,11 +43,11 @@ FFTW_DIR=-L${FFTW_DIR_ROOT}/lib
 FFLAGS = -O3 -fpp  -I${LIB_PATH_ROOT}/include  -module .
 MPI_FFLAGS = -fPIC -O3 -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module .
 
-LIBS = -lfftw3 -larpack_ifort -lxcf90 -lxc
-MKLLIBS= -lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
-MPI_LIBS = -larpack_ifort -lxcf90 -lxc
-MPI_FFT = -lfftw3_mpi -lfftw3 
-MPI_MKLLIBS= -lmkl_blacs_intelmpi_lp64 -lmkl_lapack95_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5  -lpthread
+LIBS=-lfftw3 -larpack_ifort -lxcf90 -lxc
+MKLLIBS=-lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
+MPI_LIBS=-larpack_ifort -lxcf90 -lxc
+MPI_FFT=-lfftw3_mpi -lfftw3 
+MPI_MKLLIBS=-lmkl_blacs_intelmpi_lp64 -lmkl_lapack95_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
 #=======================================================================
 
 UNAME = $(shell uname)
@@ -151,14 +151,14 @@ libsrc.a: ${LIBSRC_OBJECTS}
 
 
 _${PYTHON_MODN}.so: libsrc.a ${LIBSRC_FPP_FILES}
-	f90wrap -m ${PYTHON_MODN} ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v
+	#f90wrap -m ${PYTHON_MODN} ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v
 	f2py-f90wrap --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
 	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN} f90wrap*.f90 \
 	${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} -L. -lsrc 
 
 
 _${PYTHON_MODN}_pkg.so: libsrc.a ${LIBSRC_FPP_FILES}
-	f90wrap -m ${PYTHON_MODN}_pkg ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v -P
+	#f90wrap -m ${PYTHON_MODN}_pkg ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v -P
 	f2py-f90wrap --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
 	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN}_pkg f90wrap*.f90 \
 	${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} -L. -lsrc 

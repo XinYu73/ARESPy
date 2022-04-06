@@ -11826,7 +11826,7 @@ class Ewald(f90wrap.runtime.FortranModule):
     Module ewald
     
     
-    Defined at Ewald.fpp lines 5-739
+    Defined at Ewald.fpp lines 5-826
     
     """
     @f90wrap.runtime.register_class("arespy.ion")
@@ -12049,52 +12049,12 @@ class Ewald(f90wrap.runtime.FortranModule):
         return ewald_stress
     
     @staticmethod
-    def ewaldrpstr(eta):
-        """
-        ewaldrpstr = ewaldrpstr(eta)
-        
-        
-        Defined at Ewald.fpp lines 572-616
-        
-        Parameters
-        ----------
-        eta : float
-        
-        Returns
-        -------
-        ewaldrpstr : float array
-        
-        """
-        ewaldrpstr = _arespy.f90wrap_ewaldrpstr(eta=eta)
-        return ewaldrpstr
-    
-    @staticmethod
-    def ewaldavstr(eta):
-        """
-        ewaldavstr = ewaldavstr(eta)
-        
-        
-        Defined at Ewald.fpp lines 618-625
-        
-        Parameters
-        ----------
-        eta : float
-        
-        Returns
-        -------
-        ewaldavstr : float array
-        
-        """
-        ewaldavstr = _arespy.f90wrap_ewaldavstr(eta=eta)
-        return ewaldavstr
-    
-    @staticmethod
     def vectorlength(vc):
         """
         vectorlength = vectorlength(vc)
         
         
-        Defined at Ewald.fpp lines 628-629
+        Defined at Ewald.fpp lines 715-716
         
         Parameters
         ----------
@@ -12114,7 +12074,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         recipvector = recipvector(lat)
         
         
-        Defined at Ewald.fpp lines 632-637
+        Defined at Ewald.fpp lines 719-724
         
         Parameters
         ----------
@@ -12134,7 +12094,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         volume = volume(lat)
         
         
-        Defined at Ewald.fpp lines 640-642
+        Defined at Ewald.fpp lines 727-729
         
         Parameters
         ----------
@@ -12154,7 +12114,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         crossp = crossp(va, vb)
         
         
-        Defined at Ewald.fpp lines 645-649
+        Defined at Ewald.fpp lines 732-736
         
         Parameters
         ----------
@@ -12175,7 +12135,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         erfc = erfc(x)
         
         
-        Defined at Ewald.fpp lines 652-738
+        Defined at Ewald.fpp lines 739-825
         
         Parameters
         ----------
@@ -15095,7 +15055,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
     Module mixer_module
     
     
-    Defined at Mixer_module.fpp lines 5-652
+    Defined at Mixer_module.fpp lines 5-651
     
     """
     @f90wrap.runtime.register_class("arespy.mixer_data")
@@ -15386,7 +15346,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         om1c(nam, nuh, sp, dfp, voma)
         
         
-        Defined at Mixer_module.fpp lines 242-289
+        Defined at Mixer_module.fpp lines 242-288
         
         Parameters
         ----------
@@ -15405,7 +15365,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         amst(beta, w0, nam, nuh, dxp, dfp, sp, xl, fl, voma, xn)
         
         
-        Defined at Mixer_module.fpp lines 292-395
+        Defined at Mixer_module.fpp lines 291-394
         
         Parameters
         ----------
@@ -15431,7 +15391,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         init_kerker()
         
         
-        Defined at Mixer_module.fpp lines 398-414
+        Defined at Mixer_module.fpp lines 397-413
         
         
         """
@@ -15443,7 +15403,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         rpulayk_mixing(iter, rlg, xing)
         
         
-        Defined at Mixer_module.fpp lines 420-482
+        Defined at Mixer_module.fpp lines 419-481
         
         Parameters
         ----------
@@ -15462,7 +15422,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         rpulayk_mix(beta, w0, dime, nh, dxl, drl, xl, rl, xn)
         
         
-        Defined at Mixer_module.fpp lines 485-543
+        Defined at Mixer_module.fpp lines 484-542
         
         Parameters
         ----------
@@ -15486,7 +15446,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         resta_mixing(iter, rlg, xing)
         
         
-        Defined at Mixer_module.fpp lines 548-612
+        Defined at Mixer_module.fpp lines 547-611
         
         Parameters
         ----------
@@ -15505,7 +15465,7 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         init_resta()
         
         
-        Defined at Mixer_module.fpp lines 615-649
+        Defined at Mixer_module.fpp lines 614-648
         
         
         """

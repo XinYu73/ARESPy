@@ -2,8 +2,8 @@ from __future__ import print_function, absolute_import, division
 import _ExampleDerivedTypes_pkg
 import f90wrap.runtime
 import logging
-import ExampleDerivedTypes_pkg.parameters
-import ExampleDerivedTypes_pkg.datatypes
 import ExampleDerivedTypes_pkg.library
+import ExampleDerivedTypes_pkg.parameters
 import ExampleDerivedTypes_pkg.datatypes_allocatable
+import ExampleDerivedTypes_pkg.datatypes
 

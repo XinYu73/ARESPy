@@ -40,7 +40,7 @@ module ewald
         real(dp) :: fcd(3)
     end type ion
     real(dp), parameter :: bohr = bohr2ang, hartreetoev = rydberg*2
-!real(dp),parameter :: bohr=0.529177249_dp,hartreetoev=27.21165200_dp  !vasp
+    !real(dp),parameter :: bohr=0.529177249_dp,hartreetoev=27.21165200_dp  !vasp
     real(dp), private :: &
         sqrtpi = 1.77245385090552_dp, &
         ert = 1.0e-10_dp/hartreetoev, &
@@ -56,7 +56,6 @@ module ewald
     INTEGER(I4B), private :: &
         nar, nbr, ncr, narp, nbrp, ncrp, &
         numion, numiontype
-
 contains
 !}}}
 
@@ -83,7 +82,7 @@ contains
         ewald_energy = ewaldenergy(latticev, iontb, iontpid)
         if (allocated(iontb)) deallocate (iontb)
     end function ewald_energy!}}}
-!====================================================================================
+    !====================================================================================
     function ISO_ewald_energy(latticev, ionpositions, iontpid, ioncharges)!{{{
         real(dp), intent(in) :: latticev(3, 3), ionpositions(:, :) !Cartesian Position
         INTEGER(I4B), intent(in)  :: iontpid(:)
@@ -103,7 +102,7 @@ contains
             iontb(k)%fcd = ionpositions(:, k)
             k = k + 1
         end do
-!calculation
+        !calculation
         iienergy = 0.0d0
         DO i = 1, natom
             DO k = 1, natom
@@ -116,27 +115,27 @@ contains
         ISO_ewald_energy = iienergy*0.5d0
         if (allocated(iontb)) deallocate (iontb)
     end function ISO_ewald_energy !}}}
-!
+    !
     function ISO_ewald_forces(latticev, ionpositions, iontpid, ioncharges)!{{{
 
         USE smpi_math_module, ONLY: atom_split, parallel, smpi_reduce_sum_real_2d
 
         USE m_time_evaluate, ONLY: memory_sum, memory_free
-!> IN/OUT
+        !> IN/OUT
         real(dp), intent(in) :: latticev(3, 3), ionpositions(:, :) !Cartesian Position
         INTEGER(I4B), intent(in)  :: iontpid(:)
         REAL(DP), intent(in)  :: ioncharges(:)
-!> local
+        !> local
         real(dp) :: ISO_ewald_forces(3, iontpid(size(iontpid)) - 1), rik, force(3, iontpid(size(iontpid)) - 1)
         type(ion), allocatable :: iontb(:)
-!Euler angle
+        !Euler angle
         real(DP) :: costheta, sintheta, cosphi, sinphi, temp_force, rxy
         INTEGER(I4B) :: i, k, natom
 
         integer(I4B) :: mysize, atom_id = 0, id_core
         INTEGER(I4B), allocatable :: atom_index(:)
 
-!==========================================
+        !==========================================
         call memory_sum('iso_ewald_local', real(size(force), DP)*2*DP)
         natom = iontpid(size(iontpid)) - 1
         if (allocated(iontb)) then
@@ -154,19 +153,19 @@ contains
             k = k + 1
         end do
 
-!> initial parallel config
+        !> initial parallel config
         IF (.not. allocated(atom_index)) THEN
             ALLOCATE (atom_index(natom/parallel%numprocs + 1))
             call memory_sum('iso_ewald_atom_index', real(size(atom_index), DP)*DP)
         END IF
-! CALL start_time('init_density_0')
+        ! CALL start_time('init_density_0')
         CALL atom_split(mysize, natom, atom_index)
-! print *,'atom_index',atom_index,'id',parallel%myid
-! CALL end_time('init_density_0')
-! CALL write_time('init_density_0')
+        ! print *,'atom_index',atom_index,'id',parallel%myid
+        ! CALL end_time('init_density_0')
+        ! CALL write_time('init_density_0')
         id_core = 1
 
-!> calculation
+        !> calculation
         force = 0.0d0
         DO i = 1, natom
 
@@ -238,8 +237,8 @@ contains
             k = k + 1
         end do
 
-!call cewaldfcs(latticev,iontb,ewald_f)
-!ewald_forces=ewald_f
+        !call cewaldfcs(latticev,iontb,ewald_f)
+        !ewald_forces=ewald_f
         call cewaldfcs(latticev, iontb, ewald_forces)
         if (allocated(iontb)) deallocate (iontb)
         if (allocated(ewald_f)) deallocate (ewald_f)
@@ -284,7 +283,7 @@ contains
 
         numion = size(iontb)
         numiontype = size(iontpid) - 1
-!sqrtpi=sqrt(pi)
+        !sqrtpi=sqrt(pi)
         realct = maxrc
         cellvol = volume(cellr)
         cellrecip = recipvector(cellr)
@@ -297,14 +296,14 @@ contains
             sumcs = sumcs + numiontemp*iontb(iontpid(itp))%charge**2
         end do
         averagecs = sumcs/numion
-!WRITE(6,*)sumc,sumcs,averagecs
-!WRITE(6,*)dp
+        !WRITE(6,*)sumc,sumcs,averagecs
+        !WRITE(6,*)dp
 
         do i = 1, 3
             realclen(i) = vectorlength(cellr(:, i))
             recipclen(i) = vectorlength(cellrecip(:, i))
         end do
-!WRITE(6,*)realclen,recipclen
+        !WRITE(6,*)realclen,recipclen
 
         minla = minloc(realclen)
         aind = minla(1)
@@ -334,15 +333,15 @@ contains
                      nbr/vectorlength(cellrecip(:, 2)), &
                      ncr/vectorlength(cellrecip(:, 3)))*2*pi*.8239
 
-!nar=ceiling(realct*vectorlength(cellrecip(:,1))/pi/2)
-!nbr=ceiling(realct*vectorlength(cellrecip(:,2))/pi/2)
-!ncr=ceiling(realct*vectorlength(cellrecip(:,3))/pi/2)
+        !nar=ceiling(realct*vectorlength(cellrecip(:,1))/pi/2)
+        !nbr=ceiling(realct*vectorlength(cellrecip(:,2))/pi/2)
+        !ncr=ceiling(realct*vectorlength(cellrecip(:,3))/pi/2)
 
         temp_array = crossp(cellr(:, aind), cellr(:, bind))
         eta = sqrt(pi*vectorlength(temp_array) &
                    /realclen(aind)/cellvol)
-!eta=eta*9
-!WRITE(6,*)eta/bohr
+        !eta=eta*9
+        !WRITE(6,*)eta/bohr
         do
             realer = pi*numion**2*averagecs/cellvol/eta**2*erfc(realct*eta)
             if (realer > ert) exit
@@ -353,8 +352,8 @@ contains
             if (realer < ert) exit
             eta = eta + etainc
         end do
-!WRITE(6,*)eta/bohr
-!WRITE(6,*)realer*hartreetoev
+        !WRITE(6,*)eta/bohr
+        !WRITE(6,*)realer*hartreetoev
 
         recipct = 0._dp
         do
@@ -362,43 +361,43 @@ contains
             if (reciper < ert) exit
             recipct = recipct + recipinc
         end do
-!WRITE(6,*)reciper*hartreetoev
-!WRITE(6,*)eta,realct,recipct
+        !WRITE(6,*)reciper*hartreetoev
+        !WRITE(6,*)eta,realct,recipct
 
         narp = ceiling(recipct*vectorlength(cellr(:, 1))/pi/2)
         nbrp = ceiling(recipct*vectorlength(cellr(:, 2))/pi/2)
         ncrp = ceiling(recipct*vectorlength(cellr(:, 3))/pi/2)
-!write(51,*)nar,nbr,ncr,(2*nar+1)*(2*nbr+1)*(2*ncr+1)
-!write(51,*)narp,nbrp,ncrp,(2*narp+1)*(2*nbrp+1)*(2*ncrp+1)
+        !write(51,*)nar,nbr,ncr,(2*nar+1)*(2*nbr+1)*(2*ncr+1)
+        !write(51,*)narp,nbrp,ncrp,(2*narp+1)*(2*nbrp+1)*(2*ncrp+1)
 
         call ewaldrs
         ewaldarray(2) = -eta/sqrtpi*sumcs !selfterm
         call ewaldrps
         ewaldarray(4) = -pi/2/eta**2/cellvol*sumc**2
         ewaldenergy = sum(ewaldarray)
-!write(51,*)eta/bohr,realct*bohr,recipct/bohr
-!write(51,*)realer*hartreetoev,reciper*hartreetoev
-!write(51,*)ewaldarray(1:4)*hartreetoev,ewaldenergy*hartreetoev
+        !write(51,*)eta/bohr,realct*bohr,recipct/bohr
+        !write(51,*)realer*hartreetoev,reciper*hartreetoev
+        !write(51,*)ewaldarray(1:4)*hartreetoev,ewaldenergy*hartreetoev
 
     contains
 
         subroutine ewaldrs !real space
 
             implicit none
-            INTEGER(I4B) :: i, ia, ib, ic, j, jtp
+            INTEGER(I4B) :: ia, ib, ic, j, jtp
             real(dp) :: chargeij, distanceij, icod(3), jcod(3)
             real(dp) :: ewaldarr1
 
-!  WRITE(6,*)nar,nbr,ncr
+            !  WRITE(6,*)nar,nbr,ncr
             ewaldarray(1) = 0
             ewaldarr1 = 0.d0
-!$OMP PARALLEL DO REDUCTION(+:ewaldarr1) &
-!$OMP PRIVATE(i, icod,jtp,j,ia,ib,ic,jcod,distanceij)
+            !$OMP PARALLEL DO REDUCTION(+:ewaldarr1) &
+            !$OMP PRIVATE(i, icod,jtp,j,ia,ib,ic,jcod,distanceij)
             do i = 1, numion
                 icod = matmul(cellr, iontb(i)%fcd)
                 do jtp = 1, numiontype
                     chargeij = iontb(i)%charge*iontb(iontpid(jtp))%charge
-!  WRITE(6,*)chargeij
+                    !  WRITE(6,*)chargeij
                     do j = iontpid(jtp), iontpid(jtp + 1) - 1
                         do ia = -nar, nar
                             do ib = -nbr, nbr
@@ -408,13 +407,13 @@ contains
                                            (ic + iontb(j)%fcd(3))*cellr(:, 3)
                                     temp_array = icod - jcod
                                     distanceij = vectorlength(temp_array)
-!  WRITE(6,*)distanceij,realct
+                                    !  WRITE(6,*)distanceij,realct
                                     if (distanceij < realct .and. &
                                         (i /= j .or. ia /= 0 .or. ib /= 0 .or. ic /= 0)) then
-!WRITE(6,*)ewaldarray(1)
+                                        !WRITE(6,*)ewaldarray(1)
                                         ewaldarr1 = ewaldarr1 + &
                                                     chargeij*erfc(eta*distanceij)/distanceij
-!if (eta*distanceij>4) WRITE(6,*)eta*distanceij
+                                        !if (eta*distanceij>4) WRITE(6,*)eta*distanceij
                                     end if
                                 end do
                             end do
@@ -422,7 +421,7 @@ contains
                     end do
                 end do
             end do
-!$OMP END PARALLEL DO
+            !$OMP END PARALLEL DO
             ewaldarray(1) = ewaldarr1/2._dp
 
         end subroutine ewaldrs
@@ -468,7 +467,6 @@ contains
     end function ewaldenergy!}}}
 
     subroutine cewaldfcs(cellr, iontb, ewaldfcs)!{{{
-
         real(dp), intent(in) :: cellr(3, 3)
         type(ion), intent(in) :: iontb(:)
         real(dp), intent(out) :: ewaldfcs(:, :)
@@ -491,7 +489,7 @@ contains
                                    (ic + iontb(j)%fcd(3))*cellr(:, 3)
                             temp_array = icod - jcod
                             distanceij = vectorlength(temp_array)
-!WRITE(6,*) distanceij
+                            !WRITE(6,*) distanceij
                             if (distanceij <= realct .and. &
                                 (i /= j .or. ia /= 0 .or. ib /= 0 .or. ic /= 0)) then
                                 etadistance = eta*distanceij
@@ -508,39 +506,39 @@ contains
         end do
     contains
 
-!function ewaldrsf(icod,charge)
-!real(dp) :: icod(3),ewaldrsf(3)
-!INTEGER(I4B) :: charge,ia,ib,ic,j
-!real(dp) :: distanceij,etadistance,jcod(3)
+        !function ewaldrsf(icod,charge)
+        !real(dp) :: icod(3),ewaldrsf(3)
+        !INTEGER(I4B) :: charge,ia,ib,ic,j
+        !real(dp) :: distanceij,etadistance,jcod(3)
 
-!ewaldrsf=0
-!do j=1,numion
-!do ia=-nar,nar
-!do ib=-nbr,nbr
-!do ic=-ncr,ncr
-!jcod=(ia+iontb(j)%fcd(1))*cellr(:,1)+&
-!(ib+iontb(j)%fcd(2))*cellr(:,2)+&
-!(ic+iontb(j)%fcd(3))*cellr(:,3)
-!distanceij=vectorlength(icod-jcod)
-!!WRITE(6,*) distanceij
-!if(distanceij<=realct.and.&
-!(i/=j.or.ia/=0.or.ib/=0.or.ic/=0)) then
-!etadistance=eta*distanceij
-!ewaldrsf=ewaldrsf+(icod-jcod)*iontb(j)%charge*&
-!(erfc(etadistance)/etadistance**3+2/sqrtpi &
-!*exp(-(etadistance**2))/etadistance**2)
-!endif
-!enddo
-!enddo
-!enddo
-!enddo
-!ewaldrsf=ewaldrsf*charge*eta**3
-!WRITE(6,*)"eeee",ewaldrsf
-!end function
+        !ewaldrsf=0
+        !do j=1,numion
+        !do ia=-nar,nar
+        !do ib=-nbr,nbr
+        !do ic=-ncr,ncr
+        !jcod=(ia+iontb(j)%fcd(1))*cellr(:,1)+&
+        !(ib+iontb(j)%fcd(2))*cellr(:,2)+&
+        !(ic+iontb(j)%fcd(3))*cellr(:,3)
+        !distanceij=vectorlength(icod-jcod)
+            !!WRITE(6,*) distanceij
+        !if(distanceij<=realct.and.&
+        !(i/=j.or.ia/=0.or.ib/=0.or.ic/=0)) then
+        !etadistance=eta*distanceij
+        !ewaldrsf=ewaldrsf+(icod-jcod)*iontb(j)%charge*&
+        !(erfc(etadistance)/etadistance**3+2/sqrtpi &
+        !*exp(-(etadistance**2))/etadistance**2)
+        !endif
+        !enddo
+        !enddo
+        !enddo
+        !enddo
+        !ewaldrsf=ewaldrsf*charge*eta**3
+        !WRITE(6,*)"eeee",ewaldrsf
+        !end function
 
         function ewaldrpf(icod, charge)
             real(dp) :: icod(3), ewaldrpf(3)
-            INTEGER(I4B) :: i, ia, ib, ic, iblow, iclow, k
+            INTEGER(I4B) ::iblow, iclow, k
             real(dp) :: strfs, strfc, msqa, m(3), realcod(3), charge
 
             ewaldrpf = 0
@@ -557,7 +555,7 @@ contains
                         iclow = -ncrp
                     end if
                     do ic = iclow, ncrp
-!    WRITE(6,*)ic
+                        !    WRITE(6,*)ic
                         m = ia*cellrecip(:, 1) + ib*cellrecip(:, 2) + ic*cellrecip(:, 3)
                         if (vectorlength(m) <= recipct) then
                             strfs = 0
@@ -571,134 +569,213 @@ contains
                             ewaldrpf = ewaldrpf + exp(-(msqa/eta**2/4._dp)) &
                                        /msqa*(strfc*sin(dot_product(m, icod)) - &
                                               strfs*cos(dot_product(m, icod)))*m
-!  WRITE(6,*)ewaldrpf
+                            !  WRITE(6,*)ewaldrpf
                         end if
                     end do
                 end do
             end do
             ewaldrpf = ewaldrpf*8*pi/cellvol*charge
-!  WRITE(6,*)ewaldrpf The error is about 1.e-17(a.u.)
-
+            !  WRITE(6,*)ewaldrpf The error is about 1.e-17(a.u.)
         end function ewaldrpf
 
     end subroutine cewaldfcs!}}}
 
     function ewaldstr(cellr, iontb, iontpid)!{{{
-
         real(dp) :: cellr(3, 3), ewaldstr(3, 3)
         type(ion) :: iontb(:)
         INTEGER(I4B) :: iontpid(:)
-
-        ewaldstr = ewaldrstr(eta) + ewaldrpstr(eta) + ewaldavstr(eta)
-
-    contains
-
-        function ewaldrstr(eta)
-
-            real(dp) :: eta, ewaldrstr(3, 3)
-            INTEGER(I4B) :: a, b, i, ia, ib, ic, j, jtp
-            real(dp) :: chargeij, distanceij, icod(3), jcod(3), tep&
-                 &, temp_array(3)
-
-            ewaldrstr = 0
-            do i = 1, numion
-                icod = matmul(cellr, iontb(i)%fcd)
-                do jtp = 1, numiontype
-                    chargeij = iontb(i)%charge*iontb(iontpid(jtp))%charge
-!    WRITE(6,*)chargeij
-                    do j = iontpid(jtp), iontpid(jtp + 1) - 1
-                        do ia = -nar, nar
-                            do ib = -nbr, nbr
-                                do ic = -ncr, ncr
-                                    jcod = (ia + iontb(j)%fcd(1))*cellr(:, 1) + &
-                                           (ib + iontb(j)%fcd(2))*cellr(:, 2) + &
-                                           (ic + iontb(j)%fcd(3))*cellr(:, 3)
-                                    temp_array = icod - jcod
-                                    distanceij = vectorlength(temp_array)
-!    WRITE(6,*)distanceij,realct
-                                    if (distanceij < realct .and. &
-                                        (i /= j .or. ia /= 0 .or. ib /= 0 .or. ic /= 0)) then
-                                        tep = chargeij*(erfc(eta*distanceij)/distanceij &
-                                                        + 2*eta*exp(-(eta*distanceij)**2)/sqrtpi)/distanceij**2
-                                        do a = 1, 3
-                                            do b = a, 3
-                                                ewaldrstr(a, b) = ewaldrstr(a, b) + tep &
-                                                                  *(icod(a) - jcod(a))*(icod(b) - jcod(b))
-                                            end do
+        real(dp) ::ewaldrstr(3, 3)
+        INTEGER(I4B) :: a, b, i, ia, ib, ic, j, jtp
+        real(dp) :: chargeij, distanceij, icod(3), jcod(3), tep&
+             &, temp_array(3)
+        real(dp) ::  ewaldrpstr(3, 3)
+        INTEGER(I4B) :: iblow, iclow, k
+        real(dp) :: strfs, strfc, msqa, m(3), realcod(3), tp1, tp2
+        real(dp) :: ewaldavstr(3, 3)
+        ewaldrstr = 0
+        !!!!!!!!!!!!!!!!!!!!!!!!
+        do i = 1, numion
+            icod = matmul(cellr, iontb(i)%fcd)
+            do jtp = 1, numiontype
+                chargeij = iontb(i)%charge*iontb(iontpid(jtp))%charge
+                !    WRITE(6,*)chargeij
+                do j = iontpid(jtp), iontpid(jtp + 1) - 1
+                    do ia = -nar, nar
+                        do ib = -nbr, nbr
+                            do ic = -ncr, ncr
+                                jcod = (ia + iontb(j)%fcd(1))*cellr(:, 1) + &
+                                       (ib + iontb(j)%fcd(2))*cellr(:, 2) + &
+                                       (ic + iontb(j)%fcd(3))*cellr(:, 3)
+                                temp_array = icod - jcod
+                                distanceij = vectorlength(temp_array)
+                                !    WRITE(6,*)distanceij,realct
+                                if (distanceij < realct .and. &
+                                    (i /= j .or. ia /= 0 .or. ib /= 0 .or. ic /= 0)) then
+                                    tep = chargeij*(erfc(eta*distanceij)/distanceij &
+                                                    + 2*eta*exp(-(eta*distanceij)**2)/sqrtpi)/distanceij**2
+                                    do a = 1, 3
+                                        do b = a, 3
+                                            ewaldrstr(a, b) = ewaldrstr(a, b) + tep &
+                                                              *(icod(a) - jcod(a))*(icod(b) - jcod(b))
                                         end do
-                                    end if
-                                end do
+                                    end do
+                                end if
                             end do
                         end do
                     end do
                 end do
             end do
-            ewaldrstr = -ewaldrstr/2/cellvol
-!WRITE(6,*)ewaldrstr
-        end function ewaldrstr
-
-        function ewaldrpstr(eta)
-
-            real(dp) :: eta, ewaldrpstr(3, 3)
-            INTEGER(I4B) :: a, b, ia, ib, ic, iblow, iclow, k
-            real(dp) :: strfs, strfc, msqa, m(3), realcod(3), tp1, tp2
-
-            ewaldrpstr = 0
-            do ia = 0, narp
-                if (ia == 0) then
-                    iblow = 0
+        end do
+        ewaldrstr = -ewaldrstr/2/cellvol
+        ewaldrpstr = 0
+        do ia = 0, narp
+            if (ia == 0) then
+                iblow = 0
+            else
+                iblow = -nbrp
+            end if
+            do ib = iblow, nbrp
+                if (ia == 0 .and. ib == 0) then
+                    iclow = 1
                 else
-                    iblow = -nbrp
+                    iclow = -ncrp
                 end if
-                do ib = iblow, nbrp
-                    if (ia == 0 .and. ib == 0) then
-                        iclow = 1
-                    else
-                        iclow = -ncrp
+                do ic = iclow, ncrp
+                    m = ia*cellrecip(:, 1) + ib*cellrecip(:, 2) + ic*cellrecip(:, 3)
+                    if (vectorlength(m) <= recipct) then
+                        strfs = 0._dp
+                        strfc = 0._dp
+                        do k = 1, numion
+                            realcod = matmul(cellr, iontb(k)%fcd)
+                            strfs = strfs + iontb(k)%charge*sin(dot_product(m, realcod))
+                            strfc = strfc + iontb(k)%charge*cos(dot_product(m, realcod))
+                        end do
+                        msqa = dot_product(m, m)
+                        tp1 = exp(-(msqa/eta**2/4))/msqa*(strfs**2 + strfc**2)
+                        tp2 = tp1*2/msqa*(1 + msqa/eta**2/4)
+                        do a = 1, 3
+                            do b = a, 3
+                                if (a == b) then
+                                    ewaldrpstr(a, b) = ewaldrpstr(a, b) + tp2*m(a)*m(b) - tp1
+                                else
+                                    ewaldrpstr(a, b) = ewaldrpstr(a, b) + tp2*m(a)*m(b)
+                                end if
+                            end do
+                        end do
                     end if
-                    do ic = iclow, ncrp
-                        m = ia*cellrecip(:, 1) + ib*cellrecip(:, 2) + ic*cellrecip(:, 3)
-                        if (vectorlength(m) <= recipct) then
-                            strfs = 0._dp
-                            strfc = 0._dp
-                            do k = 1, numion
-                                realcod = matmul(cellr, iontb(k)%fcd)
-                                strfs = strfs + iontb(k)%charge*sin(dot_product(m, realcod))
-                                strfc = strfc + iontb(k)%charge*cos(dot_product(m, realcod))
-                            end do
-                            msqa = dot_product(m, m)
-                            tp1 = exp(-(msqa/eta**2/4))/msqa*(strfs**2 + strfc**2)
-                            tp2 = tp1*2/msqa*(1 + msqa/eta**2/4)
-                            do a = 1, 3
-                                do b = a, 3
-                                    if (a == b) then
-                                        ewaldrpstr(a, b) = ewaldrpstr(a, b) + tp2*m(a)*m(b) - tp1
-                                    else
-                                        ewaldrpstr(a, b) = ewaldrpstr(a, b) + tp2*m(a)*m(b)
-                                    end if
-                                end do
-                            end do
-                        end if
-                    end do
                 end do
             end do
-            ewaldrpstr = ewaldrpstr*4*pi/cellvol**2
-!WRITE(6,*)ewaldrpstr
+        end do
+        ewaldrpstr = ewaldrpstr*4*pi/cellvol**2
+        ewaldavstr = 0
+        do a = 1, 3
+            ewaldavstr(a, a) = pi/2/eta**2/cellvol**2*sumc**2
+        end do
+        ewaldstr = ewaldrstr + ewaldrpstr + ewaldavstr
+        !contains
+        ! function ewaldrstr()
+        !     real(dp) ::ewaldrstr(3, 3)
+        !     INTEGER(I4B) :: a, b, i, ia, ib, ic, j, jtp
+        !     real(dp) :: chargeij, distanceij, icod(3), jcod(3), tep&
+        !          &, temp_array(3)
 
-        end function ewaldrpstr
+        !     ewaldrstr = 0
+        !     do i = 1, numion
+        !         icod = matmul(cellr, iontb(i)%fcd)
+        !         do jtp = 1, numiontype
+        !             chargeij = iontb(i)%charge*iontb(iontpid(jtp))%charge
+        !             !    WRITE(6,*)chargeij
+        !             do j = iontpid(jtp), iontpid(jtp + 1) - 1
+        !                 do ia = -nar, nar
+        !                     do ib = -nbr, nbr
+        !                         do ic = -ncr, ncr
+        !                             jcod = (ia + iontb(j)%fcd(1))*cellr(:, 1) + &
+        !                                    (ib + iontb(j)%fcd(2))*cellr(:, 2) + &
+        !                                    (ic + iontb(j)%fcd(3))*cellr(:, 3)
+        !                             temp_array = icod - jcod
+        !                             distanceij = vectorlength(temp_array)
+        !                             !    WRITE(6,*)distanceij,realct
+        !                             if (distanceij < realct .and. &
+        !                                 (i /= j .or. ia /= 0 .or. ib /= 0 .or. ic /= 0)) then
+        !                                 tep = chargeij*(erfc(eta*distanceij)/distanceij &
+        !                                                 + 2*eta*exp(-(eta*distanceij)**2)/sqrtpi)/distanceij**2
+        !                                 do a = 1, 3
+        !                                     do b = a, 3
+        !                                         ewaldrstr(a, b) = ewaldrstr(a, b) + tep &
+        !                                                           *(icod(a) - jcod(a))*(icod(b) - jcod(b))
+        !                                     end do
+        !                                 end do
+        !                             end if
+        !                         end do
+        !                     end do
+        !                 end do
+        !             end do
+        !         end do
+        !     end do
+        !     ewaldrstr = -ewaldrstr/2/cellvol
+        !     !WRITE(6,*)ewaldrstr
+        ! end function ewaldrstr
 
-        function ewaldavstr(eta)
+        ! function ewaldrpstr()
+        !     real(dp) ::  ewaldrpstr(3, 3)
+        !     INTEGER(I4B) :: a, b, ia, ib, ic, iblow, iclow, k
+        !     real(dp) :: strfs, strfc, msqa, m(3), realcod(3), tp1, tp2
 
-            real(dp) :: eta, ewaldavstr(3, 3)
-            INTEGER(I4B) :: a
+        !     ewaldrpstr = 0
+        !     do ia = 0, narp
+        !         if (ia == 0) then
+        !             iblow = 0
+        !         else
+        !             iblow = -nbrp
+        !         end if
+        !         do ib = iblow, nbrp
+        !             if (ia == 0 .and. ib == 0) then
+        !                 iclow = 1
+        !             else
+        !                 iclow = -ncrp
+        !             end if
+        !             do ic = iclow, ncrp
+        !                 m = ia*cellrecip(:, 1) + ib*cellrecip(:, 2) + ic*cellrecip(:, 3)
+        !                 if (vectorlength(m) <= recipct) then
+        !                     strfs = 0._dp
+        !                     strfc = 0._dp
+        !                     do k = 1, numion
+        !                         realcod = matmul(cellr, iontb(k)%fcd)
+        !                         strfs = strfs + iontb(k)%charge*sin(dot_product(m, realcod))
+        !                         strfc = strfc + iontb(k)%charge*cos(dot_product(m, realcod))
+        !                     end do
+        !                     msqa = dot_product(m, m)
+        !                     tp1 = exp(-(msqa/eta**2/4))/msqa*(strfs**2 + strfc**2)
+        !                     tp2 = tp1*2/msqa*(1 + msqa/eta**2/4)
+        !                     do a = 1, 3
+        !                         do b = a, 3
+        !                             if (a == b) then
+        !                                 ewaldrpstr(a, b) = ewaldrpstr(a, b) + tp2*m(a)*m(b) - tp1
+        !                             else
+        !                                 ewaldrpstr(a, b) = ewaldrpstr(a, b) + tp2*m(a)*m(b)
+        !                             end if
+        !                         end do
+        !                     end do
+        !                 end if
+        !             end do
+        !         end do
+        !     end do
+        !     ewaldrpstr = ewaldrpstr*4*pi/cellvol**2
+        !     !WRITE(6,*)ewaldrpstr
 
-            ewaldavstr = 0
-            do a = 1, 3
-                ewaldavstr(a, a) = pi/2/eta**2/cellvol**2*sumc**2
-            end do
-!WRITE(6,*)ewaldavstr
-        end function ewaldavstr
+        ! end function ewaldrpstr
 
+        ! function ewaldavstr()
+
+        !     real(dp) :: ewaldavstr(3, 3)
+        !     INTEGER(I4B) :: a
+
+        !     ewaldavstr = 0
+        !     do a = 1, 3
+        !         ewaldavstr(a, a) = pi/2/eta**2/cellvol**2*sumc**2
+        !     end do
+        !     !WRITE(6,*)ewaldavstr
+        ! end function ewaldavstr
     end function ewaldstr!}}}
 
     function vectorlength(vc)!{{{
@@ -735,11 +812,11 @@ contains
     end function crossp!}}}
 
     function erfc(x)!{{{
-!When -.2<x, the max absolute error is about 4.44e-15 (compared to MATLAB),
-!   for big x, the error is little.
-!   Reference:
-!     W.J. Cody.  Rational Chebyshev Approximations for the Error Function.
-!     Mathematics of Computation, 23(107):7, 1969.
+        !When -.2<x, the max absolute error is about 4.44e-15 (compared to MATLAB),
+        !   for big x, the error is little.
+        !   Reference:
+        !     W.J. Cody.  Rational Chebyshev Approximations for the Error Function.
+        !     Mathematics of Computation, 23(107):7, 1969.
         real(dp) :: x, erfc, temp, x2
         INTEGER(I4B) :: i
         real(dp), parameter :: &
