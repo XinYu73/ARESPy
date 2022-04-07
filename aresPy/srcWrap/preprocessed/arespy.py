@@ -15533,6 +15533,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         
         
         """
+        print("hi there, I am in electronicscf")
         _arespy.f90wrap_electronicscf()
     
     @staticmethod
@@ -15552,6 +15553,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         
         ===============================================================
         """
+        print("hi there, I am in arpackscf")
         _arespy.f90wrap_arpackscf(nps=nps, rhos=rhos, rho=rho, eig=eig._handle)
     
     @staticmethod

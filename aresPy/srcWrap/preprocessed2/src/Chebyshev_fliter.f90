@@ -87,6 +87,7 @@ CONTAINS
 
                IF(Ii==parallel%sub2sum(Isl,parallel%ranky+1))THEN
                   DO Ip=1,nps
+                        write (*, *) 'in Cheby ', Ip, ' ', Isl, 'of', shape(X0)
                      CALL random_number(randt)
                      randt = -radius+randt*2.d0*radius
                      X0(Ip,Isl) = randt
