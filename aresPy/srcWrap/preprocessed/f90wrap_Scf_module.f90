@@ -58,8 +58,8 @@ subroutine f90wrap_eigensolver_real(nps, nev, veff, psi, eval, diagtol, n0, n1, 
 end subroutine f90wrap_eigensolver_real
 
 subroutine f90wrap_chefsi(nps, rhos, rho, eig, n0, n1, n2)
-    use grid_module, only: eigen_type
     use scf_module, only: chefsi
+    use grid_module, only: eigen_type
     implicit none
     
     type eigen_type_ptr_type
