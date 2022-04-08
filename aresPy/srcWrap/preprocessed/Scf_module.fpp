@@ -28,17 +28,17 @@ CONTAINS
             WRITE (*, *) '>----SCF Iterations for Solving KS Equations----<'
 
         END IF
-        write (*, *) 'passing mpiBarrier'
+        !write (*, *) 'passing mpiBarrier'
         CALL MPI_Barrier(parallel%comm, mpinfo)
-        write (*, *) 'pass mpiBarrier'
+        !write (*, *) 'pass mpiBarrier'
         IF (Idiag == 0) THEN
-            write (*, *) 'Passing ArpackSCF'
+            !write (*, *) 'Passing ArpackSCF'
             CALL ArpackSCF(n, grid%rhoS, grid%rho, eigen)
-            write (*, *) 'Pass ArpackSCF'
+            !write (*, *) 'Pass ArpackSCF'
         ELSE
-            write (*, *) 'Passing CheFSI'
+            !write (*, *) 'Passing CheFSI'
             CALL CheFSI(n, grid%rhoS, grid%rho, eigen)
-            write (*, *) 'Pass CheFSI'
+            !write (*, *) 'Pass CheFSI'
         END IF
         !<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     END SUBROUTINE electronicSCF
@@ -212,44 +212,41 @@ CONTAINS
 !CALL MPI_barrier
         IWD = 0
 !inirial smear
-        write (*, *) 'pass1'
+        !write (*, *) 'pass1'
         CALL smear_init(nev_tot)
-        write (*, *) 'pass2'
 !initial mixer
         CALL init_mixer(nps)
-        write (*, *) 'pass3'
 !first step by Rayleigh-Ritz step(STO+random)
         CALL CalVeff(nps, rhoS, rho, Veff)
-        write (*, *) 'pass4'
 !initialize the subspace
         CALL BuildSubspace(nps, nev, veff, eig)
-        write (*, *) 'pass5'
+        !write (*, *) 'pass5'
 !updating density and energy
         CALL smear_updaterho(nps, nev, ne, eig, rhoS, rho)
-        write (*, *) 'pass6'
+        !write (*, *) 'pass6'
 !tmp_loc=SUM(rhoS*Veff)*dvol
 !CALL MPI_ALLREDUCE(tmp_loc,tmp,1,MPI_REAL8,MPI_SUM,parallel%comm,mpinfo)
 !IF(parallel%isroot) print*,tmp
 !STOP
 !evaluate the total energy
         CALL TotalEnergy(nps, eig, rhoS, rho)
-        write (*, *) 'pass7'
+        !write (*, *) 'pass7'
 !store Veff
         Veffd = Veff
         CALL CalVeff(nps, rhoS, rho, Veff)
-        write (*, *) 'pass8'
+        !write (*, *) 'pass8'
 !tmp_loc=SUM(Veff)
 !CALL MPI_ALLREDUCE(tmp_loc,tmp,1,MPI_REAL8,MPI_SUM,parallel%comm,mpinfo)
 !IF(parallel%isroot) print*,tmp
 !first step use simple mixing
         CALL mixing(0, veff, veffd, res)
-        write (*, *) 'pass9'
+        !write (*, *) 'pass9'
 !tmp_loc=SUM(rhoS*Veff)*dvol
 !CALL MPI_ALLREDUCE(tmp_loc,tmp,1,MPI_REAL8,MPI_SUM,parallel%comm,mpinfo)
 !IF(parallel%isroot) print*,tmp
 !iteration
         DO Iter = 1, NMITER
-            write (*, *) 'in Loop'
+            !write (*, *) 'in Loop'
             CALL start_time('scf', .true.)
 
             Etotd = Etot

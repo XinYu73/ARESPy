@@ -1102,7 +1102,7 @@ CONTAINS
         integer(i4b) :: x_i, x_j, y_i, y_j, n_block, pad_block, pad_data
         integer(i4b) :: j, i_x(an), i_y(bn), il, im
         !---------------------------------------------------------------------
-        write (*, *) 'line1101'
+        !write (*, *) 'line1101'
         m = an
         n = an
         n_local = size(bmat, 2)
@@ -1117,22 +1117,22 @@ CONTAINS
         pad_block = mod(cm/cmb, parallel%dims(2))
         pad_data = mod(cm, cmb)
         if (parallel%rankx < pad_block) then
-            write (*, *) 'line1116'
+            !write (*, *) 'line1116'
             x_i = parallel%rankx*(n_block + 1)*cmb + 1
-            write (*, *) 'line1118'
+            !write (*, *) 'line1118'
         elseif (parallel%rankx == pad_block) then
-            write (*, *) 'line1120'
+            !write (*, *) 'line1120'
             x_i = parallel%rankx*n_block*cmb + pad_block + pad_data + 1
-            write (*, *) 'line1122'
+            !write (*, *) 'line1122'
         else
-            write (*, *) 'line1124'
+            !write (*, *) 'line1124'
             x_i = parallel%rankx*n_block*cmb + pad_block + 1
-            write (*, *) 'line1126'
+            !write (*, *) 'line1126'
         end if
-        write (*, *) 'line1128'
+        !write (*, *) 'line1128'
         x_j = x_i + twoD_map(1, parallel%rankx, parallel%ranky) - 1
         !> shift y
-        write (*, *) 'line1131'
+        !write (*, *) 'line1131'
         n_block = cn/cnb/parallel%dims(1)
         pad_block = mod(cn/cnb, parallel%dims(1))
         pad_data = mod(cn, cnb)
@@ -1144,7 +1144,7 @@ CONTAINS
             y_i = parallel%ranky*n_block*cnb + pad_block + 1
         end if
         y_j = y_i + twoD_map(2, parallel%rankx, parallel%ranky) - 1
-        write (*, *) 'line1143'
+        !write (*, *) 'line1143'
         !> gater in row
         allocate (amat_y(size(amat, 1), an))
         allocate (bmat_y(size(amat, 1), an))
@@ -1153,30 +1153,30 @@ CONTAINS
         do i = 2, parallel%dims(1)
             y_displs(i) = sum(y_recvcounts(:i - 1))
         end do
-        write (*, *) 'line1152'
+        !write (*, *) 'line1152'
         !xqtest
         !print*,'size amat',size(amat),'rankx',parallel%myid,'rankx',parallel%rankx, &
         ! &'ranky',parallel%ranky,'size in amat_y' &
         ! &,y_recvcounts(parallel%ranky+1),'shift',y_displs(parallel%ranky+1),'size',shape(amat_y)
         !print *,'start rank',parallel%myid,'xy,',parallel%rankx,parallel%ranky
-        write (*, *) 'line1158'
+        !write (*, *) 'line1158'
         call MPI_ALLGATHERV(amat, size(amat), MPI_REAL8, amat_y, y_recvcounts, y_displs, MPI_REAL8, parallel%commy, mpinfo)
         !print *,'end rank',parallel%myid,'xy,',parallel%rankx,parallel%ranky
         !      call MPI_BARRIER(parallel%comm,mpinfo)
         !      call MPI_FINALIZE(mpinfo)
         !      stop
         !> local matmat
-        write (*, *) 'line1164'
+        !write (*, *) 'line1164'
         allocate (cmat_local(an, an))
-        write (*, *) 'line1167'
+        !write (*, *) 'line1167'
         allocate (cmat_global(an, an))
-        write (*, *) 'line1169'
+        !write (*, *) 'line1169'
         cmat_local = 0.d0
         CALL DGEMM(opA, opB, m, N_local, K, alpha, amat_y, LDA, bmat, LDB, beta, cmat_local(:, y_i:y_j), LDC)
-        write (*, *) 'line1173'
+        !write (*, *) 'line1173'
         !> allreduce the local result
         CALL MPI_ALLREDUCE(Cmat_local, cmat_global, size(cmat_local), MPI_REAL8, MPI_SUM, parallel%comm, mpinfo)
-        write (*, *) 'line1177'
+        !write (*, *) 'line1177'
         ! & MPI_SUM, parallel%commx, mpinfo)
         !> remain the local part
         ! Cmat=cmat_global(x_i:x_j,y_i:y_j)
@@ -1189,7 +1189,7 @@ CONTAINS
                 end if
             end do
         end do
-        write (*, *) 'line1191'
+        !write (*, *) 'line1191'
         do j = 0, parallel%dims(1) - 1
             do i = 1, an, 1
                 if (mod(i - 1, parallel%dims(1)) == j) then
@@ -1198,11 +1198,11 @@ CONTAINS
                 end if
             end do
         end do
-        write (*, *) 'line1200'
+        !write (*, *) 'line1200'
         do i = x_i, x_j, 1
             cmat(i + 1 - x_i, :) = cmat_global(i_y(i_x(i)), y_i:y_j)
         end do
-        write (*, *) 'line1204'
+        !write (*, *) 'line1204'
         !> test
         ! do j=1,parallel%numprocs,1
         !     write(str_id,'(I4)')j
@@ -1217,7 +1217,7 @@ CONTAINS
         ! enddo
         !>
         deallocate (cmat_local, cmat_global)
-        write (*, *) 'line1219'
+        !write (*, *) 'line1219'
     End Subroutine SL_matmat_real_tn  !}}}
 
     Subroutine SL_matmat_real_nn(opa, opb, amat, bmat, cmat, am, an, bm, bn, amb, anb, bmb, bnb, cmb, cnb)  !{{{

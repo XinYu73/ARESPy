@@ -91,36 +91,36 @@ CONTAINS
                     END IF
                 END DO
             END DO
-            write (*, *) 'line99'
+            !write (*, *) 'line99'
         END IF
 !Raleigh-Ritz step
 !Gamma point
         DO Is = 1, Nspin !spiner
-            write (*, *) 'Is = 1, Nspin', Is, 1, Nspin
+            !write (*, *) 'Is = 1, Nspin', Is, 1, Nspin
             DO Ik = 1, nk !k-points
-                write (*, *) 'Ik = 1, nk', Ik, 1, nk
+                !write (*, *) 'Ik = 1, nk', Ik, 1, nk
                 IF (Ik /= IGamma) THEN
                     !for non-Gamma k-points
-                    write (*, *) 'line104'
+                    !write (*, *) 'line104'
                     STOP 'Waitting for non-Gamma'
-                    write (*, *) 'line106'
+                    !write (*, *) 'line106'
                 ELSE
                     !for Gamma k-points
-                    write (*, *) 'line107'
+                    !write (*, *) 'line107'
                     eig%wvfG(:, :, Is) = X0(:, :)
-                    write (*, *) 'line109'
+                    !write (*, *) 'line109'
                     IF (CheM0 > 0) THEN
                         !filter
-                        write (*, *) 'line114'
+                        !write (*, *) 'line114'
                         CALL real_first_filter(nps, nev, veff(:, Is), &
                           & eig%wvfG(:, :, Is), eig%val(:, IGamma, Is))
-                        write (*, *) 'line117'
+                        !write (*, *) 'line117'
                     ELSE
                         !RR
-                        write (*, *) 'line120'
+                        !write (*, *) 'line120'
                         CALL real_first_RRstep(nps, nev, veff(:, Is), &
                            &   eig%wvfG(:, :, Is), eig%val(:, Ik, Is))
-                        write (*, *) 'line123'
+                        !write (*, *) 'line123'
                     END IF
                 END IF
             END DO
@@ -259,7 +259,7 @@ CONTAINS
              &parallel%ranky), nev) :: Hhat, Qs, Shat
 
         !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-        write (*, *) 'line262'
+        !write (*, *) 'line262'
         m = global_n  !dim. 1
         n = nev_tot   !dim. 2
         mb = 1  !block of dim. 1
@@ -273,38 +273,38 @@ CONTAINS
         !Raleigh-Ritz step
         IF (LRROrthNorm) THEN
             !OrthNorm
-            write (*, *) 'line276'
+            !write (*, *) 'line276'
             CALL SL_OrthNorm_real(X, m, n, mb, nb)
-            write (*, *) 'line278'
+            !write (*, *) 'line278'
             !RR
             CALL Rayleigh_quotient_real(nps, nev, veff, X, Hhat)
             !eigen-decomposion
-            write (*, *) 'line282'
+            !write (*, *) 'line282'
             !STOP 'SL_diagM_real is needed'
             CALL SL_diagM_real(n, Hhat, n, n, n, n, cmb, cnb, cmb, cnb, Qs, n, n, D, cmb, cnb)
-            write (*, *) 'line285'
+            !write (*, *) 'line285'
         ELSE
             !Overlap matrix
-            write (*, *) 'line288'
+            !write (*, *) 'line288'
             CALL SL_matmat_real_tn('T', 'N', X, X, Shat, m, n, m, n, mb, nb, mb, nb, cmb, cnb)
-            write (*, *) 'line290'
+            !write (*, *) 'line290'
             !projected hamiltonian
             CALL Rayleigh_quotient_real(nps, nev, veff, X, Hhat)
-            write (*, *) 'line293'
+            !write (*, *) 'line293'
             !eigen-decomposion
-            write (*, *) 'line295'
+            !write (*, *) 'line295'
             CALL SL_GeneralizeEigen_real(n, Hhat, Shat, n, n, n, n  &
                 &, cmb, cnb, cmb, cnb, Qs, n, n, D, cmb, cnb)
-            write (*, *) 'line298'
+            !write (*, *) 'line298'
         END IF
         !-------------------
         !rotation
-        write (*, *) 'line302'
+        !write (*, *) 'line302'
         CALL SL_matmat_real_nn('N', 'N', X, Qs, Xnew, m, n, n, n, mb, nb, cmb, cmb, cmb, cnb)
-        write (*, *) 'line304'
+        !write (*, *) 'line304'
         !eigen-value
         X(:, :) = Xnew(:, :)
-        write (*, *) 'line305'
+        !write (*, *) 'line305'
         !<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     END SUBROUTINE real_first_RRstep
 !----------------------------------------------------------
