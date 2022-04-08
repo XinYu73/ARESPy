@@ -1,0 +1,13 @@
+remote: warning: File aresPy/sample/Writeout is 83.93 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: File aresPy/WrappedAresTest/out is 65.57 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: File aresPy/sample/Writeout is 83.93 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: warning: File aresPy/WrappedAresTest/040801out is 99.67 MB; this is larger than GitHub's recommended maximum file size of 50.00 MB
+remote: error: Trace: 654283e590faf67c624e74b43a358fbb99924ad6995801aeddb15fd50ec1c8da
+remote: error: See http://git.io/iEPt8g for more information.
+remote: error: File aresPy/WrappedAresTest/040802out is 116.71 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: File aresPy/WrappedAresTest/040804 is 116.72 MB; this exceeds GitHub's file size limit of 100.00 MB
+remote: error: File aresPy/WrappedAresTest/040808 is 116.72 MB; this exceeds GitHub's file size limit of 100.00 MB
+
+
+
+git filter-branch --tree-filter  "git rm -rf --cached --ignore-unmatch ./aresPy/WrappedAresTest/out" HEAD
