@@ -84,14 +84,10 @@ CONTAINS
             ! at least proceed here
             !initialize the temp subspace
             CALL random_seed()
-            write (*, *) 'in Cheby ,1'
             DO Ii = irand1, nev_tot !for global states
-                write (*, *) 'in Cheby ,2'
-                DO Isl = 1, nev, 1  !for local states
-                    write (*, *) 'in Cheby 3',Isl
+                DO Isl = 1, nev  !for local states
                     IF (Ii == parallel%sub2sum(Isl, parallel%ranky + 1)) THEN
                         DO Ip = 1, nps
-                            write (*, *) 'in Cheby ', Ip, 'of', shape(X0)
                             CALL random_number(randt)
                             randt = -radius + randt*2.d0*radius
                             X0(Ip, Isl) = randt
@@ -99,27 +95,36 @@ CONTAINS
                     END IF
                 END DO
             END DO
+            write (*, *) 'line99'
         END IF
 !Raleigh-Ritz step
 !Gamma point
         DO Is = 1, Nspin !spiner
-
+            write (*, *) 'Is = 1, Nspin', Is, 1, Nspin
             DO Ik = 1, nk !k-points
-
+                write (*, *) 'Ik = 1, nk', Ik, 1, nk
                 IF (Ik /= IGamma) THEN
-!for non-Gamma k-points
+                    !for non-Gamma k-points
+                    write (*, *) 'line104'
                     STOP 'Waitting for non-Gamma'
+                    write (*, *) 'line106'
                 ELSE
-!for Gamma k-points
+                    !for Gamma k-points
+                    write (*, *) 'line107'
                     eig%wvfG(:, :, Is) = X0(:, :)
+                    write (*, *) 'line109'
                     IF (CheM0 > 0) THEN
-!filter
+                        !filter
+                        write (*, *) 'line114'
                         CALL real_first_filter(nps, nev, veff(:, Is), &
                           & eig%wvfG(:, :, Is), eig%val(:, IGamma, Is))
+                        write (*, *) 'line117'
                     ELSE
-!RR
+                        !RR
+                        write (*, *) 'line120'
                         CALL real_first_RRstep(nps, nev, veff(:, Is), &
                            &   eig%wvfG(:, :, Is), eig%val(:, Ik, Is))
+                        write (*, *) 'line123'
                     END IF
                 END IF
             END DO
@@ -235,13 +240,13 @@ CONTAINS
                         &, nev_tot => Nstates_global, BLOCK_MBNB
 
         IMPLICIT NONE
-!IN/OUT
+        !IN/OUT
         INTEGER(I4B), INTENT(IN) :: nps, nev
         REAL(DP), INTENT(IN) :: veff(nps)
         REAL(DP), INTENT(INOUT) :: X(nps, nev) !subspace
         REAL(DP), INTENT(OUT) :: D(:)      !eigenvalue
-!LOCAL
-!REAL(DP),DIMENSION(nev,nev) :: Shat,Hhat,Qs
+        !LOCAL
+        !REAL(DP),DIMENSION(nev,nev) :: Shat,Hhat,Qs
         REAL(DP) :: Xnew(nps, nev)
         REAL(DP) :: a, b, al
 
@@ -257,8 +262,8 @@ CONTAINS
         REAL(DP), DIMENSION(twoD_map(1, parallel%rankx,&
              &parallel%ranky), nev) :: Hhat, Qs, Shat
 
-!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-
+        !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+        write (*, *) 'line262'
         m = global_n  !dim. 1
         n = nev_tot   !dim. 2
         mb = 1  !block of dim. 1
@@ -269,41 +274,42 @@ CONTAINS
         cnb = 1  !block of dim.2 of X^T*H*X
         nstsp = parallel%nstate_proc
 
-!Raleigh-Ritz step
+        !Raleigh-Ritz step
         IF (LRROrthNorm) THEN
-!OrthNorm
-
+            !OrthNorm
+            write (*, *) 'line276'
             CALL SL_OrthNorm_real(X, m, n, mb, nb)
-
-!RR
+            write (*, *) 'line278'
+            !RR
             CALL Rayleigh_quotient_real(nps, nev, veff, X, Hhat)
-!eigen-decomposion
-
-!STOP 'SL_diagM_real is needed'
+            !eigen-decomposion
+            write (*, *) 'line282'
+            !STOP 'SL_diagM_real is needed'
             CALL SL_diagM_real(n, Hhat, n, n, n, n, cmb, cnb, cmb, cnb, Qs, n, n, D, cmb, cnb)
-
+            write (*, *) 'line285'
         ELSE
-!Overlap matrix
-
+            !Overlap matrix
+            write (*, *) 'line288'
             CALL SL_matmat_real_tn('T', 'N', X, X, Shat, m, n, m, n, mb, nb, mb, nb, cmb, cnb)
-
-!projected hamiltonian
+            write (*, *) 'line290'
+            !projected hamiltonian
             CALL Rayleigh_quotient_real(nps, nev, veff, X, Hhat)
-
-!eigen-decomposion
-
+            write (*, *) 'line293'
+            !eigen-decomposion
+            write (*, *) 'line295'
             CALL SL_GeneralizeEigen_real(n, Hhat, Shat, n, n, n, n  &
                 &, cmb, cnb, cmb, cnb, Qs, n, n, D, cmb, cnb)
-
+            write (*, *) 'line298'
         END IF
-!-------------------
-!rotation
-
+        !-------------------
+        !rotation
+        write (*, *) 'line302'
         CALL SL_matmat_real_nn('N', 'N', X, Qs, Xnew, m, n, n, n, mb, nb, cmb, cmb, cmb, cnb)
-
-!eigen-value
+        write (*, *) 'line304'
+        !eigen-value
         X(:, :) = Xnew(:, :)
-!<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        write (*, *) 'line305'
+        !<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     END SUBROUTINE real_first_RRstep
 !----------------------------------------------------------
     SUBROUTINE init_uplow_real(nps, k, veff, v, a, b, al)
