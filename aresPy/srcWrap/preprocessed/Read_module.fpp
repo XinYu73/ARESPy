@@ -14,52 +14,49 @@ MODULE read_module
 
    IMPLICIT NONE
 CONTAINS
-!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-!------------------------read input.dat------------------------
+   !------------------------read input.dat------------------------
    SUBROUTINE read_file(infile)
       USE parameters
       USE math, ONLY:change_case,find_keywords
       USE pspot_module, ONLY : read_pspot
       IMPLICIT NONE
-!-----------------------------------------------------------
+      !-----------------------------------------------------------
       CHARACTER(7),INTENT(IN) :: infile
-!-----------------------------------------------------------
+      !-----------------------------------------------------------
       INTEGER(I4B)    :: l_str
       INTEGER(I4B)    :: ios,id_ex,id_pound,id_key,id_value !id of key words
       INTEGER(I4B)    :: i,j,k
       INTEGER(I4B)    :: vmajor,vminor,vmicro ! XC version
-!
       CHARACTER       :: ch_mark
       CHARACTER(100)  :: instr
       CHARACTER(100)  :: str
-!
       LOGICAL         :: lexist
-!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+      !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
       IF(parallel%isroot)THEN
 
-!-------start input.dat-----------
+      !-------start input.dat-----------
       INQUIRE(FILE=infile,EXIST=lexist)
-!test the input.dat
+      !test the input.dat
       IF(.NOT.lexist)THEN
          WRITE(*,*) '>>>WARNING<<<:input file is not exist.stop!!!'
          STOP
       ENDIF
-!
+      !
       OPEN(100,FILE=infile,STATUS='old')
       ch_mark='='
       DO WHILE(.TRUE.)
          READ(100,'(A100)',IOSTAT=ios) instr
          IF( ios /= 0 ) EXIT
          instr=ADJUSTL(instr)
-!change the upper case to lower case
+         !change the upper case to lower case
          CALL change_case(instr,str,2)
-!the length of strings
+         !the length of strings
          l_str=LEN_TRIM(str)
-!mark '!' '#'
+         !mark '!' '#'
          id_ex=INDEX(str(1:l_str),'!')
          id_pound=INDEX(str(1:l_str),'#')
-!cancel the strings after '!' or '#'
+         !cancel the strings after '!' or '#'
          IF (id_ex > 0 .AND. id_pound > 0 ) THEN
             l_str=MIN(l_str,id_ex-1,id_pound-1)
          ELSEIF(id_ex > 0 .AND. id_pound == 0 ) THEN
@@ -69,20 +66,20 @@ CONTAINS
          ENDIF
          l_str=LEN_TRIM(str(1:l_str))
          IF(l_str<2) CYCLE
-!
+         !
          CALL find_keywords(str,ch_mark,id_key,id_value)
-!System name,no use
+         !System name,no use
          IF(str(1:id_key) =='system')THEN
             str=instr
             READ(str(id_value:l_str),*) system_name
             WRITE(*,*) 'Task name >>> ',system_name
          ENDIF
-!cell name
+         !cell name
          IF(str(1:id_key)=='cellfile')THEN
             str=instr
             cellfile_name=TRIM(ADJUSTL(str(id_value:l_str)))
          ENDIF
-!pseudopotential file name
+         !pseudopotential file name
          IF(str(1:id_key)=='ppfile')THEN
             str=instr
             ntype=0
@@ -98,7 +95,7 @@ CONTAINS
             ntype=ntype+1
             ppfile_name(ntype)=trim(adjustl(str(k:l_str)))
          ENDIF
-!Ecut
+         !Ecut
          IF(str(1:id_key) == 'ecut')THEN
             READ(str(id_value:l_str),*) Ecut
             IF(Ecut>0.d0)THEN
@@ -107,7 +104,7 @@ CONTAINS
                PRINT*,'Ecut=',Ecut*hart2eV,'eV'
             ENDIF
          ENDIF 
-!gridsize
+         !gridsize
          IF(str(1:id_key) == 'gridspacing')THEN
             IF(Ecut<=0.d0)THEN
                READ(str(id_value:l_str),*) init_gap
@@ -595,16 +592,16 @@ CONTAINS
    ENDSUBROUTINE read_poscar
 !---------------------------Reset POS--------------------------
    SUBROUTINE ResetPOS(natom,lat,pos,poscar)
-!set z-axis as tallest
+      !set z-axis as tallest
       IMPLICIT NONE
       INTEGER(I4B),INTENT(IN) :: natom
       REAL(DP),INTENT(INOUT) :: lat(3,3)
       REAL(DP),INTENT(INOUT) :: pos(3,natom),poscar(3,natom)
-!LOCAL
+      !LOCAL
       REAL(DP) :: alat(3),apos(natom),aposcar(natom)
       REAL(DP) :: x2,y2,z2
       LOGICAL :: lflag
-!>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+! >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
       x2=SUM(lat(:,1))**2
       y2=SUM(lat(:,2))**2
       z2=SUM(lat(:,3))**2

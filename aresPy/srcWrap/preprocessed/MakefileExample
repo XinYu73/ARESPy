@@ -1,179 +1,179 @@
-########################################################################
+# ########################################################################
 
 
 
-#To Wrap
+# #To Wrap
 
 
 
-#######################################################################
-#=======================================================================
-#                   define the compiler names
-#=======================================================================
+# #######################################################################
+# #=======================================================================
+# #                   define the compiler names
+# #=======================================================================
 
-CC       = gcc
-#F90      = gfortran
-F90      = ifort
-#F90      =  /opt/intel/composer_xe_2015.3.187/bin/intel64/ifort
-PYTHON   = python
+# CC       = gcc
+# #F90      = gfortran
+# F90      = ifort
+# #F90      =  /opt/intel/composer_xe_2015.3.187/bin/intel64/ifort
+# PYTHON   = python
 
-#=======================================================================
-#                     additional flags
-#=======================================================================
+# #=======================================================================
+# #                     additional flags
+# #=======================================================================
 
-ifeq ($(F90),gfortran)
-	FPP      = gfortran -E
-	FPP_F90FLAGS = -x f95-cpp-input -fPIC
-	F90FLAGS = -fPIC
-    FCOMP    = gfortran
-    LIBS     =
-endif
+# ifeq ($(F90),gfortran)
+# 	FPP      = gfortran -E
+# 	FPP_F90FLAGS = -x f95-cpp-input -fPIC
+# 	F90FLAGS = -fPIC
+#     FCOMP    = gfortran
+#     LIBS     =
+# endif
 
-ifeq ($(F90),ifort)
+# ifeq ($(F90),ifort)
 
-	FPP      = gfortran -E # gfortran f90wrap temp files only. not compilation
-	FPP_F90FLAGS = -x f95-cpp-input -fPIC
-	F90FLAGS = -fpscomp logicals -fPIC # use 1 and 0 for True and False
-    FCOMP    = intelem # for f2py
-	MPIFC = mpiifort
-    LIBS =
-endif
+# 	FPP      = gfortran -E # gfortran f90wrap temp files only. not compilation
+# 	FPP_F90FLAGS = -x f95-cpp-input -fPIC
+# 	F90FLAGS = -fpscomp logicals -fPIC # use 1 and 0 for True and False
+#     FCOMP    = intelem # for f2py
+# 	MPIFC = mpiifort
+#     LIBS =
+# endif
 
-CFLAGS = -fPIC #     ==> universal for ifort, gfortran, pgi
+# CFLAGS = -fPIC #     ==> universal for ifort, gfortran, pgi
 
-#=======================================================================
-LIB_PATH_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib
-LIB_PATH=-L${LIB_PATH_ROOT}
-LIB_MKL_ROOT=${MKLROOT}/lib/intel64
-LIB_MKL_PATH=-L${LIB_MKL_ROOT}
-FFTW_DIR_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib/fftw
-FFTW_DIR=-L${FFTW_DIR_ROOT}/lib
+# #=======================================================================
+# LIB_PATH_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib
+# LIB_PATH=-L${LIB_PATH_ROOT}
+# LIB_MKL_ROOT=${MKLROOT}/lib/intel64
+# LIB_MKL_PATH=-L${LIB_MKL_ROOT}
+# FFTW_DIR_ROOT=/work/home/xinyu/workplace/PhdProgram/aresPy/ares_lib/lib/fftw
+# FFTW_DIR=-L${FFTW_DIR_ROOT}/lib
 
-FFLAGS = -O3 -fPIC -fpp  -I${LIB_PATH_ROOT}/include  -module .
-MPI_FFLAGS = -fPIC -O3 -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module .
+# FFLAGS = -O3 -fPIC -fpp  -I${LIB_PATH_ROOT}/include  -module .
+# MPI_FFLAGS = -fPIC -O3 -traceback -heap-arrays 1000 -align array32byte -align rec32byte -fpp -DMPI -I$(FFTW_DIR_ROOT)/include -I${LIB_PATH_ROOT}/include -module .
 
-LIBS=-lfftw3 -larpack_ifort -lxcf90 -lxc
-MKLLIBS=-lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
-MPI_LIBS=-larpack_ifort -lxcf90 -lxc
-MPI_FFT=-lfftw3_mpi -lfftw3 
-MPI_MKLLIBS=-lmkl_blacs_intelmpi_lp64 -lmkl_lapack95_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
-#=======================================================================
+# LIBS=-lfftw3 -larpack_ifort -lxcf90 -lxc
+# MKLLIBS=-lmkl_blas95_lp64 -lmkl_lapack95_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
+# MPI_LIBS=-larpack_ifort -lxcf90 -lxc
+# MPI_FFT=-lfftw3_mpi -lfftw3 
+# MPI_MKLLIBS=-lmkl_blacs_intelmpi_lp64 -lmkl_lapack95_lp64 -lmkl_scalapack_lp64 -lmkl_intel_lp64 -lmkl_intel_thread -lmkl_core -liomp5 -lpthread
+# #=======================================================================
 
-LAPACKLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0 -llapack -lrefblas  -ltmglib
-BLASLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0 -lblas
+# LAPACKLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/lapack-3.10.0 -llapack -lrefblas  -ltmglib
+# BLASLIB=-L/work/home/xinyu/workplace/PhdProgram/LAPACK_BLAS/BLAS-3.10.0 -lblas
 
-UNAME = $(shell uname)
+# UNAME = $(shell uname)
 
-ifeq (${UNAME}, Darwin)
-  LIBTOOL = libtool -static -o
-else
-  LIBTOOL = ar src
-endif
+# ifeq (${UNAME}, Darwin)
+#   LIBTOOL = libtool -static -o
+# else
+#   LIBTOOL = ar src
+# endif
 
-# ======================================================================
-# PROJECT CONFIG, do not put spaced behind the variables
-# ======================================================================
-# Python module name
-PYTHON_MODN = arespy
-# mapping between Fortran and C types
-KIND_MAP = kindMap.json
+# # ======================================================================
+# # PROJECT CONFIG, do not put spaced behind the variables
+# # ======================================================================
+# # Python module name
+# PYTHON_MODN = arespy
+# # mapping between Fortran and C types
+# KIND_MAP = kindMap.json
 
-#=======================================================================
-#
-#=======================================================================
+# #=======================================================================
+# #
+# #=======================================================================
 
-#VPATH	=
+# #VPATH	=
 
-#=======================================================================
-#       List all source files required for the project
-#=======================================================================
+# #=======================================================================
+# #       List all source files required for the project
+# #=======================================================================
 
-# names (without suffix), f90 sources
-LIBSRC_SOURCES = Constants MPI_time_evaluate Parameters MPI_array_io \
-	MathSplines Math \
-	Smpi_math_module Fourier Struct_module Read_module \
-	Succeed_module ScaLapack_module Ewald  Finite_module \
-	XC_functional Nonlocalpot_module \
-	Begin_module Smearing_module \
-	Potential_module Lapack_module Matvec_module \
-	Arpack_module Chebyshev_fliter Energy_module Mixer_module Scf_module
+# # names (without suffix), f90 sources
+# LIBSRC_SOURCES = Constants MPI_time_evaluate Parameters MPI_array_io \
+# 	MathSplines Math \
+# 	Smpi_math_module Fourier Struct_module Read_module \
+# 	Succeed_module ScaLapack_module Ewald  Finite_module \
+# 	XC_functional Nonlocalpot_module \
+# 	Begin_module Smearing_module \
+# 	Potential_module Lapack_module Matvec_module \
+# 	Arpack_module Chebyshev_fliter Energy_module Mixer_module Scf_module
 
-# file names
-LIBSRC_FILES = $(addsuffix .f90,${LIBSRC_SOURCES})
+# # file names
+# LIBSRC_FILES = $(addsuffix .f90,${LIBSRC_SOURCES})
 
-# object files
-LIBSRC_OBJECTS = $(addsuffix .o,${LIBSRC_SOURCES})
+# # object files
+# LIBSRC_OBJECTS = $(addsuffix .o,${LIBSRC_SOURCES})
 
-# only used when cleaning up
-LIBSRC_FPP_FILES = $(addsuffix .fpp,${LIBSRC_SOURCES})
+# # only used when cleaning up
+# LIBSRC_FPP_FILES = $(addsuffix .fpp,${LIBSRC_SOURCES})
 
-#=======================================================================
-#       List all source files that require a Python interface
-#=======================================================================
+# #=======================================================================
+# #       List all source files that require a Python interface
+# #=======================================================================
 
-# names (without suffix), f90 sources
-LIBSRC_WRAP_SOURCES = $(LIBSRC_SOURCES)
+# # names (without suffix), f90 sources
+# LIBSRC_WRAP_SOURCES = $(LIBSRC_SOURCES)
 
-# file names
-LIBSRC_WRAP_FILES = $(addsuffix .f90,${LIBSRC_WRAP_SOURCES})
+# # file names
+# LIBSRC_WRAP_FILES = $(addsuffix .f90,${LIBSRC_WRAP_SOURCES})
 
-# object files
-LIBSRC_WRAP_OBJECTS = $(addsuffix .o,${LIBSRC_WRAP_SOURCES})
+# # object files
+# LIBSRC_WRAP_OBJECTS = $(addsuffix .o,${LIBSRC_WRAP_SOURCES})
 
-# fpp files
-LIBSRC_WRAP_FPP_FILES = $(addsuffix .fpp,${LIBSRC_WRAP_SOURCES})
+# # fpp files
+# LIBSRC_WRAP_FPP_FILES = $(addsuffix .fpp,${LIBSRC_WRAP_SOURCES})
 
-#=======================================================================
-#                 Relevant suffixes
-#=======================================================================
+# #=======================================================================
+# #                 Relevant suffixes
+# #=======================================================================
 
-.SUFFIXES: .f90 .fpp
+# .SUFFIXES: .f90 .fpp
 
-#=======================================================================
-#
-#=======================================================================
+# #=======================================================================
+# #
+# #=======================================================================
 
-.PHONY: all clean
-
-
-all: _${PYTHON_MODN}.so _${PYTHON_MODN}_pkg.so
+# .PHONY: all clean
 
 
-clean:
-	-rm -f ${LIBSRC_OBJECTS} ${LIBSRC_FPP_FILES} libsrc.a _${PYTHON_MODN}*.so \
-	_${PYTHON_MODN}_pkg.so *.mod *.fpp f90wrap*.f90 f90wrap*.o *.o ${PYTHON_MODN}.py
-	-rm -rf ${PYTHON_MODN}_pkg
-	-rm -rf src.*/ .f2py_f2cmap .libs/ __pycache__/
+# all: _${PYTHON_MODN}.so _${PYTHON_MODN}_pkg.so
 
 
-.f90.o:
-	#${F90} ${F90FLAGS} -c $< -o $@
-	$(MPIFC) $(MPI_FFLAGS) -c $< -o $@
-
-.c.o:
-	${CC} ${CFLAGS} -c $< -o $@
-
-
-.f90.fpp:
-	${FPP} ${FPP_F90FLAGS} $<  -o $@
+# clean:
+# 	-rm -f ${LIBSRC_OBJECTS} ${LIBSRC_FPP_FILES} libsrc.a _${PYTHON_MODN}*.so \
+# 	_${PYTHON_MODN}_pkg.so *.mod *.fpp f90wrap*.f90 f90wrap*.o *.o ${PYTHON_MODN}.py
+# 	-rm -rf ${PYTHON_MODN}_pkg
+# 	-rm -rf src.*/ .f2py_f2cmap .libs/ __pycache__/
 
 
-libsrc.a: ${LIBSRC_OBJECTS}
-	${LIBTOOL} $@ $?
+# .f90.o:
+# 	#${F90} ${F90FLAGS} -c $< -o $@
+# 	$(MPIFC) $(MPI_FFLAGS) -c $< -o $@
 
-_${PYTHON_MODN}.so: libsrc.a ${LIBSRC_FPP_FILES}
-	#f90wrap -m ${PYTHON_MODN} ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v
-	f2py --debug --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
-	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN} f90wrap*.f90 \
-	-L. -lsrc $(LAPACKLIB) $(BLASLIB) ${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS}  
+# .c.o:
+# 	${CC} ${CFLAGS} -c $< -o $@
 
 
-_${PYTHON_MODN}_pkg.so: libsrc.a ${LIBSRC_FPP_FILES}
-	#f90wrap -m ${PYTHON_MODN}_pkg ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v -P
-	f2py --debug --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
-	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN}_pkg f90wrap*.f90 \
-	-L. -lsrc $(LAPACKLIB) $(BLASLIB) ${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} 
+# .f90.fpp:
+# 	${FPP} ${FPP_F90FLAGS} $<  -o $@
 
-test: all
-	${PYTHON} tests.py
-	${PYTHON} tests_pkg.py
+
+# libsrc.a: ${LIBSRC_OBJECTS}
+# 	${LIBTOOL} $@ $?
+
+# _${PYTHON_MODN}.so: libsrc.a ${LIBSRC_FPP_FILES}
+# 	#f90wrap -m ${PYTHON_MODN} ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v
+# 	f2py-f90wrap --debug --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
+# 	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN} f90wrap*.f90 \
+# 	-L. -lsrc $(LAPACKLIB) $(BLASLIB) ${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS}  
+
+
+# _${PYTHON_MODN}_pkg.so: libsrc.a ${LIBSRC_FPP_FILES}
+# 	#f90wrap -m ${PYTHON_MODN}_pkg ${LIBSRC_WRAP_FPP_FILES} -k ${KIND_MAP} -v -P
+# 	f2py-f90wrap --debug --fcompiler=$(FCOMP) --f90exec=$(MPIFC) --f77exec=$(MPIFC) \
+# 	--f90flags='${MPI_FFLAGS}' --build-dir . -c -m _${PYTHON_MODN}_pkg f90wrap*.f90 \
+# 	-L. -lsrc $(LAPACKLIB) $(BLASLIB) ${FFTW_DIR} ${MPI_FFT} ${LIB_PATH} $(MPI_LIBS) ${LIB_MKL_PATH} ${MPI_MKLLIBS} 
+
+# test: all
+# 	${PYTHON} tests.py
+# 	${PYTHON} tests_pkg.py
