@@ -10,4 +10,4 @@ remote: error: File aresPy/WrappedAresTest/040808 is 116.72 MB; this exceeds Git
 
 
 
-git filter-branch --tree-filter  "git rm -rf --cached --ignore-unmatch ./aresPy/WrappedAresTest/out" HEAD
+git filter-branch --tree-filter  "git rm -rf ./aresPy/WrappedAresTest/out" HEAD
