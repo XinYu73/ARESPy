@@ -31,6 +31,11 @@ CONTAINS
         ELSE
             CALL CheFSI(n, grid%rhoS, grid%rho, eigen)
         END IF
+        write (*, *) 'struct%forces', struct%forces
+        write (*, *) 'struct%Zion', struct%Zion
+        write (*, *) 'struct%nati', struct%nati
+        write (*, *) 'struct%eleid', struct%eleid
+        write (*, *) 'struct%mass', struct%mass
 !<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     END SUBROUTINE electronicSCF
 !############################################################!

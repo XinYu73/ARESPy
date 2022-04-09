@@ -6956,9 +6956,10 @@ class Struct_Module(f90wrap.runtime.FortranModule):
             if array_handle in self._arrays:
                 forces = self._arrays[array_handle]
             else:
-                forces = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _arespy.f90wrap_struct_type__array__forces)
+                print("IIIIIIIIII")
+                print(f90wrap.runtime.sizeof_fortran_t,self._handle,_arespy.f90wrap_struct_type__array__forces)
+                print("IIIIIIIIII")
+                forces = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,self._handle,_arespy.f90wrap_struct_type__array__forces)
                 self._arrays[array_handle] = forces
             return forces
         
@@ -14958,7 +14959,6 @@ class Output_Module(f90wrap.runtime.FortranModule):
         
         
         """
-        print("WWWWWWWWW")
         _arespy.f90wrap_write_density()
     
     @staticmethod

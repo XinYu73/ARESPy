@@ -1,0 +1,112 @@
+ =========================== ARES-PBC ==============================
+ >>>>>>>>> Ab initio Real space Electronic Structer solver <<<<<<<<<
+ Task name >>> OPTIMUS_PRIME                 
+ [The Atomic Spherical Cutting Radius is (Angs)]  -4.00000000000000     
+ Ecut=   940.075301025635      eV
+ The order of finite difference is:           8
+ Spin unpolarized
+ Max simulate steps is:           0
+ Max simulate steps is:           0
+ Chebyshev filter is used,order:          12
+ first Chebyshev filter order:         -24
+ Chebyshev:first step diag free
+ RayleighRitz needn't OrthNorm step
+ Initialize the subspace by Pseudo orbitals
+ initial density by program
+ [The Adding Charge]  0.000000000000000E+000
+ Use Simple Mixing + (r)Pulay Mixing + kerker
+ parallel dims           1           1
+ [Reading PseudoPP FILE]C.pbe-mt-cpi.UPF              
+ [Reading PseudoPP FILE]H.pbe-mt-cpi.UPF              
+ [Ion and Charge Num.]           8   8.00000000000000     
+ [Eigen States Num.]          19
+ XC: PBE-GGA (Pewdew-Burke-Ernzerhof 1996)
+ communicate all grids
+ Total Charge# in Sphere is   7.99999999999999     
+ Non-Local pseudopotential has been used
+ R-space-GRIDS:          50          50          50
+ K-space-GRIDS:           1           1           1
+ Num of K-used:           1
+ >----SCF Iterations for Solving KS Equations----<
+ CheFSI: Dim. of Pseudo Subspace:           8
+ CheFSI: # of random samping states:          11
+ >CheFSI:   1 Energy -2.4687307E+02 Res(E)  4.6496294E+00 Res(POT) -1.0000000E+00
+ >CheFSI:   2 Energy -2.5193552E+02 Res(E)  1.0124884E+00 Res(POT)  3.8751944E-01
+ >CheFSI:   3 Energy -2.4850191E+02 Res(E)  6.8672217E-01 Res(POT)  4.1664245E-01
+ >CheFSI:   4 Energy -2.5464475E+02 Res(E)  1.2285698E+00 Res(POT)  3.6501834E-01
+ >CheFSI:   5 Energy -2.7434257E+02 Res(E)  3.9395631E+00 Res(POT)  4.3233096E-01
+ >CheFSI:   6 Energy -2.3485975E+02 Res(E)  7.8965637E+00 Res(POT)  6.5107287E-01
+ >CheFSI:   7 Energy -2.0867903E+02 Res(E)  5.2361438E+00 Res(POT)  1.2431024E-01
+ >CheFSI:   8 Energy -2.1841314E+02 Res(E)  1.9468218E+00 Res(POT)  2.0947424E-01
+ >CheFSI:   9 Energy -2.2148855E+02 Res(E)  6.1508070E-01 Res(POT)  6.4540845E-02
+ >CheFSI:  10 Energy -2.2092146E+02 Res(E)  1.1341664E-01 Res(POT)  3.6632313E-02
+ >CheFSI:  11 Energy -2.1994615E+02 Res(E)  1.9506254E-01 Res(POT)  3.0224001E-02
+ >CheFSI:  12 Energy -2.1976692E+02 Res(E)  3.5846872E-02 Res(POT)  7.9823460E-03
+ >CheFSI:  13 Energy -2.1973117E+02 Res(E)  7.1496511E-03 Res(POT)  6.1124904E-03
+ >CheFSI:  14 Energy -2.1978232E+02 Res(E)  1.0229763E-02 Res(POT)  3.4362441E-03
+ >CheFSI:  15 Energy -2.1983020E+02 Res(E)  9.5769242E-03 Res(POT)  1.5493575E-03
+ >CheFSI:  16 Energy -2.1983852E+02 Res(E)  1.6639897E-03 Res(POT)  7.4335318E-04
+ >CheFSI:  17 Energy -2.1983591E+02 Res(E)  5.2214806E-04 Res(POT)  4.6732000E-04
+ >CheFSI:  18 Energy -2.1983600E+02 Res(E)  1.7931937E-05 Res(POT)  2.4369554E-04
+ >CheFSI:  19 Energy -2.1983765E+02 Res(E)  3.3042115E-04 Res(POT)  1.3401766E-04
+ >CheFSI:  20 Energy -2.1983920E+02 Res(E)  3.0983924E-04 Res(POT)  7.7679007E-05
+ >CheFSI:  21 Energy -2.1983914E+02 Res(E)  1.2831044E-05 Res(POT)  4.4208044E-05
+ >CheFSI:  22 Energy -2.1983940E+02 Res(E)  5.2017796E-05 Res(POT)  2.4636848E-05
+ >CheFSI:  23 Energy -2.1983962E+02 Res(E)  4.3813599E-05 Res(POT)  1.7570215E-05
+ >CheFSI:  24 Energy -2.1983964E+02 Res(E)  4.9671109E-06 Res(POT)  1.1341762E-05
+ >CheFSI:  25 Energy -2.1983970E+02 Res(E)  1.1072260E-05 Res(POT)  9.0969844E-06
+ >CheFSI:  26 Energy -2.1983974E+02 Res(E)  9.6388974E-06 Res(POT)  1.2587467E-05
+ >CheFSI:  27 Energy -2.1983978E+02 Res(E)  6.7919879E-06 Res(POT)  4.8463590E-06
+ >CheFSI:  28 Energy -2.1983975E+02 Res(E)  5.1255342E-06 Res(POT)  3.3143834E-05
+ >CheFSI:  29 Energy -2.1983975E+02 Res(E)  7.7566030E-07 Res(POT)  8.2041321E-05
+ >CheFSI:  30 Energy -2.1983974E+02 Res(E)  7.9322380E-07 Res(POT)  3.5612636E-05
+ >CheFSI:  31 Energy -2.1983978E+02 Res(E)  6.8499087E-06 Res(POT)  1.4871265E-05
+ >CheFSI:  32 Energy -2.1983979E+02 Res(E)  1.3871735E-06 Res(POT)  7.1201655E-06
+ >CheFSI:  33 Energy -2.1983983E+02 Res(E)  9.0077665E-06 Res(POT)  1.0267479E-04
+ >CheFSI:  34 Energy -2.1983975E+02 Res(E)  1.5623255E-05 Res(POT)  3.8101730E-06
+ >CheFSI:  35 Energy -2.1983979E+02 Res(E)  7.3044086E-06 Res(POT)  5.0244000E-06
+ >CheFSI:  36 Energy -2.1983972E+02 Res(E)  1.3406589E-05 Res(POT)  5.9462448E-06
+ >CheFSI:  37 Energy -2.1983982E+02 Res(E)  1.8523381E-05 Res(POT)  8.2368022E-05
+ >CheFSI:  38 Energy -2.1983977E+02 Res(E)  9.8849221E-06 Res(POT)  3.4376485E-06
+ >CheFSI:  39 Energy -2.1983980E+02 Res(E)  6.9051695E-06 Res(POT)  1.3697379E-05
+ >CheFSI:  40 Energy -2.1983983E+02 Res(E)  6.4528846E-06 Res(POT)  2.1648178E-06
+ >CheFSI:  41 Energy -2.1983979E+02 Res(E)  9.4915311E-06 Res(POT)  1.8256719E-06
+ >CheFSI:  42 Energy -2.1983981E+02 Res(E)  4.0305952E-06 Res(POT)  2.4003543E-04
+ >CheFSI:  43 Energy -2.1983976E+02 Res(E)  9.3245199E-06 Res(POT)  9.2837936E-07
+ >CheFSI:  44 Energy -2.1983974E+02 Res(E)  3.0523812E-06 Res(POT)  2.1694320E-05
+ >CheFSI:  45 Energy -2.1983983E+02 Res(E)  1.6481492E-05 Res(POT)  4.1917616E-06
+ >CheFSI:  46 Energy -2.1983978E+02 Res(E)  9.5250414E-06 Res(POT)  8.4439057E-05
+ >CheFSI:  47 Energy -2.1983981E+02 Res(E)  5.7644897E-06 Res(POT)  5.6217844E-05
+ >CheFSI:  48 Energy -2.1983977E+02 Res(E)  7.5761429E-06 Res(POT)  1.7237995E-05
+ >CheFSI:  49 Energy -2.1983978E+02 Res(E)  3.1753520E-06 Res(POT)  5.3994855E-06
+ >CheFSI:  50 Energy -2.1983979E+02 Res(E)  4.2193644E-07 Res(POT)  5.8200978E-06
+ >CheFSI:  51 Energy -2.1983978E+02 Res(E)  1.8638276E-06 Res(POT)  3.3649844E-06
+ SCF DONE!STEP is:          51
+ struct%forces  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000  0.000000000000000E+000  0.000000000000000E+000
+  0.000000000000000E+000
+ struct%Zion   4.00000000000000        1.00000000000000     
+ struct%nati           1           4
+ struct%eleid           1           2           6
+ struct%mass  0.000000000000000E+000  0.000000000000000E+000
+ *******************OUTPUT DATA***********************
+                    [SCF Time]    1.0605E+02           0  0
+ -----------------------------------------------------
+ *Band energy     ->               -85.4904303 eV
+ *XC energy       ->               -86.0724862 eV
+ *Hartree energy  ->              +285.5850089 eV
+ *I-E energy      ->              -742.0711572 eV
+ *Ion-Ion energy  ->              +130.7189660 eV
+ -----------------------------------------------------
+ *Total-energy    ->              -219.8397777 eV
+ *Free-energy     ->              -219.8397777 eV
+ *0K Free-energy  ->              -219.8397777 eV
+ -----------------------------------------------------
+ *Cohesive energy ->               -23.9806754 eV
+ *AE energy (test)->             -1101.5650648 eV
+ *******************OUTPUT DATA***********************
+                  [Total Time]    1.0605E+02           0  0
+ =================================Well Done===================================
