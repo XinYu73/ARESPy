@@ -25,20 +25,31 @@ print("ecut",aresParameters.ecut)
 # print(aresParameters.etol)
 print("ntype",aresParameters.ntype)
 
+Out = ares.Aresapi.aresOut()
 ares.Scalapack_Module.init_scala()
 ares.Begin_Module.initial_grid_pbc()
 ares.Potential_Module.vlpp()
 ares.Scf_Module.electronicscf()
+
+ares.Aresapi.init_alloc_arrays(Out,5)
+
+print("Out.forces\n",Out.forces)
+print("Out.Stress\n",Out.stress)
+print("Out.poscar\n",Out.poscar)
+print("Out.pos\n",Out.pos)
+print("Out.chargeRho\n",Out.chargerho[0,0,:,0])
+
+
 hart2ev = ares.Constants().hart2ev
-print("Total Energy",ares.Energy_Module().etot*hart2ev)
-print("Band Energy",ares.Energy_Module().eband*hart2ev)
-print("XC Energy",ares.Energy_Module().exc*hart2ev)
-print("Hartree Energy",ares.Energy_Module().eh*hart2ev)
-print("I-E Energy",ares.Energy_Module().eext*hart2ev)
-print("Ion-Ion Energy",ares.Struct_Module().eionion*hart2ev)
-print("Free Energy",ares.Energy_Module().fe*hart2ev)
-print("0K Energy",ares.Energy_Module().fe0*hart2ev)
-print("natom, naty",ares.Struct_Module().natom,ares.Struct_Module().naty)
+print("Total Energy\n",ares.Energy_Module().etot*hart2ev)
+print("Band Energy\n",ares.Energy_Module().eband*hart2ev)
+print("XC Energy\n",ares.Energy_Module().exc*hart2ev)
+print("Hartree Energy\n",ares.Energy_Module().eh*hart2ev)
+print("I-E Energy\n",ares.Energy_Module().eext*hart2ev)
+print("Ion-Ion Energy\n",ares.Struct_Module().eionion*hart2ev)
+print("Free Energy\n",ares.Energy_Module().fe*hart2ev)
+print("0K Energy\n",ares.Energy_Module().fe0*hart2ev)
+print("natom, naty\n",ares.Struct_Module().natom,ares.Struct_Module().naty)
 
 # print("forces",struct.forces)
 

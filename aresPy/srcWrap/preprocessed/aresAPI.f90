@@ -1,59 +1,54 @@
 module aresAPI
     USE constants
-    USE struct_module, ONLY: natom => nat
+    USE Struct_module
     implicit none
-    type, public :: embed_base
-        ! type(input_base)                :: input
-        ! type(tddft_base)                :: tddft
-        ! real(kind=dp), allocatable      :: extpot(:, :)
-        ! real(kind=dp)                   :: extene = 0.0
-        ! integer                         :: exttype = 0
-        real(kind=dp), allocatable      :: extforces(:, :)
-        !     real(kind=dp)                   :: extstress(3, 3)
-        !     logical                         :: initial = .true.
-        !     real(kind=dp)                   :: mix_coef = -1.0
-        !     logical                         :: finish = .false.
-        !     real(kind=dp)                   :: etotal = 0.0
-        !     real(kind=dp)                   :: dnorm = 1.0
-        !     logical                         :: lewald = .true.
-        !     logical                         :: nlpp = .true.
-        !     real(kind=dp)                   :: diag_conv = 1.D-2
-        !     logical                         :: ldescf = .false.
-        ! !! add scf correction energy
-        !     logical                         :: iterative = .false.
-        ! !! add correction for variational energy
-        !     logical                         :: lmovecell = .false.
-        ! !! allow change the cell
-    CONTAINS
-        !--------------------------------------------------------------------------------
-        ! PROCEDURE :: allocate_extpot => allocate_extpot_class
-        PROCEDURE :: allocate_extforces
-    end type embed_base
-    TYPE(embed_base), public :: messenger
+    type aresOut
+        REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: forces
+        REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: stress
+        REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: poscar
+        REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: pos
+        REAL(DP), ALLOCATABLE, DIMENSION(:, :, :, :) :: chargeRho
+    end type aresOut
 contains
-    ! For Force
-    SUBROUTINE allocate_extforces(embed)
-        IMPLICIT NONE
-        TYPE(embed_base), INTENT(INOUT) :: embed
-        !
-        IF (ALLOCATED(embed%extforces)) THEN
-            IF (SIZE(embed%extforces, 2) /= nat) DEALLOCATE (embed%extforces)
+    subroutine init_alloc_arrays(dertype, nnatom)
+        USE parameters, ONLY: nspin
+        USE grid_module, ONLY: ni1 => global_n1, ni2 => global_n2, ni3 => global_n3 &
+                    & , Sphere2Cubic, sph => grid, nps => n
+        implicit none
+        type(aresout), INTENT(inout) :: dertype
+        INTEGER(I4B), intent(in) :: nnatom
+        REAL(DP) :: rhot(ni1, ni2, ni3, 2)
+        !force
+        ALLOCATE (dertype%forces(3, nnatom))
+        dertype%forces = struct%forces
+        !stress
+        ALLOCATE (dertype%stress(3, 3))
+        dertype%stress = struct%stress
+        !poscar
+        ALLOCATE (dertype%poscar(3, nnatom))
+        dertype%poscar = struct%poscar
+        !pos
+        ALLOCATE (dertype%pos(3, nnatom))
+        dertype%pos = struct%pos
+        !electron density????????????????
+        ALLOCATE (dertype%chargeRho(ni1, ni2, ni3, 2))
+        IF (nspin == 1) THEN
+            CALL Sphere2Cubic(nps, sph%rhoS(:, 1), rhot(:, :, :, 1))
+            rhot(:, :, :, 2) = 0._DP
+        ELSE
+            CALL Sphere2Cubic(nps, sph%rhoS(:, 1) + sph%rhoS(:, 2), rhot(:, :, :, 1))
+            CALL Sphere2Cubic(nps, sph%rhoS(:, 1) - sph%rhoS(:, 2), rhot(:, :, :, 2))
         END IF
-        IF (.NOT. ALLOCATED(embed%extforces)) THEN
-            ALLOCATE (embed%extforces(3, nat))
-            embed%extforces = 0.0_DP
-        END IF
-    END SUBROUTINE
-    !
-    SUBROUTINE ares_set_extforces(embed)
+        dertype%chargeRho = rhot
         !
-        use struct_module, only: struct
-        IMPLICIT NONE
-        TYPE(embed_base), INTENT(INOUT) :: embed
-        !
-        call embed%allocate_extforces()
-        embed%extforces(:, :) = struct%forces(:, 1:nat)
-        !
-    END SUBROUTINE
-    ! Force Done
+    end subroutine init_alloc_arrays
+
+    subroutine destroy_alloc_arrays(dertype)
+        type(aresout), INTENT(inout) :: dertype
+        if (allocated(dertype%forces)) deallocate (dertype%forces)
+        if (allocated(dertype%stress)) deallocate (dertype%stress)
+        if (allocated(dertype%poscar)) deallocate (dertype%poscar)
+        if (allocated(dertype%pos)) deallocate (dertype%pos)
+        if (allocated(dertype%chargeRho)) deallocate (dertype%chargeRho)
+    end subroutine destroy_alloc_arrays
 end module aresAPI

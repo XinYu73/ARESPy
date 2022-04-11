@@ -45,6 +45,7 @@ CONTAINS
         write (*, *) 'struct%nati', struct%nati
         write (*, *) 'struct%eleid', struct%eleid
         write (*, *) 'struct%mass', struct%mass
+        write (*, *) 'struct%mass', struct%poscar
         !<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     END SUBROUTINE electronicSCF
 !############################################################!
