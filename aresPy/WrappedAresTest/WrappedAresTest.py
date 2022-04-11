@@ -40,6 +40,10 @@ print("Out.pos\n",Out.pos)
 print("Out.chargeRho\n",Out.chargerho[0,0,:,0])
 
 
+
+
+
+
 hart2ev = ares.Constants().hart2ev
 print("Total Energy\n",ares.Energy_Module().etot*hart2ev)
 print("Band Energy\n",ares.Energy_Module().eband*hart2ev)
