@@ -2,7 +2,7 @@
 Module scf_module
 
 
-Defined at Scf_module.fpp lines 5-281
+Defined at Scf_module.fpp lines 5-299
 
 """
 from __future__ import print_function, absolute_import, division
@@ -18,7 +18,7 @@ def electronicscf():
     electronicscf()
     
     
-    Defined at Scf_module.fpp lines 18-32
+    Defined at Scf_module.fpp lines 18-43
     
     
     """
@@ -29,7 +29,7 @@ def arpackscf(nps, rhos, rho, eig):
     arpackscf(nps, rhos, rho, eig)
     
     
-    Defined at Scf_module.fpp lines 39-108
+    Defined at Scf_module.fpp lines 50-119
     
     Parameters
     ----------
@@ -47,7 +47,7 @@ def eigensolver_real(nps, nev, veff, psi, eval, diagtol):
     eigensolver_real(nps, nev, veff, psi, eval, diagtol)
     
     
-    Defined at Scf_module.fpp lines 111-154
+    Defined at Scf_module.fpp lines 122-165
     
     Parameters
     ----------
@@ -67,7 +67,7 @@ def chefsi(nps, rhos, rho, eig):
     chefsi(nps, rhos, rho, eig)
     
     
-    Defined at Scf_module.fpp lines 162-262
+    Defined at Scf_module.fpp lines 173-280
     
     Parameters
     ----------
@@ -85,7 +85,7 @@ def filter_spin_gamma(nps, nev, veff, x, d):
     filter_spin_gamma(nps, nev, veff, x, d)
     
     
-    Defined at Scf_module.fpp lines 265-280
+    Defined at Scf_module.fpp lines 283-298
     
     Parameters
     ----------

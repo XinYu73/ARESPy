@@ -2,7 +2,7 @@
 Module scalapack_module
 
 
-Defined at ScaLapack_module.fpp lines 5-1152
+Defined at ScaLapack_module.fpp lines 5-1169
 
 """
 from __future__ import print_function, absolute_import, division
@@ -409,7 +409,7 @@ def sl_matmat_real_tn(opa, opb, amat, bmat, cmat, am, an, bm, bn, amb, anb, bmb,
         bnb, cmb, cnb)
     
     
-    Defined at ScaLapack_module.fpp lines 971-1089
+    Defined at ScaLapack_module.fpp lines 971-1106
     
     Parameters
     ----------
@@ -430,6 +430,7 @@ def sl_matmat_real_tn(opa, opb, amat, bmat, cmat, am, an, bm, bn, amb, anb, bmb,
     cnb : int
     
     ---------------------------------------------------------------------
+    write(*, *) 'line1101'
     """
     _arespy_pkg.f90wrap_sl_matmat_real_tn(opa=opa, opb=opb, amat=amat, bmat=bmat, \
         cmat=cmat, am=am, an=an, bm=bm, bn=bn, amb=amb, anb=anb, bmb=bmb, bnb=bnb, \
@@ -442,7 +443,7 @@ def sl_matmat_real_nn(opa, opb, amat, bmat, cmat, am, an, bm, bn, amb, anb, bmb,
         bnb, cmb, cnb)
     
     
-    Defined at ScaLapack_module.fpp lines 1092-1151
+    Defined at ScaLapack_module.fpp lines 1109-1168
     
     Parameters
     ----------

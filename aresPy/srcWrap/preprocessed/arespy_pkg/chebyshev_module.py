@@ -2,7 +2,7 @@
 Module chebyshev_module
 
 
-Defined at Chebyshev_fliter.fpp lines 10-722
+Defined at Chebyshev_fliter.fpp lines 10-747
 
 """
 from __future__ import print_function, absolute_import, division
@@ -18,7 +18,7 @@ def buildsubspace(nps, nev, veff, eig):
     buildsubspace(nps, nev, veff, eig)
     
     
-    Defined at Chebyshev_fliter.fpp lines 22-107
+    Defined at Chebyshev_fliter.fpp lines 22-119
     
     Parameters
     ----------
@@ -35,7 +35,7 @@ def real_pseudosubspace(nps, nev, initx):
     real_pseudosubspace(nps, nev, initx)
     
     
-    Defined at Chebyshev_fliter.fpp lines 110-185
+    Defined at Chebyshev_fliter.fpp lines 122-197
     
     Parameters
     ----------
@@ -51,7 +51,7 @@ def real_first_rrstep(nps, nev, veff, x, d):
     real_first_rrstep(nps, nev, veff, x, d)
     
     
-    Defined at Chebyshev_fliter.fpp lines 188-251
+    Defined at Chebyshev_fliter.fpp lines 200-276
     
     Parameters
     ----------
@@ -63,6 +63,7 @@ def real_first_rrstep(nps, nev, veff, x, d):
     
     -------------------
     rotation
+    write(*, *) 'line302'
     """
     _arespy_pkg.f90wrap_real_first_rrstep(nps=nps, nev=nev, veff=veff, x=x, d=d)
 
@@ -71,7 +72,7 @@ def init_uplow_real(nps, k, veff, v):
     a, b, al = init_uplow_real(nps, k, veff, v)
     
     
-    Defined at Chebyshev_fliter.fpp lines 254-310
+    Defined at Chebyshev_fliter.fpp lines 279-335
     
     Parameters
     ----------
@@ -95,7 +96,7 @@ def real_first_filter(nps, nst, veff, x, eval):
     real_first_filter(nps, nst, veff, x, eval)
     
     
-    Defined at Chebyshev_fliter.fpp lines 313-394
+    Defined at Chebyshev_fliter.fpp lines 338-419
     
     Parameters
     ----------
@@ -115,7 +116,7 @@ def rayleigh_quotient_real(nps, nst, veff, x, xhx):
     rayleigh_quotient_real(nps, nst, veff, x, xhx)
     
     
-    Defined at Chebyshev_fliter.fpp lines 402-421
+    Defined at Chebyshev_fliter.fpp lines 427-446
     
     Parameters
     ----------
@@ -134,7 +135,7 @@ def cal_hx_real(nps, nst, veff, v, hv):
     cal_hx_real(nps, nst, veff, v, hv)
     
     
-    Defined at Chebyshev_fliter.fpp lines 424-438
+    Defined at Chebyshev_fliter.fpp lines 449-463
     
     Parameters
     ----------
@@ -152,7 +153,7 @@ def estupb_real(nps, k, veff, vec):
     b = estupb_real(nps, k, veff, vec)
     
     
-    Defined at Chebyshev_fliter.fpp lines 441-496
+    Defined at Chebyshev_fliter.fpp lines 466-521
     
     Parameters
     ----------
@@ -174,7 +175,7 @@ def chebyshev_filter_real(nps, nst, veff, x, m, a, b):
     chebyshev_filter_real(nps, nst, veff, x, m, a, b)
     
     
-    Defined at Chebyshev_fliter.fpp lines 499-533
+    Defined at Chebyshev_fliter.fpp lines 524-558
     
     Parameters
     ----------
@@ -195,7 +196,7 @@ def chebyshev_filter_scaled_real(nps, nst, veff, x, m, a, b, al):
     chebyshev_filter_scaled_real(nps, nst, veff, x, m, a, b, al)
     
     
-    Defined at Chebyshev_fliter.fpp lines 536-574
+    Defined at Chebyshev_fliter.fpp lines 561-599
     
     Parameters
     ----------
@@ -217,7 +218,7 @@ def grayleigh_ritz_real(nps, nev, veff, x, d):
     grayleigh_ritz_real(nps, nev, veff, x, d)
     
     
-    Defined at Chebyshev_fliter.fpp lines 577-626
+    Defined at Chebyshev_fliter.fpp lines 602-651
     
     Parameters
     ----------
@@ -235,7 +236,7 @@ def rayleigh_ritz_real(nps, sn, veff, x, d):
     rayleigh_ritz_real(nps, sn, veff, x, d)
     
     
-    Defined at Chebyshev_fliter.fpp lines 629-675
+    Defined at Chebyshev_fliter.fpp lines 654-700
     
     Parameters
     ----------
@@ -253,7 +254,7 @@ def cheby_filtering_grrr(nps, nev, veff, x, d):
     cheby_filtering_grrr(nps, nev, veff, x, d)
     
     
-    Defined at Chebyshev_fliter.fpp lines 678-721
+    Defined at Chebyshev_fliter.fpp lines 703-746
     
     Parameters
     ----------

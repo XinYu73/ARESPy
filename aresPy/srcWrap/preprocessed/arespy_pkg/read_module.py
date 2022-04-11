@@ -2,7 +2,7 @@
 Module read_module
 
 
-Defined at Read_module.fpp lines 5-632
+Defined at Read_module.fpp lines 5-629
 
 """
 from __future__ import print_function, absolute_import, division
@@ -18,7 +18,7 @@ def read_file(infile):
     read_file(infile)
     
     
-    Defined at Read_module.fpp lines 17-451
+    Defined at Read_module.fpp lines 16-448
     
     Parameters
     ----------
@@ -33,7 +33,7 @@ def read_poscar(nty, filename):
     read_poscar(nty, filename)
     
     
-    Defined at Read_module.fpp lines 454-569
+    Defined at Read_module.fpp lines 451-566
     
     Parameters
     ----------
@@ -48,7 +48,7 @@ def resetpos(natom, lat, pos, poscar):
     resetpos(natom, lat, pos, poscar)
     
     
-    Defined at Read_module.fpp lines 572-631
+    Defined at Read_module.fpp lines 569-628
     
     Parameters
     ----------

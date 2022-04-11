@@ -6956,10 +6956,9 @@ class Struct_Module(f90wrap.runtime.FortranModule):
             if array_handle in self._arrays:
                 forces = self._arrays[array_handle]
             else:
-                print("IIIIIIIIII")
-                print(f90wrap.runtime.sizeof_fortran_t,self._handle,_arespy.f90wrap_struct_type__array__forces)
-                print("IIIIIIIIII")
-                forces = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,self._handle,_arespy.f90wrap_struct_type__array__forces)
+                forces = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                        self._handle,
+                                        _arespy.f90wrap_struct_type__array__forces)
                 self._arrays[array_handle] = forces
             return forces
         
@@ -10209,7 +10208,7 @@ class Read_Module(f90wrap.runtime.FortranModule):
     Module read_module
     
     
-    Defined at Read_module.fpp lines 5-632
+    Defined at Read_module.fpp lines 5-629
     
     """
     @staticmethod
@@ -10218,7 +10217,7 @@ class Read_Module(f90wrap.runtime.FortranModule):
         read_file(infile)
         
         
-        Defined at Read_module.fpp lines 17-451
+        Defined at Read_module.fpp lines 16-448
         
         Parameters
         ----------
@@ -10234,7 +10233,7 @@ class Read_Module(f90wrap.runtime.FortranModule):
         read_poscar(nty, filename)
         
         
-        Defined at Read_module.fpp lines 454-569
+        Defined at Read_module.fpp lines 451-566
         
         Parameters
         ----------
@@ -10250,7 +10249,7 @@ class Read_Module(f90wrap.runtime.FortranModule):
         resetpos(natom, lat, pos, poscar)
         
         
-        Defined at Read_module.fpp lines 572-631
+        Defined at Read_module.fpp lines 569-628
         
         Parameters
         ----------
@@ -11078,7 +11077,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
     Module scalapack_module
     
     
-    Defined at ScaLapack_module.fpp lines 5-1152
+    Defined at ScaLapack_module.fpp lines 5-1169
     
     """
     @staticmethod
@@ -11491,7 +11490,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
             bnb, cmb, cnb)
         
         
-        Defined at ScaLapack_module.fpp lines 971-1089
+        Defined at ScaLapack_module.fpp lines 971-1106
         
         Parameters
         ----------
@@ -11512,6 +11511,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
         cnb : int
         
         ---------------------------------------------------------------------
+        write(*, *) 'line1101'
         """
         _arespy.f90wrap_sl_matmat_real_tn(opa=opa, opb=opb, amat=amat, bmat=bmat, \
             cmat=cmat, am=am, an=an, bm=bm, bn=bn, amb=amb, anb=anb, bmb=bmb, bnb=bnb, \
@@ -11525,7 +11525,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
             bnb, cmb, cnb)
         
         
-        Defined at ScaLapack_module.fpp lines 1092-1151
+        Defined at ScaLapack_module.fpp lines 1109-1168
         
         Parameters
         ----------
@@ -14419,7 +14419,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
     Module chebyshev_module
     
     
-    Defined at Chebyshev_fliter.fpp lines 10-722
+    Defined at Chebyshev_fliter.fpp lines 10-747
     
     """
     @staticmethod
@@ -14428,7 +14428,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         buildsubspace(nps, nev, veff, eig)
         
         
-        Defined at Chebyshev_fliter.fpp lines 22-107
+        Defined at Chebyshev_fliter.fpp lines 22-119
         
         Parameters
         ----------
@@ -14446,7 +14446,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         real_pseudosubspace(nps, nev, initx)
         
         
-        Defined at Chebyshev_fliter.fpp lines 110-185
+        Defined at Chebyshev_fliter.fpp lines 122-197
         
         Parameters
         ----------
@@ -14463,7 +14463,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         real_first_rrstep(nps, nev, veff, x, d)
         
         
-        Defined at Chebyshev_fliter.fpp lines 188-251
+        Defined at Chebyshev_fliter.fpp lines 200-276
         
         Parameters
         ----------
@@ -14475,6 +14475,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         
         -------------------
         rotation
+        write(*, *) 'line302'
         """
         _arespy.f90wrap_real_first_rrstep(nps=nps, nev=nev, veff=veff, x=x, d=d)
     
@@ -14484,7 +14485,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         a, b, al = init_uplow_real(nps, k, veff, v)
         
         
-        Defined at Chebyshev_fliter.fpp lines 254-310
+        Defined at Chebyshev_fliter.fpp lines 279-335
         
         Parameters
         ----------
@@ -14509,7 +14510,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         real_first_filter(nps, nst, veff, x, eval)
         
         
-        Defined at Chebyshev_fliter.fpp lines 313-394
+        Defined at Chebyshev_fliter.fpp lines 338-419
         
         Parameters
         ----------
@@ -14529,7 +14530,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         rayleigh_quotient_real(nps, nst, veff, x, xhx)
         
         
-        Defined at Chebyshev_fliter.fpp lines 402-421
+        Defined at Chebyshev_fliter.fpp lines 427-446
         
         Parameters
         ----------
@@ -14549,7 +14550,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         cal_hx_real(nps, nst, veff, v, hv)
         
         
-        Defined at Chebyshev_fliter.fpp lines 424-438
+        Defined at Chebyshev_fliter.fpp lines 449-463
         
         Parameters
         ----------
@@ -14568,7 +14569,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         b = estupb_real(nps, k, veff, vec)
         
         
-        Defined at Chebyshev_fliter.fpp lines 441-496
+        Defined at Chebyshev_fliter.fpp lines 466-521
         
         Parameters
         ----------
@@ -14591,7 +14592,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         chebyshev_filter_real(nps, nst, veff, x, m, a, b)
         
         
-        Defined at Chebyshev_fliter.fpp lines 499-533
+        Defined at Chebyshev_fliter.fpp lines 524-558
         
         Parameters
         ----------
@@ -14613,7 +14614,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         chebyshev_filter_scaled_real(nps, nst, veff, x, m, a, b, al)
         
         
-        Defined at Chebyshev_fliter.fpp lines 536-574
+        Defined at Chebyshev_fliter.fpp lines 561-599
         
         Parameters
         ----------
@@ -14636,7 +14637,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         grayleigh_ritz_real(nps, nev, veff, x, d)
         
         
-        Defined at Chebyshev_fliter.fpp lines 577-626
+        Defined at Chebyshev_fliter.fpp lines 602-651
         
         Parameters
         ----------
@@ -14655,7 +14656,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         rayleigh_ritz_real(nps, sn, veff, x, d)
         
         
-        Defined at Chebyshev_fliter.fpp lines 629-675
+        Defined at Chebyshev_fliter.fpp lines 654-700
         
         Parameters
         ----------
@@ -14674,7 +14675,7 @@ class Chebyshev_Module(f90wrap.runtime.FortranModule):
         cheby_filtering_grrr(nps, nev, veff, x, d)
         
         
-        Defined at Chebyshev_fliter.fpp lines 678-721
+        Defined at Chebyshev_fliter.fpp lines 703-746
         
         Parameters
         ----------
@@ -15521,7 +15522,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
     Module scf_module
     
     
-    Defined at Scf_module.fpp lines 5-281
+    Defined at Scf_module.fpp lines 5-299
     
     """
     @staticmethod
@@ -15530,11 +15531,10 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         electronicscf()
         
         
-        Defined at Scf_module.fpp lines 18-32
+        Defined at Scf_module.fpp lines 18-43
         
         
         """
-        print("hi there, I am in electronicscf")
         _arespy.f90wrap_electronicscf()
     
     @staticmethod
@@ -15543,7 +15543,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         arpackscf(nps, rhos, rho, eig)
         
         
-        Defined at Scf_module.fpp lines 39-108
+        Defined at Scf_module.fpp lines 50-119
         
         Parameters
         ----------
@@ -15554,7 +15554,6 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         
         ===============================================================
         """
-        print("hi there, I am in arpackscf")
         _arespy.f90wrap_arpackscf(nps=nps, rhos=rhos, rho=rho, eig=eig._handle)
     
     @staticmethod
@@ -15563,7 +15562,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         eigensolver_real(nps, nev, veff, psi, eval, diagtol)
         
         
-        Defined at Scf_module.fpp lines 111-154
+        Defined at Scf_module.fpp lines 122-165
         
         Parameters
         ----------
@@ -15584,7 +15583,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         chefsi(nps, rhos, rho, eig)
         
         
-        Defined at Scf_module.fpp lines 162-262
+        Defined at Scf_module.fpp lines 173-280
         
         Parameters
         ----------
@@ -15603,7 +15602,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         filter_spin_gamma(nps, nev, veff, x, d)
         
         
-        Defined at Scf_module.fpp lines 265-280
+        Defined at Scf_module.fpp lines 283-298
         
         Parameters
         ----------
