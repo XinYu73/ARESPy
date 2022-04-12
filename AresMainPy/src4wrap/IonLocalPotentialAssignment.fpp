@@ -20,8 +20,10 @@ MODULE GetVLocalPseudoPotential
     !weight !! for DoubleGrid
     REAL(DP), ALLOCATABLE :: wijk(:), drijk(:, :)
     INTEGER(I4B)         :: Ilft, Irit, numdg
-    
-    private CubicSplineInterp
+
+    !add by YuXin
+    private :: polynom,dfdr,finite_factor,CubicSplineInterp,cubichermiteinterp
+    !end add by YuXin
 CONTAINS
     !-----------------------DIVIDER-LINE--------------------------
     SUBROUTINE CalVlpp()
@@ -157,7 +159,7 @@ CONTAINS
         temp = 0.d0
 
         max_m = size(psp(Ity)%r_real)
-# 166 "IonLocalPotentialAssignment.f90"
+# 168 "IonLocalPotentialAssignment.f90"
                     DO i = 1, parallel%mygrid_range(3), 1
                         ! rr=grid%rvec(4,rho_calc%n(i))
                         rr = sqrt((grid%rvec(1, rho_calc%n(i)) - poscar(1))**2 + &
@@ -869,7 +871,7 @@ CONTAINS
         temp = 0.d0
 
         !##CALCULATE Vion GENERATE BY ATOM IN "struct%poscar(:,struct%eleid(i)+j-1)"
-# 888 "IonLocalPotentialAssignment.f90"
+# 890 "IonLocalPotentialAssignment.f90"
                     !> debug
                     ! open(1180,file='Vloc')
                     ! open(1181,file='Vcomp')
@@ -982,7 +984,7 @@ CONTAINS
             !enddo
         end do
         Vloc = sum(d_Vloc*wijk)
-# 1019 "IonLocalPotentialAssignment.f90"
+# 1021 "IonLocalPotentialAssignment.f90"
     END SUBROUTINE set_Vloc_dg
     !-----------------------PARTING-LINE--------------------------
     SUBROUTINE set_vcomp(n_inp, zion, rgauss, r_inp, V_inp, Vcomp)

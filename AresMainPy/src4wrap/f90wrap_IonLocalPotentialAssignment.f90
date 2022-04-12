@@ -49,103 +49,21 @@ subroutine f90wrap_fourbess_gr(g, fg, r, fr, n0, n1, n2, n3)
     call fourbess_gr(g=g, fg=fg, r=r, fr=fr)
 end subroutine f90wrap_fourbess_gr
 
-subroutine f90wrap_cubicsplineinterp(fun, ddfdx2, xmax, dx, x, ret_cubicsplineinterp, zion, n0, n1)
-    use getvlocalpseudopotential, only: cubicsplineinterp
-    implicit none
-    
-    real(8), intent(in), dimension(n0) :: fun
-    real(8), intent(in), dimension(n1) :: ddfdx2
-    real(8), intent(in) :: xmax
-    real(8), intent(in) :: dx
-    real(8), intent(in) :: x
-    real(8), intent(out) :: ret_cubicsplineinterp
-    integer(4), optional, intent(in) :: zion
-    integer :: n0
-    !f2py intent(hide), depend(fun) :: n0 = shape(fun,0)
-    integer :: n1
-    !f2py intent(hide), depend(ddfdx2) :: n1 = shape(ddfdx2,0)
-    ret_cubicsplineinterp = cubicsplineinterp(fun=fun, ddfdx2=ddfdx2, xmax=xmax, dx=dx, x=x, Zion=zion)
-end subroutine f90wrap_cubicsplineinterp
-
-subroutine f90wrap_cubichermiteinterp(fun, dfdx, xmax, h, x, ret_cubichermiteinterp, zion, n0, n1)
-    use getvlocalpseudopotential, only: cubichermiteinterp
-    implicit none
-    
-    real(8), intent(in), dimension(n0) :: fun
-    real(8), intent(in), dimension(n1) :: dfdx
-    real(8), intent(in) :: xmax
-    real(8), intent(in) :: h
-    real(8), intent(in) :: x
-    real(8), intent(out) :: ret_cubichermiteinterp
-    integer(4) :: zion
-    integer :: n0
-    !f2py intent(hide), depend(fun) :: n0 = shape(fun,0)
-    integer :: n1
-    !f2py intent(hide), depend(dfdx) :: n1 = shape(dfdx,0)
-    ret_cubichermiteinterp = cubichermiteinterp(fun=fun, dfdx=dfdx, xmax=xmax, h=h, x=x, zion=zion)
-end subroutine f90wrap_cubichermiteinterp
-
-subroutine f90wrap_dfdr(np, h, f, zion, df, n0, n1)
-    use getvlocalpseudopotential, only: dfdr
-    implicit none
-    
-    integer(4), intent(in) :: np
-    real(8), intent(in) :: h
-    real(8), intent(in), dimension(n0) :: f
-    integer(4), intent(in) :: zion
-    real(8), intent(inout), dimension(n1) :: df
-    integer :: n0
-    !f2py intent(hide), depend(f) :: n0 = shape(f,0)
-    integer :: n1
-    !f2py intent(hide), depend(df) :: n1 = shape(df,0)
-    call dfdr(np=np, h=h, f=f, zion=zion, df=df)
-end subroutine f90wrap_dfdr
-
-subroutine f90wrap_finite_factor(fnor, norder, coe, n0)
-    use getvlocalpseudopotential, only: finite_factor
-    implicit none
-    
-    integer(4), intent(in) :: fnor
-    integer(4), intent(in) :: norder
-    real(8), intent(inout), dimension(n0) :: coe
-    integer :: n0
-    !f2py intent(hide), depend(coe) :: n0 = shape(coe,0)
-    call finite_factor(fnor=fnor, norder=norder, coe=coe)
-end subroutine f90wrap_finite_factor
-
-subroutine f90wrap_dir2car_single(cry_coo, ort_coo, lat, n0, n1)
+subroutine f90wrap_dir2car_single(cry_coo, ort_coo, lat, n0, n1, n2)
     use getvlocalpseudopotential, only: dir2car_single
     implicit none
     
     real(8), dimension(n0) :: cry_coo
     real(8), dimension(n1) :: ort_coo
-    real(8), dimension(3,3) :: lat
+    real(8), dimension(3,n2) :: lat
     integer :: n0
     !f2py intent(hide), depend(cry_coo) :: n0 = shape(cry_coo,0)
     integer :: n1
     !f2py intent(hide), depend(ort_coo) :: n1 = shape(ort_coo,0)
+    integer :: n2
+    !f2py intent(hide), depend(lat) :: n2 = shape(lat,1)
     call dir2car_single(cry_coo=cry_coo, ort_coo=ort_coo, lat=lat)
 end subroutine f90wrap_dir2car_single
-
-subroutine f90wrap_polynom(m, np, xa, ya, c, ret_polynom, x, n0, n1, n2)
-    use getvlocalpseudopotential, only: polynom
-    implicit none
-    
-    integer(4), intent(in) :: m
-    integer(4), intent(in) :: np
-    real(8), intent(in), dimension(n0) :: xa
-    real(8), intent(in), dimension(n1) :: ya
-    real(8), intent(inout), dimension(n2) :: c
-    real(8), intent(out) :: ret_polynom
-    real(8), intent(in) :: x
-    integer :: n0
-    !f2py intent(hide), depend(xa) :: n0 = shape(xa,0)
-    integer :: n1
-    !f2py intent(hide), depend(ya) :: n1 = shape(ya,0)
-    integer :: n2
-    !f2py intent(hide), depend(c) :: n2 = shape(c,0)
-    ret_polynom = polynom(m=m, np=np, xa=xa, ya=ya, c=c, x=x)
-end subroutine f90wrap_polynom
 
 subroutine f90wrap_ionpotentialassignment_dg(ity, zion, poscar, temp, n0)
     use getvlocalpseudopotential, only: ionpotentialassignment_dg

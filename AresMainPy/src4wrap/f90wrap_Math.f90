@@ -587,16 +587,6 @@ subroutine f90wrap_direct_productlm(nll, nml, index_ll, index_ml, mat_in, mat_ou
     call direct_productlm(nll=nll, nml=nml, index_ll=index_ll, index_ml=index_ml, mat_in=mat_in, mat_out=mat_out)
 end subroutine f90wrap_direct_productlm
 
-subroutine f90wrap_sphbess(l, ret_sphbess, x)
-    use math, only: sphbess
-    implicit none
-    
-    integer, intent(in) :: l
-    real(8), intent(out) :: ret_sphbess
-    real(8), intent(in) :: x
-    ret_sphbess = sphbess(l=l, x=x)
-end subroutine f90wrap_sphbess
-
 subroutine f90wrap_fourier_1d(nr, rr, rab, vr, ll, nql, yp, vql, vt, n0, n1, n2, n3, n4)
     use math, only: fourier_1d
     implicit none

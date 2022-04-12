@@ -44,6 +44,10 @@ Module Math
       MODULE PROCEDURE One2Three_d_cplx
       MODULE PROCEDURE One2Three_d_real
     END INTERFACE  !}}}
+
+   !added by YuXin
+    private ::sphbess
+   !end added by YuXin
    !---------------------------- DIVIDER LINE -----------------------------
 CONTAINS
   SUBROUTINE change_case(instr,str,fun)!{{{

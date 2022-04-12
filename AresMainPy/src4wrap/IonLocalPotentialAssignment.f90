@@ -16,9 +16,10 @@ MODULE GetVLocalPseudoPotential
     !weight !! for DoubleGrid
     REAL(DP), ALLOCATABLE :: wijk(:), drijk(:, :)
     INTEGER(I4B)         :: Ilft, Irit, numdg
-    !added by YuXin
-    private CubicSplineInterp
-    !end added by YuxXin
+
+    !add by YuXin
+    private :: polynom,dfdr,finite_factor,CubicSplineInterp,cubichermiteinterp
+    !end add by YuXin
 CONTAINS
     !-----------------------DIVIDER-LINE--------------------------
     SUBROUTINE CalVlpp()

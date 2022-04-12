@@ -1,0 +1,161 @@
+In file included from /work/home/xinyu/soft/XinYuEnv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarraytypes.h:1969:0,
+                 from /work/home/xinyu/soft/XinYuEnv/lib/python3.8/site-packages/numpy/core/include/numpy/ndarrayobject.h:12,
+                 from /work/home/xinyu/soft/XinYuEnv/lib/python3.8/site-packages/numpy/core/include/numpy/arrayobject.h:4,
+                 from ./src.linux-x86_64-3.8/./src.linux-x86_64-3.8/fortranobject.h:13,
+                 from ./src.linux-x86_64-3.8/_AresMainPymodule.c:16:
+/work/home/xinyu/soft/XinYuEnv/lib/python3.8/site-packages/numpy/core/include/numpy/npy_1_7_deprecated_api.h:17:2: warning: #warning "Using deprecated NumPy API, disable it with " "#define NPY_NO_DEPRECATED_API NPY_1_7_API_VERSION" [-Wcpp]
+ #warning "Using deprecated NumPy API, disable it with " \
+  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148156:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44736:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148166:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44746:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148280:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44860:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148290:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44870:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148404:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44984:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148414:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44994:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148528:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45108:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148538:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45118:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148652:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45232:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148662:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45242:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148900:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45356:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:148910:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45366:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:149024:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45480:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:149029:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45485:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:149114:13: error: redefinition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise’
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45570:13: note: previous definition of ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise’ was here
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:149119:18: error: redefinition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise’
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45575:18: note: previous definition of ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise’ was here
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:234:12: warning: ‘f2py_size’ defined but not used [-Wunused-function]
+ static int f2py_size(PyArrayObject* var, ...)
+            ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44736:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44746:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__nz_map(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44860:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44870:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_cores(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44984:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:44994:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mycomm_size(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45108:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45118:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__mysend_size(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45232:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45242:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__local_map(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45356:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45366:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type__array__boundary(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45480:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45485:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_initialise(const PyObject *capi_self,
+                  ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45570:13: warning: ‘doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise’ defined but not used [-Wunused-variable]
+ static char doc_f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise[] = "\
+             ^
+./src.linux-x86_64-3.8/_AresMainPymodule.c:45575:18: warning: ‘f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise’ defined but not used [-Wunused-function]
+ static PyObject *f2py_rout__AresMainPy_f90wrap_grid_diff_map_type_finalise(const PyObject *capi_self,
+                  ^
+analyzevars: charselector={'len': '30'} unhandled.analyzevars: charselector={'len': '3'} unhandled.analyzevars: charselector={'len': '6'} unhandled.analyzevars: charselector={'len': '6'} unhandled.analyzevars: character array "character*(*) atom_symbol(n3)" is considered as "character atom_symbol(n3,(*))"; "intent(c)" is forced.
+analyzevars: character array "character*(*) atom_symbol(n3)" is considered as "character atom_symbol(n3,(*))"; "intent(c)" is forced.
+/work/home/xinyu/soft/XinYuEnv/lib/python3.8/site-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+error: Command "gcc -pthread -B /work/home/xinyu/soft/XinYuEnv/compiler_compat -Wl,--sysroot=/ -Wsign-compare -DNDEBUG -g -fwrapv -O3 -Wall -Wstrict-prototypes -fPIC -DNPY_DISABLE_OPTIMIZATION=1 -I./src.linux-x86_64-3.8/./src.linux-x86_64-3.8 -I/work/home/xinyu/soft/XinYuEnv/lib/python3.8/site-packages/numpy/core/include -I/work/home/xinyu/soft/XinYuEnv/include/python3.8 -c ./src.linux-x86_64-3.8/_AresMainPymodule.c -o ./src.linux-x86_64-3.8/_AresMainPymodule.o -MMD -MF ./src.linux-x86_64-3.8/_AresMainPymodule.o.d" failed with exit status 1
+make: *** [_AresMainPy.so] Error 1

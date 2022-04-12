@@ -7165,7 +7165,7 @@ class Math(f90wrap.runtime.FortranModule):
     Module math
     
     
-    Defined at Math.fpp lines 5-3436
+    Defined at Math.fpp lines 5-3439
     
     """
     @staticmethod
@@ -7174,7 +7174,7 @@ class Math(f90wrap.runtime.FortranModule):
         change_case(instr, str, fun)
         
         
-        Defined at Math.fpp lines 52-92
+        Defined at Math.fpp lines 55-95
         
         Parameters
         ----------
@@ -7191,7 +7191,7 @@ class Math(f90wrap.runtime.FortranModule):
         find_keywords(str, ch_mark, id_key, id_value)
         
         
-        Defined at Math.fpp lines 96-125
+        Defined at Math.fpp lines 99-128
         
         Parameters
         ----------
@@ -7210,7 +7210,7 @@ class Math(f90wrap.runtime.FortranModule):
         find_nword(str, ch_comma, nword)
         
         
-        Defined at Math.fpp lines 129-155
+        Defined at Math.fpp lines 132-158
         
         Parameters
         ----------
@@ -7227,7 +7227,7 @@ class Math(f90wrap.runtime.FortranModule):
         det = det(matrix)
         
         
-        Defined at Math.fpp lines 187-191
+        Defined at Math.fpp lines 190-194
         
         Parameters
         ----------
@@ -7247,7 +7247,7 @@ class Math(f90wrap.runtime.FortranModule):
         inv_33 = inv_33(m)
         
         
-        Defined at Math.fpp lines 195-225
+        Defined at Math.fpp lines 198-228
         
         Parameters
         ----------
@@ -7267,7 +7267,7 @@ class Math(f90wrap.runtime.FortranModule):
         lindg = lindg(eta, lambda_, mu)
         
         
-        Defined at Math.fpp lines 229-275
+        Defined at Math.fpp lines 232-278
         
         Parameters
         ----------
@@ -7289,7 +7289,7 @@ class Math(f90wrap.runtime.FortranModule):
         int_to_char = int_to_char(int_bn)
         
         
-        Defined at Math.fpp lines 279-300
+        Defined at Math.fpp lines 282-303
         
         Parameters
         ----------
@@ -7310,7 +7310,7 @@ class Math(f90wrap.runtime.FortranModule):
         lat2matrix(lat_para, lat_mat, flag)
         
         
-        Defined at Math.fpp lines 304-347
+        Defined at Math.fpp lines 307-350
         
         Parameters
         ----------
@@ -7327,7 +7327,7 @@ class Math(f90wrap.runtime.FortranModule):
         one2three(id, n_dens, pos)
         
         
-        Defined at Math.fpp lines 351-373
+        Defined at Math.fpp lines 354-376
         
         Parameters
         ----------
@@ -7344,7 +7344,7 @@ class Math(f90wrap.runtime.FortranModule):
         init_random_seed()
         
         
-        Defined at Math.fpp lines 467-531
+        Defined at Math.fpp lines 470-534
         
         
         """
@@ -7356,7 +7356,7 @@ class Math(f90wrap.runtime.FortranModule):
         atom_mass(atom_name, mass)
         
         
-        Defined at Math.fpp lines 691-832
+        Defined at Math.fpp lines 694-835
         
         Parameters
         ----------
@@ -7373,7 +7373,7 @@ class Math(f90wrap.runtime.FortranModule):
         newton_inter(n, x, y, m, tx, ty)
         
         
-        Defined at Math.fpp lines 836-859
+        Defined at Math.fpp lines 839-862
         
         Parameters
         ----------
@@ -7394,7 +7394,7 @@ class Math(f90wrap.runtime.FortranModule):
         diag(n, ina, w, q)
         
         
-        Defined at Math.fpp lines 863-997
+        Defined at Math.fpp lines 866-1000
         
         Parameters
         ----------
@@ -7412,7 +7412,7 @@ class Math(f90wrap.runtime.FortranModule):
         boltzmann_distribution = boltzmann_distribution(rnull, width)
         
         
-        Defined at Math.fpp lines 1001-1016
+        Defined at Math.fpp lines 1004-1019
         
         Parameters
         ----------
@@ -7434,7 +7434,7 @@ class Math(f90wrap.runtime.FortranModule):
         dir2car(cry_coo, ort_coo, lat)
         
         
-        Defined at Math.fpp lines 1023-1033
+        Defined at Math.fpp lines 1026-1036
         
         Parameters
         ----------
@@ -7451,7 +7451,7 @@ class Math(f90wrap.runtime.FortranModule):
         car2dir(ort_coo, cry_coo, lat)
         
         
-        Defined at Math.fpp lines 1039-1050
+        Defined at Math.fpp lines 1042-1053
         
         Parameters
         ----------
@@ -7468,7 +7468,7 @@ class Math(f90wrap.runtime.FortranModule):
         dimnu = thr2mat(n1, n2, n3, i, j, k)
         
         
-        Defined at Math.fpp lines 1053-1059
+        Defined at Math.fpp lines 1056-1062
         
         Parameters
         ----------
@@ -7493,7 +7493,7 @@ class Math(f90wrap.runtime.FortranModule):
         ix, iy, iz = mat2thr(n1, n2, n3, i)
         
         
-        Defined at Math.fpp lines 1062-1093
+        Defined at Math.fpp lines 1065-1096
         
         Parameters
         ----------
@@ -7519,7 +7519,7 @@ class Math(f90wrap.runtime.FortranModule):
         sopo(a, lda, n, b, ldb, m, w)
         
         
-        Defined at Math.fpp lines 1096-1152
+        Defined at Math.fpp lines 1099-1155
         
         Parameters
         ----------
@@ -7540,7 +7540,7 @@ class Math(f90wrap.runtime.FortranModule):
         csort_eigen(nev, arr, brr)
         
         
-        Defined at Math.fpp lines 1155-1188
+        Defined at Math.fpp lines 1158-1191
         
         Parameters
         ----------
@@ -7557,7 +7557,7 @@ class Math(f90wrap.runtime.FortranModule):
         rsort_eigen(nev, arr, brr)
         
         
-        Defined at Math.fpp lines 1191-1224
+        Defined at Math.fpp lines 1194-1227
         
         Parameters
         ----------
@@ -7574,7 +7574,7 @@ class Math(f90wrap.runtime.FortranModule):
         sort_eigval(n, arr)
         
         
-        Defined at Math.fpp lines 1227-1249
+        Defined at Math.fpp lines 1230-1252
         
         Parameters
         ----------
@@ -7590,7 +7590,7 @@ class Math(f90wrap.runtime.FortranModule):
         realint_sort(nev, arr, brr[, crr])
         
         
-        Defined at Math.fpp lines 1252-1290
+        Defined at Math.fpp lines 1255-1293
         
         Parameters
         ----------
@@ -7608,7 +7608,7 @@ class Math(f90wrap.runtime.FortranModule):
         ex, ey, ez = pgfo(omat, n1, n2, n3, ix, iy, iz)
         
         
-        Defined at Math.fpp lines 1294-1324
+        Defined at Math.fpp lines 1297-1327
         
         Parameters
         ----------
@@ -7637,7 +7637,7 @@ class Math(f90wrap.runtime.FortranModule):
         cubicsplineinterp = cubicsplineinterp(fun, ddfdx2, xmax, dx, x[, zion])
         
         
-        Defined at Math.fpp lines 1327-1403
+        Defined at Math.fpp lines 1330-1406
         
         Parameters
         ----------
@@ -7663,7 +7663,7 @@ class Math(f90wrap.runtime.FortranModule):
         finite_factor(fnor, norder, coe)
         
         
-        Defined at Math.fpp lines 1406-1547
+        Defined at Math.fpp lines 1409-1550
         
         Parameters
         ----------
@@ -7680,7 +7680,7 @@ class Math(f90wrap.runtime.FortranModule):
         finite_factor_new(fnor, norder, coe)
         
         
-        Defined at Math.fpp lines 1549-1605
+        Defined at Math.fpp lines 1552-1608
         
         Parameters
         ----------
@@ -7697,7 +7697,7 @@ class Math(f90wrap.runtime.FortranModule):
         dfdr(np, h, f, df)
         
         
-        Defined at Math.fpp lines 1609-1643
+        Defined at Math.fpp lines 1612-1646
         
         Parameters
         ----------
@@ -7715,7 +7715,7 @@ class Math(f90wrap.runtime.FortranModule):
         cubichermiteinterp = cubichermiteinterp(fun, dfdx, xmax, h, x)
         
         
-        Defined at Math.fpp lines 1646-1705
+        Defined at Math.fpp lines 1649-1708
         
         Parameters
         ----------
@@ -7740,7 +7740,7 @@ class Math(f90wrap.runtime.FortranModule):
         simpleinterp = simpleinterp(fun, xmax, h, x)
         
         
-        Defined at Math.fpp lines 1708-1747
+        Defined at Math.fpp lines 1711-1750
         
         Parameters
         ----------
@@ -7763,7 +7763,7 @@ class Math(f90wrap.runtime.FortranModule):
         r_dylm(l, m, x, y, z, rmod, f)
         
         
-        Defined at Math.fpp lines 1750-1890
+        Defined at Math.fpp lines 1753-1893
         
         Parameters
         ----------
@@ -7784,7 +7784,7 @@ class Math(f90wrap.runtime.FortranModule):
         lmax = atom_effcharge(atom_name, nquan, zeta)
         
         
-        Defined at Math.fpp lines 2064-2158
+        Defined at Math.fpp lines 2067-2161
         
         Parameters
         ----------
@@ -7808,7 +7808,7 @@ class Math(f90wrap.runtime.FortranModule):
         f = atom_sto(p, l, m, zeta, r)
         
         
-        Defined at Math.fpp lines 2443-2644
+        Defined at Math.fpp lines 2446-2647
         
         Parameters
         ----------
@@ -7832,7 +7832,7 @@ class Math(f90wrap.runtime.FortranModule):
         gammp = gammp(a, x)
         
         
-        Defined at Math.fpp lines 2802-2819
+        Defined at Math.fpp lines 2805-2822
         
         Parameters
         ----------
@@ -7853,7 +7853,7 @@ class Math(f90wrap.runtime.FortranModule):
         gser(gamser, a, x, gln)
         
         
-        Defined at Math.fpp lines 2822-2849
+        Defined at Math.fpp lines 2825-2852
         
         Parameters
         ----------
@@ -7871,7 +7871,7 @@ class Math(f90wrap.runtime.FortranModule):
         gcf(gammcf, a, x, gln)
         
         
-        Defined at Math.fpp lines 2852-2888
+        Defined at Math.fpp lines 2855-2891
         
         Parameters
         ----------
@@ -7889,7 +7889,7 @@ class Math(f90wrap.runtime.FortranModule):
         gammln = gammln(xx)
         
         
-        Defined at Math.fpp lines 2891-2911
+        Defined at Math.fpp lines 2894-2914
         
         Parameters
         ----------
@@ -7909,7 +7909,7 @@ class Math(f90wrap.runtime.FortranModule):
         integral = integral(l, dx, x)
         
         
-        Defined at Math.fpp lines 2914-2927
+        Defined at Math.fpp lines 2917-2930
         
         Parameters
         ----------
@@ -7931,7 +7931,7 @@ class Math(f90wrap.runtime.FortranModule):
         myfun = myfun(l, t)
         
         
-        Defined at Math.fpp lines 2930-2935
+        Defined at Math.fpp lines 2933-2938
         
         Parameters
         ----------
@@ -7952,7 +7952,7 @@ class Math(f90wrap.runtime.FortranModule):
         plgndr = plgndr(l, m, x)
         
         
-        Defined at Math.fpp lines 2938-2971
+        Defined at Math.fpp lines 2941-2974
         
         Parameters
         ----------
@@ -7974,7 +7974,7 @@ class Math(f90wrap.runtime.FortranModule):
         lagrange_interpolation_coe(npoint, scatter_x, coe)
         
         
-        Defined at Math.fpp lines 2974-2991
+        Defined at Math.fpp lines 2977-2994
         
         Parameters
         ----------
@@ -7992,7 +7992,7 @@ class Math(f90wrap.runtime.FortranModule):
         lagrange_interpolation_x = lagrange_interpolation_x(npoint, x_sample, x_in)
         
         
-        Defined at Math.fpp lines 2993-3008
+        Defined at Math.fpp lines 2996-3011
         
         Parameters
         ----------
@@ -8016,7 +8016,7 @@ class Math(f90wrap.runtime.FortranModule):
         interpolation_test()
         
         
-        Defined at Math.fpp lines 3010-3034
+        Defined at Math.fpp lines 3013-3037
         
         
         """
@@ -8028,7 +8028,7 @@ class Math(f90wrap.runtime.FortranModule):
         direct_productlm(nll, nml, index_ll, index_ml, mat_in, mat_out)
         
         
-        Defined at Math.fpp lines 3036-3113
+        Defined at Math.fpp lines 3039-3116
         
         Parameters
         ----------
@@ -8044,33 +8044,12 @@ class Math(f90wrap.runtime.FortranModule):
             index_ml=index_ml, mat_in=mat_in, mat_out=mat_out)
     
     @staticmethod
-    def sphbess(l, x):
-        """
-        sphbess = sphbess(l, x)
-        
-        
-        Defined at Math.fpp lines 3116-3155
-        
-        Parameters
-        ----------
-        l : int
-        x : float
-        
-        Returns
-        -------
-        sphbess : float
-        
-        """
-        sphbess = _AresMainPy.f90wrap_sphbess(l=l, x=x)
-        return sphbess
-    
-    @staticmethod
     def fourier_1d(nr, rr, rab, vr, ll, nql, yp, vql, vt):
         """
         fourier_1d(nr, rr, rab, vr, ll, nql, yp, vql, vt)
         
         
-        Defined at Math.fpp lines 3158-3216
+        Defined at Math.fpp lines 3161-3219
         
         Parameters
         ----------
@@ -8094,7 +8073,7 @@ class Math(f90wrap.runtime.FortranModule):
         invfourier_1d(g, fg, ll, r, fr)
         
         
-        Defined at Math.fpp lines 3219-3250
+        Defined at Math.fpp lines 3222-3253
         
         Parameters
         ----------
@@ -8113,7 +8092,7 @@ class Math(f90wrap.runtime.FortranModule):
         f = integ_new(rab, y)
         
         
-        Defined at Math.fpp lines 3253-3273
+        Defined at Math.fpp lines 3256-3276
         
         Parameters
         ----------
@@ -8134,7 +8113,7 @@ class Math(f90wrap.runtime.FortranModule):
         interp = interp(np, f, r, rnorm[, z])
         
         
-        Defined at Math.fpp lines 3276-3330
+        Defined at Math.fpp lines 3279-3333
         
         Parameters
         ----------
@@ -8158,7 +8137,7 @@ class Math(f90wrap.runtime.FortranModule):
         getfileunit = getfileunit()
         
         
-        Defined at Math.fpp lines 3405-3418
+        Defined at Math.fpp lines 3408-3421
         
         
         Returns
@@ -8175,7 +8154,7 @@ class Math(f90wrap.runtime.FortranModule):
         kahan_sum = kahan_sum(n, array)
         
         
-        Defined at Math.fpp lines 3421-3436
+        Defined at Math.fpp lines 3424-3439
         
         Parameters
         ----------
@@ -8196,7 +8175,7 @@ class Math(f90wrap.runtime.FortranModule):
         harvest = _gasdev_s_sp([inmu, insigma])
         
         
-        Defined at Math.fpp lines 535-564
+        Defined at Math.fpp lines 538-567
         
         Parameters
         ----------
@@ -8217,7 +8196,7 @@ class Math(f90wrap.runtime.FortranModule):
         harvest = _gasdev_s_dp([inmu, insigma])
         
         
-        Defined at Math.fpp lines 568-597
+        Defined at Math.fpp lines 571-600
         
         Parameters
         ----------
@@ -8238,7 +8217,7 @@ class Math(f90wrap.runtime.FortranModule):
         _gasdev_v_sp(harvest[, inmu, insigma])
         
         
-        Defined at Math.fpp lines 601-642
+        Defined at Math.fpp lines 604-645
         
         Parameters
         ----------
@@ -8255,7 +8234,7 @@ class Math(f90wrap.runtime.FortranModule):
         _gasdev_v_dp(harvest[, inmu, insigma])
         
         
-        Defined at Math.fpp lines 646-687
+        Defined at Math.fpp lines 649-690
         
         Parameters
         ----------
@@ -8294,7 +8273,7 @@ class Math(f90wrap.runtime.FortranModule):
         norm_real = _norm_real(a)
         
         
-        Defined at Math.fpp lines 159-161
+        Defined at Math.fpp lines 162-164
         
         Parameters
         ----------
@@ -8314,7 +8293,7 @@ class Math(f90wrap.runtime.FortranModule):
         norm_complex = _norm_complex(a)
         
         
-        Defined at Math.fpp lines 165-167
+        Defined at Math.fpp lines 168-170
         
         Parameters
         ----------
@@ -8353,7 +8332,7 @@ class Math(f90wrap.runtime.FortranModule):
         cross_real = _cross_real(a, b)
         
         
-        Defined at Math.fpp lines 179-183
+        Defined at Math.fpp lines 182-186
         
         Parameters
         ----------
@@ -8374,7 +8353,7 @@ class Math(f90wrap.runtime.FortranModule):
         cross_complex = _cross_complex(a, b)
         
         
-        Defined at Math.fpp lines 171-175
+        Defined at Math.fpp lines 174-178
         
         Parameters
         ----------
@@ -8414,7 +8393,7 @@ class Math(f90wrap.runtime.FortranModule):
         _integer_index(array, n, id)
         
         
-        Defined at Math.fpp lines 422-463
+        Defined at Math.fpp lines 425-466
         
         Parameters
         ----------
@@ -8431,7 +8410,7 @@ class Math(f90wrap.runtime.FortranModule):
         _real_index(array, n, id)
         
         
-        Defined at Math.fpp lines 377-418
+        Defined at Math.fpp lines 380-421
         
         Parameters
         ----------
@@ -8467,7 +8446,7 @@ class Math(f90wrap.runtime.FortranModule):
         _three2one_d_cplx(amat, bmat)
         
         
-        Defined at Math.fpp lines 3334-3348
+        Defined at Math.fpp lines 3337-3351
         
         Parameters
         ----------
@@ -8485,7 +8464,7 @@ class Math(f90wrap.runtime.FortranModule):
         _three2one_d_real(amat, bmat)
         
         
-        Defined at Math.fpp lines 3352-3366
+        Defined at Math.fpp lines 3355-3369
         
         Parameters
         ----------
@@ -8522,7 +8501,7 @@ class Math(f90wrap.runtime.FortranModule):
         _one2three_d_cplx(amat, bmat)
         
         
-        Defined at Math.fpp lines 3370-3384
+        Defined at Math.fpp lines 3373-3387
         
         Parameters
         ----------
@@ -8540,7 +8519,7 @@ class Math(f90wrap.runtime.FortranModule):
         _one2three_d_real(amat, bmat)
         
         
-        Defined at Math.fpp lines 3388-3402
+        Defined at Math.fpp lines 3391-3405
         
         Parameters
         ----------
@@ -17405,7 +17384,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
     Module getvlocalpseudopotential
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 5-937
+    Defined at IonLocalPotentialAssignment.fpp lines 5-940
     
     """
     @staticmethod
@@ -17414,7 +17393,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         calvlpp()
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 23-104
+        Defined at IonLocalPotentialAssignment.fpp lines 26-107
         
         
         ==========================================================
@@ -17427,7 +17406,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         ionpotentialassignment(ity, zion, poscar, temp)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 107-183
+        Defined at IonLocalPotentialAssignment.fpp lines 110-186
         
         Parameters
         ----------
@@ -17447,7 +17426,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         sphbess = sphbess(l, x)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 188-227
+        Defined at IonLocalPotentialAssignment.fpp lines 191-230
         
         Parameters
         ----------
@@ -17468,7 +17447,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         fourbess_gr(g, fg, r, fr)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 231-254
+        Defined at IonLocalPotentialAssignment.fpp lines 234-257
         
         Parameters
         ----------
@@ -17481,100 +17460,12 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         _AresMainPy.f90wrap_fourbess_gr(g=g, fg=fg, r=r, fr=fr)
     
     @staticmethod
-    def cubicsplineinterp(fun, ddfdx2, xmax, dx, x, zion=None):
-        """
-        cubicsplineinterp = cubicsplineinterp(fun, ddfdx2, xmax, dx, x[, zion])
-        
-        
-        Defined at IonLocalPotentialAssignment.fpp lines 258-333
-        
-        Parameters
-        ----------
-        fun : float array
-        ddfdx2 : float array
-        xmax : float
-        dx : float
-        x : float
-        zion : int
-        
-        Returns
-        -------
-        cubicsplineinterp : float
-        
-        """
-        cubicsplineinterp = _AresMainPy.f90wrap_cubicsplineinterp(fun=fun, \
-            ddfdx2=ddfdx2, xmax=xmax, dx=dx, x=x, zion=zion)
-        return cubicsplineinterp
-    
-    @staticmethod
-    def cubichermiteinterp(fun, dfdx, xmax, h, x, zion):
-        """
-        cubichermiteinterp = cubichermiteinterp(fun, dfdx, xmax, h, x, zion)
-        
-        
-        Defined at IonLocalPotentialAssignment.fpp lines 337-407
-        
-        Parameters
-        ----------
-        fun : float array
-        dfdx : float array
-        xmax : float
-        h : float
-        x : float
-        zion : int
-        
-        Returns
-        -------
-        cubichermiteinterp : float
-        
-        """
-        cubichermiteinterp = _AresMainPy.f90wrap_cubichermiteinterp(fun=fun, dfdx=dfdx, \
-            xmax=xmax, h=h, x=x, zion=zion)
-        return cubichermiteinterp
-    
-    @staticmethod
-    def dfdr(np, h, f, zion, df):
-        """
-        dfdr(np, h, f, zion, df)
-        
-        
-        Defined at IonLocalPotentialAssignment.fpp lines 411-446
-        
-        Parameters
-        ----------
-        np : int
-        h : float
-        f : float array
-        zion : int
-        df : float array
-        
-        """
-        _AresMainPy.f90wrap_dfdr(np=np, h=h, f=f, zion=zion, df=df)
-    
-    @staticmethod
-    def finite_factor(fnor, norder, coe):
-        """
-        finite_factor(fnor, norder, coe)
-        
-        
-        Defined at IonLocalPotentialAssignment.fpp lines 450-591
-        
-        Parameters
-        ----------
-        fnor : int
-        norder : int
-        coe : float array
-        
-        """
-        _AresMainPy.f90wrap_finite_factor(fnor=fnor, norder=norder, coe=coe)
-    
-    @staticmethod
     def dir2car_single(cry_coo, ort_coo, lat):
         """
         dir2car_single(cry_coo, ort_coo, lat)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 595-602
+        Defined at IonLocalPotentialAssignment.fpp lines 598-605
         
         Parameters
         ----------
@@ -17586,37 +17477,12 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         _AresMainPy.f90wrap_dir2car_single(cry_coo=cry_coo, ort_coo=ort_coo, lat=lat)
     
     @staticmethod
-    def polynom(m, np, xa, ya, c, x):
-        """
-        polynom = polynom(m, np, xa, ya, c, x)
-        
-        
-        Defined at IonLocalPotentialAssignment.fpp lines 615-793
-        
-        Parameters
-        ----------
-        m : int
-        np : int
-        xa : float array
-        ya : float array
-        c : float array
-        x : float
-        
-        Returns
-        -------
-        polynom : float
-        
-        """
-        polynom = _AresMainPy.f90wrap_polynom(m=m, np=np, xa=xa, ya=ya, c=c, x=x)
-        return polynom
-    
-    @staticmethod
     def ionpotentialassignment_dg(ity, zion, poscar, temp):
         """
         ionpotentialassignment_dg(ity, zion, poscar, temp)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 797-863
+        Defined at IonLocalPotentialAssignment.fpp lines 800-866
         
         Parameters
         ----------
@@ -17637,7 +17503,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         vloc = set_vloc_dg(ity, xyz)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 866-912
+        Defined at IonLocalPotentialAssignment.fpp lines 869-915
         
         Parameters
         ----------
@@ -17658,7 +17524,7 @@ class Getvlocalpseudopotential(f90wrap.runtime.FortranModule):
         set_vcomp(n_inp, zion, rgauss, r_inp, v_inp, vcomp)
         
         
-        Defined at IonLocalPotentialAssignment.fpp lines 915-935
+        Defined at IonLocalPotentialAssignment.fpp lines 918-938
         
         Parameters
         ----------
