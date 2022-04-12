@@ -356,20 +356,20 @@ def symm_ind(nd1, nd2, nd3, i1, i2, i3, ind):
     _AresMainPy_pkg.f90wrap_symm_ind(nd1=nd1, nd2=nd2, nd3=nd3, i1=i1, i2=i2, i3=i3, \
         ind=ind)
 
-def kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, \
-    karray, inzee):
+def kernel_application(n1xy, n2xy, n3xy, nd1h, nd2, nd3, nfft1, nfft2, nfft3, \
+    zarray, karray, inzee):
     """
-    kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, \
-        karray, inzee)
+    kernel_application(n1xy, n2xy, n3xy, nd1h, nd2, nd3, nfft1, nfft2, nfft3, \
+        zarray, karray, inzee)
     
     
     Defined at poisson_isf.fpp lines 1037-1429
     
     Parameters
     ----------
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     nd1h : int
     nd2 : int
     nd3 : int
@@ -385,9 +385,9 @@ def kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, 
     --------------------------------------------
     -------------Case i3 = 1
     """
-    _AresMainPy_pkg.f90wrap_kernel_application(n1=n1, n2=n2, n3=n3, nd1h=nd1h, \
-        nd2=nd2, nd3=nd3, nfft1=nfft1, nfft2=nfft2, nfft3=nfft3, zarray=zarray, \
-        karray=karray, inzee=inzee)
+    _AresMainPy_pkg.f90wrap_kernel_application(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, \
+        nd1h=nd1h, nd2=nd2, nd3=nd3, nfft1=nfft1, nfft2=nfft2, nfft3=nfft3, \
+        zarray=zarray, karray=karray, inzee=inzee)
 
 def get_array_karray():
     """

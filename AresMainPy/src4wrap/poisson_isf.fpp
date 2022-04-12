@@ -1146,8 +1146,8 @@ end do
   end subroutine symm_ind
   !!***
   !-----------------------------divided line--------------------------------
-  subroutine kernel_application(n1,n2,n3,nd1h,nd2,nd3,nfft1,nfft2,nfft3,zarray,karray,inzee)
-    integer, intent(in)    :: n1,n2,n3,nd1h,nd2,nd3,nfft1,nfft2,nfft3,inzee
+  subroutine kernel_application( n1xy, n2xy, n3xy,nd1h,nd2,nd3,nfft1,nfft2,nfft3,zarray,karray,inzee)
+    integer, intent(in)    ::  n1xy, n2xy, n3xy,nd1h,nd2,nd3,nfft1,nfft2,nfft3,inzee
     real(DP), intent(in)    :: karray(1:nfft1/2 + 1, 1:nfft2/2 + 1, 1:nfft3/2 + 1)
     real(DP), intent(inout) :: zarray(1:2, 1:nd1h, 1:nd2, 1:nd3, 1:2)
 
@@ -1157,15 +1157,15 @@ end do
     integer :: i1,i2,i3,j1,j2,j3, ouzee,n1h,n2h,n3h
     integer :: si1,si2,si3
 
-    n1h = n1/2
-    n2h = n2/2
-    n3h = n3/2
+    n1h =  n1xy/2
+    n2h =  n2xy/2
+    n3h =  n3xy/2
 
     ALLOCATE(cos_array(1:n1h + 1))
     ALLOCATE(sin_array(1:n1h + 1))
 
     pi2=8.d0*datan(1.d0)
-    pi2=pi2/real(n1,8)
+    pi2=pi2/real( n1xy,8)
     do i1=1,n1h+1
       cos_array(i1)=dcos(pi2*(i1-1))
       sin_array(i1)=-dsin(pi2*(i1-1))
@@ -1258,9 +1258,9 @@ end do
     !-------------END case i2 = 1 , i3=1
 
     !case i2 >=2
-    do i2=2,n2
+    do i2=2, n2xy
       j2=n2h+1-abs(n2h+1-i2)
-      si2=n2+2-i2 !if i2 /=1, otherwise si2=1
+      si2= n2xy+2-i2 !if i2 /=1, otherwise si2=1
 
       !Case i1 == 1
       i1=1
@@ -1334,9 +1334,9 @@ end do
     !-------------END Case i3 = 1
 
     !case i3 >=2
-    do i3=2,n3
+    do i3=2, n3xy
       j3=n3h+1-abs(n3h+1-i3)
-      si3=n3+2-i3 !if i3 /=1, otherwise si3=1
+      si3= n3xy+2-i3 !if i3 /=1, otherwise si3=1
 
       !-------------Case i2 = 1
       i2=1
@@ -1414,9 +1414,9 @@ end do
       !-------------END case i2 = 1      
 
       !case i2 >=2
-      do i2=2,n2
+      do i2=2, n2xy
         j2=n2h+1-abs(n2h+1-i2)
-        si2=n2+2-i2 !if i2 /=1, otherwise si2=1
+        si2= n2xy+2-i2 !if i2 /=1, otherwise si2=1
 
         !Case i1 == 1
         i1=1
@@ -1521,7 +1521,7 @@ end do
       zarray(2,i1,i2,i3,inzee)=ihk
     end do
     !case i2 >= 2
-    do i2=2,n2
+    do i2=2, n2xy
       j2=nd2+1-i2
       do i1=1,n1h
         j1=n1h+2-i1
@@ -1546,7 +1546,7 @@ end do
 
 
     !case i3 >=2
-    do i3=2,n3
+    do i3=2, n3xy
       j3=nd3+1-i3
       !case i2=1
       i2=1
@@ -1571,7 +1571,7 @@ end do
         zarray(2,i1,i2,i3,inzee)=ihk
       end do
       !case i2 >= 2
-      do i2=2,n2
+      do i2=2, n2xy
         j2=nd2+1-i2
         do i1=1,n1h
           j1=n1h+2-i1

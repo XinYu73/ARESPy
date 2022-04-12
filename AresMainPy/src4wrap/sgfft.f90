@@ -173,8 +173,8 @@ contains
   !  This file is distributed under the terms of the
   !  GNU General Public License, see http://www.gnu.org/copyleft/gpl.txt .
 
-  subroutine fft(n1, n2, n3, nd1, nd2, nd3, z, isign, inzee)
-    integer, intent(in)    :: n1, n2, n3, nd1, nd2, nd3
+  subroutine fft( n1xy,  n2xy,  n3xy, nd1, nd2, nd3, z, isign, inzee)
+    integer, intent(in)    ::  n1xy,  n2xy,  n3xy, nd1, nd2, nd3
     real(8), intent(inout) :: z(1:2, 1:nd1*nd2*nd3, 1:2)
     integer, intent(in)    :: isign
     integer, intent(inout) :: inzee
@@ -190,7 +190,7 @@ contains
 
     ! call profiling_in(prof, "SGFFT")
 
-    if (max(n1,n2,n3) > 8192) stop 'fft:8192 limit reached'
+    if (max( n1xy, n2xy, n3xy) > 8192) stop 'fft:8192 limit reached'
 
     ! some reasonable values of ncache: 
     !   IBM/RS6000/590: 16*1024 ; IBM/RS6000/390: 3*1024 ; 
@@ -199,14 +199,14 @@ contains
     !       On all vector machines: ncache=0
 
     ncache = 8192
-    if (ncache /= 0 .and. ncache <= max(n1,n2,n3)*4) ncache=max(n1,n2,n3/2)*4
+    if (ncache /= 0 .and. ncache <= max( n1xy, n2xy, n3xy)*4) ncache=max( n1xy, n2xy, n3xy/2)*4
 
     ! check whether input values are reasonable
     if (inzee <= 0 .or. inzee >= 3) stop 'fft:wrong inzee'
     if (isign /= 1 .and. isign /= -1) stop 'fft:wrong isign'
-    if (n1 > nd1) stop 'fft:n1>nd1'
-    if (n2 > nd2) stop 'fft:n2>nd2'
-    if (n3 > nd3) stop 'fft:n3>nd3'
+    if ( n1xy > nd1) stop 'fft:n1>nd1'
+    if ( n2xy > nd2) stop 'fft:n2>nd2'
+    if ( n3xy > nd3) stop 'fft:n3>nd3'
 
 
     ! vector computer with memory banks:
@@ -216,8 +216,8 @@ contains
       ALLOCATE(now(1:20))
       ALLOCATE(before(1:20))
 
-      call ctrig(n3,trig,after,before,now,isign,ic)
-      nfft=nd1*n2
+      call ctrig( n3xy,trig,after,before,now,isign,ic)
+      nfft=nd1* n2xy
       mm=nd1*nd2
 
       do i=1,ic-1
@@ -233,8 +233,8 @@ contains
 
       inzee=3-inzee
 
-      if (n2 /= n3) call ctrig(n2,trig,after,before,now,isign,ic)
-      nfft=nd3*n1
+      if ( n2xy /=  n3xy) call ctrig( n2xy,trig,after,before,now,isign,ic)
+      nfft=nd3* n1xy
       mm=nd3*nd1
 
       do i=1,ic-1
@@ -248,8 +248,8 @@ contains
         trig,after(i),now(i),before(i),isign)
       inzee=3-inzee
 
-      if (n1 /= n2) call ctrig(n1,trig,after,before,now,isign,ic)
-      nfft=nd2*n3
+      if ( n1xy /=  n2xy) call ctrig( n1xy,trig,after,before,now,isign,ic)
+      nfft=nd2* n3xy
       mm=nd2*nd3
 
       do i=1,ic-1
@@ -288,18 +288,18 @@ contains
 
       mm = nd1*nd2
       m = nd3
-      lot = max(1,ncache/(4*n3))
+      lot = max(1,ncache/(4* n3xy))
       nn = lot
-      n=n3
+      n= n3xy
       if (2*n*lot*2 > ncache) stop 'fft:ncache1'
 
-      call ctrig(n3,trig,after,before,now,isign,ic)
+      call ctrig( n3xy,trig,after,before,now,isign,ic)
 
       if (ic == 1) then
         i=ic
-        lotomp=(nd1*n2)/npr+1
+        lotomp=(nd1* n2xy)/npr+1
         ma=iam*lotomp+1
-        mb=min((iam+1)*lotomp,nd1*n2)
+        mb=min((iam+1)*lotomp,nd1* n2xy)
         nfft=mb-ma+1
         j=ma
         jj=j*nd3-nd3+1
@@ -308,9 +308,9 @@ contains
 
       else
 
-        lotomp=(nd1*n2)/npr+1
+        lotomp=(nd1* n2xy)/npr+1
         jompa=iam*lotomp+1
-        jompb=min((iam+1)*lotomp,nd1*n2)
+        jompb=min((iam+1)*lotomp,nd1* n2xy)
         do j=jompa,jompb,lot
           ma=j
           mb=min(j+(lot-1),jompb)
@@ -341,18 +341,18 @@ contains
       ! TRANSFORM ALONG Y AXIS
       mm=nd3*nd1
       m=nd2
-      lot=max(1,ncache/(4*n2))
+      lot=max(1,ncache/(4* n2xy))
       nn=lot
-      n=n2
+      n= n2xy
       if (2*n*lot*2 > ncache) stop 'fft:ncache2'
 
-      if (n2 /= n3) call ctrig(n2,trig,after,before,now,isign,ic)
+      if ( n2xy /=  n3xy) call ctrig( n2xy,trig,after,before,now,isign,ic)
 
       if (ic == 1) then
         i=ic
-        lotomp=(nd3*n1)/npr+1
+        lotomp=(nd3* n1xy)/npr+1
         ma=iam*lotomp+1
-        mb=min((iam+1)*lotomp,nd3*n1)
+        mb=min((iam+1)*lotomp,nd3* n1xy)
         nfft=mb-ma+1
         j=ma
         jj=j*nd2-nd2+1
@@ -361,9 +361,9 @@ contains
 
       else
 
-        lotomp=(nd3*n1)/npr+1
+        lotomp=(nd3* n1xy)/npr+1
         jompa=iam*lotomp+1
-        jompb=min((iam+1)*lotomp,nd3*n1)
+        jompb=min((iam+1)*lotomp,nd3* n1xy)
         do j=jompa,jompb,lot
           ma=j
           mb=min(j+(lot-1),jompb)
@@ -394,18 +394,18 @@ contains
       ! TRANSFORM ALONG X AXIS
       mm=nd2*nd3
       m=nd1
-      lot=max(1,ncache/(4*n1))
+      lot=max(1,ncache/(4* n1xy))
       nn=lot
-      n=n1
+      n= n1xy
       if (2*n*lot*2 > ncache) stop 'fft:ncache3'
 
-      if (n1 /= n2) call ctrig(n1,trig,after,before,now,isign,ic)
+      if ( n1xy /=  n2xy) call ctrig( n1xy,trig,after,before,now,isign,ic)
 
       if (ic == 1) then
         i=ic
-        lotomp=(nd2*n3)/npr+1
+        lotomp=(nd2* n3xy)/npr+1
         ma=iam*lotomp+1
-        mb=min((iam+1)*lotomp,nd2*n3)
+        mb=min((iam+1)*lotomp,nd2* n3xy)
         nfft=mb-ma+1
         j=ma
         jj=j*nd1-nd1+1
@@ -414,9 +414,9 @@ contains
 
       else
 
-        lotomp=(nd2*n3)/npr+1
+        lotomp=(nd2* n3xy)/npr+1
         jompa=iam*lotomp+1
-        jompb=min((iam+1)*lotomp,nd2*n3)
+        jompb=min((iam+1)*lotomp,nd2* n3xy)
         do j=jompa,jompb,lot
           ma=j
           mb=min(j+(lot-1),jompb)
@@ -3614,9 +3614,9 @@ contains
   !!
   !! SOURCE
   !!
-  subroutine convolxc_off(n1,n2,n3,nd1,nd2,nd3,md1,md2,md3, &
+  subroutine convolxc_off(n1xy,n2xy,n3xy,nd1,nd2,nd3,md1,md2,md3, &
     nproc,iproc,pot,zf,scal,comm)
-    integer, intent(in) :: n1,n2,n3,nd1,nd2,nd3,md1,md2,md3,nproc,iproc
+    integer, intent(in) :: n1xy,n2xy,n3xy,nd1,nd2,nd3,md1,md2,md3,nproc,iproc
     real(8), intent(in) :: scal
     real(8), dimension(nd1,nd2,nd3/nproc), intent(in) :: pot
     real(8), dimension(md1,md3,md2/nproc), intent(inout) :: zf

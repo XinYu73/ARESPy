@@ -1657,8 +1657,8 @@ subroutine f90wrap_array_split(nev)
     call array_split(nev=nev)
 end subroutine f90wrap_array_split
 
-subroutine f90wrap_grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs, gridrange_sum, n1, n2, n3, n, n0, &
-    n1, n2)
+subroutine f90wrap_grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs, gridrange_sum, n1xy, n2xy, n3xy, &
+    n, n0, n1, n2)
     use smpi_math_module, only: grid_split
     implicit none
     
@@ -1670,9 +1670,9 @@ subroutine f90wrap_grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, di
     integer(4), intent(inout), dimension(n0) :: recvcounts
     integer(4), intent(inout), dimension(n1) :: displs
     integer(4), optional, intent(inout), dimension(3,n2) :: gridrange_sum
-    integer(4), intent(inout), optional :: n1
-    integer(4), intent(inout), optional :: n2
-    integer(4), intent(inout), optional :: n3
+    integer(4), intent(inout), optional :: n1xy
+    integer(4), intent(inout), optional :: n2xy
+    integer(4), intent(inout), optional :: n3xy
     integer(4), intent(inout), optional :: n
     integer :: n0
     !f2py intent(hide), depend(recvcounts) :: n0 = shape(recvcounts,0)
@@ -1681,7 +1681,7 @@ subroutine f90wrap_grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, di
     integer :: n2
     !f2py intent(hide), depend(gridrange_sum) :: n2 = shape(gridrange_sum,1)
     call grid_split(ngrid=ngrid, ncore=ncore, comm=comm, id=id, grid_range=grid_range, recvcounts=recvcounts, displs=displs, &
-        gridrange_sum=gridrange_sum, n1=n1, n2=n2, n3=n3, n=n)
+        gridrange_sum=gridrange_sum, n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, n=n)
 end subroutine f90wrap_grid_split
 
 subroutine f90wrap_atom_split(mysize, natom, atom_index, n0)

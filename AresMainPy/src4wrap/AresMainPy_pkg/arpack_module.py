@@ -2,7 +2,7 @@
 Module arpack_module
 
 
-Defined at Arpack_module.fpp lines 5-920
+Defined at Arpack_module.fpp lines 5-919
 
 """
 from __future__ import print_function, absolute_import, division
@@ -19,7 +19,7 @@ def diagh_arpack(veff, ik, nev, evec, eval, resid_restart, nec, info, maxmvs, \
     diagh_arpack(veff, ik, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
     
     
-    Defined at Arpack_module.fpp lines 24-193
+    Defined at Arpack_module.fpp lines 23-192
     
     Parameters
     ----------
@@ -46,7 +46,7 @@ def real_diagh_arpack(veff, nev, evec, eval, resid_restart, nec, info, maxmvs, \
     real_diagh_arpack(veff, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
     
     
-    Defined at Arpack_module.fpp lines 203-364
+    Defined at Arpack_module.fpp lines 202-363
     
     Parameters
     ----------
@@ -72,7 +72,7 @@ def real_diagm_arpk(mat, nev, evec, eval, resid_restart, nec, info, maxmvs, \
     real_diagm_arpk(mat, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
     
     
-    Defined at Arpack_module.fpp lines 374-507
+    Defined at Arpack_module.fpp lines 373-506
     
     Parameters
     ----------
@@ -96,7 +96,7 @@ def rdiagm_arpk(mat, dimen, nev, evec, eval):
     rdiagm_arpk(mat, dimen, nev, evec, eval)
     
     
-    Defined at Arpack_module.fpp lines 510-545
+    Defined at Arpack_module.fpp lines 509-544
     
     Parameters
     ----------
@@ -116,7 +116,7 @@ def iso_diagh_arpack(veff, nev, evec, eval, resid_restart, nec, info, maxmvs, \
     iso_diagh_arpack(veff, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
     
     
-    Defined at Arpack_module.fpp lines 554-717
+    Defined at Arpack_module.fpp lines 553-716
     
     Parameters
     ----------
@@ -143,7 +143,7 @@ def diagh_arpack_band(veff, ik, nev, evec, eval, resid_restart, nec, info, \
         tol)
     
     
-    Defined at Arpack_module.fpp lines 720-919
+    Defined at Arpack_module.fpp lines 719-918
     
     Parameters
     ----------
@@ -174,8 +174,7 @@ def get_maxn():
     """
     return _AresMainPy_pkg.f90wrap_arpack_module__get__maxn()
 
-def set_maxn(maxn):
-    _AresMainPy_pkg.f90wrap_arpack_module__set__maxn(maxn)
+maxn = get_maxn()
 
 def get_maxnev():
     """
@@ -187,8 +186,7 @@ def get_maxnev():
     """
     return _AresMainPy_pkg.f90wrap_arpack_module__get__maxnev()
 
-def set_maxnev(maxnev):
-    _AresMainPy_pkg.f90wrap_arpack_module__set__maxnev(maxnev)
+maxnev = get_maxnev()
 
 def get_maxncv():
     """
@@ -200,8 +198,7 @@ def get_maxncv():
     """
     return _AresMainPy_pkg.f90wrap_arpack_module__get__maxncv()
 
-def set_maxncv(maxncv):
-    _AresMainPy_pkg.f90wrap_arpack_module__set__maxncv(maxncv)
+maxncv = get_maxncv()
 
 
 _array_initialisers = []

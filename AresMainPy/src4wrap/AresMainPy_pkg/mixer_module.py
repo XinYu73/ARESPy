@@ -513,8 +513,8 @@ def om1c(nam, nuh, sp, dfp, voma):
     nam : int
     nuh : int
     sp : float
-    dfp : float
-    voma : float
+    dfp : float array
+    voma : float array
     
     """
     _AresMainPy_pkg.f90wrap_om1c(nam=nam, nuh=nuh, sp=sp, dfp=dfp, voma=voma)
@@ -532,13 +532,13 @@ def amst(beta, w0, nam, nuh, dxp, dfp, sp, xl, fl, voma, xn):
     w0 : float
     nam : int
     nuh : int
-    dxp : float
-    dfp : float
+    dxp : float array
+    dfp : float array
     sp : float
-    xl : float
-    fl : float
-    voma : float
-    xn : float
+    xl : float array
+    fl : float array
+    voma : float array
+    xn : float array
     
     """
     _AresMainPy_pkg.f90wrap_amst(beta=beta, w0=w0, nam=nam, nuh=nuh, dxp=dxp, \

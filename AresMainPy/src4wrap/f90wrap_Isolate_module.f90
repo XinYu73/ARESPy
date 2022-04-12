@@ -572,14 +572,14 @@ subroutine f90wrap_c(l, ret_c, m)
     ret_c = c(l=l, m=m)
 end subroutine f90wrap_c
 
-subroutine f90wrap_rcs(n1, n2, n3, dr, cost, sint, cns, indx, n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, n12, &
-    n13, n14)
+subroutine f90wrap_rcs(n1xy, n2xy, n3xy, dr, cost, sint, cns, indx, n0, n1, n2, n3, n4, n5, n6, n7, n8, n9, n10, n11, &
+    n12, n13, n14)
     use isolateset, only: rcs
     implicit none
     
-    integer(4), intent(in) :: n1
-    integer(4), intent(in) :: n2
-    integer(4), intent(in) :: n3
+    integer(4), intent(in) :: n1xy
+    integer(4), intent(in) :: n2xy
+    integer(4), intent(in) :: n3xy
     real(8), intent(inout), dimension(n0,n1,n2) :: dr
     real(8), intent(inout), dimension(n3,n4,n5) :: cost
     real(8), intent(inout), dimension(n6,n7,n8) :: sint
@@ -615,7 +615,7 @@ subroutine f90wrap_rcs(n1, n2, n3, dr, cost, sint, cns, indx, n0, n1, n2, n3, n4
     !f2py intent(hide), depend(indx) :: n13 = shape(indx,1)
     integer :: n14
     !f2py intent(hide), depend(indx) :: n14 = shape(indx,2)
-    call rcs(n1=n1, n2=n2, n3=n3, dr=dr, cost=cost, sint=sint, cns=cns, indx=indx)
+    call rcs(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, dr=dr, cost=cost, sint=sint, cns=cns, indx=indx)
 end subroutine f90wrap_rcs
 
 subroutine f90wrap_vhartree_fmm(rhos, vcoulomb, n0, n1, n2, n3, n4, n5)

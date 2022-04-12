@@ -541,18 +541,18 @@ def c(l, m):
     c = _AresMainPy_pkg.f90wrap_c(l=l, m=m)
     return c
 
-def rcs(n1, n2, n3, dr, cost, sint, cns, indx):
+def rcs(n1xy, n2xy, n3xy, dr, cost, sint, cns, indx):
     """
-    rcs(n1, n2, n3, dr, cost, sint, cns, indx)
+    rcs(n1xy, n2xy, n3xy, dr, cost, sint, cns, indx)
     
     
     Defined at Isolate_module.fpp lines 1166-1195
     
     Parameters
     ----------
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     dr : float array
     cost : float array
     sint : float array
@@ -560,8 +560,8 @@ def rcs(n1, n2, n3, dr, cost, sint, cns, indx):
     indx : int array
     
     """
-    _AresMainPy_pkg.f90wrap_rcs(n1=n1, n2=n2, n3=n3, dr=dr, cost=cost, sint=sint, \
-        cns=cns, indx=indx)
+    _AresMainPy_pkg.f90wrap_rcs(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, dr=dr, cost=cost, \
+        sint=sint, cns=cns, indx=indx)
 
 def vhartree_fmm(rhos, vcoulomb):
     """

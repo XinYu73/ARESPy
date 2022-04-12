@@ -11,8 +11,7 @@ MODULE Arpack_module
   USE constants
   USE grid_module , ONLY : n,n1,n2,n3
   IMPLICIT NONE
-  INTEGER(I4B) :: maxn,maxnev,maxncv
-  PARAMETER (maxn=1000000,maxnev=500,maxncv=10000)
+  INTEGER(I4B),PARAMETER :: maxn=1000000,maxnev=500,maxncv=10000
 CONTAINS
   !----------------------------------------------------------
   !#########################################################!

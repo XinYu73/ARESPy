@@ -32,18 +32,18 @@ def fourier_dim(n):
     n_next = _AresMainPy_pkg.f90wrap_fourier_dim(n=n)
     return n_next
 
-def fft(n1, n2, n3, nd1, nd2, nd3, z, isign, inzee):
+def fft(n1xy, n2xy, n3xy, nd1, nd2, nd3, z, isign, inzee):
     """
-    fft(n1, n2, n3, nd1, nd2, nd3, z, isign, inzee)
+    fft(n1xy, n2xy, n3xy, nd1, nd2, nd3, z, isign, inzee)
     
     
     Defined at sgfft.fpp lines 161-385
     
     Parameters
     ----------
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     nd1 : int
     nd2 : int
     nd3 : int
@@ -52,23 +52,23 @@ def fft(n1, n2, n3, nd1, nd2, nd3, z, isign, inzee):
     inzee : int
     
     """
-    _AresMainPy_pkg.f90wrap_fft(n1=n1, n2=n2, n3=n3, nd1=nd1, nd2=nd2, nd3=nd3, z=z, \
-        isign=isign, inzee=inzee)
+    _AresMainPy_pkg.f90wrap_fft(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, nd1=nd1, nd2=nd2, \
+        nd3=nd3, z=z, isign=isign, inzee=inzee)
 
-def convolxc_off(n1, n2, n3, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, \
-    zf, scal, comm):
+def convolxc_off(n1xy, n2xy, n3xy, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, \
+    pot, zf, scal, comm):
     """
-    convolxc_off(n1, n2, n3, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, zf, \
-        scal, comm)
+    convolxc_off(n1xy, n2xy, n3xy, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, \
+        zf, scal, comm)
     
     
     Defined at sgfft.fpp lines 3504-3796
     
     Parameters
     ----------
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     nd1 : int
     nd2 : int
     nd3 : int
@@ -83,9 +83,9 @@ def convolxc_off(n1, n2, n3, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, \
     comm : int
     
     """
-    _AresMainPy_pkg.f90wrap_convolxc_off(n1=n1, n2=n2, n3=n3, nd1=nd1, nd2=nd2, \
-        nd3=nd3, md1=md1, md2=md2, md3=md3, nproc=nproc, iproc=iproc, pot=pot, \
-        zf=zf, scal=scal, comm=comm)
+    _AresMainPy_pkg.f90wrap_convolxc_off(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, nd1=nd1, \
+        nd2=nd2, nd3=nd3, md1=md1, md2=md2, md3=md3, nproc=nproc, iproc=iproc, \
+        pot=pot, zf=zf, scal=scal, comm=comm)
 
 
 _array_initialisers = []

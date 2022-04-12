@@ -1,0 +1,42 @@
+###########################BASIS DATA#############################
+system = ARES_example
+#Cell file name
+CELLFILE = ares.cell
+#real-space gridsize (angs)
+gridsize = 0.3
+#k-points(KSPACING)
+KSPACING=-0.1
+#Use k-points file
+LKPT=F
+#elements type
+ELEMENTS= Al
+#pseudopotential formats option:{PP_OPT -> 0:rrpot,realpot;1:upf}
+#PP_OPT=0
+#pseudo-potential
+PPFILE = Al_lda.rrpot 
+#Finite difference order
+NORDER = 16
+#The order of smearing (2-5) , <=0 is fermi-dirac-like smearing
+Nsmear= -1
+#Width of broadening(eV.)
+Wsmear= 0.01
+#ISTART
+ISTART= 0
+#Number of structure optimization steps
+NSSP=3
+#the max SCF(self-consistant field) iteration step
+NMITER=1000
+##########################mixing data#############################
+#number of simple mixing
+NSMIX=6
+#simple mixing factor
+MALPHA=0.4
+#number of history for Anderson mixing used (2-6)
+NHMAX=6
+#Anderson mixing factor
+MBETA=0.2
+#tolarence of drho in scf
+RTOL=1e-5
+#tolerance of total energy(Bohr)
+ETOL=1e-4
+############################THE END###############################

@@ -131,10 +131,11 @@ def get_rho(nr, r_new, nrho, nspin, rho_new, dvol):
     _AresMainPy_pkg.f90wrap_get_rho(nr=nr, r_new=r_new, nrho=nrho, nspin=nspin, \
         rho_new=rho_new, dvol=dvol)
 
-def cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, \
+def cal_trans_phase(nr, nspin, r_new, n1xy, n2xy, n3xy, ng1, ng2, ng3, gvec, \
     trans_phase):
     """
-    cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, trans_phase)
+    cal_trans_phase(nr, nspin, r_new, n1xy, n2xy, n3xy, ng1, ng2, ng3, gvec, \
+        trans_phase)
     
     
     Defined at Succeed_module.fpp lines 323-375
@@ -144,9 +145,9 @@ def cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, \
     nr : int
     nspin : int
     r_new : float array
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     ng1 : int
     ng2 : int
     ng3 : int
@@ -154,13 +155,15 @@ def cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, \
     trans_phase : complex array
     
     """
-    _AresMainPy_pkg.f90wrap_cal_trans_phase(nr=nr, nspin=nspin, r_new=r_new, n1=n1, \
-        n2=n2, n3=n3, ng1=ng1, ng2=ng2, ng3=ng3, gvec=gvec, trans_phase=trans_phase)
+    _AresMainPy_pkg.f90wrap_cal_trans_phase(nr=nr, nspin=nspin, r_new=r_new, \
+        n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, ng1=ng1, ng2=ng2, ng3=ng3, gvec=gvec, \
+        trans_phase=trans_phase)
 
-def get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, \
-    gvec):
+def get_new_rho_psi(nr, r_new, nrho, n1xy, n2xy, n3xy, nspin, rho_new, n_s, \
+    psi_new, gvec):
     """
-    get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, gvec)
+    get_new_rho_psi(nr, r_new, nrho, n1xy, n2xy, n3xy, nspin, rho_new, n_s, psi_new, \
+        gvec)
     
     
     Defined at Succeed_module.fpp lines 377-436
@@ -170,9 +173,9 @@ def get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, \
     nr : int
     r_new : float array
     nrho : int
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     nspin : int
     rho_new : float array
     n_s : int
@@ -180,9 +183,9 @@ def get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, \
     gvec : float array
     
     """
-    _AresMainPy_pkg.f90wrap_get_new_rho_psi(nr=nr, r_new=r_new, nrho=nrho, n1=n1, \
-        n2=n2, n3=n3, nspin=nspin, rho_new=rho_new, n_s=n_s, psi_new=psi_new, \
-        gvec=gvec)
+    _AresMainPy_pkg.f90wrap_get_new_rho_psi(nr=nr, r_new=r_new, nrho=nrho, \
+        n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, nspin=nspin, rho_new=rho_new, n_s=n_s, \
+        psi_new=psi_new, gvec=gvec)
 
 def store_rho_fft_trans(n_rho, nspin, rho):
     """

@@ -2,7 +2,7 @@
 Module getvlocalpseudopotential
 
 
-Defined at IonLocalPotentialAssignment.fpp lines 5-937
+Defined at IonLocalPotentialAssignment.fpp lines 5-940
 
 """
 from __future__ import print_function, absolute_import, division
@@ -18,7 +18,7 @@ def calvlpp():
     calvlpp()
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 23-104
+    Defined at IonLocalPotentialAssignment.fpp lines 26-107
     
     
     ==========================================================
@@ -30,7 +30,7 @@ def ionpotentialassignment(ity, zion, poscar, temp):
     ionpotentialassignment(ity, zion, poscar, temp)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 107-183
+    Defined at IonLocalPotentialAssignment.fpp lines 110-186
     
     Parameters
     ----------
@@ -49,7 +49,7 @@ def sphbess(l, x):
     sphbess = sphbess(l, x)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 188-227
+    Defined at IonLocalPotentialAssignment.fpp lines 191-230
     
     Parameters
     ----------
@@ -69,7 +69,7 @@ def fourbess_gr(g, fg, r, fr):
     fourbess_gr(g, fg, r, fr)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 231-254
+    Defined at IonLocalPotentialAssignment.fpp lines 234-257
     
     Parameters
     ----------
@@ -81,96 +81,12 @@ def fourbess_gr(g, fg, r, fr):
     """
     _AresMainPy_pkg.f90wrap_fourbess_gr(g=g, fg=fg, r=r, fr=fr)
 
-def cubicsplineinterp(fun, ddfdx2, xmax, dx, x, zion=None):
-    """
-    cubicsplineinterp = cubicsplineinterp(fun, ddfdx2, xmax, dx, x[, zion])
-    
-    
-    Defined at IonLocalPotentialAssignment.fpp lines 258-333
-    
-    Parameters
-    ----------
-    fun : float array
-    ddfdx2 : float array
-    xmax : float
-    dx : float
-    x : float
-    zion : int
-    
-    Returns
-    -------
-    cubicsplineinterp : float
-    
-    """
-    cubicsplineinterp = _AresMainPy_pkg.f90wrap_cubicsplineinterp(fun=fun, \
-        ddfdx2=ddfdx2, xmax=xmax, dx=dx, x=x, zion=zion)
-    return cubicsplineinterp
-
-def cubichermiteinterp(fun, dfdx, xmax, h, x, zion):
-    """
-    cubichermiteinterp = cubichermiteinterp(fun, dfdx, xmax, h, x, zion)
-    
-    
-    Defined at IonLocalPotentialAssignment.fpp lines 337-407
-    
-    Parameters
-    ----------
-    fun : float array
-    dfdx : float array
-    xmax : float
-    h : float
-    x : float
-    zion : int
-    
-    Returns
-    -------
-    cubichermiteinterp : float
-    
-    """
-    cubichermiteinterp = _AresMainPy_pkg.f90wrap_cubichermiteinterp(fun=fun, \
-        dfdx=dfdx, xmax=xmax, h=h, x=x, zion=zion)
-    return cubichermiteinterp
-
-def dfdr(np, h, f, zion, df):
-    """
-    dfdr(np, h, f, zion, df)
-    
-    
-    Defined at IonLocalPotentialAssignment.fpp lines 411-446
-    
-    Parameters
-    ----------
-    np : int
-    h : float
-    f : float array
-    zion : int
-    df : float array
-    
-    """
-    _AresMainPy_pkg.f90wrap_dfdr(np=np, h=h, f=f, zion=zion, df=df)
-
-def finite_factor(fnor, norder, coe):
-    """
-    finite_factor(fnor, norder, coe)
-    
-    
-    Defined at IonLocalPotentialAssignment.fpp lines 450-591
-    
-    Parameters
-    ----------
-    fnor : int
-    norder : int
-    coe : float array
-    
-    """
-    _AresMainPy_pkg.f90wrap_finite_factor(fnor=fnor, norder=norder, coe=coe)
-
 def dir2car_single(cry_coo, ort_coo, lat):
     """
     dir2car_single(cry_coo, ort_coo, lat)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 595-602
+    Defined at IonLocalPotentialAssignment.fpp lines 598-605
     
     Parameters
     ----------
@@ -182,36 +98,12 @@ def dir2car_single(cry_coo, ort_coo, lat):
     _AresMainPy_pkg.f90wrap_dir2car_single(cry_coo=cry_coo, ort_coo=ort_coo, \
         lat=lat)
 
-def polynom(m, np, xa, ya, c, x):
-    """
-    polynom = polynom(m, np, xa, ya, c, x)
-    
-    
-    Defined at IonLocalPotentialAssignment.fpp lines 615-793
-    
-    Parameters
-    ----------
-    m : int
-    np : int
-    xa : float array
-    ya : float array
-    c : float array
-    x : float
-    
-    Returns
-    -------
-    polynom : float
-    
-    """
-    polynom = _AresMainPy_pkg.f90wrap_polynom(m=m, np=np, xa=xa, ya=ya, c=c, x=x)
-    return polynom
-
 def ionpotentialassignment_dg(ity, zion, poscar, temp):
     """
     ionpotentialassignment_dg(ity, zion, poscar, temp)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 797-863
+    Defined at IonLocalPotentialAssignment.fpp lines 800-866
     
     Parameters
     ----------
@@ -231,7 +123,7 @@ def set_vloc_dg(ity, xyz):
     vloc = set_vloc_dg(ity, xyz)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 866-912
+    Defined at IonLocalPotentialAssignment.fpp lines 869-915
     
     Parameters
     ----------
@@ -251,7 +143,7 @@ def set_vcomp(n_inp, zion, rgauss, r_inp, v_inp, vcomp):
     set_vcomp(n_inp, zion, rgauss, r_inp, v_inp, vcomp)
     
     
-    Defined at IonLocalPotentialAssignment.fpp lines 915-935
+    Defined at IonLocalPotentialAssignment.fpp lines 918-938
     
     Parameters
     ----------

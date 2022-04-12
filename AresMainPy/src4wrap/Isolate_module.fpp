@@ -1194,26 +1194,26 @@ CONTAINS
   ENDFUNCTION c
   !-----------------------PARTING-LINE--------------------------
   !-----------------------DIVIDER-LINE--------------------------
-  SUBROUTINE rcs(n1,n2,n3,dr,cost,sint,cns,indx)
+  SUBROUTINE rcs( n1xy, n2xy, n3xy,dr,cost,sint,cns,indx)
     !USE struct_info, ONLY: Rermax
     USE struct_module
-    INTEGER(I4B),INTENT(IN) :: n1,n2,n3
-    REAL(DP),DIMENSION(n1,n2,n3),INTENT(OUT)    :: dr,cost,sint
-    COMPLEX(DCP),DIMENSION(n1,n2,n3),INTENT(OUT)  :: cns
-    INTEGER(I4B),DIMENSION(n1,n2,n3),INTENT(OUT)  :: indx
+    INTEGER(I4B),INTENT(IN) ::  n1xy, n2xy, n3xy
+    REAL(DP),DIMENSION( n1xy, n2xy, n3xy),INTENT(OUT)    :: dr,cost,sint
+    COMPLEX(DCP),DIMENSION( n1xy, n2xy, n3xy),INTENT(OUT)  :: cns
+    INTEGER(I4B),DIMENSION( n1xy, n2xy, n3xy),INTENT(OUT)  :: indx
     INTEGER(I4B) :: ix,iy,iz
     REAL(DP) :: orig(3),cosp,sinp
     !>>>>>>>>>>>>>>>>>>>>>>>>>START F_DR>>>>>>>>>>>>>>>>>>>>>>>>>>>
     !cubic cell?
-    IF(n1/=n2.OR.n2/=n3.OR.n1/=n3) THEN
+    IF( n1xy/= n2xy.OR. n2xy/= n3xy.OR. n1xy/= n3xy) THEN
        WRITE(6,*) 'CGPHI:STOP!!! need cubic cell'
        STOP
     ENDIF
-    orig(:)=0.5d0*gap(1)*(n1+2)
+    orig(:)=0.5d0*gap(1)*( n1xy+2)
 
-    DO iz=1,n3
-       DO iy=1,n2
-          DO ix=1,n1
+    DO iz=1, n3xy
+       DO iy=1, n2xy
+          DO ix=1, n1xy
              CALL car2spe(ORIG,ix,iy,iz,dr(ix,iy,iz),cost(ix,iy,iz),sint(ix,iy,iz),cosp,sinp)
              cns(ix,iy,iz)=CMPLX(cosp,sinp)
 

@@ -73,7 +73,7 @@ LIBSRC_SOURCES =Constants m_time_evaluate Parameters \
 				Arpack_module Chebyshev_fliter Energy_module \
 	 			Mixer_module Scf_module Out_module ForceStress_module \
      			Write_module dyn_module brent cg_vasp cg_module \
-     			Relax_module End_module Bands_module
+     			Relax_module End_module Bands_module AresMainAPI
 
 # file names
 LIBSRC_FILES = $(addsuffix .f90,${LIBSRC_SOURCES})

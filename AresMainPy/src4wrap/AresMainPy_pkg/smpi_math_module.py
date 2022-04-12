@@ -1781,10 +1781,10 @@ def array_split(nev):
     _AresMainPy_pkg.f90wrap_array_split(nev=nev)
 
 def grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs, \
-    gridrange_sum=None, n1=None, n2=None, n3=None, n=None):
+    gridrange_sum=None, n1xy=None, n2xy=None, n3xy=None, n=None):
     """
     grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs[, \
-        gridrange_sum, n1, n2, n3, n])
+        gridrange_sum, n1xy, n2xy, n3xy, n])
     
     
     Defined at Smpi_math_module.fpp lines 1147-1202
@@ -1799,15 +1799,15 @@ def grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs, \
     recvcounts : int array
     displs : int array
     gridrange_sum : int array
-    n1 : int
-    n2 : int
-    n3 : int
+    n1xy : int
+    n2xy : int
+    n3xy : int
     n : int
     
     """
     _AresMainPy_pkg.f90wrap_grid_split(ngrid=ngrid, ncore=ncore, comm=comm, id=id, \
         grid_range=grid_range, recvcounts=recvcounts, displs=displs, \
-        gridrange_sum=gridrange_sum, n1=n1, n2=n2, n3=n3, n=n)
+        gridrange_sum=gridrange_sum, n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, n=n)
 
 def atom_split(mysize, natom, atom_index):
     """

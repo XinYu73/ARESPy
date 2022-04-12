@@ -91,17 +91,17 @@ subroutine f90wrap_get_rho(nr, r_new, nrho, nspin, rho_new, dvol, n0, n1, n2)
     call get_rho(nr=nr, r_new=r_new, nrho=nrho, Nspin=nspin, rho_new=rho_new, dvol=dvol)
 end subroutine f90wrap_get_rho
 
-subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, trans_phase, n0, n1, n2, n3, n4, &
-    n5)
+subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1xy, n2xy, n3xy, ng1, ng2, ng3, gvec, trans_phase, n0, n1, n2, n3, &
+    n4, n5)
     use succeed, only: cal_trans_phase
     implicit none
     
     integer(4), intent(in) :: nr
     integer(4), intent(in) :: nspin
     real(8), intent(in), dimension(3,n0) :: r_new
-    integer(4), intent(in) :: n1
-    integer(4), intent(in) :: n2
-    integer(4), intent(in) :: n3
+    integer(4), intent(in) :: n1xy
+    integer(4), intent(in) :: n2xy
+    integer(4), intent(in) :: n3xy
     integer(4), intent(in) :: ng1
     integer(4), intent(in) :: ng2
     integer(4), intent(in) :: ng3
@@ -119,21 +119,21 @@ subroutine f90wrap_cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, 
     !f2py intent(hide), depend(trans_phase) :: n4 = shape(trans_phase,2)
     integer :: n5
     !f2py intent(hide), depend(trans_phase) :: n5 = shape(trans_phase,3)
-    call cal_trans_phase(nr=nr, nspin=nspin, r_new=r_new, n1=n1, n2=n2, n3=n3, ng1=ng1, ng2=ng2, ng3=ng3, gvec=gvec, &
-        trans_phase=trans_phase)
+    call cal_trans_phase(nr=nr, nspin=nspin, r_new=r_new, n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, ng1=ng1, ng2=ng2, ng3=ng3, &
+        gvec=gvec, trans_phase=trans_phase)
 end subroutine f90wrap_cal_trans_phase
 
-subroutine f90wrap_get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, gvec, n0, n1, n2, n3, n4, &
-    n5, n6)
+subroutine f90wrap_get_new_rho_psi(nr, r_new, nrho, n1xy, n2xy, n3xy, nspin, rho_new, n_s, psi_new, gvec, n0, n1, n2, &
+    n3, n4, n5, n6)
     use succeed, only: get_new_rho_psi
     implicit none
     
     integer(4), intent(in) :: nr
     real(8), intent(in), dimension(3,n0) :: r_new
     integer(4), intent(in) :: nrho
-    integer(4), intent(in) :: n1
-    integer(4), intent(in) :: n2
-    integer(4), intent(in) :: n3
+    integer(4), intent(in) :: n1xy
+    integer(4), intent(in) :: n2xy
+    integer(4), intent(in) :: n3xy
     integer(4), intent(in) :: nspin
     real(8), intent(inout), dimension(n1,n2) :: rho_new
     integer(4), intent(in) :: n_s
@@ -153,8 +153,8 @@ subroutine f90wrap_get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, 
     !f2py intent(hide), depend(psi_new) :: n5 = shape(psi_new,2)
     integer :: n6
     !f2py intent(hide), depend(gvec) :: n6 = shape(gvec,1)
-    call get_new_rho_psi(nr=nr, r_new=r_new, nrho=nrho, n1=n1, n2=n2, n3=n3, Nspin=nspin, rho_new=rho_new, n_s=n_s, &
-        psi_new=psi_new, gvec=gvec)
+    call get_new_rho_psi(nr=nr, r_new=r_new, nrho=nrho, n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, Nspin=nspin, rho_new=rho_new, &
+        n_s=n_s, psi_new=psi_new, gvec=gvec)
 end subroutine f90wrap_get_new_rho_psi
 
 subroutine f90wrap_store_rho_fft_trans(n_rho, nspin, rho, n0, n1)

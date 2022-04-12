@@ -417,7 +417,7 @@ subroutine f90wrap_create_dyn(na, dyn)
 end subroutine f90wrap_create_dyn
 
 subroutine f90wrap_destroy_dyn(dyn)
-    use dyn_module, only: destroy_dyn, dynamics
+    use dyn_module, only: dynamics, destroy_dyn
     implicit none
     
     type dynamics_ptr_type

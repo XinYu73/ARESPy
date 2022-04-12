@@ -318,14 +318,14 @@ subroutine f90wrap_symm_ind(nd1, nd2, nd3, i1, i2, i3, ind)
     call symm_ind(nd1=nd1, nd2=nd2, nd3=nd3, i1=i1, i2=i2, i3=i3, ind=ind)
 end subroutine f90wrap_symm_ind
 
-subroutine f90wrap_kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, karray, inzee, n0, n1, &
-    n2, n3, n4, n5, n6, n7)
+subroutine f90wrap_kernel_application(n1xy, n2xy, n3xy, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, karray, inzee, n0, &
+    n1, n2, n3, n4, n5, n6, n7)
     use poisson_isf, only: kernel_application
     implicit none
     
-    integer, intent(in) :: n1
-    integer, intent(in) :: n2
-    integer, intent(in) :: n3
+    integer, intent(in) :: n1xy
+    integer, intent(in) :: n2xy
+    integer, intent(in) :: n3xy
     integer, intent(in) :: nd1h
     integer, intent(in) :: nd2
     integer, intent(in) :: nd3
@@ -351,8 +351,8 @@ subroutine f90wrap_kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, 
     !f2py intent(hide), depend(karray) :: n6 = shape(karray,1)
     integer :: n7
     !f2py intent(hide), depend(karray) :: n7 = shape(karray,2)
-    call kernel_application(n1=n1, n2=n2, n3=n3, nd1h=nd1h, nd2=nd2, nd3=nd3, nfft1=nfft1, nfft2=nfft2, nfft3=nfft3, &
-        zarray=zarray, karray=karray, inzee=inzee)
+    call kernel_application(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, nd1h=nd1h, nd2=nd2, nd3=nd3, nfft1=nfft1, nfft2=nfft2, &
+        nfft3=nfft3, zarray=zarray, karray=karray, inzee=inzee)
 end subroutine f90wrap_kernel_application
 
 subroutine f90wrap_poisson_isf__array__karray(dummy_this, nd, dtype, dshape, dloc)

@@ -539,34 +539,60 @@ subroutine f90wrap_anderson_mixing(iiter, xout, xin, err, n0, n1)
     call anderson_mixing(IITER=iiter, XOUT=xout, XIN=xin, err=err)
 end subroutine f90wrap_anderson_mixing
 
-subroutine f90wrap_om1c(nam, nuh, sp, dfp, voma)
+subroutine f90wrap_om1c(nam, nuh, sp, dfp, voma, n0, n1, n2, n3)
     use mixer_module, only: om1c
     implicit none
     
     integer, intent(in) :: nam
     integer, intent(in) :: nuh
-    real :: sp
-    real :: dfp
-    real :: voma
-    call om1c(NAM=nam, NUH=nuh, sp=sp, dfp=dfp, voma=voma)
+    real(8), intent(in) :: sp
+    real(8), intent(in), dimension(n0,n1) :: dfp
+    real(8), intent(inout), dimension(n2,n3) :: voma
+    integer :: n0
+    !f2py intent(hide), depend(dfp) :: n0 = shape(dfp,0)
+    integer :: n1
+    !f2py intent(hide), depend(dfp) :: n1 = shape(dfp,1)
+    integer :: n2
+    !f2py intent(hide), depend(voma) :: n2 = shape(voma,0)
+    integer :: n3
+    !f2py intent(hide), depend(voma) :: n3 = shape(voma,1)
+    call om1c(NAM=nam, NUH=nuh, SP=sp, DFP=dfp, VOMA=voma)
 end subroutine f90wrap_om1c
 
-subroutine f90wrap_amst(beta, w0, nam, nuh, dxp, dfp, sp, xl, fl, voma, xn)
+subroutine f90wrap_amst(beta, w0, nam, nuh, dxp, dfp, sp, xl, fl, voma, xn, n0, n1, n2, n3, n4, n5, n6, n7, n8)
     use mixer_module, only: amst
     implicit none
     
-    real :: beta
-    real :: w0
+    real(8), intent(in) :: beta
+    real(8), intent(in) :: w0
     integer, intent(in) :: nam
     integer, intent(in) :: nuh
-    real :: dxp
-    real :: dfp
-    real :: sp
-    real :: xl
-    real :: fl
-    real :: voma
-    real :: xn
-    call amst(beta=beta, w0=w0, NAM=nam, NUH=nuh, dxp=dxp, dfp=dfp, sp=sp, xl=xl, fl=fl, voma=voma, xn=xn)
+    real(8), intent(in), dimension(n0,n1) :: dxp
+    real(8), intent(in), dimension(n2,n3) :: dfp
+    real(8), intent(in) :: sp
+    real(8), intent(in), dimension(n4) :: xl
+    real(8), intent(in), dimension(n5) :: fl
+    real(8), intent(in), dimension(n6,n7) :: voma
+    real(8), intent(inout), dimension(n8) :: xn
+    integer :: n0
+    !f2py intent(hide), depend(dxp) :: n0 = shape(dxp,0)
+    integer :: n1
+    !f2py intent(hide), depend(dxp) :: n1 = shape(dxp,1)
+    integer :: n2
+    !f2py intent(hide), depend(dfp) :: n2 = shape(dfp,0)
+    integer :: n3
+    !f2py intent(hide), depend(dfp) :: n3 = shape(dfp,1)
+    integer :: n4
+    !f2py intent(hide), depend(xl) :: n4 = shape(xl,0)
+    integer :: n5
+    !f2py intent(hide), depend(fl) :: n5 = shape(fl,0)
+    integer :: n6
+    !f2py intent(hide), depend(voma) :: n6 = shape(voma,0)
+    integer :: n7
+    !f2py intent(hide), depend(voma) :: n7 = shape(voma,1)
+    integer :: n8
+    !f2py intent(hide), depend(xn) :: n8 = shape(xn,0)
+    call amst(BETA=beta, W0=w0, NAM=nam, NUH=nuh, DXP=dxp, DFP=dfp, SP=sp, XL=xl, FL=fl, VOMA=voma, XN=xn)
 end subroutine f90wrap_amst
 
 subroutine f90wrap_rpulay_mixing(iter, xout, xin, err, n0, n1)

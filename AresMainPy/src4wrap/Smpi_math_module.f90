@@ -1222,14 +1222,14 @@ CONTAINS
      ! IF(parallel%isroot)print *,"sub2sum",parallel%sub2sum
    ENDSUBROUTINE array_split
    !---------------------------------------------------------------------
-   SUBROUTINE grid_split(ngrid,ncore,comm,id,grid_range,recvcounts,displs,gridrange_sum,n1,n2,n3,n)
+   SUBROUTINE grid_split(ngrid,ncore,comm,id,grid_range,recvcounts,displs,gridrange_sum, n1xy,n2xy,n3xy,n)
      IMPLICIT NONE
      INTEGER(I4B),INTENT(IN)  :: ngrid,ncore,comm,id
      INTEGER(I4B),INTENT(OUT) :: grid_range(3)
      INTEGER(I4B),INTENT(OUT) :: recvcounts(ncore)
      INTEGER(I4B),INTENT(OUT) :: displs(ncore)
      INTEGER(I4B),INTENT(OUT),optional :: gridrange_sum(3,ncore)
-    INTEGER(I4B),INTENT(INOUT),optional :: n1,n2,n3,n
+    INTEGER(I4B),INTENT(INOUT),optional ::  n1xy,n2xy,n3xy,n
      !> local
      INTEGER(I4B) :: i,j
      INTEGER(I4B) :: average,redund
@@ -1274,8 +1274,8 @@ CONTAINS
      endif
 
      !> set the local cubic grid
-     if(present(n1).and.present(n2).and.present(n3))then
-        n3=(grid_range(2)-1)/n1/n2+1-(grid_range(1)-1)/n1/n2-1+1
+     if(present( n1xy).and.present(n2xy).and.present(n3xy))then
+        n3xy=(grid_range(2)-1)/ n1xy/n2xy+1-(grid_range(1)-1)/ n1xy/n2xy-1+1
         n=grid_range(3)
      endif
 

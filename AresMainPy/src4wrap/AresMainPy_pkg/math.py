@@ -2,7 +2,7 @@
 Module math
 
 
-Defined at Math.fpp lines 5-3436
+Defined at Math.fpp lines 5-3439
 
 """
 from __future__ import print_function, absolute_import, division
@@ -18,7 +18,7 @@ def change_case(instr, str, fun):
     change_case(instr, str, fun)
     
     
-    Defined at Math.fpp lines 52-92
+    Defined at Math.fpp lines 55-95
     
     Parameters
     ----------
@@ -34,7 +34,7 @@ def find_keywords(str, ch_mark, id_key, id_value):
     find_keywords(str, ch_mark, id_key, id_value)
     
     
-    Defined at Math.fpp lines 96-125
+    Defined at Math.fpp lines 99-128
     
     Parameters
     ----------
@@ -52,7 +52,7 @@ def find_nword(str, ch_comma, nword):
     find_nword(str, ch_comma, nword)
     
     
-    Defined at Math.fpp lines 129-155
+    Defined at Math.fpp lines 132-158
     
     Parameters
     ----------
@@ -68,7 +68,7 @@ def det(matrix):
     det = det(matrix)
     
     
-    Defined at Math.fpp lines 187-191
+    Defined at Math.fpp lines 190-194
     
     Parameters
     ----------
@@ -87,7 +87,7 @@ def inv_33(m):
     inv_33 = inv_33(m)
     
     
-    Defined at Math.fpp lines 195-225
+    Defined at Math.fpp lines 198-228
     
     Parameters
     ----------
@@ -106,7 +106,7 @@ def lindg(eta, lambda_, mu):
     lindg = lindg(eta, lambda_, mu)
     
     
-    Defined at Math.fpp lines 229-275
+    Defined at Math.fpp lines 232-278
     
     Parameters
     ----------
@@ -127,7 +127,7 @@ def int_to_char(int_bn):
     int_to_char = int_to_char(int_bn)
     
     
-    Defined at Math.fpp lines 279-300
+    Defined at Math.fpp lines 282-303
     
     Parameters
     ----------
@@ -147,7 +147,7 @@ def lat2matrix(lat_para, lat_mat, flag):
     lat2matrix(lat_para, lat_mat, flag)
     
     
-    Defined at Math.fpp lines 304-347
+    Defined at Math.fpp lines 307-350
     
     Parameters
     ----------
@@ -164,7 +164,7 @@ def one2three(id, n_dens, pos):
     one2three(id, n_dens, pos)
     
     
-    Defined at Math.fpp lines 351-373
+    Defined at Math.fpp lines 354-376
     
     Parameters
     ----------
@@ -180,7 +180,7 @@ def init_random_seed():
     init_random_seed()
     
     
-    Defined at Math.fpp lines 467-531
+    Defined at Math.fpp lines 470-534
     
     
     """
@@ -191,7 +191,7 @@ def atom_mass(atom_name, mass):
     atom_mass(atom_name, mass)
     
     
-    Defined at Math.fpp lines 691-832
+    Defined at Math.fpp lines 694-835
     
     Parameters
     ----------
@@ -207,7 +207,7 @@ def newton_inter(n, x, y, m, tx, ty):
     newton_inter(n, x, y, m, tx, ty)
     
     
-    Defined at Math.fpp lines 836-859
+    Defined at Math.fpp lines 839-862
     
     Parameters
     ----------
@@ -227,7 +227,7 @@ def diag(n, ina, w, q):
     diag(n, ina, w, q)
     
     
-    Defined at Math.fpp lines 863-997
+    Defined at Math.fpp lines 866-1000
     
     Parameters
     ----------
@@ -244,7 +244,7 @@ def boltzmann_distribution(rnull, width):
     boltzmann_distribution = boltzmann_distribution(rnull, width)
     
     
-    Defined at Math.fpp lines 1001-1016
+    Defined at Math.fpp lines 1004-1019
     
     Parameters
     ----------
@@ -265,7 +265,7 @@ def dir2car(cry_coo, ort_coo, lat):
     dir2car(cry_coo, ort_coo, lat)
     
     
-    Defined at Math.fpp lines 1023-1033
+    Defined at Math.fpp lines 1026-1036
     
     Parameters
     ----------
@@ -281,7 +281,7 @@ def car2dir(ort_coo, cry_coo, lat):
     car2dir(ort_coo, cry_coo, lat)
     
     
-    Defined at Math.fpp lines 1039-1050
+    Defined at Math.fpp lines 1042-1053
     
     Parameters
     ----------
@@ -297,7 +297,7 @@ def thr2mat(n1, n2, n3, i, j, k):
     dimnu = thr2mat(n1, n2, n3, i, j, k)
     
     
-    Defined at Math.fpp lines 1053-1059
+    Defined at Math.fpp lines 1056-1062
     
     Parameters
     ----------
@@ -321,7 +321,7 @@ def mat2thr(n1, n2, n3, i):
     ix, iy, iz = mat2thr(n1, n2, n3, i)
     
     
-    Defined at Math.fpp lines 1062-1093
+    Defined at Math.fpp lines 1065-1096
     
     Parameters
     ----------
@@ -346,7 +346,7 @@ def sopo(a, lda, n, b, ldb, m, w):
     sopo(a, lda, n, b, ldb, m, w)
     
     
-    Defined at Math.fpp lines 1096-1152
+    Defined at Math.fpp lines 1099-1155
     
     Parameters
     ----------
@@ -366,7 +366,7 @@ def csort_eigen(nev, arr, brr):
     csort_eigen(nev, arr, brr)
     
     
-    Defined at Math.fpp lines 1155-1188
+    Defined at Math.fpp lines 1158-1191
     
     Parameters
     ----------
@@ -382,7 +382,7 @@ def rsort_eigen(nev, arr, brr):
     rsort_eigen(nev, arr, brr)
     
     
-    Defined at Math.fpp lines 1191-1224
+    Defined at Math.fpp lines 1194-1227
     
     Parameters
     ----------
@@ -398,7 +398,7 @@ def sort_eigval(n, arr):
     sort_eigval(n, arr)
     
     
-    Defined at Math.fpp lines 1227-1249
+    Defined at Math.fpp lines 1230-1252
     
     Parameters
     ----------
@@ -413,7 +413,7 @@ def realint_sort(nev, arr, brr, crr=None):
     realint_sort(nev, arr, brr[, crr])
     
     
-    Defined at Math.fpp lines 1252-1290
+    Defined at Math.fpp lines 1255-1293
     
     Parameters
     ----------
@@ -430,7 +430,7 @@ def pgfo(omat, n1, n2, n3, ix, iy, iz):
     ex, ey, ez = pgfo(omat, n1, n2, n3, ix, iy, iz)
     
     
-    Defined at Math.fpp lines 1294-1324
+    Defined at Math.fpp lines 1297-1327
     
     Parameters
     ----------
@@ -458,7 +458,7 @@ def cubicsplineinterp(fun, ddfdx2, xmax, dx, x, zion=None):
     cubicsplineinterp = cubicsplineinterp(fun, ddfdx2, xmax, dx, x[, zion])
     
     
-    Defined at Math.fpp lines 1327-1403
+    Defined at Math.fpp lines 1330-1406
     
     Parameters
     ----------
@@ -483,7 +483,7 @@ def finite_factor(fnor, norder, coe):
     finite_factor(fnor, norder, coe)
     
     
-    Defined at Math.fpp lines 1406-1547
+    Defined at Math.fpp lines 1409-1550
     
     Parameters
     ----------
@@ -499,7 +499,7 @@ def finite_factor_new(fnor, norder, coe):
     finite_factor_new(fnor, norder, coe)
     
     
-    Defined at Math.fpp lines 1549-1605
+    Defined at Math.fpp lines 1552-1608
     
     Parameters
     ----------
@@ -515,7 +515,7 @@ def dfdr(np, h, f, df):
     dfdr(np, h, f, df)
     
     
-    Defined at Math.fpp lines 1609-1643
+    Defined at Math.fpp lines 1612-1646
     
     Parameters
     ----------
@@ -532,7 +532,7 @@ def cubichermiteinterp(fun, dfdx, xmax, h, x):
     cubichermiteinterp = cubichermiteinterp(fun, dfdx, xmax, h, x)
     
     
-    Defined at Math.fpp lines 1646-1705
+    Defined at Math.fpp lines 1649-1708
     
     Parameters
     ----------
@@ -556,7 +556,7 @@ def simpleinterp(fun, xmax, h, x):
     simpleinterp = simpleinterp(fun, xmax, h, x)
     
     
-    Defined at Math.fpp lines 1708-1747
+    Defined at Math.fpp lines 1711-1750
     
     Parameters
     ----------
@@ -579,7 +579,7 @@ def r_dylm(l, m, x, y, z, rmod, f):
     r_dylm(l, m, x, y, z, rmod, f)
     
     
-    Defined at Math.fpp lines 1750-1890
+    Defined at Math.fpp lines 1753-1893
     
     Parameters
     ----------
@@ -599,7 +599,7 @@ def atom_effcharge(atom_name, nquan, zeta):
     lmax = atom_effcharge(atom_name, nquan, zeta)
     
     
-    Defined at Math.fpp lines 2064-2158
+    Defined at Math.fpp lines 2067-2161
     
     Parameters
     ----------
@@ -622,7 +622,7 @@ def atom_sto(p, l, m, zeta, r):
     f = atom_sto(p, l, m, zeta, r)
     
     
-    Defined at Math.fpp lines 2443-2644
+    Defined at Math.fpp lines 2446-2647
     
     Parameters
     ----------
@@ -645,7 +645,7 @@ def gammp(a, x):
     gammp = gammp(a, x)
     
     
-    Defined at Math.fpp lines 2802-2819
+    Defined at Math.fpp lines 2805-2822
     
     Parameters
     ----------
@@ -665,7 +665,7 @@ def gser(gamser, a, x, gln):
     gser(gamser, a, x, gln)
     
     
-    Defined at Math.fpp lines 2822-2849
+    Defined at Math.fpp lines 2825-2852
     
     Parameters
     ----------
@@ -682,7 +682,7 @@ def gcf(gammcf, a, x, gln):
     gcf(gammcf, a, x, gln)
     
     
-    Defined at Math.fpp lines 2852-2888
+    Defined at Math.fpp lines 2855-2891
     
     Parameters
     ----------
@@ -699,7 +699,7 @@ def gammln(xx):
     gammln = gammln(xx)
     
     
-    Defined at Math.fpp lines 2891-2911
+    Defined at Math.fpp lines 2894-2914
     
     Parameters
     ----------
@@ -718,7 +718,7 @@ def integral(l, dx, x):
     integral = integral(l, dx, x)
     
     
-    Defined at Math.fpp lines 2914-2927
+    Defined at Math.fpp lines 2917-2930
     
     Parameters
     ----------
@@ -739,7 +739,7 @@ def myfun(l, t):
     myfun = myfun(l, t)
     
     
-    Defined at Math.fpp lines 2930-2935
+    Defined at Math.fpp lines 2933-2938
     
     Parameters
     ----------
@@ -759,7 +759,7 @@ def plgndr(l, m, x):
     plgndr = plgndr(l, m, x)
     
     
-    Defined at Math.fpp lines 2938-2971
+    Defined at Math.fpp lines 2941-2974
     
     Parameters
     ----------
@@ -780,7 +780,7 @@ def lagrange_interpolation_coe(npoint, scatter_x, coe):
     lagrange_interpolation_coe(npoint, scatter_x, coe)
     
     
-    Defined at Math.fpp lines 2974-2991
+    Defined at Math.fpp lines 2977-2994
     
     Parameters
     ----------
@@ -797,7 +797,7 @@ def lagrange_interpolation_x(npoint, x_sample, x_in):
     lagrange_interpolation_x = lagrange_interpolation_x(npoint, x_sample, x_in)
     
     
-    Defined at Math.fpp lines 2993-3008
+    Defined at Math.fpp lines 2996-3011
     
     Parameters
     ----------
@@ -820,7 +820,7 @@ def interpolation_test():
     interpolation_test()
     
     
-    Defined at Math.fpp lines 3010-3034
+    Defined at Math.fpp lines 3013-3037
     
     
     """
@@ -831,7 +831,7 @@ def direct_productlm(nll, nml, index_ll, index_ml, mat_in, mat_out):
     direct_productlm(nll, nml, index_ll, index_ml, mat_in, mat_out)
     
     
-    Defined at Math.fpp lines 3036-3113
+    Defined at Math.fpp lines 3039-3116
     
     Parameters
     ----------
@@ -846,32 +846,12 @@ def direct_productlm(nll, nml, index_ll, index_ml, mat_in, mat_out):
     _AresMainPy_pkg.f90wrap_direct_productlm(nll=nll, nml=nml, index_ll=index_ll, \
         index_ml=index_ml, mat_in=mat_in, mat_out=mat_out)
 
-def sphbess(l, x):
-    """
-    sphbess = sphbess(l, x)
-    
-    
-    Defined at Math.fpp lines 3116-3155
-    
-    Parameters
-    ----------
-    l : int
-    x : float
-    
-    Returns
-    -------
-    sphbess : float
-    
-    """
-    sphbess = _AresMainPy_pkg.f90wrap_sphbess(l=l, x=x)
-    return sphbess
-
 def fourier_1d(nr, rr, rab, vr, ll, nql, yp, vql, vt):
     """
     fourier_1d(nr, rr, rab, vr, ll, nql, yp, vql, vt)
     
     
-    Defined at Math.fpp lines 3158-3216
+    Defined at Math.fpp lines 3161-3219
     
     Parameters
     ----------
@@ -894,7 +874,7 @@ def invfourier_1d(g, fg, ll, r, fr):
     invfourier_1d(g, fg, ll, r, fr)
     
     
-    Defined at Math.fpp lines 3219-3250
+    Defined at Math.fpp lines 3222-3253
     
     Parameters
     ----------
@@ -912,7 +892,7 @@ def integ_new(rab, y):
     f = integ_new(rab, y)
     
     
-    Defined at Math.fpp lines 3253-3273
+    Defined at Math.fpp lines 3256-3276
     
     Parameters
     ----------
@@ -932,7 +912,7 @@ def interp(np, f, r, rnorm, z=None):
     interp = interp(np, f, r, rnorm[, z])
     
     
-    Defined at Math.fpp lines 3276-3330
+    Defined at Math.fpp lines 3279-3333
     
     Parameters
     ----------
@@ -955,7 +935,7 @@ def getfileunit():
     getfileunit = getfileunit()
     
     
-    Defined at Math.fpp lines 3405-3418
+    Defined at Math.fpp lines 3408-3421
     
     
     Returns
@@ -971,7 +951,7 @@ def kahan_sum(n, array):
     kahan_sum = kahan_sum(n, array)
     
     
-    Defined at Math.fpp lines 3421-3436
+    Defined at Math.fpp lines 3424-3439
     
     Parameters
     ----------
@@ -991,7 +971,7 @@ def _gasdev_s_sp(inmu=None, insigma=None):
     harvest = _gasdev_s_sp([inmu, insigma])
     
     
-    Defined at Math.fpp lines 535-564
+    Defined at Math.fpp lines 538-567
     
     Parameters
     ----------
@@ -1011,7 +991,7 @@ def _gasdev_s_dp(inmu=None, insigma=None):
     harvest = _gasdev_s_dp([inmu, insigma])
     
     
-    Defined at Math.fpp lines 568-597
+    Defined at Math.fpp lines 571-600
     
     Parameters
     ----------
@@ -1031,7 +1011,7 @@ def _gasdev_v_sp(harvest, inmu=None, insigma=None):
     _gasdev_v_sp(harvest[, inmu, insigma])
     
     
-    Defined at Math.fpp lines 601-642
+    Defined at Math.fpp lines 604-645
     
     Parameters
     ----------
@@ -1047,7 +1027,7 @@ def _gasdev_v_dp(harvest, inmu=None, insigma=None):
     _gasdev_v_dp(harvest[, inmu, insigma])
     
     
-    Defined at Math.fpp lines 646-687
+    Defined at Math.fpp lines 649-690
     
     Parameters
     ----------
@@ -1083,7 +1063,7 @@ def _norm_real(a):
     norm_real = _norm_real(a)
     
     
-    Defined at Math.fpp lines 159-161
+    Defined at Math.fpp lines 162-164
     
     Parameters
     ----------
@@ -1102,7 +1082,7 @@ def _norm_complex(a):
     norm_complex = _norm_complex(a)
     
     
-    Defined at Math.fpp lines 165-167
+    Defined at Math.fpp lines 168-170
     
     Parameters
     ----------
@@ -1139,7 +1119,7 @@ def _cross_real(a, b):
     cross_real = _cross_real(a, b)
     
     
-    Defined at Math.fpp lines 179-183
+    Defined at Math.fpp lines 182-186
     
     Parameters
     ----------
@@ -1159,7 +1139,7 @@ def _cross_complex(a, b):
     cross_complex = _cross_complex(a, b)
     
     
-    Defined at Math.fpp lines 171-175
+    Defined at Math.fpp lines 174-178
     
     Parameters
     ----------
@@ -1197,7 +1177,7 @@ def _integer_index(array, n, id):
     _integer_index(array, n, id)
     
     
-    Defined at Math.fpp lines 422-463
+    Defined at Math.fpp lines 425-466
     
     Parameters
     ----------
@@ -1213,7 +1193,7 @@ def _real_index(array, n, id):
     _real_index(array, n, id)
     
     
-    Defined at Math.fpp lines 377-418
+    Defined at Math.fpp lines 380-421
     
     Parameters
     ----------
@@ -1247,7 +1227,7 @@ def _three2one_d_cplx(amat, bmat):
     _three2one_d_cplx(amat, bmat)
     
     
-    Defined at Math.fpp lines 3334-3348
+    Defined at Math.fpp lines 3337-3351
     
     Parameters
     ----------
@@ -1264,7 +1244,7 @@ def _three2one_d_real(amat, bmat):
     _three2one_d_real(amat, bmat)
     
     
-    Defined at Math.fpp lines 3352-3366
+    Defined at Math.fpp lines 3355-3369
     
     Parameters
     ----------
@@ -1299,7 +1279,7 @@ def _one2three_d_cplx(amat, bmat):
     _one2three_d_cplx(amat, bmat)
     
     
-    Defined at Math.fpp lines 3370-3384
+    Defined at Math.fpp lines 3373-3387
     
     Parameters
     ----------
@@ -1316,7 +1296,7 @@ def _one2three_d_real(amat, bmat):
     _one2three_d_real(amat, bmat)
     
     
-    Defined at Math.fpp lines 3388-3402
+    Defined at Math.fpp lines 3391-3405
     
     Parameters
     ----------

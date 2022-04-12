@@ -653,12 +653,12 @@ CONTAINS
 
        !REAL*8, DIMENSION(:), INTENT(IN) :: & 
        !   SP
-       REAL*8,INTENT(IN) :: SP
+       REAL(8),INTENT(IN) :: SP
  
-       REAL*8, DIMENSION(:,:), INTENT(IN) :: & 
+       REAL(8), DIMENSION(:,:), INTENT(IN) :: & 
           DFP
   
-       REAL*8, DIMENSION(:,:), INTENT(OUT) :: &
+       REAL(8), DIMENSION(:,:), INTENT(OUT) :: &
           VOMA
 
 !C*************************************************
@@ -679,11 +679,11 @@ CONTAINS
 !C                 - 1ST COLUMN OF OVERLAP MATRIX
 !C*************************************************
 
-       REAL*8, DIMENSION(NAM) :: & 
+       REAL(8), DIMENSION(NAM) :: & 
           VECT
 
 #ifdef MPI
-       REAL*8, DIMENSION(NUH) :: VOMA_local
+       REAL(8), DIMENSION(NUH) :: VOMA_local
        ! !> kahan sum
        ! REAL(DP) ::kahan_y,kahan_t,kahan_eps
 #endif
@@ -732,23 +732,23 @@ CONTAINS
 #endif
         IMPLICIT NONE
 
-        REAL*8, INTENT(IN) :: & 
+        REAL(8), INTENT(IN) :: & 
            BETA, W0
 
         INTEGER, INTENT(IN) ::& 
            NAM, NUH
 
-        REAL*8, DIMENSION(:,:), INTENT(IN) :: &
+        REAL(8), DIMENSION(:,:), INTENT(IN) :: &
            DXP, DFP 
 
-        REAL*8, DIMENSION(:), INTENT(IN) :: &
+        REAL(8), DIMENSION(:), INTENT(IN) :: &
             XL, FL !,SP
-        REAL*8,INTENT(IN) :: SP
+        REAL(8),INTENT(IN) :: SP
 
-        REAL*8, DIMENSION(:,:), INTENT(IN) :: &
+        REAL(8), DIMENSION(:,:), INTENT(IN) :: &
            VOMA
 
-        REAL*8, DIMENSION(:), INTENT(OUT) :: &
+        REAL(8), DIMENSION(:), INTENT(OUT) :: &
            XN
 
 !C*************************************************
@@ -776,27 +776,27 @@ CONTAINS
 !C     XN(I), I=1,...,NAM,   -  THE NEW VECTOR X
 !C*************************************************
 
-      REAL*8, DIMENSION(NAM) :: & 
+      REAL(8), DIMENSION(NAM) :: & 
          VECT
 
-      REAL*8, DIMENSION(NUH) :: & 
+      REAL(8), DIMENSION(NUH) :: & 
          WORK
 
-      REAL*8, DIMENSION(NUH, 1) :: &
+      REAL(8), DIMENSION(NUH, 1) :: &
            T
 #ifdef MPI
-      REAL*8, DIMENSION(NUH) :: T_local
+      REAL(8), DIMENSION(NUH) :: T_local
       ! !> kahan sum
       ! REAL(DP) ::kahan_y,kahan_t,kahan_eps
 #endif
 
-      REAL*8, DIMENSION(NUH, NUH) :: &
+      REAL(8), DIMENSION(NUH, NUH) :: &
          A
 
        INTEGER :: & 
           IH, I, JH, MNUH
 
-       REAL*8 :: & 
+       REAL(8) :: & 
           DUM, BT
 
       MNUH=NUH

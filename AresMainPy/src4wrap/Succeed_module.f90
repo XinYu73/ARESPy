@@ -373,13 +373,13 @@ CONTAINS
   !> SUBROUTINE store_r_fft_trans(nr,r)
   !> SUBROUTINE store_psi_fft_trans(n_rho,n_s,nspin,psi)
 
-  SUBROUTINE cal_trans_phase(nr,nspin,r_new,n1,n2,n3,ng1,ng2,ng3,gvec,trans_phase)
+  SUBROUTINE cal_trans_phase(nr,nspin,r_new, n1xy, n2xy,n3xy,ng1,ng2,ng3,gvec,trans_phase)
     USE FOURIER , ONLY: FFT
     IMPLICIT NONE
     !> reciprocal grid
     INTEGER(I4B),intent(in) :: nr,nspin
     REAL(DP),intent(in)     :: r_new(3,nr)
-    INTEGER(I4B),intent(in) :: ng1,ng2,ng3,n1,n2,n3
+    INTEGER(I4B),intent(in) :: ng1,ng2,ng3, n1xy, n2xy, n3xy
     REAL(DP),intent(in)     :: gvec(4,ng1*ng2*ng3)
     COMPLEX(DP),intent(out)  :: trans_phase(ng1,ng2,ng3,nspin)
     !> local
@@ -397,13 +397,13 @@ CONTAINS
     !> rho_atom for per atom in reciprocal
     do i=1,nr,1   !> per atom position
        do j=1,Nspin,1 !> per spin
-          rhoi_reci(:,:,:,j,i)=FFT(reshape(rhoi1(:,j,i),(/n1,n2,n3/)))
+          rhoi_reci(:,:,:,j,i)=FFT(reshape(rhoi1(:,j,i),(/ n1xy, n2xy, n3xy/)))
        enddo
     enddo
 
     !> rho_atom for all atom in reciprocal
     do i=1,nspin,1 !> per spin
-       rho_at_reci(:,:,:,i)=FFT( reshape(rho_at1(:,i),(/n1,n2,n3/)) )
+       rho_at_reci(:,:,:,i)=FFT( reshape(rho_at1(:,i),(/ n1xy, n2xy, n3xy/)) )
     enddo
     ! do i=1,nspin,1 !> per spin
     !    rhoi_reci(:,:,:,1,i)=FFT( reshape(rho_at(:,i),(/n1,n2,n3/)) )
@@ -433,11 +433,11 @@ CONTAINS
 
   ENDSUBROUTINE cal_trans_phase
 
-  SUBROUTINE get_new_rho_psi(nr,r_new,nrho,n1,n2,n3,nspin,rho_new,n_s,psi_new,gvec)
+  SUBROUTINE get_new_rho_psi(nr,r_new,nrho, n1xy,n2xy,n3xy,nspin,rho_new,n_s,psi_new,gvec)
     !> get the new rho and new psi by fourier translation
     USE Fourier, ONLY: FFT
     implicit none
-    INTEGER(I4B),intent(IN) :: nr, nrho,n1,n2,n3, Nspin, n_s
+    INTEGER(I4B),intent(IN) :: nr, nrho, n1xy,n2xy,n3xy, Nspin, n_s
     REAL(DP),intent(IN)     :: r_new(3,nr),gvec(4,nrho)
     REAL(DP),intent(OUT)    :: rho_new(nrho,Nspin)
     REAL(DP),intent(OUT)    :: psi_new(nrho,n_s,nspin)
@@ -449,28 +449,28 @@ CONTAINS
     CHARACTER(len=10) :: nu
 
     !> initialize
-    ng1=n1/2+1
-    ng2=n2
-    ng3=n3
+    ng1= n1xy/2+1
+    ng2=n2xy
+    ng3=n3xy
     allocate(trans_phase(ng1,ng2,ng3,nspin))
     nu=''
     write(nu,'(I4)')counter1
 
     !> get translation phase
-    CALL cal_trans_phase(nr,nspin,r_new,n1,n2,n3,ng1,ng2,ng3,gvec,trans_phase)
+    CALL cal_trans_phase(nr,nspin,r_new, n1xy,n2xy,n3xy,ng1,ng2,ng3,gvec,trans_phase)
     open(1256,file='tran_phase')
     write(1256,*)trans_phase
     close(1256)
 
     !> cal new rho !>> nrho_l,nrho_new_l
     allocate(rho1_reci(ng1,ng2,ng3))
-    allocate(nrho_l(n1,n2,n3))
-    allocate(nrho_new_l(n1,n2,n3))
+    allocate(nrho_l( n1xy,n2xy,n3xy))
+    allocate(nrho_new_l( n1xy,n2xy,n3xy))
     do i=1,Nspin,1
        ! CALL dcopy(nrho,rho_at1(:,i),1,nrho_l,1)
        CALL dcopy(nrho,rho1(:,i),1,nrho_l,1)
     open(1256,file='nrho_l'//trim(adjustl(nu)))
-    write(1256,*)n1,n2,n3
+    write(1256,*) n1xy,n2xy,n3xy
     write(1256,*)nrho_l
     close(1256)
        !> cal array2 which "FFT(array2)=FFT(array1)*trans"
@@ -478,7 +478,7 @@ CONTAINS
        rho1_reci=rho1_reci*trans_phase(:,:,:,i)
        nrho_new_l=FFT(rho1_reci)
     open(1256,file='nrho_new_l'//trim(adjustl(nu)))
-    write(1256,*)n1,n2,n3
+    write(1256,*) n1xy,n2xy,n3xy
     write(1256,*)nrho_new_l
     close(1256)
        CALL dcopy(nrho,nrho_new_l,1,rho_new(:,i),1)

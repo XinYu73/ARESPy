@@ -64,14 +64,14 @@ MODULE grid_module
      REAL(DP),ALLOCATABLE     :: initMO(:,:)
      REAL(DP),ALLOCATABLE     :: vlpp(:)
   ENDTYPE charge_sphere
-  TYPE grid_diff_map_type
-     INTEGER(I4B),allocatable :: nz_map(:,:) !> the up id and down id for per nz
-     INTEGER(I4B) :: mycomm_cores(2)         !> number of cores for communcation
-     INTEGER(I4B),allocatable :: mycomm_size(:,:)
-     INTEGER(I4B),allocatable :: mysend_size(:,:)
-     INTEGER(I4B),allocatable :: local_map(:,:)
-     INTEGER(I4B)             :: boundary(2,3)
-  ENDTYPE grid_diff_map_type
+!   TYPE grid_diff_map_type
+!      INTEGER(I4B),allocatable :: nz_map(:,:) !> the up id and down id for per nz
+!      INTEGER(I4B) :: mycomm_cores(2)         !> number of cores for communcation
+!      INTEGER(I4B),allocatable :: mycomm_size(:,:)
+!      INTEGER(I4B),allocatable :: mysend_size(:,:)
+!      INTEGER(I4B),allocatable :: local_map(:,:)
+!      INTEGER(I4B)             :: boundary(2,3)
+!   ENDTYPE grid_diff_map_type
   ! TYPE grid_diff_map_type
   !    INTEGER(I4B),allocatable :: local_nz(:,:)
   ! ENDTYPE grid_diff_map_type

@@ -2,7 +2,7 @@
 Module ewald
 
 
-Defined at Ewald.fpp lines 5-739
+Defined at Ewald.fpp lines 5-826
 
 """
 from __future__ import print_function, absolute_import, division
@@ -227,50 +227,12 @@ def ewald_stress(latticev, ionpositions, iontpid, ioncharges):
         ionpositions=ionpositions, iontpid=iontpid, ioncharges=ioncharges)
     return ewald_stress
 
-def ewaldrpstr(eta):
-    """
-    ewaldrpstr = ewaldrpstr(eta)
-    
-    
-    Defined at Ewald.fpp lines 572-616
-    
-    Parameters
-    ----------
-    eta : float
-    
-    Returns
-    -------
-    ewaldrpstr : float array
-    
-    """
-    ewaldrpstr = _AresMainPy_pkg.f90wrap_ewaldrpstr(eta=eta)
-    return ewaldrpstr
-
-def ewaldavstr(eta):
-    """
-    ewaldavstr = ewaldavstr(eta)
-    
-    
-    Defined at Ewald.fpp lines 618-625
-    
-    Parameters
-    ----------
-    eta : float
-    
-    Returns
-    -------
-    ewaldavstr : float array
-    
-    """
-    ewaldavstr = _AresMainPy_pkg.f90wrap_ewaldavstr(eta=eta)
-    return ewaldavstr
-
 def vectorlength(vc):
     """
     vectorlength = vectorlength(vc)
     
     
-    Defined at Ewald.fpp lines 628-629
+    Defined at Ewald.fpp lines 715-716
     
     Parameters
     ----------
@@ -289,7 +251,7 @@ def recipvector(lat):
     recipvector = recipvector(lat)
     
     
-    Defined at Ewald.fpp lines 632-637
+    Defined at Ewald.fpp lines 719-724
     
     Parameters
     ----------
@@ -308,7 +270,7 @@ def volume(lat):
     volume = volume(lat)
     
     
-    Defined at Ewald.fpp lines 640-642
+    Defined at Ewald.fpp lines 727-729
     
     Parameters
     ----------
@@ -327,7 +289,7 @@ def crossp(va, vb):
     crossp = crossp(va, vb)
     
     
-    Defined at Ewald.fpp lines 645-649
+    Defined at Ewald.fpp lines 732-736
     
     Parameters
     ----------
@@ -347,7 +309,7 @@ def erfc(x):
     erfc = erfc(x)
     
     
-    Defined at Ewald.fpp lines 652-738
+    Defined at Ewald.fpp lines 739-825
     
     Parameters
     ----------

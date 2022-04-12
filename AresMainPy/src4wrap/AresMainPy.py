@@ -5910,10 +5910,10 @@ class Smpi_Math_Module(f90wrap.runtime.FortranModule):
     
     @staticmethod
     def grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs, \
-        gridrange_sum=None, n1=None, n2=None, n3=None, n=None):
+        gridrange_sum=None, n1xy=None, n2xy=None, n3xy=None, n=None):
         """
         grid_split(ngrid, ncore, comm, id, grid_range, recvcounts, displs[, \
-            gridrange_sum, n1, n2, n3, n])
+            gridrange_sum, n1xy, n2xy, n3xy, n])
         
         
         Defined at Smpi_math_module.fpp lines 1147-1202
@@ -5928,15 +5928,15 @@ class Smpi_Math_Module(f90wrap.runtime.FortranModule):
         recvcounts : int array
         displs : int array
         gridrange_sum : int array
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         n : int
         
         """
         _AresMainPy.f90wrap_grid_split(ngrid=ngrid, ncore=ncore, comm=comm, id=id, \
             grid_range=grid_range, recvcounts=recvcounts, displs=displs, \
-            gridrange_sum=gridrange_sum, n1=n1, n2=n2, n3=n3, n=n)
+            gridrange_sum=gridrange_sum, n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, n=n)
     
     @staticmethod
     def atom_split(mysize, natom, atom_index):
@@ -10889,10 +10889,11 @@ class Succeed(f90wrap.runtime.FortranModule):
             rho_new=rho_new, dvol=dvol)
     
     @staticmethod
-    def cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, \
+    def cal_trans_phase(nr, nspin, r_new, n1xy, n2xy, n3xy, ng1, ng2, ng3, gvec, \
         trans_phase):
         """
-        cal_trans_phase(nr, nspin, r_new, n1, n2, n3, ng1, ng2, ng3, gvec, trans_phase)
+        cal_trans_phase(nr, nspin, r_new, n1xy, n2xy, n3xy, ng1, ng2, ng3, gvec, \
+            trans_phase)
         
         
         Defined at Succeed_module.fpp lines 323-375
@@ -10902,9 +10903,9 @@ class Succeed(f90wrap.runtime.FortranModule):
         nr : int
         nspin : int
         r_new : float array
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         ng1 : int
         ng2 : int
         ng3 : int
@@ -10912,14 +10913,16 @@ class Succeed(f90wrap.runtime.FortranModule):
         trans_phase : complex array
         
         """
-        _AresMainPy.f90wrap_cal_trans_phase(nr=nr, nspin=nspin, r_new=r_new, n1=n1, \
-            n2=n2, n3=n3, ng1=ng1, ng2=ng2, ng3=ng3, gvec=gvec, trans_phase=trans_phase)
+        _AresMainPy.f90wrap_cal_trans_phase(nr=nr, nspin=nspin, r_new=r_new, n1xy=n1xy, \
+            n2xy=n2xy, n3xy=n3xy, ng1=ng1, ng2=ng2, ng3=ng3, gvec=gvec, \
+            trans_phase=trans_phase)
     
     @staticmethod
-    def get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, \
-        gvec):
+    def get_new_rho_psi(nr, r_new, nrho, n1xy, n2xy, n3xy, nspin, rho_new, n_s, \
+        psi_new, gvec):
         """
-        get_new_rho_psi(nr, r_new, nrho, n1, n2, n3, nspin, rho_new, n_s, psi_new, gvec)
+        get_new_rho_psi(nr, r_new, nrho, n1xy, n2xy, n3xy, nspin, rho_new, n_s, psi_new, \
+            gvec)
         
         
         Defined at Succeed_module.fpp lines 377-436
@@ -10929,9 +10932,9 @@ class Succeed(f90wrap.runtime.FortranModule):
         nr : int
         r_new : float array
         nrho : int
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         nspin : int
         rho_new : float array
         n_s : int
@@ -10939,8 +10942,9 @@ class Succeed(f90wrap.runtime.FortranModule):
         gvec : float array
         
         """
-        _AresMainPy.f90wrap_get_new_rho_psi(nr=nr, r_new=r_new, nrho=nrho, n1=n1, n2=n2, \
-            n3=n3, nspin=nspin, rho_new=rho_new, n_s=n_s, psi_new=psi_new, gvec=gvec)
+        _AresMainPy.f90wrap_get_new_rho_psi(nr=nr, r_new=r_new, nrho=nrho, n1xy=n1xy, \
+            n2xy=n2xy, n3xy=n3xy, nspin=nspin, rho_new=rho_new, n_s=n_s, \
+            psi_new=psi_new, gvec=gvec)
     
     @staticmethod
     def store_rho_fft_trans(n_rho, nspin, rho):
@@ -13390,217 +13394,6 @@ class Grid_Module(f90wrap.runtime.FortranModule):
         _dt_array_initialisers = []
         
     
-    @f90wrap.runtime.register_class("AresMainPy.grid_diff_map_type")
-    class grid_diff_map_type(f90wrap.runtime.FortranDerivedType):
-        """
-        Type(name=grid_diff_map_type)
-        
-        
-        Defined at Grid_module.fpp lines 59-65
-        
-        """
-        def __init__(self, handle=None):
-            """
-            self = Grid_Diff_Map_Type()
-            
-            
-            Defined at Grid_module.fpp lines 59-65
-            
-            
-            Returns
-            -------
-            this : Grid_Diff_Map_Type
-            	Object to be constructed
-            
-            
-            Automatically generated constructor for grid_diff_map_type
-            """
-            f90wrap.runtime.FortranDerivedType.__init__(self)
-            result = _AresMainPy.f90wrap_grid_diff_map_type_initialise()
-            self._handle = result[0] if isinstance(result, tuple) else result
-        
-        def __del__(self):
-            """
-            Destructor for class Grid_Diff_Map_Type
-            
-            
-            Defined at Grid_module.fpp lines 59-65
-            
-            Parameters
-            ----------
-            this : Grid_Diff_Map_Type
-            	Object to be destructed
-            
-            
-            Automatically generated destructor for grid_diff_map_type
-            """
-            if self._alloc:
-                _AresMainPy.f90wrap_grid_diff_map_type_finalise(this=self._handle)
-        
-        @property
-        def nz_map(self):
-            """
-            Element nz_map ftype=integer(i4b) pytype=int
-            
-            
-            Defined at Grid_module.fpp line 60
-            
-            """
-            array_ndim, array_type, array_shape, array_handle = \
-                _AresMainPy.f90wrap_grid_diff_map_type__array__nz_map(self._handle)
-            if array_handle in self._arrays:
-                nz_map = self._arrays[array_handle]
-            else:
-                nz_map = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _AresMainPy.f90wrap_grid_diff_map_type__array__nz_map)
-                self._arrays[array_handle] = nz_map
-            return nz_map
-        
-        @nz_map.setter
-        def nz_map(self, nz_map):
-            self.nz_map[...] = nz_map
-        
-        @property
-        def mycomm_cores(self):
-            """
-            Element mycomm_cores ftype=integer(i4b) pytype=int
-            
-            
-            Defined at Grid_module.fpp line 61
-            
-            """
-            array_ndim, array_type, array_shape, array_handle = \
-                _AresMainPy.f90wrap_grid_diff_map_type__array__mycomm_cores(self._handle)
-            if array_handle in self._arrays:
-                mycomm_cores = self._arrays[array_handle]
-            else:
-                mycomm_cores = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _AresMainPy.f90wrap_grid_diff_map_type__array__mycomm_cores)
-                self._arrays[array_handle] = mycomm_cores
-            return mycomm_cores
-        
-        @mycomm_cores.setter
-        def mycomm_cores(self, mycomm_cores):
-            self.mycomm_cores[...] = mycomm_cores
-        
-        @property
-        def mycomm_size(self):
-            """
-            Element mycomm_size ftype=integer(i4b) pytype=int
-            
-            
-            Defined at Grid_module.fpp line 62
-            
-            """
-            array_ndim, array_type, array_shape, array_handle = \
-                _AresMainPy.f90wrap_grid_diff_map_type__array__mycomm_size(self._handle)
-            if array_handle in self._arrays:
-                mycomm_size = self._arrays[array_handle]
-            else:
-                mycomm_size = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _AresMainPy.f90wrap_grid_diff_map_type__array__mycomm_size)
-                self._arrays[array_handle] = mycomm_size
-            return mycomm_size
-        
-        @mycomm_size.setter
-        def mycomm_size(self, mycomm_size):
-            self.mycomm_size[...] = mycomm_size
-        
-        @property
-        def mysend_size(self):
-            """
-            Element mysend_size ftype=integer(i4b) pytype=int
-            
-            
-            Defined at Grid_module.fpp line 63
-            
-            """
-            array_ndim, array_type, array_shape, array_handle = \
-                _AresMainPy.f90wrap_grid_diff_map_type__array__mysend_size(self._handle)
-            if array_handle in self._arrays:
-                mysend_size = self._arrays[array_handle]
-            else:
-                mysend_size = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _AresMainPy.f90wrap_grid_diff_map_type__array__mysend_size)
-                self._arrays[array_handle] = mysend_size
-            return mysend_size
-        
-        @mysend_size.setter
-        def mysend_size(self, mysend_size):
-            self.mysend_size[...] = mysend_size
-        
-        @property
-        def local_map(self):
-            """
-            Element local_map ftype=integer(i4b) pytype=int
-            
-            
-            Defined at Grid_module.fpp line 64
-            
-            """
-            array_ndim, array_type, array_shape, array_handle = \
-                _AresMainPy.f90wrap_grid_diff_map_type__array__local_map(self._handle)
-            if array_handle in self._arrays:
-                local_map = self._arrays[array_handle]
-            else:
-                local_map = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _AresMainPy.f90wrap_grid_diff_map_type__array__local_map)
-                self._arrays[array_handle] = local_map
-            return local_map
-        
-        @local_map.setter
-        def local_map(self, local_map):
-            self.local_map[...] = local_map
-        
-        @property
-        def boundary(self):
-            """
-            Element boundary ftype=integer(i4b) pytype=int
-            
-            
-            Defined at Grid_module.fpp line 65
-            
-            """
-            array_ndim, array_type, array_shape, array_handle = \
-                _AresMainPy.f90wrap_grid_diff_map_type__array__boundary(self._handle)
-            if array_handle in self._arrays:
-                boundary = self._arrays[array_handle]
-            else:
-                boundary = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                        self._handle,
-                                        _AresMainPy.f90wrap_grid_diff_map_type__array__boundary)
-                self._arrays[array_handle] = boundary
-            return boundary
-        
-        @boundary.setter
-        def boundary(self, boundary):
-            self.boundary[...] = boundary
-        
-        def __str__(self):
-            ret = ['<grid_diff_map_type>{\n']
-            ret.append('    nz_map : ')
-            ret.append(repr(self.nz_map))
-            ret.append(',\n    mycomm_cores : ')
-            ret.append(repr(self.mycomm_cores))
-            ret.append(',\n    mycomm_size : ')
-            ret.append(repr(self.mycomm_size))
-            ret.append(',\n    mysend_size : ')
-            ret.append(repr(self.mysend_size))
-            ret.append(',\n    local_map : ')
-            ret.append(repr(self.local_map))
-            ret.append(',\n    boundary : ')
-            ret.append(repr(self.boundary))
-            ret.append('}')
-            return ''.join(ret)
-        
-        _dt_array_initialisers = []
-        
-    
     @staticmethod
     def build_rgrid():
         """
@@ -14537,7 +14330,7 @@ class Ewald(f90wrap.runtime.FortranModule):
     Module ewald
     
     
-    Defined at Ewald.fpp lines 5-739
+    Defined at Ewald.fpp lines 5-826
     
     """
     @f90wrap.runtime.register_class("AresMainPy.ion")
@@ -14760,52 +14553,12 @@ class Ewald(f90wrap.runtime.FortranModule):
         return ewald_stress
     
     @staticmethod
-    def ewaldrpstr(eta):
-        """
-        ewaldrpstr = ewaldrpstr(eta)
-        
-        
-        Defined at Ewald.fpp lines 572-616
-        
-        Parameters
-        ----------
-        eta : float
-        
-        Returns
-        -------
-        ewaldrpstr : float array
-        
-        """
-        ewaldrpstr = _AresMainPy.f90wrap_ewaldrpstr(eta=eta)
-        return ewaldrpstr
-    
-    @staticmethod
-    def ewaldavstr(eta):
-        """
-        ewaldavstr = ewaldavstr(eta)
-        
-        
-        Defined at Ewald.fpp lines 618-625
-        
-        Parameters
-        ----------
-        eta : float
-        
-        Returns
-        -------
-        ewaldavstr : float array
-        
-        """
-        ewaldavstr = _AresMainPy.f90wrap_ewaldavstr(eta=eta)
-        return ewaldavstr
-    
-    @staticmethod
     def vectorlength(vc):
         """
         vectorlength = vectorlength(vc)
         
         
-        Defined at Ewald.fpp lines 628-629
+        Defined at Ewald.fpp lines 715-716
         
         Parameters
         ----------
@@ -14825,7 +14578,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         recipvector = recipvector(lat)
         
         
-        Defined at Ewald.fpp lines 632-637
+        Defined at Ewald.fpp lines 719-724
         
         Parameters
         ----------
@@ -14845,7 +14598,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         volume = volume(lat)
         
         
-        Defined at Ewald.fpp lines 640-642
+        Defined at Ewald.fpp lines 727-729
         
         Parameters
         ----------
@@ -14865,7 +14618,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         crossp = crossp(va, vb)
         
         
-        Defined at Ewald.fpp lines 645-649
+        Defined at Ewald.fpp lines 732-736
         
         Parameters
         ----------
@@ -14886,7 +14639,7 @@ class Ewald(f90wrap.runtime.FortranModule):
         erfc = erfc(x)
         
         
-        Defined at Ewald.fpp lines 652-738
+        Defined at Ewald.fpp lines 739-825
         
         Parameters
         ----------
@@ -15832,18 +15585,18 @@ class Sgfft_Oct_M(f90wrap.runtime.FortranModule):
         return n_next
     
     @staticmethod
-    def fft(n1, n2, n3, nd1, nd2, nd3, z, isign, inzee):
+    def fft(n1xy, n2xy, n3xy, nd1, nd2, nd3, z, isign, inzee):
         """
-        fft(n1, n2, n3, nd1, nd2, nd3, z, isign, inzee)
+        fft(n1xy, n2xy, n3xy, nd1, nd2, nd3, z, isign, inzee)
         
         
         Defined at sgfft.fpp lines 161-385
         
         Parameters
         ----------
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         nd1 : int
         nd2 : int
         nd3 : int
@@ -15852,24 +15605,24 @@ class Sgfft_Oct_M(f90wrap.runtime.FortranModule):
         inzee : int
         
         """
-        _AresMainPy.f90wrap_fft(n1=n1, n2=n2, n3=n3, nd1=nd1, nd2=nd2, nd3=nd3, z=z, \
-            isign=isign, inzee=inzee)
+        _AresMainPy.f90wrap_fft(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, nd1=nd1, nd2=nd2, \
+            nd3=nd3, z=z, isign=isign, inzee=inzee)
     
     @staticmethod
-    def convolxc_off(n1, n2, n3, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, \
-        zf, scal, comm):
+    def convolxc_off(n1xy, n2xy, n3xy, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, \
+        pot, zf, scal, comm):
         """
-        convolxc_off(n1, n2, n3, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, zf, \
-            scal, comm)
+        convolxc_off(n1xy, n2xy, n3xy, nd1, nd2, nd3, md1, md2, md3, nproc, iproc, pot, \
+            zf, scal, comm)
         
         
         Defined at sgfft.fpp lines 3504-3796
         
         Parameters
         ----------
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         nd1 : int
         nd2 : int
         nd3 : int
@@ -15884,9 +15637,9 @@ class Sgfft_Oct_M(f90wrap.runtime.FortranModule):
         comm : int
         
         """
-        _AresMainPy.f90wrap_convolxc_off(n1=n1, n2=n2, n3=n3, nd1=nd1, nd2=nd2, nd3=nd3, \
-            md1=md1, md2=md2, md3=md3, nproc=nproc, iproc=iproc, pot=pot, zf=zf, \
-            scal=scal, comm=comm)
+        _AresMainPy.f90wrap_convolxc_off(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, nd1=nd1, \
+            nd2=nd2, nd3=nd3, md1=md1, md2=md2, md3=md3, nproc=nproc, iproc=iproc, \
+            pot=pot, zf=zf, scal=scal, comm=comm)
     
     _dt_array_initialisers = []
     
@@ -16261,20 +16014,20 @@ class Poisson_Isf(f90wrap.runtime.FortranModule):
             ind=ind)
     
     @staticmethod
-    def kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, \
-        karray, inzee):
+    def kernel_application(n1xy, n2xy, n3xy, nd1h, nd2, nd3, nfft1, nfft2, nfft3, \
+        zarray, karray, inzee):
         """
-        kernel_application(n1, n2, n3, nd1h, nd2, nd3, nfft1, nfft2, nfft3, zarray, \
-            karray, inzee)
+        kernel_application(n1xy, n2xy, n3xy, nd1h, nd2, nd3, nfft1, nfft2, nfft3, \
+            zarray, karray, inzee)
         
         
         Defined at poisson_isf.fpp lines 1037-1429
         
         Parameters
         ----------
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         nd1h : int
         nd2 : int
         nd3 : int
@@ -16290,9 +16043,9 @@ class Poisson_Isf(f90wrap.runtime.FortranModule):
         --------------------------------------------
         -------------Case i3 = 1
         """
-        _AresMainPy.f90wrap_kernel_application(n1=n1, n2=n2, n3=n3, nd1h=nd1h, nd2=nd2, \
-            nd3=nd3, nfft1=nfft1, nfft2=nfft2, nfft3=nfft3, zarray=zarray, \
-            karray=karray, inzee=inzee)
+        _AresMainPy.f90wrap_kernel_application(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, \
+            nd1h=nd1h, nd2=nd2, nd3=nd3, nfft1=nfft1, nfft2=nfft2, nfft3=nfft3, \
+            zarray=zarray, karray=karray, inzee=inzee)
     
     @property
     def karray(self):
@@ -18262,18 +18015,18 @@ class Isolateset(f90wrap.runtime.FortranModule):
         return c
     
     @staticmethod
-    def rcs(n1, n2, n3, dr, cost, sint, cns, indx):
+    def rcs(n1xy, n2xy, n3xy, dr, cost, sint, cns, indx):
         """
-        rcs(n1, n2, n3, dr, cost, sint, cns, indx)
+        rcs(n1xy, n2xy, n3xy, dr, cost, sint, cns, indx)
         
         
         Defined at Isolate_module.fpp lines 1166-1195
         
         Parameters
         ----------
-        n1 : int
-        n2 : int
-        n3 : int
+        n1xy : int
+        n2xy : int
+        n3xy : int
         dr : float array
         cost : float array
         sint : float array
@@ -18281,8 +18034,8 @@ class Isolateset(f90wrap.runtime.FortranModule):
         indx : int array
         
         """
-        _AresMainPy.f90wrap_rcs(n1=n1, n2=n2, n3=n3, dr=dr, cost=cost, sint=sint, \
-            cns=cns, indx=indx)
+        _AresMainPy.f90wrap_rcs(n1xy=n1xy, n2xy=n2xy, n3xy=n3xy, dr=dr, cost=cost, \
+            sint=sint, cns=cns, indx=indx)
     
     @staticmethod
     def vhartree_fmm(rhos, vcoulomb):
@@ -19675,7 +19428,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
     Module arpack_module
     
     
-    Defined at Arpack_module.fpp lines 5-920
+    Defined at Arpack_module.fpp lines 5-919
     
     """
     @staticmethod
@@ -19685,7 +19438,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         diagh_arpack(veff, ik, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
         
         
-        Defined at Arpack_module.fpp lines 24-193
+        Defined at Arpack_module.fpp lines 23-192
         
         Parameters
         ----------
@@ -19713,7 +19466,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         real_diagh_arpack(veff, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
         
         
-        Defined at Arpack_module.fpp lines 203-364
+        Defined at Arpack_module.fpp lines 202-363
         
         Parameters
         ----------
@@ -19739,7 +19492,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         real_diagm_arpk(mat, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
         
         
-        Defined at Arpack_module.fpp lines 374-507
+        Defined at Arpack_module.fpp lines 373-506
         
         Parameters
         ----------
@@ -19764,7 +19517,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         rdiagm_arpk(mat, dimen, nev, evec, eval)
         
         
-        Defined at Arpack_module.fpp lines 510-545
+        Defined at Arpack_module.fpp lines 509-544
         
         Parameters
         ----------
@@ -19785,7 +19538,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         iso_diagh_arpack(veff, nev, evec, eval, resid_restart, nec, info, maxmvs, tol)
         
         
-        Defined at Arpack_module.fpp lines 554-717
+        Defined at Arpack_module.fpp lines 553-716
         
         Parameters
         ----------
@@ -19812,7 +19565,7 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
             tol)
         
         
-        Defined at Arpack_module.fpp lines 720-919
+        Defined at Arpack_module.fpp lines 719-918
         
         Parameters
         ----------
@@ -19844,10 +19597,6 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         """
         return _AresMainPy.f90wrap_arpack_module__get__maxn()
     
-    @maxn.setter
-    def maxn(self, maxn):
-        _AresMainPy.f90wrap_arpack_module__set__maxn(maxn)
-    
     @property
     def maxnev(self):
         """
@@ -19859,10 +19608,6 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         """
         return _AresMainPy.f90wrap_arpack_module__get__maxnev()
     
-    @maxnev.setter
-    def maxnev(self, maxnev):
-        _AresMainPy.f90wrap_arpack_module__set__maxnev(maxnev)
-    
     @property
     def maxncv(self):
         """
@@ -19873,10 +19618,6 @@ class Arpack_Module(f90wrap.runtime.FortranModule):
         
         """
         return _AresMainPy.f90wrap_arpack_module__get__maxncv()
-    
-    @maxncv.setter
-    def maxncv(self, maxncv):
-        _AresMainPy.f90wrap_arpack_module__set__maxncv(maxncv)
     
     def __str__(self):
         ret = ['<arpack_module>{\n']
@@ -21933,8 +21674,8 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         nam : int
         nuh : int
         sp : float
-        dfp : float
-        voma : float
+        dfp : float array
+        voma : float array
         
         """
         _AresMainPy.f90wrap_om1c(nam=nam, nuh=nuh, sp=sp, dfp=dfp, voma=voma)
@@ -21953,13 +21694,13 @@ class Mixer_Module(f90wrap.runtime.FortranModule):
         w0 : float
         nam : int
         nuh : int
-        dxp : float
-        dfp : float
+        dxp : float array
+        dfp : float array
         sp : float
-        xl : float
-        fl : float
-        voma : float
-        xn : float
+        xl : float array
+        fl : float array
+        voma : float array
+        xn : float array
         
         """
         _AresMainPy.f90wrap_amst(beta=beta, w0=w0, nam=nam, nuh=nuh, dxp=dxp, dfp=dfp, \
@@ -24501,6 +24242,235 @@ class Band_Structure(f90wrap.runtime.FortranModule):
     
 
 band_structure = Band_Structure()
+
+class Aresmainapi(f90wrap.runtime.FortranModule):
+    """
+    Module aresmainapi
+    
+    
+    Defined at AresMainAPI.fpp lines 5-40
+    
+    """
+    @f90wrap.runtime.register_class("AresMainPy.aresOut")
+    class aresOut(f90wrap.runtime.FortranDerivedType):
+        """
+        Type(name=aresout)
+        
+        
+        Defined at AresMainAPI.fpp lines 9-14
+        
+        """
+        def __init__(self, handle=None):
+            """
+            self = Aresout()
+            
+            
+            Defined at AresMainAPI.fpp lines 9-14
+            
+            
+            Returns
+            -------
+            this : Aresout
+            	Object to be constructed
+            
+            
+            Automatically generated constructor for aresout
+            """
+            f90wrap.runtime.FortranDerivedType.__init__(self)
+            result = _AresMainPy.f90wrap_aresout_initialise()
+            self._handle = result[0] if isinstance(result, tuple) else result
+        
+        def __del__(self):
+            """
+            Destructor for class Aresout
+            
+            
+            Defined at AresMainAPI.fpp lines 9-14
+            
+            Parameters
+            ----------
+            this : Aresout
+            	Object to be destructed
+            
+            
+            Automatically generated destructor for aresout
+            """
+            if self._alloc:
+                _AresMainPy.f90wrap_aresout_finalise(this=self._handle)
+        
+        @property
+        def forces(self):
+            """
+            Element forces ftype=real(dp) pytype=float
+            
+            
+            Defined at AresMainAPI.fpp line 10
+            
+            """
+            array_ndim, array_type, array_shape, array_handle = \
+                _AresMainPy.f90wrap_aresout__array__forces(self._handle)
+            if array_handle in self._arrays:
+                forces = self._arrays[array_handle]
+            else:
+                forces = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                        self._handle,
+                                        _AresMainPy.f90wrap_aresout__array__forces)
+                self._arrays[array_handle] = forces
+            return forces
+        
+        @forces.setter
+        def forces(self, forces):
+            self.forces[...] = forces
+        
+        @property
+        def stress(self):
+            """
+            Element stress ftype=real(dp) pytype=float
+            
+            
+            Defined at AresMainAPI.fpp line 11
+            
+            """
+            array_ndim, array_type, array_shape, array_handle = \
+                _AresMainPy.f90wrap_aresout__array__stress(self._handle)
+            if array_handle in self._arrays:
+                stress = self._arrays[array_handle]
+            else:
+                stress = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                        self._handle,
+                                        _AresMainPy.f90wrap_aresout__array__stress)
+                self._arrays[array_handle] = stress
+            return stress
+        
+        @stress.setter
+        def stress(self, stress):
+            self.stress[...] = stress
+        
+        @property
+        def poscar(self):
+            """
+            Element poscar ftype=real(dp) pytype=float
+            
+            
+            Defined at AresMainAPI.fpp line 12
+            
+            """
+            array_ndim, array_type, array_shape, array_handle = \
+                _AresMainPy.f90wrap_aresout__array__poscar(self._handle)
+            if array_handle in self._arrays:
+                poscar = self._arrays[array_handle]
+            else:
+                poscar = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                        self._handle,
+                                        _AresMainPy.f90wrap_aresout__array__poscar)
+                self._arrays[array_handle] = poscar
+            return poscar
+        
+        @poscar.setter
+        def poscar(self, poscar):
+            self.poscar[...] = poscar
+        
+        @property
+        def pos(self):
+            """
+            Element pos ftype=real(dp) pytype=float
+            
+            
+            Defined at AresMainAPI.fpp line 13
+            
+            """
+            array_ndim, array_type, array_shape, array_handle = \
+                _AresMainPy.f90wrap_aresout__array__pos(self._handle)
+            if array_handle in self._arrays:
+                pos = self._arrays[array_handle]
+            else:
+                pos = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                        self._handle,
+                                        _AresMainPy.f90wrap_aresout__array__pos)
+                self._arrays[array_handle] = pos
+            return pos
+        
+        @pos.setter
+        def pos(self, pos):
+            self.pos[...] = pos
+        
+        @property
+        def chargerho(self):
+            """
+            Element chargerho ftype=real(dp) pytype=float
+            
+            
+            Defined at AresMainAPI.fpp line 14
+            
+            """
+            array_ndim, array_type, array_shape, array_handle = \
+                _AresMainPy.f90wrap_aresout__array__chargerho(self._handle)
+            if array_handle in self._arrays:
+                chargerho = self._arrays[array_handle]
+            else:
+                chargerho = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                        self._handle,
+                                        _AresMainPy.f90wrap_aresout__array__chargerho)
+                self._arrays[array_handle] = chargerho
+            return chargerho
+        
+        @chargerho.setter
+        def chargerho(self, chargerho):
+            self.chargerho[...] = chargerho
+        
+        def __str__(self):
+            ret = ['<aresout>{\n']
+            ret.append('    forces : ')
+            ret.append(repr(self.forces))
+            ret.append(',\n    stress : ')
+            ret.append(repr(self.stress))
+            ret.append(',\n    poscar : ')
+            ret.append(repr(self.poscar))
+            ret.append(',\n    pos : ')
+            ret.append(repr(self.pos))
+            ret.append(',\n    chargerho : ')
+            ret.append(repr(self.chargerho))
+            ret.append('}')
+            return ''.join(ret)
+        
+        _dt_array_initialisers = []
+        
+    
+    @staticmethod
+    def init_alloc_arrays(self, nnatom):
+        """
+        init_alloc_arrays(self, nnatom)
+        
+        
+        Defined at AresMainAPI.fpp lines 17-33
+        
+        Parameters
+        ----------
+        dertype : Aresout
+        nnatom : int
+        
+        """
+        _AresMainPy.f90wrap_init_alloc_arrays(dertype=self._handle, nnatom=nnatom)
+    
+    @staticmethod
+    def destroy_alloc_arrays(self):
+        """
+        destroy_alloc_arrays(self)
+        
+        
+        Defined at AresMainAPI.fpp lines 35-40
+        
+        Parameters
+        ----------
+        dertype : Aresout
+        
+        """
+        _AresMainPy.f90wrap_destroy_alloc_arrays(dertype=self._handle)
+    
+    _dt_array_initialisers = []
+    
+
+aresmainapi = Aresmainapi()
 
 def zbrent(iu, lreset, ebreak, x, y, f, xnew, xnewh, ynew, yd, ifail):
     """

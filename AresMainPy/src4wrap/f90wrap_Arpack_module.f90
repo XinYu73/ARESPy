@@ -184,14 +184,6 @@ subroutine f90wrap_arpack_module__get__maxn(f90wrap_maxn)
     f90wrap_maxn = arpack_module_maxn
 end subroutine f90wrap_arpack_module__get__maxn
 
-subroutine f90wrap_arpack_module__set__maxn(f90wrap_maxn)
-    use arpack_module, only: arpack_module_maxn => maxn
-    implicit none
-    integer(4), intent(in) :: f90wrap_maxn
-    
-    arpack_module_maxn = f90wrap_maxn
-end subroutine f90wrap_arpack_module__set__maxn
-
 subroutine f90wrap_arpack_module__get__maxnev(f90wrap_maxnev)
     use arpack_module, only: arpack_module_maxnev => maxnev
     implicit none
@@ -200,14 +192,6 @@ subroutine f90wrap_arpack_module__get__maxnev(f90wrap_maxnev)
     f90wrap_maxnev = arpack_module_maxnev
 end subroutine f90wrap_arpack_module__get__maxnev
 
-subroutine f90wrap_arpack_module__set__maxnev(f90wrap_maxnev)
-    use arpack_module, only: arpack_module_maxnev => maxnev
-    implicit none
-    integer(4), intent(in) :: f90wrap_maxnev
-    
-    arpack_module_maxnev = f90wrap_maxnev
-end subroutine f90wrap_arpack_module__set__maxnev
-
 subroutine f90wrap_arpack_module__get__maxncv(f90wrap_maxncv)
     use arpack_module, only: arpack_module_maxncv => maxncv
     implicit none
@@ -215,14 +199,6 @@ subroutine f90wrap_arpack_module__get__maxncv(f90wrap_maxncv)
     
     f90wrap_maxncv = arpack_module_maxncv
 end subroutine f90wrap_arpack_module__get__maxncv
-
-subroutine f90wrap_arpack_module__set__maxncv(f90wrap_maxncv)
-    use arpack_module, only: arpack_module_maxncv => maxncv
-    implicit none
-    integer(4), intent(in) :: f90wrap_maxncv
-    
-    arpack_module_maxncv = f90wrap_maxncv
-end subroutine f90wrap_arpack_module__set__maxncv
 
 ! End of module arpack_module defined in file Arpack_module.fpp
 
