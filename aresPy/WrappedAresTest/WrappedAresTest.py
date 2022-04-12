@@ -4,9 +4,8 @@ sys.path.insert(0, '/work/home/xinyu/workplace/PhdProgram/aresPy/srcWrap/preproc
 import arespy as ares
 import numpy as np
 from mpi4py import MPI
+from matplotlib import pyplot as plt
 comm = MPI.COMM_WORLD
-
-
 
 ares.Smpi_Math_Module.smpi_init()
 ares.Smpi_Math_Module.start_time('[Total Time]',True)
@@ -29,17 +28,36 @@ Out = ares.Aresapi.aresOut()
 ares.Scalapack_Module.init_scala()
 ares.Begin_Module.initial_grid_pbc()
 ares.Potential_Module.vlpp()
-ares.Scf_Module.electronicscf()
 
+
+ares.Scf_Module.electronicscf()
 ares.Aresapi.init_alloc_arrays(Out,5)
+data0 = Out.chargerho[:,:,:,0]
+print("Out.chargeRho\n",Out.chargerho[0,0,:,0])
+# ares.Aresapi.init_alloc_arrays(Out,5)
 
 print("Out.forces\n",Out.forces)
 print("Out.Stress\n",Out.stress)
 print("Out.poscar\n",Out.poscar)
-print("Out.pos\n",Out.pos)
 print("Out.chargeRho\n",Out.chargerho[0,0,:,0])
 
+fig = plt.figure()
 
+ax = plt.axes(projection ="3d")
+data0 = data0/data0.max()
+grid  = 25
+X = np.linspace(0,10,grid)
+Y = np.linspace(0,10,grid)
+Z = np.linspace(0,10,grid)
+for i in range(grid):
+    for j in range(grid):
+        for k in range(grid):
+            ax.scatter3D(X[i],Y[j],Z[k],c='blue',s = 3*data0[2*i,2*j,2*k])
+
+ax.set_xlabel(r"$a$")
+ax.set_ylabel(r"$b$")
+ax.set_zlabel(r"$c$")
+plt.savefig('./Figure/iter0.png')
 
 
 
