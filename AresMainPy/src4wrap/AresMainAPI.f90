@@ -16,18 +16,24 @@ contains
         INTEGER(I4B), intent(in) :: nnatom
         !force
         ALLOCATE (dertype%forces(3, nnatom))
-        dertype%forces = struct%forces
         !stress
         ALLOCATE (dertype%stress(3, 3))
-        dertype%stress = struct%stress
         !poscar
         ALLOCATE (dertype%poscar(3, nnatom))
-        dertype%poscar = struct%poscar
         !pos
         ALLOCATE (dertype%pos(3, nnatom))
-        dertype%pos = struct%pos
         !
     end subroutine init_alloc_arrays
+
+    !
+    subroutine assignment(dertype)
+        implicit none
+        type(aresout), INTENT(inout) :: dertype
+        dertype%forces = struct%forces
+        dertype%stress = struct%stress
+        dertype%poscar = struct%poscar
+        dertype%pos = struct%pos
+    end subroutine assignment
 
     subroutine destroy_alloc_arrays(dertype)
         type(aresout), INTENT(inout) :: dertype

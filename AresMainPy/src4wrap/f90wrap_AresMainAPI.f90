@@ -147,7 +147,7 @@ subroutine f90wrap_aresout_finalise(this)
 end subroutine f90wrap_aresout_finalise
 
 subroutine f90wrap_init_alloc_arrays(dertype, nnatom)
-    use aresmainapi, only: init_alloc_arrays, aresout
+    use aresmainapi, only: aresout, init_alloc_arrays
     implicit none
     
     type aresout_ptr_type
@@ -159,6 +159,19 @@ subroutine f90wrap_init_alloc_arrays(dertype, nnatom)
     dertype_ptr = transfer(dertype, dertype_ptr)
     call init_alloc_arrays(dertype=dertype_ptr%p, nnatom=nnatom)
 end subroutine f90wrap_init_alloc_arrays
+
+subroutine f90wrap_assignment(dertype)
+    use aresmainapi, only: aresout, assignment
+    implicit none
+    
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    type(aresout_ptr_type) :: dertype_ptr
+    integer, intent(in), dimension(2) :: dertype
+    dertype_ptr = transfer(dertype, dertype_ptr)
+    call assignment(dertype=dertype_ptr%p)
+end subroutine f90wrap_assignment
 
 subroutine f90wrap_destroy_alloc_arrays(dertype)
     use aresmainapi, only: destroy_alloc_arrays, aresout

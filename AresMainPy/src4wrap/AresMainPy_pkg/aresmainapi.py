@@ -2,7 +2,7 @@
 Module aresmainapi
 
 
-Defined at AresMainAPI.fpp lines 5-40
+Defined at AresMainAPI.fpp lines 5-45
 
 """
 from __future__ import print_function, absolute_import, division
@@ -203,7 +203,7 @@ def init_alloc_arrays(self, nnatom):
     init_alloc_arrays(self, nnatom)
     
     
-    Defined at AresMainAPI.fpp lines 17-33
+    Defined at AresMainAPI.fpp lines 17-29
     
     Parameters
     ----------
@@ -213,12 +213,26 @@ def init_alloc_arrays(self, nnatom):
     """
     _AresMainPy_pkg.f90wrap_init_alloc_arrays(dertype=self._handle, nnatom=nnatom)
 
+def assignment(self):
+    """
+    assignment(self)
+    
+    
+    Defined at AresMainAPI.fpp lines 32-38
+    
+    Parameters
+    ----------
+    dertype : Aresout
+    
+    """
+    _AresMainPy_pkg.f90wrap_assignment(dertype=self._handle)
+
 def destroy_alloc_arrays(self):
     """
     destroy_alloc_arrays(self)
     
     
-    Defined at AresMainAPI.fpp lines 35-40
+    Defined at AresMainAPI.fpp lines 40-45
     
     Parameters
     ----------
