@@ -23,7 +23,7 @@ Wsmear= 0.01
 #ISTART
 ISTART= 0
 #Number of structure optimization steps
-NSSP=3
+NSSP=6
 #the max SCF(self-consistant field) iteration step
 NMITER=1000
 ##########################mixing data#############################
