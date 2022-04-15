@@ -1,23 +1,27 @@
 # Question
 
-## 关于
+## 关于 Arespy 的并行
+
+ares的并行初始化在函数内部
 
 ```fortran
-c file: dot.f 
-FUNCTION dot(n, x, y) 
-INTEGER n, i 
-DOUBLE PRECISION dot, x(n), y(n) 
-dot = 0d0 
-DO 10 i=1,n 
-    dot = dot + x(i) * y(i) 
-10 CONTINUE 
-END
+  SUBROUTINE smpi_init()
+    IMPLICIT NONE
+
+    CALL MPI_INIT(mpinfo)
+
+    CALL MPI_COMM_RANK(MPI_COMM_WORLD, parallel%myid, mpinfo)
+    CALL MPI_Comm_SIZE(MPI_COMM_WORLD, parallel%numprocs, mpinfo)
+
+    parallel%comm  = MPI_COMM_WORLD
+
+    parallel%rootid = 0
+    if(parallel%rootid == parallel%myid)then
+       parallel%isroot = .true.
+    else
+       parallel%isroot = .false.
+    endif
+  END SUBROUTINE smpi_init
 ```
 
-```python
-sh> python 
->>> import foo 
->>> result = foo.dot([1,2], [3, 4]) 
->>> print result 
-11.0
-```
+该函数并不需要外部参数，我们在python中调用smpi_init()应该就可以给ares初始化并行环境

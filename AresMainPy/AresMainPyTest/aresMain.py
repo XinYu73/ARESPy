@@ -22,34 +22,37 @@ Read_Module.read_file('ares.in')
 Scalapack_Module.init_scala()
 Relax_Module.initialize_relax()
 AresApi.init_alloc_arrays(aresOut,30)
-#!###################
-posStore=np.zeros((3,30,Parameters.nssp))
+Forcestress_Module.cal_force_stress()
+AresApi.assignment(aresOut)
+print(">>>>",aresOut.comm)
+# #!###################
+# posStore=np.zeros((3,30,Parameters.nssp))
 
-#!################
-for i in range(Parameters.nssp):
-    print(">>>>Current Ionic Step",i)
-    Forcestress_Module.cal_force_stress()
-    AresApi.assignment(aresOut)
-    posStore[:,:,i]=aresOut.pos
-    Relax_Module.relaxer(i)
-#!###############
-for i in range(Parameters.nssp):
-    print(">>>>pos at ",i,"\n")
-    print(posStore[:,:,i])
-#!Plot>>>>>>>>>>>>>
+# #!################
+# for i in range(Parameters.nssp):
+#     print(">>>>Current Ionic Step",i)
+#     Forcestress_Module.cal_force_stress()
+#     AresApi.assignment(aresOut)
+#     posStore[:,:,i]=aresOut.pos
+#     Relax_Module.relaxer(i)
+# #!###############
+# for i in range(Parameters.nssp):
+#     print(">>>>pos at ",i,"\n")
+#     print(posStore[:,:,i])
+# #!Plot>>>>>>>>>>>>>
 
-plt.figure()
-plt.plot(posStore[0,:,2]-posStore[0,:,1])
-plt.plot(posStore[1,:,2]-posStore[1,:,1])
-plt.plot(posStore[2,:,2]-posStore[2,:,1])
-plt.legend([r"$dim1$",r"$dim2$",r"$dim3$"])
-plt.savefig('./Figure/ionStep3_2.png')
+# plt.figure()
+# plt.plot(posStore[0,:,2]-posStore[0,:,1])
+# plt.plot(posStore[1,:,2]-posStore[1,:,1])
+# plt.plot(posStore[2,:,2]-posStore[2,:,1])
+# plt.legend([r"$dim1$",r"$dim2$",r"$dim3$"])
+# plt.savefig('./Figure/ionStep3_2.png')
 
-plt.figure()
-plt.plot(posStore[0,:,5]-posStore[0,:,0])
-plt.plot(posStore[1,:,5]-posStore[1,:,0])
-plt.plot(posStore[2,:,5]-posStore[2,:,0])
-plt.legend([r"$dim1$",r"$dim2$",r"$dim3$"])
-plt.savefig('./Figure/ionStep2_1.png')
+# plt.figure()
+# plt.plot(posStore[0,:,5]-posStore[0,:,0])
+# plt.plot(posStore[1,:,5]-posStore[1,:,0])
+# plt.plot(posStore[2,:,5]-posStore[2,:,0])
+# plt.legend([r"$dim1$",r"$dim2$",r"$dim3$"])
+# plt.savefig('./Figure/ionStep2_1.png')
 
 print(">>>>>>>>>>>>>>>End Wrapped AresMain<<<<<<<<<<<<<<<")

@@ -120,6 +120,118 @@ subroutine f90wrap_aresout__array__chargeRho(this, nd, dtype, dshape, dloc)
     end if
 end subroutine f90wrap_aresout__array__chargeRho
 
+subroutine f90wrap_aresout__get__comm(this, f90wrap_comm)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(out) :: f90wrap_comm
+    
+    this_ptr = transfer(this, this_ptr)
+    f90wrap_comm = this_ptr%p%comm
+end subroutine f90wrap_aresout__get__comm
+
+subroutine f90wrap_aresout__set__comm(this, f90wrap_comm)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(in) :: f90wrap_comm
+    
+    this_ptr = transfer(this, this_ptr)
+    this_ptr%p%comm = f90wrap_comm
+end subroutine f90wrap_aresout__set__comm
+
+subroutine f90wrap_aresout__get__myid(this, f90wrap_myid)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(out) :: f90wrap_myid
+    
+    this_ptr = transfer(this, this_ptr)
+    f90wrap_myid = this_ptr%p%myid
+end subroutine f90wrap_aresout__get__myid
+
+subroutine f90wrap_aresout__set__myid(this, f90wrap_myid)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(in) :: f90wrap_myid
+    
+    this_ptr = transfer(this, this_ptr)
+    this_ptr%p%myid = f90wrap_myid
+end subroutine f90wrap_aresout__set__myid
+
+subroutine f90wrap_aresout__get__numprocs(this, f90wrap_numprocs)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(out) :: f90wrap_numprocs
+    
+    this_ptr = transfer(this, this_ptr)
+    f90wrap_numprocs = this_ptr%p%numprocs
+end subroutine f90wrap_aresout__get__numprocs
+
+subroutine f90wrap_aresout__set__numprocs(this, f90wrap_numprocs)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(in) :: f90wrap_numprocs
+    
+    this_ptr = transfer(this, this_ptr)
+    this_ptr%p%numprocs = f90wrap_numprocs
+end subroutine f90wrap_aresout__set__numprocs
+
+subroutine f90wrap_aresout__get__rootid(this, f90wrap_rootid)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(out) :: f90wrap_rootid
+    
+    this_ptr = transfer(this, this_ptr)
+    f90wrap_rootid = this_ptr%p%rootid
+end subroutine f90wrap_aresout__get__rootid
+
+subroutine f90wrap_aresout__set__rootid(this, f90wrap_rootid)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in)   :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer(4), intent(in) :: f90wrap_rootid
+    
+    this_ptr = transfer(this, this_ptr)
+    this_ptr%p%rootid = f90wrap_rootid
+end subroutine f90wrap_aresout__set__rootid
+
 subroutine f90wrap_aresout_initialise(this)
     use aresmainapi, only: aresout
     implicit none
@@ -147,7 +259,7 @@ subroutine f90wrap_aresout_finalise(this)
 end subroutine f90wrap_aresout_finalise
 
 subroutine f90wrap_init_alloc_arrays(dertype, nnatom)
-    use aresmainapi, only: aresout, init_alloc_arrays
+    use aresmainapi, only: init_alloc_arrays, aresout
     implicit none
     
     type aresout_ptr_type
@@ -161,7 +273,7 @@ subroutine f90wrap_init_alloc_arrays(dertype, nnatom)
 end subroutine f90wrap_init_alloc_arrays
 
 subroutine f90wrap_assignment(dertype)
-    use aresmainapi, only: aresout, assignment
+    use aresmainapi, only: assignment, aresout
     implicit none
     
     type aresout_ptr_type
@@ -174,7 +286,7 @@ subroutine f90wrap_assignment(dertype)
 end subroutine f90wrap_assignment
 
 subroutine f90wrap_destroy_alloc_arrays(dertype)
-    use aresmainapi, only: destroy_alloc_arrays, aresout
+    use aresmainapi, only: aresout, destroy_alloc_arrays
     implicit none
     
     type aresout_ptr_type

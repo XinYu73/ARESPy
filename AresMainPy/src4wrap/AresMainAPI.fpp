@@ -5,6 +5,7 @@
 module AresMainAPI
     use constants
     use struct_module
+    use smpi_math_module
     implicit none
     type aresOut
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: forces
@@ -12,6 +13,10 @@ module AresMainAPI
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: poscar
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: pos
         REAL(DP), ALLOCATABLE, DIMENSION(:, :, :, :) :: chargeRho
+        INTEGER(I4B)              :: comm
+        INTEGER(I4B)              :: myid
+        INTEGER(I4B)              :: numprocs
+        INTEGER(I4B)              :: rootid
     end type aresOut
 contains
     subroutine init_alloc_arrays(dertype, nnatom)
@@ -37,6 +42,7 @@ contains
         dertype%stress = struct%stress
         dertype%poscar = struct%poscar
         dertype%pos = struct%pos
+        dertype%comm = parallel%comm
     end subroutine assignment
 
     subroutine destroy_alloc_arrays(dertype)

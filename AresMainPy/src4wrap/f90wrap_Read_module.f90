@@ -79,8 +79,8 @@ subroutine f90wrap_resetlattice
 end subroutine f90wrap_resetlattice
 
 subroutine f90wrap_read_pspot_atom(ity, filename, ps)
-    use pspot_module, only: pspot
     use read_module, only: read_pspot_atom
+    use pspot_module, only: pspot
     implicit none
     
     type pspot_ptr_type
@@ -107,8 +107,8 @@ subroutine f90wrap_read_pspot(nty, filenames, n0)
 end subroutine f90wrap_read_pspot
 
 subroutine f90wrap_read_realpot_atom(ity, filename, ps)
-    use pspot_module, only: pspot
     use read_module, only: read_realpot_atom
+    use pspot_module, only: pspot
     implicit none
     
     type pspot_ptr_type
@@ -163,8 +163,8 @@ subroutine f90wrap_scan_tail(file_unit, title)
 end subroutine f90wrap_scan_tail
 
 subroutine f90wrap_read_upf(ity, filename, ps)
-    use pspot_module, only: pspot
     use read_module, only: read_upf
+    use pspot_module, only: pspot
     implicit none
     
     type pspot_ptr_type

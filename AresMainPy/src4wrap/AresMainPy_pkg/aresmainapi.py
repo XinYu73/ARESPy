@@ -2,7 +2,7 @@
 Module aresmainapi
 
 
-Defined at AresMainAPI.fpp lines 5-45
+Defined at AresMainAPI.fpp lines 5-51
 
 """
 from __future__ import print_function, absolute_import, division
@@ -19,7 +19,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
     Type(name=aresout)
     
     
-    Defined at AresMainAPI.fpp lines 9-14
+    Defined at AresMainAPI.fpp lines 10-19
     
     """
     def __init__(self, handle=None):
@@ -27,7 +27,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         self = Aresout()
         
         
-        Defined at AresMainAPI.fpp lines 9-14
+        Defined at AresMainAPI.fpp lines 10-19
         
         
         Returns
@@ -47,7 +47,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Destructor for class Aresout
         
         
-        Defined at AresMainAPI.fpp lines 9-14
+        Defined at AresMainAPI.fpp lines 10-19
         
         Parameters
         ----------
@@ -66,7 +66,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element forces ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 10
+        Defined at AresMainAPI.fpp line 11
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -90,7 +90,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element stress ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 11
+        Defined at AresMainAPI.fpp line 12
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -114,7 +114,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element poscar ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 12
+        Defined at AresMainAPI.fpp line 13
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -138,7 +138,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element pos ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 13
+        Defined at AresMainAPI.fpp line 14
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -162,7 +162,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element chargerho ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 14
+        Defined at AresMainAPI.fpp line 15
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -180,6 +180,66 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
     def chargerho(self, chargerho):
         self.chargerho[...] = chargerho
     
+    @property
+    def comm(self):
+        """
+        Element comm ftype=integer(i4b) pytype=int
+        
+        
+        Defined at AresMainAPI.fpp line 16
+        
+        """
+        return _AresMainPy_pkg.f90wrap_aresout__get__comm(self._handle)
+    
+    @comm.setter
+    def comm(self, comm):
+        _AresMainPy_pkg.f90wrap_aresout__set__comm(self._handle, comm)
+    
+    @property
+    def myid(self):
+        """
+        Element myid ftype=integer(i4b) pytype=int
+        
+        
+        Defined at AresMainAPI.fpp line 17
+        
+        """
+        return _AresMainPy_pkg.f90wrap_aresout__get__myid(self._handle)
+    
+    @myid.setter
+    def myid(self, myid):
+        _AresMainPy_pkg.f90wrap_aresout__set__myid(self._handle, myid)
+    
+    @property
+    def numprocs(self):
+        """
+        Element numprocs ftype=integer(i4b) pytype=int
+        
+        
+        Defined at AresMainAPI.fpp line 18
+        
+        """
+        return _AresMainPy_pkg.f90wrap_aresout__get__numprocs(self._handle)
+    
+    @numprocs.setter
+    def numprocs(self, numprocs):
+        _AresMainPy_pkg.f90wrap_aresout__set__numprocs(self._handle, numprocs)
+    
+    @property
+    def rootid(self):
+        """
+        Element rootid ftype=integer(i4b) pytype=int
+        
+        
+        Defined at AresMainAPI.fpp line 19
+        
+        """
+        return _AresMainPy_pkg.f90wrap_aresout__get__rootid(self._handle)
+    
+    @rootid.setter
+    def rootid(self, rootid):
+        _AresMainPy_pkg.f90wrap_aresout__set__rootid(self._handle, rootid)
+    
     def __str__(self):
         ret = ['<aresout>{\n']
         ret.append('    forces : ')
@@ -192,6 +252,14 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         ret.append(repr(self.pos))
         ret.append(',\n    chargerho : ')
         ret.append(repr(self.chargerho))
+        ret.append(',\n    comm : ')
+        ret.append(repr(self.comm))
+        ret.append(',\n    myid : ')
+        ret.append(repr(self.myid))
+        ret.append(',\n    numprocs : ')
+        ret.append(repr(self.numprocs))
+        ret.append(',\n    rootid : ')
+        ret.append(repr(self.rootid))
         ret.append('}')
         return ''.join(ret)
     
@@ -203,7 +271,7 @@ def init_alloc_arrays(self, nnatom):
     init_alloc_arrays(self, nnatom)
     
     
-    Defined at AresMainAPI.fpp lines 17-29
+    Defined at AresMainAPI.fpp lines 22-34
     
     Parameters
     ----------
@@ -218,7 +286,7 @@ def assignment(self):
     assignment(self)
     
     
-    Defined at AresMainAPI.fpp lines 32-38
+    Defined at AresMainAPI.fpp lines 37-44
     
     Parameters
     ----------
@@ -232,7 +300,7 @@ def destroy_alloc_arrays(self):
     destroy_alloc_arrays(self)
     
     
-    Defined at AresMainAPI.fpp lines 40-45
+    Defined at AresMainAPI.fpp lines 46-51
     
     Parameters
     ----------
