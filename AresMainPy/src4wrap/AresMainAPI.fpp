@@ -9,10 +9,10 @@ module AresMainAPI
     implicit none
     type aresOut
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: forces
-        REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: stress
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: poscar
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: pos
         REAL(DP), ALLOCATABLE, DIMENSION(:, :, :, :) :: chargeRho
+        REAL(DP), DIMENSION(3, 3)  :: stress
         REAL(DP)                  :: apilat_mat(3, 3)
         REAL(DP)                  :: apilat_para(6)
         INTEGER(I4B)              :: comm
@@ -27,8 +27,6 @@ contains
         INTEGER(I4B), intent(in) :: nnatom
         !force
         ALLOCATE (dertype%forces(3, nnatom))
-        !stress
-        ALLOCATE (dertype%stress(3, 3))
         !poscar
         ALLOCATE (dertype%poscar(3, nnatom))
         !pos
@@ -52,7 +50,6 @@ contains
     subroutine destroy_alloc_arrays(dertype)
         type(aresout), INTENT(inout) :: dertype
         if (allocated(dertype%forces)) deallocate (dertype%forces)
-        if (allocated(dertype%stress)) deallocate (dertype%stress)
         if (allocated(dertype%poscar)) deallocate (dertype%poscar)
         if (allocated(dertype%pos)) deallocate (dertype%pos)
     end subroutine destroy_alloc_arrays

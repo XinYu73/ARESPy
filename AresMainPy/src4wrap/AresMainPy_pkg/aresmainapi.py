@@ -2,7 +2,7 @@
 Module aresmainapi
 
 
-Defined at AresMainAPI.fpp lines 5-77
+Defined at AresMainAPI.fpp lines 5-74
 
 """
 from __future__ import print_function, absolute_import, division
@@ -85,36 +85,12 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         self.forces[...] = forces
     
     @property
-    def stress(self):
-        """
-        Element stress ftype=real(dp) pytype=float
-        
-        
-        Defined at AresMainAPI.fpp line 12
-        
-        """
-        array_ndim, array_type, array_shape, array_handle = \
-            _AresMainPy_pkg.f90wrap_aresout__array__stress(self._handle)
-        if array_handle in self._arrays:
-            stress = self._arrays[array_handle]
-        else:
-            stress = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
-                                    self._handle,
-                                    _AresMainPy_pkg.f90wrap_aresout__array__stress)
-            self._arrays[array_handle] = stress
-        return stress
-    
-    @stress.setter
-    def stress(self, stress):
-        self.stress[...] = stress
-    
-    @property
     def poscar(self):
         """
         Element poscar ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 13
+        Defined at AresMainAPI.fpp line 12
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -138,7 +114,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element pos ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 14
+        Defined at AresMainAPI.fpp line 13
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -162,7 +138,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element chargerho ftype=real(dp) pytype=float
         
         
-        Defined at AresMainAPI.fpp line 15
+        Defined at AresMainAPI.fpp line 14
         
         """
         array_ndim, array_type, array_shape, array_handle = \
@@ -179,6 +155,30 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
     @chargerho.setter
     def chargerho(self, chargerho):
         self.chargerho[...] = chargerho
+    
+    @property
+    def stress(self):
+        """
+        Element stress ftype=real(dp) pytype=float
+        
+        
+        Defined at AresMainAPI.fpp line 15
+        
+        """
+        array_ndim, array_type, array_shape, array_handle = \
+            _AresMainPy_pkg.f90wrap_aresout__array__stress(self._handle)
+        if array_handle in self._arrays:
+            stress = self._arrays[array_handle]
+        else:
+            stress = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                    self._handle,
+                                    _AresMainPy_pkg.f90wrap_aresout__array__stress)
+            self._arrays[array_handle] = stress
+        return stress
+    
+    @stress.setter
+    def stress(self, stress):
+        self.stress[...] = stress
     
     @property
     def apilat_mat(self):
@@ -292,14 +292,14 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         ret = ['<aresout>{\n']
         ret.append('    forces : ')
         ret.append(repr(self.forces))
-        ret.append(',\n    stress : ')
-        ret.append(repr(self.stress))
         ret.append(',\n    poscar : ')
         ret.append(repr(self.poscar))
         ret.append(',\n    pos : ')
         ret.append(repr(self.pos))
         ret.append(',\n    chargerho : ')
         ret.append(repr(self.chargerho))
+        ret.append(',\n    stress : ')
+        ret.append(repr(self.stress))
         ret.append(',\n    apilat_mat : ')
         ret.append(repr(self.apilat_mat))
         ret.append(',\n    apilat_para : ')
@@ -323,7 +323,7 @@ def init_alloc_arrays(self, nnatom):
     init_alloc_arrays(self, nnatom)
     
     
-    Defined at AresMainAPI.fpp lines 24-36
+    Defined at AresMainAPI.fpp lines 24-34
     
     Parameters
     ----------
@@ -338,7 +338,7 @@ def assignment(self):
     assignment(self)
     
     
-    Defined at AresMainAPI.fpp lines 39-48
+    Defined at AresMainAPI.fpp lines 37-46
     
     Parameters
     ----------
@@ -352,7 +352,7 @@ def destroy_alloc_arrays(self):
     destroy_alloc_arrays(self)
     
     
-    Defined at AresMainAPI.fpp lines 50-55
+    Defined at AresMainAPI.fpp lines 48-52
     
     Parameters
     ----------
@@ -366,7 +366,7 @@ def updateions(pos, lattice=None, ikind=None):
     updateions(pos[, lattice, ikind])
     
     
-    Defined at AresMainAPI.fpp lines 58-77
+    Defined at AresMainAPI.fpp lines 55-74
     
     Parameters
     ----------

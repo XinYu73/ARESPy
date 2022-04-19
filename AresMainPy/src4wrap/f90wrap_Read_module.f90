@@ -79,8 +79,8 @@ subroutine f90wrap_resetlattice
 end subroutine f90wrap_resetlattice
 
 subroutine f90wrap_read_pspot_atom(ity, filename, ps)
-    use pspot_module, only: pspot
     use read_module, only: read_pspot_atom
+    use pspot_module, only: pspot
     implicit none
     
     type pspot_ptr_type

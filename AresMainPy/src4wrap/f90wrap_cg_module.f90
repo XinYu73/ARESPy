@@ -155,7 +155,7 @@ subroutine f90wrap_check_opt(na, flag)
 end subroutine f90wrap_check_opt
 
 subroutine f90wrap_lattic(mylatt)
-    use cg_relax, only: lattice, lattic
+    use cg_relax, only: lattic, lattice
     implicit none
     
     type lattice_ptr_type

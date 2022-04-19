@@ -24,30 +24,6 @@ subroutine f90wrap_aresout__array__forces(this, nd, dtype, dshape, dloc)
     end if
 end subroutine f90wrap_aresout__array__forces
 
-subroutine f90wrap_aresout__array__stress(this, nd, dtype, dshape, dloc)
-    use aresmainapi, only: aresout
-    implicit none
-    type aresout_ptr_type
-        type(aresout), pointer :: p => NULL()
-    end type aresout_ptr_type
-    integer, intent(in) :: this(2)
-    type(aresout_ptr_type) :: this_ptr
-    integer, intent(out) :: nd
-    integer, intent(out) :: dtype
-    integer, dimension(10), intent(out) :: dshape
-    integer*8, intent(out) :: dloc
-    
-    nd = 2
-    dtype = 12
-    this_ptr = transfer(this, this_ptr)
-    if (allocated(this_ptr%p%stress)) then
-        dshape(1:2) = shape(this_ptr%p%stress)
-        dloc = loc(this_ptr%p%stress)
-    else
-        dloc = 0
-    end if
-end subroutine f90wrap_aresout__array__stress
-
 subroutine f90wrap_aresout__array__poscar(this, nd, dtype, dshape, dloc)
     use aresmainapi, only: aresout
     implicit none
@@ -119,6 +95,26 @@ subroutine f90wrap_aresout__array__chargeRho(this, nd, dtype, dshape, dloc)
         dloc = 0
     end if
 end subroutine f90wrap_aresout__array__chargeRho
+
+subroutine f90wrap_aresout__array__stress(this, nd, dtype, dshape, dloc)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in) :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer, intent(out) :: nd
+    integer, intent(out) :: dtype
+    integer, dimension(10), intent(out) :: dshape
+    integer*8, intent(out) :: dloc
+    
+    nd = 2
+    dtype = 12
+    this_ptr = transfer(this, this_ptr)
+    dshape(1:2) = shape(this_ptr%p%stress)
+    dloc = loc(this_ptr%p%stress)
+end subroutine f90wrap_aresout__array__stress
 
 subroutine f90wrap_aresout__array__apilat_mat(this, nd, dtype, dshape, dloc)
     use aresmainapi, only: aresout
@@ -326,7 +322,7 @@ subroutine f90wrap_assignment(dertype)
 end subroutine f90wrap_assignment
 
 subroutine f90wrap_destroy_alloc_arrays(dertype)
-    use aresmainapi, only: aresout, destroy_alloc_arrays
+    use aresmainapi, only: destroy_alloc_arrays, aresout
     implicit none
     
     type aresout_ptr_type

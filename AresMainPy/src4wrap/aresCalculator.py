@@ -43,7 +43,6 @@ class aresCalculator(Calculator):
         self._stress = None
 
     def get_potential_energy(self, atoms=None, **kwargs):
-        
         self._energy = Ares.Energy_Module().etot*Ares.Constants().hart2ev
         return self._energy
 
@@ -52,4 +51,6 @@ class aresCalculator(Calculator):
         return self._forces
 
     def get_stress(self, atoms=None):
-        self._stress = self.aresOut.stress
+        print(self.aresOut.stress* Ares.Constants().au2gpa)
+        self._stress = self.aresOut.stress* Ares.Constants().au2gpa
+        return self._stress
