@@ -7,9 +7,9 @@
 #                   define the compiler names
 #=======================================================================
 CC       = icc
-#F90      = gfortran
+# F90      = gfortran
 F90      = ifort
-#F90      =  /opt/intel/composer_xe_2015.3.187/bin/intel64/ifort
+# F90      =  /opt/intel/composer_xe_2015.3.187/bin/intel64/ifort
 PYTHON   = python
 #=======================================================================
 #                     additional flags

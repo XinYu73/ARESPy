@@ -26,19 +26,19 @@ Forcestress_Module.cal_force_stress()
 AresApi.assignment(aresOut)
 print(">>>>",aresOut.comm)
 # #!###################
-# posStore=np.zeros((3,30,Parameters.nssp))
+posStore=np.zeros((3,30,Parameters.nssp))
 
-# #!################
-# for i in range(Parameters.nssp):
-#     print(">>>>Current Ionic Step",i)
-#     Forcestress_Module.cal_force_stress()
-#     AresApi.assignment(aresOut)
-#     posStore[:,:,i]=aresOut.pos
-#     Relax_Module.relaxer(i)
-# #!###############
-# for i in range(Parameters.nssp):
-#     print(">>>>pos at ",i,"\n")
-#     print(posStore[:,:,i])
+#!################
+for i in range(Parameters.nssp):
+    print(">>>>Current Ionic Step",i)
+    Forcestress_Module.cal_force_stress()
+    AresApi.assignment(aresOut)
+    posStore[:,:,i]=aresOut.pos
+    Relax_Module.relaxer(i)
+#!###############
+for i in range(Parameters.nssp):
+    print(">>>>pos at ",i,"\n")
+    print(posStore[:,:,i])
 # #!Plot>>>>>>>>>>>>>
 
 # plt.figure()
