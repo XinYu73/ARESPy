@@ -120,6 +120,46 @@ subroutine f90wrap_aresout__array__chargeRho(this, nd, dtype, dshape, dloc)
     end if
 end subroutine f90wrap_aresout__array__chargeRho
 
+subroutine f90wrap_aresout__array__apilat_mat(this, nd, dtype, dshape, dloc)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in) :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer, intent(out) :: nd
+    integer, intent(out) :: dtype
+    integer, dimension(10), intent(out) :: dshape
+    integer*8, intent(out) :: dloc
+    
+    nd = 2
+    dtype = 12
+    this_ptr = transfer(this, this_ptr)
+    dshape(1:2) = shape(this_ptr%p%apilat_mat)
+    dloc = loc(this_ptr%p%apilat_mat)
+end subroutine f90wrap_aresout__array__apilat_mat
+
+subroutine f90wrap_aresout__array__apilat_para(this, nd, dtype, dshape, dloc)
+    use aresmainapi, only: aresout
+    implicit none
+    type aresout_ptr_type
+        type(aresout), pointer :: p => NULL()
+    end type aresout_ptr_type
+    integer, intent(in) :: this(2)
+    type(aresout_ptr_type) :: this_ptr
+    integer, intent(out) :: nd
+    integer, intent(out) :: dtype
+    integer, dimension(10), intent(out) :: dshape
+    integer*8, intent(out) :: dloc
+    
+    nd = 1
+    dtype = 12
+    this_ptr = transfer(this, this_ptr)
+    dshape(1:1) = shape(this_ptr%p%apilat_para)
+    dloc = loc(this_ptr%p%apilat_para)
+end subroutine f90wrap_aresout__array__apilat_para
+
 subroutine f90wrap_aresout__get__comm(this, f90wrap_comm)
     use aresmainapi, only: aresout
     implicit none
@@ -297,6 +337,22 @@ subroutine f90wrap_destroy_alloc_arrays(dertype)
     dertype_ptr = transfer(dertype, dertype_ptr)
     call destroy_alloc_arrays(dertype=dertype_ptr%p)
 end subroutine f90wrap_destroy_alloc_arrays
+
+subroutine f90wrap_updateions(pos, lattice, ikind, n0, n1, n2)
+    use aresmainapi, only: updateions
+    implicit none
+    
+    real(8), intent(in), dimension(n0,n1) :: pos
+    real(8), intent(in), optional, dimension(3,n2) :: lattice
+    integer, intent(in), optional :: ikind
+    integer :: n0
+    !f2py intent(hide), depend(pos) :: n0 = shape(pos,0)
+    integer :: n1
+    !f2py intent(hide), depend(pos) :: n1 = shape(pos,1)
+    integer :: n2
+    !f2py intent(hide), depend(lattice) :: n2 = shape(lattice,1)
+    call updateions(pos=pos, lattice=lattice, ikind=ikind)
+end subroutine f90wrap_updateions
 
 ! End of module aresmainapi defined in file AresMainAPI.fpp
 

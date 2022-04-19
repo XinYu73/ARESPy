@@ -2,7 +2,7 @@
 Module aresmainapi
 
 
-Defined at AresMainAPI.fpp lines 5-51
+Defined at AresMainAPI.fpp lines 5-77
 
 """
 from __future__ import print_function, absolute_import, division
@@ -19,7 +19,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
     Type(name=aresout)
     
     
-    Defined at AresMainAPI.fpp lines 10-19
+    Defined at AresMainAPI.fpp lines 10-21
     
     """
     def __init__(self, handle=None):
@@ -27,7 +27,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         self = Aresout()
         
         
-        Defined at AresMainAPI.fpp lines 10-19
+        Defined at AresMainAPI.fpp lines 10-21
         
         
         Returns
@@ -47,7 +47,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Destructor for class Aresout
         
         
-        Defined at AresMainAPI.fpp lines 10-19
+        Defined at AresMainAPI.fpp lines 10-21
         
         Parameters
         ----------
@@ -181,12 +181,60 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         self.chargerho[...] = chargerho
     
     @property
+    def apilat_mat(self):
+        """
+        Element apilat_mat ftype=real(dp) pytype=float
+        
+        
+        Defined at AresMainAPI.fpp line 16
+        
+        """
+        array_ndim, array_type, array_shape, array_handle = \
+            _AresMainPy_pkg.f90wrap_aresout__array__apilat_mat(self._handle)
+        if array_handle in self._arrays:
+            apilat_mat = self._arrays[array_handle]
+        else:
+            apilat_mat = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                    self._handle,
+                                    _AresMainPy_pkg.f90wrap_aresout__array__apilat_mat)
+            self._arrays[array_handle] = apilat_mat
+        return apilat_mat
+    
+    @apilat_mat.setter
+    def apilat_mat(self, apilat_mat):
+        self.apilat_mat[...] = apilat_mat
+    
+    @property
+    def apilat_para(self):
+        """
+        Element apilat_para ftype=real(dp) pytype=float
+        
+        
+        Defined at AresMainAPI.fpp line 17
+        
+        """
+        array_ndim, array_type, array_shape, array_handle = \
+            _AresMainPy_pkg.f90wrap_aresout__array__apilat_para(self._handle)
+        if array_handle in self._arrays:
+            apilat_para = self._arrays[array_handle]
+        else:
+            apilat_para = f90wrap.runtime.get_array(f90wrap.runtime.sizeof_fortran_t,
+                                    self._handle,
+                                    _AresMainPy_pkg.f90wrap_aresout__array__apilat_para)
+            self._arrays[array_handle] = apilat_para
+        return apilat_para
+    
+    @apilat_para.setter
+    def apilat_para(self, apilat_para):
+        self.apilat_para[...] = apilat_para
+    
+    @property
     def comm(self):
         """
         Element comm ftype=integer(i4b) pytype=int
         
         
-        Defined at AresMainAPI.fpp line 16
+        Defined at AresMainAPI.fpp line 18
         
         """
         return _AresMainPy_pkg.f90wrap_aresout__get__comm(self._handle)
@@ -201,7 +249,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element myid ftype=integer(i4b) pytype=int
         
         
-        Defined at AresMainAPI.fpp line 17
+        Defined at AresMainAPI.fpp line 19
         
         """
         return _AresMainPy_pkg.f90wrap_aresout__get__myid(self._handle)
@@ -216,7 +264,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element numprocs ftype=integer(i4b) pytype=int
         
         
-        Defined at AresMainAPI.fpp line 18
+        Defined at AresMainAPI.fpp line 20
         
         """
         return _AresMainPy_pkg.f90wrap_aresout__get__numprocs(self._handle)
@@ -231,7 +279,7 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         Element rootid ftype=integer(i4b) pytype=int
         
         
-        Defined at AresMainAPI.fpp line 19
+        Defined at AresMainAPI.fpp line 21
         
         """
         return _AresMainPy_pkg.f90wrap_aresout__get__rootid(self._handle)
@@ -252,6 +300,10 @@ class aresOut(f90wrap.runtime.FortranDerivedType):
         ret.append(repr(self.pos))
         ret.append(',\n    chargerho : ')
         ret.append(repr(self.chargerho))
+        ret.append(',\n    apilat_mat : ')
+        ret.append(repr(self.apilat_mat))
+        ret.append(',\n    apilat_para : ')
+        ret.append(repr(self.apilat_para))
         ret.append(',\n    comm : ')
         ret.append(repr(self.comm))
         ret.append(',\n    myid : ')
@@ -271,7 +323,7 @@ def init_alloc_arrays(self, nnatom):
     init_alloc_arrays(self, nnatom)
     
     
-    Defined at AresMainAPI.fpp lines 22-34
+    Defined at AresMainAPI.fpp lines 24-36
     
     Parameters
     ----------
@@ -286,7 +338,7 @@ def assignment(self):
     assignment(self)
     
     
-    Defined at AresMainAPI.fpp lines 37-44
+    Defined at AresMainAPI.fpp lines 39-48
     
     Parameters
     ----------
@@ -300,7 +352,7 @@ def destroy_alloc_arrays(self):
     destroy_alloc_arrays(self)
     
     
-    Defined at AresMainAPI.fpp lines 46-51
+    Defined at AresMainAPI.fpp lines 50-55
     
     Parameters
     ----------
@@ -308,6 +360,22 @@ def destroy_alloc_arrays(self):
     
     """
     _AresMainPy_pkg.f90wrap_destroy_alloc_arrays(dertype=self._handle)
+
+def updateions(pos, lattice=None, ikind=None):
+    """
+    updateions(pos[, lattice, ikind])
+    
+    
+    Defined at AresMainAPI.fpp lines 58-77
+    
+    Parameters
+    ----------
+    pos : float array
+    lattice : float array
+    ikind : int
+    
+    """
+    _AresMainPy_pkg.f90wrap_updateions(pos=pos, lattice=lattice, ikind=ikind)
 
 
 _array_initialisers = []

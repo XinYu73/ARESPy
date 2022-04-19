@@ -13,6 +13,8 @@ module AresMainAPI
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: poscar
         REAL(DP), ALLOCATABLE, DIMENSION(:, :)  :: pos
         REAL(DP), ALLOCATABLE, DIMENSION(:, :, :, :) :: chargeRho
+        REAL(DP)                  :: apilat_mat(3, 3)
+        REAL(DP)                  :: apilat_para(6)
         INTEGER(I4B)              :: comm
         INTEGER(I4B)              :: myid
         INTEGER(I4B)              :: numprocs
@@ -43,6 +45,8 @@ contains
         dertype%poscar = struct%poscar
         dertype%pos = struct%pos
         dertype%comm = parallel%comm
+        dertype%apilat_mat = lat_mat
+        dertype%apilat_para = lat_para
     end subroutine assignment
 
     subroutine destroy_alloc_arrays(dertype)
@@ -52,4 +56,27 @@ contains
         if (allocated(dertype%poscar)) deallocate (dertype%poscar)
         if (allocated(dertype%pos)) deallocate (dertype%pos)
     end subroutine destroy_alloc_arrays
+
+    ! #! input info
+    subroutine updateIons(pos, lattice, ikind)
+        REAL(DP), INTENT(IN) :: pos(:, :)
+        INTEGER, INTENT(IN), OPTIONAL  :: ikind
+        REAL(DP), INTENT(IN), OPTIONAL  :: lattice(3, 3)
+        logical :: lmovecell
+        INTEGER   :: iflag
+        IF (present(ikind)) THEN
+            iflag = ikind
+        ELSE
+            iflag = 0
+        end if
+        IF (present(lattice)) THEN
+            lmovecell = .TRUE.
+        ELSE
+            lmovecell = .FALSE.
+        END IF
+        if (lmovecell) Then
+            struct%pos = pos
+            lat_mat = lattice
+        end if
+    end subroutine updateIons
 end module AresMainAPI

@@ -15,9 +15,9 @@ Read_Module = Ares.Read_Module()
 AresApi = Ares.Aresmainapi()
 Scalapack_Module = Ares.Scalapack_Module()
 Relax_Module = Ares.Relax_Module()
-Parameters = Ares.Parameters()
 Forcestress_Module = Ares.Forcestress_Module()
 aresOut = AresApi.aresOut()
+Struct_Module=Ares.Struct_Module()
 #!###################
 Smpi_Math_Module.smpi_init()
 Read_Module.read_file('ares.in')
@@ -26,22 +26,30 @@ Relax_Module.initialize_relax()
 AresApi.init_alloc_arrays(aresOut, 30)
 Forcestress_Module.cal_force_stress()
 AresApi.assignment(aresOut)
-print(">>>>", aresOut.comm)
-# #!###################
-posStore = np.zeros((3, 30, Parameters.nssp))
+print("before:  \n",aresOut.pos,"\n",aresOut.apilat_mat)
+newPos = aresOut.pos + 0.1
+newLattice = aresOut.apilat_mat - 0.1
+AresApi.updateions(newPos, newLattice)
+AresApi.assignment(aresOut)
+print("After:  \n",aresOut.pos,"\n",aresOut.apilat_mat)
 
-#!################
-for i in range(Parameters.nssp):
-    print(">>>>Current Ionic Step", i)
-    Forcestress_Module.cal_force_stress()
-    AresApi.assignment(aresOut)
-    posStore[:, :, i] = aresOut.pos
-    Relax_Module.relaxer(i)
-#!###############
-for i in range(Parameters.nssp):
-    print(">>>>pos at ", i, "\n")
-    print(posStore[:, :, i])
-# #!Plot>>>>>>>>>>>>>
+print(Struct_Module.natom)
+# print(">>>>", aresOut.comm)
+# # #!###################
+# posStore = np.zeros((3, 30, Parameters.nssp))
+
+# #!################
+# for i in range(Parameters.nssp):
+#     print(">>>>Current Ionic Step", i)
+#     Forcestress_Module.cal_force_stress()
+#     AresApi.assignment(aresOut)
+#     posStore[:, :, i] = aresOut.pos
+#     Relax_Module.relaxer(i)
+# #!###############
+# for i in range(Parameters.nssp):
+#     print(">>>>pos at ", i, "\n")
+#     print(posStore[:, :, i])
+# # #!Plot>>>>>>>>>>>>>
 
 # plt.figure()
 # plt.plot(posStore[0,:,2]-posStore[0,:,1])
