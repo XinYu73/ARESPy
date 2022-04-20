@@ -17,8 +17,6 @@ atoms = ase.io.read("ares.cell", format='vasp')
 print(atoms.cell)
 cal = aresCalculator(inputfile="ares.in",atoms=atoms)
 atoms.calc = cal
-
 atoms.set_constraint(FixSymmetry(atoms))
-opt = LBFGS(atoms, trajectory='optMPI.traj', use_line_search=False)
-opt.run(fmax=0.001)
-print(atoms.positions)
+opt = LBFGS(atoms, trajectory='opt.traj', use_line_search=False)
+opt.run(fmax=0.01)
