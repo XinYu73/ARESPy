@@ -1,6 +1,6 @@
 # AresPy 和 ASE
 
-周日和周一两天主要在看师兄推荐的pymatgen,pymatgen里面对material project的数据库访问模块确实特别给力，谢谢师兄!。
+周日和周一两天主要在看师兄推荐的pymatgen,pymatgen里面对material project的数据库访问模块确实特别给力，谢谢师兄!
 
 昨天和今天主要看了ASE，写了一下AresPy的calculator.
 
