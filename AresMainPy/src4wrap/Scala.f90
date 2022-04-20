@@ -891,6 +891,7 @@ itest = itest + 1
 
     !> error info
     IF(info/=0)THEN
+      !!!!xinyu
        print*,'ZHEGV err:info',info,ifail(1),parallel%myid
        STOP
     ENDIF
@@ -1053,6 +1054,7 @@ itest = itest + 1
 !if (parallel%isroot) print *,'the number of eigenvector',m
     IF(info/=0)THEN
        ! print*,'ZHEGV err:info',info,ifail(1),parallel%coords
+      
        print*,'ZHEGV err:info',info,ifail(1),parallel%myid
        ! print *,'you shi scalapack','amat',amat,'bmat',bmat
        STOP

@@ -322,7 +322,7 @@ subroutine f90wrap_assignment(dertype)
 end subroutine f90wrap_assignment
 
 subroutine f90wrap_destroy_alloc_arrays(dertype)
-    use aresmainapi, only: destroy_alloc_arrays, aresout
+    use aresmainapi, only: aresout, destroy_alloc_arrays
     implicit none
     
     type aresout_ptr_type
@@ -334,20 +334,19 @@ subroutine f90wrap_destroy_alloc_arrays(dertype)
     call destroy_alloc_arrays(dertype=dertype_ptr%p)
 end subroutine f90wrap_destroy_alloc_arrays
 
-subroutine f90wrap_updateions(pos, lattice, ikind, n0, n1, n2)
+subroutine f90wrap_updateions(pos, lattice, n0, n1, n2)
     use aresmainapi, only: updateions
     implicit none
     
     real(8), intent(in), dimension(n0,n1) :: pos
     real(8), intent(in), optional, dimension(3,n2) :: lattice
-    integer, intent(in), optional :: ikind
     integer :: n0
     !f2py intent(hide), depend(pos) :: n0 = shape(pos,0)
     integer :: n1
     !f2py intent(hide), depend(pos) :: n1 = shape(pos,1)
     integer :: n2
     !f2py intent(hide), depend(lattice) :: n2 = shape(lattice,1)
-    call updateions(pos=pos, lattice=lattice, ikind=ikind)
+    call updateions(pos=pos, lattice=lattice)
 end subroutine f90wrap_updateions
 
 ! End of module aresmainapi defined in file AresMainAPI.fpp

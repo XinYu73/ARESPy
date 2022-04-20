@@ -289,6 +289,10 @@ CONTAINS
       COMPLEX(DP) :: psi_global(global_n1,global_n2,global_n3)
       integer(i4b) :: ix,iy,iz
 #endif
+!!!!xinyu
+write(*,*)"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+write(*,*)struct%pos
+write(*,*)lat_mat
       !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
       !number of state we need
       nev=Nstates
@@ -426,6 +430,8 @@ CONTAINS
          !check
          dtoten=ABS(toten-totend)/natom*hart2ev
 #ifndef MPI
+            
+!!!!
          WRITE(6,"(1X,A8,I4,1X,A6,ES18.9,1X,A6,ES15.7,1X,A8,ES15.7)")     &
               &      '>CheFSI:',iter,'Energy',toten*hart2ev,'Res(E)',dtoten ,  &
               &  'Res(rho)',res

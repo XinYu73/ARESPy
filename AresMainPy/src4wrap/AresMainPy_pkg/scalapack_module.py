@@ -2,7 +2,7 @@
 Module scalapack_module
 
 
-Defined at Scala.fpp lines 5-1149
+Defined at Scala.fpp lines 5-1150
 
 """
 from __future__ import print_function, absolute_import, division
@@ -324,7 +324,7 @@ def sl_generalizeeigen_real2(dime, amat, bmat, am, an, bm, bn, amb, anb, bmb, \
         evec, cm, cn, eval[, cmbin, cnbin])
     
     
-    Defined at Scala.fpp lines 715-801
+    Defined at Scala.fpp lines 715-802
     
     Parameters
     ----------
@@ -358,7 +358,7 @@ def sl_generalizeeigen_real(dime, amat, bmat, am, an, bm, bn, amb, anb, bmb, \
         evec, cm, cn, eval[, cmbin, cnbin])
     
     
-    Defined at Scala.fpp lines 804-953
+    Defined at Scala.fpp lines 805-954
     
     Parameters
     ----------
@@ -390,7 +390,7 @@ def twod_map_set(nstates, nrow, ncol, twod_map):
     twod_map_set(nstates, nrow, ncol, twod_map)
     
     
-    Defined at Scala.fpp lines 957-975
+    Defined at Scala.fpp lines 958-976
     
     Parameters
     ----------
@@ -410,7 +410,7 @@ def sl_matmat_realtn(opa, opb, amat, bmat, cmat, am, an, bm, bn, amb, anb, bmb, 
         cmb, cnb)
     
     
-    Defined at Scala.fpp lines 977-1086
+    Defined at Scala.fpp lines 978-1087
     
     Parameters
     ----------
@@ -443,7 +443,7 @@ def sl_matmat_realnn(opa, opb, amat, bmat, cmat, am, an, bm, bn, amb, anb, bmb, 
         cmb, cnb)
     
     
-    Defined at Scala.fpp lines 1089-1148
+    Defined at Scala.fpp lines 1090-1149
     
     Parameters
     ----------

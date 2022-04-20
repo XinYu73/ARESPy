@@ -403,7 +403,7 @@ subroutine f90wrap_dynamics_finalise(this)
 end subroutine f90wrap_dynamics_finalise
 
 subroutine f90wrap_create_dyn(na, dyn)
-    use dyn_module, only: dynamics, create_dyn
+    use dyn_module, only: create_dyn, dynamics
     implicit none
     
     type dynamics_ptr_type

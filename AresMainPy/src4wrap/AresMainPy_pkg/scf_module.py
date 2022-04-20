@@ -2,7 +2,7 @@
 Module scf_module
 
 
-Defined at Scf_module.fpp lines 5-1458
+Defined at Scf_module.fpp lines 5-1462
 
 """
 from __future__ import print_function, absolute_import, division
@@ -98,7 +98,7 @@ def chefsi(rhos, psi, eval):
     chefsi(rhos, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 182-382
+    Defined at Scf_module.fpp lines 182-386
     
     Parameters
     ----------
@@ -120,7 +120,7 @@ def filter_spin(veff, psi, eval):
     filter_spin(veff, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 385-407
+    Defined at Scf_module.fpp lines 389-411
     
     Parameters
     ----------
@@ -136,7 +136,7 @@ def arpackscf_r(rhos, psi, eval):
     arpackscf_r(rhos, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 431-498
+    Defined at Scf_module.fpp lines 435-502
     
     Parameters
     ----------
@@ -153,7 +153,7 @@ def solver_spin_r(rhos, psi, eval, nev, diagtol):
     solver_spin_r(rhos, psi, eval, nev, diagtol)
     
     
-    Defined at Scf_module.fpp lines 501-554
+    Defined at Scf_module.fpp lines 505-558
     
     Parameters
     ----------
@@ -172,7 +172,7 @@ def real_smear_updaterho(nev, ne, psi, eval, wke_l, rhos):
     fme, ets = real_smear_updaterho(nev, ne, psi, eval, wke_l, rhos)
     
     
-    Defined at Scf_module.fpp lines 557-602
+    Defined at Scf_module.fpp lines 561-606
     
     Parameters
     ----------
@@ -198,7 +198,7 @@ def bvk_chefsi(rhos, psi, eval):
     bvk_chefsi(rhos, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 609-706
+    Defined at Scf_module.fpp lines 613-710
     
     Parameters
     ----------
@@ -223,7 +223,7 @@ def bvk_filter_spin(rhos, x, d):
     bvk_filter_spin(rhos, x, d)
     
     
-    Defined at Scf_module.fpp lines 709-728
+    Defined at Scf_module.fpp lines 713-732
     
     Parameters
     ----------
@@ -239,7 +239,7 @@ def prr_filter_spin(nfs, nfe, rhos, x, efr, pbar):
     fme, ets = prr_filter_spin(nfs, nfe, rhos, x, efr, pbar)
     
     
-    Defined at Scf_module.fpp lines 735-823
+    Defined at Scf_module.fpp lines 739-827
     
     Parameters
     ----------
@@ -265,7 +265,7 @@ def prr_chefsi(rhos, phi):
     prr_chefsi(rhos, phi)
     
     
-    Defined at Scf_module.fpp lines 826-904
+    Defined at Scf_module.fpp lines 830-908
     
     Parameters
     ----------
@@ -281,7 +281,7 @@ def iso_solver_spin_r(rhos, psi, eval, nev, diagtol):
     iso_solver_spin_r(rhos, psi, eval, nev, diagtol)
     
     
-    Defined at Scf_module.fpp lines 914-967
+    Defined at Scf_module.fpp lines 918-971
     
     Parameters
     ----------
@@ -300,7 +300,7 @@ def iso_smear_updaterho(nev, ne, psi, eval, wke_l, rhos_out):
     fme, ets = iso_smear_updaterho(nev, ne, psi, eval, wke_l, rhos_out)
     
     
-    Defined at Scf_module.fpp lines 970-1019
+    Defined at Scf_module.fpp lines 974-1023
     
     Parameters
     ----------
@@ -326,7 +326,7 @@ def iso_chefsi(rhos, psi, eval):
     iso_chefsi(rhos, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 1026-1200
+    Defined at Scf_module.fpp lines 1030-1204
     
     Parameters
     ----------
@@ -346,7 +346,7 @@ def iso_filter_spin(rhos, x, d):
     iso_filter_spin(rhos, x, d)
     
     
-    Defined at Scf_module.fpp lines 1203-1234
+    Defined at Scf_module.fpp lines 1207-1238
     
     Parameters
     ----------
@@ -368,7 +368,7 @@ def chefsi_gamma(rhos, psi, eval):
     chefsi_gamma(rhos, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 1237-1374
+    Defined at Scf_module.fpp lines 1241-1378
     
     Parameters
     ----------
@@ -384,7 +384,7 @@ def smear_updaterho_gamma(nev, ne, psi, eval, wke_l, rhos):
     fme, ets = smear_updaterho_gamma(nev, ne, psi, eval, wke_l, rhos)
     
     
-    Defined at Scf_module.fpp lines 1377-1434
+    Defined at Scf_module.fpp lines 1381-1438
     
     Parameters
     ----------
@@ -410,7 +410,7 @@ def filter_spin_gamma(veff, psi, eval):
     filter_spin_gamma(veff, psi, eval)
     
     
-    Defined at Scf_module.fpp lines 1437-1457
+    Defined at Scf_module.fpp lines 1441-1461
     
     Parameters
     ----------

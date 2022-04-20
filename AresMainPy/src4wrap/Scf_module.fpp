@@ -238,6 +238,10 @@ CONTAINS
       COMPLEX(DP) :: psi_global(global_n1,global_n2,global_n3)
       integer(i4b) :: ix,iy,iz
 
+!!!!xinyu
+write(*,*)"XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+write(*,*)struct%pos
+write(*,*)lat_mat
       !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
       !number of state we need
       nev=Nstates
@@ -374,6 +378,8 @@ CONTAINS
 
          !check
          dtoten=ABS(toten-totend)/natom*hart2ev
+
+
 
 
 
@@ -993,7 +999,7 @@ CONTAINS
 !*Author : qiangxu, modified by xlt                          !
 !*Date   : 2018-04-10                                        !
 !############################################################!
-# 1170 "Scf_module.f90"
+# 1176 "Scf_module.f90"
    !-----------------------Ispin solver-----------------------
    SUBROUTINE ISO_solver_spin_r(rhoS,psi,eval,nev,diagTOL)
       !
@@ -1166,7 +1172,7 @@ CONTAINS
 
 
 !VERSION information
-# 1327 "Scf_module.f90" 2
+# 1333 "Scf_module.f90" 2
 
       USE smpi_math_module
       USE scalapack_module
@@ -1242,7 +1248,7 @@ CONTAINS
 
 
 
-# 1412 "Scf_module.f90"
+# 1418 "Scf_module.f90"
 
 
       nev=Nstates
@@ -1321,7 +1327,7 @@ CONTAINS
 
       CALL get_psi(parallel%mygrid_range(3),nev,Nspin,psi)
       CALL get_rho(natom,struct%poscar,parallel%mygrid_range(3),Nspin,rhoS,dvol)
-# 1511 "Scf_module.f90"
+# 1517 "Scf_module.f90"
       toten=Etot
       rhoSd=rhoS
       CALL mixing_iso(0,rhoS,rhoSd,res)
@@ -1369,7 +1375,7 @@ CONTAINS
          !=================================================
       ENDDO
       CALL destroy_mixer()
-# 1566 "Scf_module.f90"
+# 1572 "Scf_module.f90"
       IF(Iter==NMITER+1) THEN
           IF(parallel%isroot)WRITE(6,*) 'SCF:failed STOP'
          ! STOP
@@ -1386,7 +1392,7 @@ CONTAINS
 
       !call total energy
       !=====================================================
-# 1592 "Scf_module.f90"
+# 1598 "Scf_module.f90"
       !==================================================
 
 

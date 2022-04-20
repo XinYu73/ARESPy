@@ -8,10 +8,17 @@ from ase.calculators.emt import EMT
 from ase.constraints import FixAtoms
 from ase.optimize import QuasiNewton
 from ase.build import fcc111, add_adsorbate
+from ase.io.trajectory import Trajectory
+from ase.spacegroup.symmetrize import FixSymmetry, check_symmetry
+from ase.optimize import BFGS, LBFGS
+import ase.io
 
-cal = aresCalculator()
-atoms = Atoms('2N', positions=[(0., 0., 0.), (0., 0., 1)])
+atoms = ase.io.read("ares.cell", format='vasp')
+print(atoms.cell)
+cal = aresCalculator(inputfile="ares.in",atoms=atoms)
 atoms.calc = cal
-print(atoms.get_potential_energy())
-print(atoms.get_forces())
-print(atoms.get_stress())
+
+atoms.set_constraint(FixSymmetry(atoms))
+opt = LBFGS(atoms, trajectory='optMPI.traj', use_line_search=False)
+opt.run(fmax=0.001)
+print(atoms.positions)

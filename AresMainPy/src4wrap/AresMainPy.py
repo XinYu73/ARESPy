@@ -11734,7 +11734,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
     Module scalapack_module
     
     
-    Defined at Scala.fpp lines 5-1149
+    Defined at Scala.fpp lines 5-1150
     
     """
     @staticmethod
@@ -12059,7 +12059,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
             evec, cm, cn, eval[, cmbin, cnbin])
         
         
-        Defined at Scala.fpp lines 715-801
+        Defined at Scala.fpp lines 715-802
         
         Parameters
         ----------
@@ -12094,7 +12094,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
             evec, cm, cn, eval[, cmbin, cnbin])
         
         
-        Defined at Scala.fpp lines 804-953
+        Defined at Scala.fpp lines 805-954
         
         Parameters
         ----------
@@ -12127,7 +12127,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
         twod_map_set(nstates, nrow, ncol, twod_map)
         
         
-        Defined at Scala.fpp lines 957-975
+        Defined at Scala.fpp lines 958-976
         
         Parameters
         ----------
@@ -12148,7 +12148,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
             cmb, cnb)
         
         
-        Defined at Scala.fpp lines 977-1086
+        Defined at Scala.fpp lines 978-1087
         
         Parameters
         ----------
@@ -12182,7 +12182,7 @@ class Scalapack_Module(f90wrap.runtime.FortranModule):
             cmb, cnb)
         
         
-        Defined at Scala.fpp lines 1089-1148
+        Defined at Scala.fpp lines 1090-1149
         
         Parameters
         ----------
@@ -21850,7 +21850,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
     Module scf_module
     
     
-    Defined at Scf_module.fpp lines 5-1458
+    Defined at Scf_module.fpp lines 5-1462
     
     """
     @staticmethod
@@ -21942,7 +21942,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         chefsi(rhos, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 182-382
+        Defined at Scf_module.fpp lines 182-386
         
         Parameters
         ----------
@@ -21965,7 +21965,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         filter_spin(veff, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 385-407
+        Defined at Scf_module.fpp lines 389-411
         
         Parameters
         ----------
@@ -21982,7 +21982,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         arpackscf_r(rhos, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 431-498
+        Defined at Scf_module.fpp lines 435-502
         
         Parameters
         ----------
@@ -22000,7 +22000,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         solver_spin_r(rhos, psi, eval, nev, diagtol)
         
         
-        Defined at Scf_module.fpp lines 501-554
+        Defined at Scf_module.fpp lines 505-558
         
         Parameters
         ----------
@@ -22020,7 +22020,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         fme, ets = real_smear_updaterho(nev, ne, psi, eval, wke_l, rhos)
         
         
-        Defined at Scf_module.fpp lines 557-602
+        Defined at Scf_module.fpp lines 561-606
         
         Parameters
         ----------
@@ -22047,7 +22047,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         bvk_chefsi(rhos, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 609-706
+        Defined at Scf_module.fpp lines 613-710
         
         Parameters
         ----------
@@ -22073,7 +22073,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         bvk_filter_spin(rhos, x, d)
         
         
-        Defined at Scf_module.fpp lines 709-728
+        Defined at Scf_module.fpp lines 713-732
         
         Parameters
         ----------
@@ -22090,7 +22090,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         fme, ets = prr_filter_spin(nfs, nfe, rhos, x, efr, pbar)
         
         
-        Defined at Scf_module.fpp lines 735-823
+        Defined at Scf_module.fpp lines 739-827
         
         Parameters
         ----------
@@ -22117,7 +22117,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         prr_chefsi(rhos, phi)
         
         
-        Defined at Scf_module.fpp lines 826-904
+        Defined at Scf_module.fpp lines 830-908
         
         Parameters
         ----------
@@ -22134,7 +22134,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         iso_solver_spin_r(rhos, psi, eval, nev, diagtol)
         
         
-        Defined at Scf_module.fpp lines 914-967
+        Defined at Scf_module.fpp lines 918-971
         
         Parameters
         ----------
@@ -22154,7 +22154,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         fme, ets = iso_smear_updaterho(nev, ne, psi, eval, wke_l, rhos_out)
         
         
-        Defined at Scf_module.fpp lines 970-1019
+        Defined at Scf_module.fpp lines 974-1023
         
         Parameters
         ----------
@@ -22181,7 +22181,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         iso_chefsi(rhos, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 1026-1200
+        Defined at Scf_module.fpp lines 1030-1204
         
         Parameters
         ----------
@@ -22202,7 +22202,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         iso_filter_spin(rhos, x, d)
         
         
-        Defined at Scf_module.fpp lines 1203-1234
+        Defined at Scf_module.fpp lines 1207-1238
         
         Parameters
         ----------
@@ -22225,7 +22225,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         chefsi_gamma(rhos, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 1237-1374
+        Defined at Scf_module.fpp lines 1241-1378
         
         Parameters
         ----------
@@ -22242,7 +22242,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         fme, ets = smear_updaterho_gamma(nev, ne, psi, eval, wke_l, rhos)
         
         
-        Defined at Scf_module.fpp lines 1377-1434
+        Defined at Scf_module.fpp lines 1381-1438
         
         Parameters
         ----------
@@ -22269,7 +22269,7 @@ class Scf_Module(f90wrap.runtime.FortranModule):
         filter_spin_gamma(veff, psi, eval)
         
         
-        Defined at Scf_module.fpp lines 1437-1457
+        Defined at Scf_module.fpp lines 1441-1461
         
         Parameters
         ----------
@@ -24248,7 +24248,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
     Module aresmainapi
     
     
-    Defined at AresMainAPI.fpp lines 5-74
+    Defined at AresMainAPI.fpp lines 5-104
     
     """
     @f90wrap.runtime.register_class("AresMainPy.aresOut")
@@ -24257,7 +24257,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
         Type(name=aresout)
         
         
-        Defined at AresMainAPI.fpp lines 10-21
+        Defined at AresMainAPI.fpp lines 16-27
         
         """
         def __init__(self, handle=None):
@@ -24265,7 +24265,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             self = Aresout()
             
             
-            Defined at AresMainAPI.fpp lines 10-21
+            Defined at AresMainAPI.fpp lines 16-27
             
             
             Returns
@@ -24285,7 +24285,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Destructor for class Aresout
             
             
-            Defined at AresMainAPI.fpp lines 10-21
+            Defined at AresMainAPI.fpp lines 16-27
             
             Parameters
             ----------
@@ -24304,7 +24304,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element forces ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 11
+            Defined at AresMainAPI.fpp line 17
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24328,7 +24328,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element poscar ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 12
+            Defined at AresMainAPI.fpp line 18
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24352,7 +24352,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element pos ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 13
+            Defined at AresMainAPI.fpp line 19
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24376,7 +24376,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element chargerho ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 14
+            Defined at AresMainAPI.fpp line 20
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24400,7 +24400,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element stress ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 15
+            Defined at AresMainAPI.fpp line 21
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24424,7 +24424,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element apilat_mat ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 16
+            Defined at AresMainAPI.fpp line 22
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24448,7 +24448,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element apilat_para ftype=real(dp) pytype=float
             
             
-            Defined at AresMainAPI.fpp line 17
+            Defined at AresMainAPI.fpp line 23
             
             """
             array_ndim, array_type, array_shape, array_handle = \
@@ -24472,7 +24472,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element comm ftype=integer(i4b) pytype=int
             
             
-            Defined at AresMainAPI.fpp line 18
+            Defined at AresMainAPI.fpp line 24
             
             """
             return _AresMainPy.f90wrap_aresout__get__comm(self._handle)
@@ -24487,7 +24487,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element myid ftype=integer(i4b) pytype=int
             
             
-            Defined at AresMainAPI.fpp line 19
+            Defined at AresMainAPI.fpp line 25
             
             """
             return _AresMainPy.f90wrap_aresout__get__myid(self._handle)
@@ -24502,7 +24502,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element numprocs ftype=integer(i4b) pytype=int
             
             
-            Defined at AresMainAPI.fpp line 20
+            Defined at AresMainAPI.fpp line 26
             
             """
             return _AresMainPy.f90wrap_aresout__get__numprocs(self._handle)
@@ -24517,7 +24517,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
             Element rootid ftype=integer(i4b) pytype=int
             
             
-            Defined at AresMainAPI.fpp line 21
+            Defined at AresMainAPI.fpp line 27
             
             """
             return _AresMainPy.f90wrap_aresout__get__rootid(self._handle)
@@ -24562,7 +24562,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
         init_alloc_arrays(self, nnatom)
         
         
-        Defined at AresMainAPI.fpp lines 24-34
+        Defined at AresMainAPI.fpp lines 30-40
         
         Parameters
         ----------
@@ -24578,7 +24578,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
         assignment(self)
         
         
-        Defined at AresMainAPI.fpp lines 37-46
+        Defined at AresMainAPI.fpp lines 43-52
         
         Parameters
         ----------
@@ -24593,7 +24593,7 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
         destroy_alloc_arrays(self)
         
         
-        Defined at AresMainAPI.fpp lines 48-52
+        Defined at AresMainAPI.fpp lines 54-58
         
         Parameters
         ----------
@@ -24603,21 +24603,20 @@ class Aresmainapi(f90wrap.runtime.FortranModule):
         _AresMainPy.f90wrap_destroy_alloc_arrays(dertype=self._handle)
     
     @staticmethod
-    def updateions(pos, lattice=None, ikind=None):
+    def updateions(pos, lattice=None):
         """
-        updateions(pos[, lattice, ikind])
+        updateions(pos[, lattice])
         
         
-        Defined at AresMainAPI.fpp lines 55-74
+        Defined at AresMainAPI.fpp lines 61-104
         
         Parameters
         ----------
         pos : float array
         lattice : float array
-        ikind : int
         
         """
-        _AresMainPy.f90wrap_updateions(pos=pos, lattice=lattice, ikind=ikind)
+        _AresMainPy.f90wrap_updateions(pos=pos, lattice=lattice)
     
     _dt_array_initialisers = []
     
